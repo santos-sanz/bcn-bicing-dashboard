@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# npx shadcn@latest add "https://v0.dev/chat/b/XLtOZ2C?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..t2_lzBZ65iuUfUV7.aXItyV-rUM0iOSwMHN0l4n_R04uIR9Bn15bQLlwN7btZecrg-yY.WcHUQf1RNO4QleK0bSypAA"
 
 # dependencies
 /node_modules
