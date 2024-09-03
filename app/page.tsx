@@ -1,113 +1,299 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useState, useEffect, useRef } from 'react'
+import { Bike, MapIcon, Lock } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import L from 'leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+
+// Leaflet icon workaround for webpack
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png',
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
+});
+
+// Mock data for bike stations
+const bikeStations = [
+  { id: 1, name: "Plaça Catalunya", lat: 41.3874, lng: 2.1686, status: "green", bikes: 15, docks: 5, zone: "Ciutat Vella" },
+  { id: 2, name: "Passeig de Gràcia", lat: 41.3915, lng: 2.1652, status: "yellow", bikes: 8, docks: 12, zone: "Eixample" },
+  { id: 3, name: "La Rambla", lat: 41.3797, lng: 2.1732, status: "red", bikes: 2, docks: 18, zone: "Ciutat Vella" },
+  { id: 4, name: "Barceloneta", lat: 41.3842, lng: 2.1872, status: "green", bikes: 20, docks: 0, zone: "Ciutat Vella" },
+  { id: 5, name: "Sagrada Família", lat: 41.4036, lng: 2.1744, status: "yellow", bikes: 10, docks: 10, zone: "Eixample" },
+]
+
+// Mock data for usage chart
+const usageData = [
+  { time: '00:00', users: 1000 },
+  { time: '04:00', users: 500 },
+  { time: '08:00', users: 3000 },
+  { time: '12:00', users: 2000 },
+  { time: '16:00', users: 4000 },
+  { time: '20:00', users: 3000 },
+]
+
+const createCustomIcon = (status) => {
+  return L.divIcon({
+    className: 'custom-icon',
+    html: `<div class="marker-pin bg-${status}-500"></div>`,
+    iconSize: [30, 42],
+    iconAnchor: [15, 42]
+  })
+}
+
+const AutocompleteSearch = ({ onSelect }) => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [suggestions, setSuggestions] = useState([])
+  const [isOpen, setIsOpen] = useState(false)
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    if (searchTerm.length > 1) {
+      const filteredSuggestions = bikeStations.filter(station => 
+        station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        station.zone.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setSuggestions(filteredSuggestions)
+      setIsOpen(true)
+    } else {
+      setSuggestions([])
+      setIsOpen(false)
+    }
+  }, [searchTerm])
+
+  const handleSelect = (station) => {
+    setSearchTerm(station.name)
+    setIsOpen(false)
+    onSelect(station)
+  }
+
+  const handleClear = () => {
+    setSearchTerm('')
+    setIsOpen(false)
+    onSelect(null)
+    inputRef.current?.focus()
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className="relative">
+      <div className="flex items-center">
+        <Input
+          ref={inputRef}
+          type="text"
+          placeholder="Search station or zone..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-64"
         />
+        {searchTerm && (
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="absolute right-0 mr-2"
+            onClick={handleClear}
+          >
+            <X className="h-4 w-4" />
+            <span className="sr-only">Clear search</span>
+          </Button>
+        )}
       </div>
+      {isOpen && suggestions.length > 0 && (
+        <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
+          {suggestions.map((station) => (
+            <li
+              key={station.id}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleSelect(station)}
+            >
+              {station.name} - {station.zone}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+export default function Component() {
+  const [selectedStation, setSelectedStation] = useState(null)
+  const [filter, setFilter] = useState('all')
+  const [map, setMap] = useState(null)
+  const [filteredStations, setFilteredStations] = useState(bikeStations)
+  const [metrics, setMetrics] = useState({
+    stations: 0,
+    availableBikes: 0,
+    availableDocks: 0
+  })
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+  useEffect(() => {
+    if (map) {
+      map.setView([41.3874, 2.1686], 13)
+    }
+  }, [map])
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+  useEffect(() => {
+    const filtered = bikeStations.filter(station => 
+      filter === 'all' || station.status === filter
+    )
+    setFilteredStations(filtered)
+    updateMetrics(filtered)
+  }, [filter])
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+  const updateMetrics = (stations) => {
+    const totalStations = stations.length
+    const availableBikes = stations.reduce((sum, station) => sum + station.bikes, 0)
+    const availableDocks = stations.reduce((sum, station) => sum + station.docks, 0)
+    setMetrics({
+      stations: totalStations,
+      availableBikes,
+      availableDocks
+    })
+  }
+
+  const handleStationSelect = (station) => {
+    setSelectedStation(station)
+    if (station) {
+      const filtered = [station]
+      setFilteredStations(filtered)
+      updateMetrics(filtered)
+      map?.setView([station.lat, station.lng], 15)
+    } else {
+      setFilteredStations(bikeStations)
+      updateMetrics(bikeStations)
+      map?.setView([41.3874, 2.1686], 13)
+    }
+  }
+
+  return (
+    <div className="container mx-auto p-4 space-y-8">
+      <h1 className="text-4xl font-bold mb-6 text-center">Barcelona Bike System Analytics</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Card>
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-primary/10">
+              <MapIcon className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Stations</p>
+              <p className="text-2xl font-bold">{metrics.stations}</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-primary/10">
+              <Bike className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Available Bikes</p>
+              <p className="text-2xl font-bold">{metrics.availableBikes}</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-primary/10">
+              <Lock className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Available Docks</p>
+              <p className="text-2xl font-bold">{metrics.availableDocks}</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-    </main>
-  );
+      
+      <Card>
+        <CardHeader>
+          <div className="flex justify-between items-center flex-wrap gap-4">
+            <CardTitle className="text-2xl">Bike Station Map</CardTitle>
+            <div className="flex items-center gap-4">
+              <AutocompleteSearch onSelect={handleStationSelect} />
+              <Select value={filter} onValueChange={setFilter}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Filter stations" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Stations</SelectItem>
+                  <SelectItem value="green">Available</SelectItem>
+                  <SelectItem value="yellow">Limited</SelectItem>
+                  <SelectItem value="red">Full</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="h-[400px] rounded-lg overflow-hidden">
+            <MapContainer
+              center={[41.3874, 2.1686]}
+              zoom={13}
+              style={{ height: '100%', width: '100%' }}
+              whenCreated={setMap}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              {filteredStations.map((station) => (
+                <Marker
+                  key={station.id}
+                  position={[station.lat, station.lng]}
+                  icon={createCustomIcon(station.status)}
+                  eventHandlers={{
+                    click: () => setSelectedStation(station),
+                  }}
+                >
+                  <Popup>
+                    <h3 className="font-semibold">{station.name}</h3>
+                    <p>Zone: {station.zone}</p>
+                    <p>Status: {station.status}</p>
+                    <p>Available Bikes: {station.bikes}</p>
+                    <p>Available Docks: {station.docks}</p>
+                  </Popup>
+                </Marker>
+              ))}
+            </MapContainer>
+          </div>
+          {selectedStation && (
+            <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
+              <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
+              <p className="text-sm text-gray-600">Zone: {selectedStation.zone}</p>
+              <p className="text-sm text-gray-600">Status: {selectedStation.status}</p>
+              <div className="mt-2 flex justify-between">
+                <span className="text-green-600">Available Bikes: {selectedStation.bikes}</span>
+                <span className="text-blue-600">Available Docks: {selectedStation.docks}</span>
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl">Daily Usage</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={usageData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="time" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="users" stroke="#3b82f6" strokeWidth={2} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
 }
