@@ -1,23 +1,20 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import { Bike, MapIcon, Lock } from 'lucide-react'
+import { Bike, MapIcon, Lock, X } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import dynamic from 'next/dynamic'
+import { Map as LeafletMap } from 'leaflet' // Importa el tipo Map de Leaflet
 
-// Leaflet icon workaround for webpack
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png',
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
-});
+// Carga dinámica del componente del mapa
+const MapComponent = dynamic(() => import('@/components/MapComponent'), {
+  ssr: false,
+  loading: () => <p>Cargando mapa...</p>
+})
 
 // Mock data for bike stations
 const bikeStations = [
@@ -38,92 +35,10 @@ const usageData = [
   { time: '20:00', users: 3000 },
 ]
 
-const createCustomIcon = (status) => {
-  return L.divIcon({
-    className: 'custom-icon',
-    html: `<div class="marker-pin bg-${status}-500"></div>`,
-    iconSize: [30, 42],
-    iconAnchor: [15, 42]
-  })
-}
-
-const AutocompleteSearch = ({ onSelect }) => {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [suggestions, setSuggestions] = useState([])
-  const [isOpen, setIsOpen] = useState(false)
-  const inputRef = useRef(null)
-
-  useEffect(() => {
-    if (searchTerm.length > 1) {
-      const filteredSuggestions = bikeStations.filter(station => 
-        station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        station.zone.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      setSuggestions(filteredSuggestions)
-      setIsOpen(true)
-    } else {
-      setSuggestions([])
-      setIsOpen(false)
-    }
-  }, [searchTerm])
-
-  const handleSelect = (station) => {
-    setSearchTerm(station.name)
-    setIsOpen(false)
-    onSelect(station)
-  }
-
-  const handleClear = () => {
-    setSearchTerm('')
-    setIsOpen(false)
-    onSelect(null)
-    inputRef.current?.focus()
-  }
-
-  return (
-    <div className="relative">
-      <div className="flex items-center">
-        <Input
-          ref={inputRef}
-          type="text"
-          placeholder="Search station or zone..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-64"
-        />
-        {searchTerm && (
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute right-0 mr-2"
-            onClick={handleClear}
-          >
-            <X className="h-4 w-4" />
-            <span className="sr-only">Clear search</span>
-          </Button>
-        )}
-      </div>
-      {isOpen && suggestions.length > 0 && (
-        <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
-          {suggestions.map((station) => (
-            <li
-              key={station.id}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleSelect(station)}
-            >
-              {station.name} - {station.zone}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
-}
-
 export default function Component() {
   const [selectedStation, setSelectedStation] = useState(null)
   const [filter, setFilter] = useState('all')
-  const [map, setMap] = useState(null)
+  const [map, setMap] = useState<LeafletMap | null>(null) // Especifica el tipo correcto aquí
   const [filteredStations, setFilteredStations] = useState(bikeStations)
   const [metrics, setMetrics] = useState({
     stations: 0,
@@ -232,43 +147,20 @@ export default function Component() {
         </CardHeader>
         <CardContent>
           <div className="h-[400px] rounded-lg overflow-hidden">
-            <MapContainer
-              center={[41.3874, 2.1686]}
-              zoom={13}
-              style={{ height: '100%', width: '100%' }}
-              whenCreated={setMap}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              {filteredStations.map((station) => (
-                <Marker
-                  key={station.id}
-                  position={[station.lat, station.lng]}
-                  icon={createCustomIcon(station.status)}
-                  eventHandlers={{
-                    click: () => setSelectedStation(station),
-                  }}
-                >
-                  <Popup>
-                    <h3 className="font-semibold">{station.name}</h3>
-                    <p>Zone: {station.zone}</p>
-                    <p>Status: {station.status}</p>
-                    <p>Available Bikes: {station.bikes}</p>
-                    <p>Available Docks: {station.docks}</p>
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
+            <MapComponent
+              filteredStations={filteredStations}
+              selectedStation={selectedStation}
+              setSelectedStation={setSelectedStation}
+              setMap={setMap}
+            />
           </div>
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
-              <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
-              <p className="text-sm text-gray-600">Zone: {selectedStation.zone}</p>
-              <p className="text-sm text-gray-600">Status: {selectedStation.status}</p>
+              <h3 className="font-semibold text-lg">{selectedStation?.name}</h3>
+              <p className="text-sm text-gray-600">Zona: {selectedStation?.zone}</p>
+              <p className="text-sm text-gray-600">Estado: {selectedStation?.status}</p>
               <div className="mt-2 flex justify-between">
-                <span className="text-green-600">Available Bikes: {selectedStation.bikes}</span>
+                <span className="text-green-600">Bicicletas Disponibles: {selectedStation?.bikes}</span>
                 <span className="text-blue-600">Available Docks: {selectedStation.docks}</span>
               </div>
             </div>
@@ -294,6 +186,79 @@ export default function Component() {
           </div>
         </CardContent>
       </Card>
+    </div>
+  )
+}
+
+const AutocompleteSearch = ({ onSelect }) => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [suggestions, setSuggestions] = useState([])
+  const [isOpen, setIsOpen] = useState(false)
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    if (searchTerm.length > 1) {
+      const filteredSuggestions = bikeStations.filter(station => 
+        station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        station.zone.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setSuggestions(filteredSuggestions)
+      setIsOpen(true)
+    } else {
+      setSuggestions([])
+      setIsOpen(false)
+    }
+  }, [searchTerm])
+
+  const handleSelect = (station) => {
+    setSearchTerm(station.name)
+    setIsOpen(false)
+    onSelect(station)
+  }
+
+  const handleClear = () => {
+    setSearchTerm('')
+    setIsOpen(false)
+    onSelect(null)
+    inputRef.current?.focus()
+  }
+
+  return (
+    <div className="relative">
+      <div className="flex items-center">
+        <Input
+          ref={inputRef}
+          type="text"
+          placeholder="Search station or zone..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-64"
+        />
+        {searchTerm && (
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="absolute right-0 mr-2"
+            onClick={handleClear}
+          >
+            <X className="h-4 w-4" />
+            <span className="sr-only">Clear search</span>
+          </Button>
+        )}
+      </div>
+      {isOpen && suggestions.length > 0 && (
+        <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
+          {suggestions.map((station) => (
+            <li
+              key={station.id}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleSelect(station)}
+            >
+              {station.name} - {station.zone}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
