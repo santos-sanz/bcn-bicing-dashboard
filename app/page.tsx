@@ -87,7 +87,7 @@ export default function Component() {
 
   return (
     <div className="container mx-auto p-4 space-y-8">
-      <h1 className="text-4xl font-bold mb-6 text-center">Barcelona Bike System Analytics</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Barcelona Bicing Analytics</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
@@ -128,7 +128,7 @@ export default function Component() {
       <Card>
         <CardHeader>
           <div className="flex justify-between items-center flex-wrap gap-4">
-            <CardTitle className="text-2xl">Bike Station Map</CardTitle>
+            <CardTitle className="text-2xl">Stations Map</CardTitle>
             <div className="flex items-center gap-4">
               <AutocompleteSearch onSelect={handleStationSelect} />
               <Select value={filter} onValueChange={setFilter}>
