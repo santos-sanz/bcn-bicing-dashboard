@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, SetStateAction } from 'react'
 import { Bike, MapIcon, Lock, X } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import dynamic from 'next/dynamic'
-import { Map as LeafletMap } from 'leaflet' // Importa el tipo Map de Leaflet
+import { Map } from 'leaflet' // Importa el tipo Map de Leaflet
 
 // Carga dinámica del componente del mapa
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -36,9 +36,9 @@ const usageData = [
 ]
 
 export default function Component() {
-  const [selectedStation, setSelectedStation] = useState(null)
+  const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('all')
-  const [map, setMap] = useState<LeafletMap | null>(null) // Especifica el tipo correcto aquí
+  const [map, setMap] = useState<Map | null>(null) // Especifica el tipo correcto aquí
   const [filteredStations, setFilteredStations] = useState(bikeStations)
   const [metrics, setMetrics] = useState({
     stations: 0,
@@ -47,7 +47,7 @@ export default function Component() {
   })
 
   useEffect(() => {
-    if (map) {
+    if (map && typeof map.setView === 'function') {
       map.setView([41.3874, 2.1686], 13)
     }
   }, [map])
@@ -60,10 +60,10 @@ export default function Component() {
     updateMetrics(filtered)
   }, [filter])
 
-  const updateMetrics = (stations) => {
+  const updateMetrics = (stations: any[]) => {
     const totalStations = stations.length
-    const availableBikes = stations.reduce((sum, station) => sum + station.bikes, 0)
-    const availableDocks = stations.reduce((sum, station) => sum + station.docks, 0)
+    const availableBikes = stations.reduce((sum: any, station: { bikes: any }) => sum + station.bikes, 0)
+    const availableDocks = stations.reduce((sum: any, station: { docks: any }) => sum + station.docks, 0)
     setMetrics({
       stations: totalStations,
       availableBikes,
@@ -71,13 +71,15 @@ export default function Component() {
     })
   }
 
-  const handleStationSelect = (station) => {
+  const handleStationSelect = (station: Station | null) => {
     setSelectedStation(station)
     if (station) {
-      const filtered = [station]
+      const filtered = [station as unknown as { id: number; name: string; lat: number; lng: number; status: string; bikes: number; docks: number; zone: string; }]
       setFilteredStations(filtered)
       updateMetrics(filtered)
-      map?.setView([station.lat, station.lng], 15)
+      if (station && 'lat' in station && 'lng' in station) {
+        map?.setView([station.lat, station.lng], 15)
+      }
     } else {
       setFilteredStations(bikeStations)
       updateMetrics(bikeStations)
@@ -156,12 +158,12 @@ export default function Component() {
           </div>
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
-              <h3 className="font-semibold text-lg">{selectedStation?.name}</h3>
-              <p className="text-sm text-gray-600">Zona: {selectedStation?.zone}</p>
-              <p className="text-sm text-gray-600">Estado: {selectedStation?.status}</p>
+              <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
+              <p className="text-sm text-gray-600">Zona: {selectedStation.zone}</p>
+              <p className="text-sm text-gray-600">Estado: {selectedStation.status}</p>
               <div className="mt-2 flex justify-between">
-                <span className="text-green-600">Bicicletas Disponibles: {selectedStation?.bikes}</span>
-                <span className="text-blue-600">Available Docks: {selectedStation.docks}</span>
+                <span className="text-green-600">Bicicletas Disponibles: {selectedStation.bikes}</span>
+                <span className="text-blue-600">Espacios Disponibles: {selectedStation.docks}</span>
               </div>
             </div>
           )}
@@ -190,11 +192,22 @@ export default function Component() {
   )
 }
 
-const AutocompleteSearch = ({ onSelect }) => {
+type Station = {
+  id: number;
+  name: string;
+  lat: number;
+  lng: number;
+  status: string;
+  bikes: number;
+  docks: number;
+  zone: string;
+};
+
+const AutocompleteSearch = ({ onSelect }: { onSelect: (station: Station | null) => void }) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [suggestions, setSuggestions] = useState([])
+  const [suggestions, setSuggestions] = useState<Station[]>([])
   const [isOpen, setIsOpen] = useState(false)
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (searchTerm.length > 1) {
@@ -209,9 +222,10 @@ const AutocompleteSearch = ({ onSelect }) => {
       setIsOpen(false)
     }
   }, [searchTerm])
-
-  const handleSelect = (station) => {
-    setSearchTerm(station.name)
+  const handleSelect = (station: Station | null) => {
+    if (station) {
+      setSearchTerm(station.name)
+    }
     setIsOpen(false)
     onSelect(station)
   }

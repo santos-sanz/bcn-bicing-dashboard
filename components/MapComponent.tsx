@@ -3,15 +3,16 @@ import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
+
 // Solución alternativa para el ícono de Leaflet en webpack
-L.Icon.Default.mergeOptions({
+(L.Icon.Default as any).mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png',
- // iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png',
+  // iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png',
   iconUrl: '/icon/bike.svg',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
 })
 
-const createCustomIcon = (status) => {
+const createCustomIcon = (status: string) => {
   return L.divIcon({
     className: 'custom-icon',
     html: `<div class="marker-pin bg-${status}-500"></div>`,
@@ -20,7 +21,7 @@ const createCustomIcon = (status) => {
   })
 }
 
-export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap }) {
+export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap }: { filteredStations: any[], selectedStation: any, setSelectedStation: any, setMap: any }) {
   useEffect(() => {
     // Cualquier efecto necesario para el mapa
   }, [])
@@ -30,20 +31,17 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
       center={[41.3874, 2.1686]}
       zoom={13}
       style={{ height: '100%', width: '100%' }}
-      whenCreated={setMap}
+      whenReady={setMap}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {filteredStations.map((station) => (
+      {filteredStations.map((station: any) => (
         <Marker
           key={station.id}
           position={[station.lat, station.lng]}
-          icon={createCustomIcon(station.status)}
-          eventHandlers={{
-            click: () => setSelectedStation(station),
-          }}
+          icon={createCustomIcon(station.status)} 
         >
           <Popup>
             <h3 className="font-semibold">{station.name}</h3>
