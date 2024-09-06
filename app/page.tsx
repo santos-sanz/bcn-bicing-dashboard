@@ -133,7 +133,7 @@ export default function Component() {
         <CardHeader>
           <div className="flex justify-between items-center flex-wrap gap-4">
             <CardTitle className="text-2xl">Stations Map</CardTitle>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 relative z-10">
               <AutocompleteSearch onSelect={handleStationSelect} bikeStations={bikeStations} />
               <Select value={filter} onValueChange={setFilter}>
                 <SelectTrigger className="w-[180px]">
@@ -150,7 +150,7 @@ export default function Component() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px] rounded-lg overflow-hidden">
+          <div className="h-[400px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
             <MapComponent
               filteredStations={filteredStations}
               selectedStation={selectedStation}
@@ -240,7 +240,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
   }
 
   return (
-    <div className="relative">
+    <div className="relative z-20">
       <div className="flex items-center">
         <Input
           ref={inputRef}
