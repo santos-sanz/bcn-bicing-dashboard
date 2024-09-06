@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import dynamic from 'next/dynamic'
-import { Map } from 'leaflet' // Importa el tipo Map de Leaflet
+import { Map as LeafletMap } from 'leaflet' // Importa el tipo Map de Leaflet
 
 // Carga dinámica del componente del mapa
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -20,7 +20,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 export default function Component() {
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('all')
-  const [map, setMap] = useState<Map | null>(null) // Especifica el tipo correcto aquí
+  const [map, setMap] = useState<LeafletMap | null>(null) // Especifica el tipo correcto aquí
   const [filteredStations, setFilteredStations] = useState<Station[]>([])
   const [metrics, setMetrics] = useState({
     stations: 0,
@@ -77,13 +77,15 @@ export default function Component() {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
       updateMetrics(filtered)
-      if (station && 'lat' in station && 'lng' in station) {
-        map?.setView([station.lat, station.lng], 15)
+      if (station && 'lat' in station && 'lng' in station && map) {
+        map.setView([station.lat, station.lng], 15)
       }
     } else {
       setFilteredStations(bikeStations)
       updateMetrics(bikeStations)
-      map?.setView([41.3874, 2.1686], 13)
+      if (map) {
+        map.setView([41.3874, 2.1686], 13)
+      }
     }
   }
 

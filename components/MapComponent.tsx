@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
-
 
 // Solución alternativa para el ícono de Leaflet en webpack
 (L.Icon.Default as any).mergeOptions({
@@ -13,19 +12,24 @@ import 'leaflet/dist/leaflet.css'
 })
 
 const createCustomIcon = (status: string) => {
+  console.log('Creando icono para estado:', status);
   return L.divIcon({
-    className: 'custom-icon',
-    html: `<div class="marker-pin bg-${status}-500"></div>`,
+    className: `custom-icon status-${status}`,
+    html: `<div class="marker-pin"></div>`,
     iconSize: [30, 42],
     iconAnchor: [15, 42]
   })
 }
 
-export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap }: { filteredStations: any[], selectedStation: any, setSelectedStation: any, setMap: any }) {
+const MapController = ({ setMap }: { setMap: (map: L.Map) => void }) => {
+  const map = useMap()
   useEffect(() => {
-    // Cualquier efecto necesario para el mapa
-  }, [])
+    setMap(map)
+  }, [map, setMap])
+  return null
+}
 
+const MapComponent = ({ filteredStations, selectedStation, setSelectedStation, setMap }: { filteredStations: any[], selectedStation: any, setSelectedStation: any, setMap: (map: L.Map) => void }) => {
   return (
     <MapContainer
       center={[41.3874, 2.1686]}
@@ -37,21 +41,27 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {filteredStations.map((station: any) => (
-        <Marker
-          key={station.id}
-          position={[station.lat, station.lng]}
-          icon={createCustomIcon(station.status)} 
-        >
-          <Popup>
-            <h3 className="font-semibold">{station.name}</h3>
-            <p>Zone: {station.zone}</p>
-            <p>Status: {station.status}</p>
-            <p>Available Bikes: {station.bikes}</p>
-            <p>Available Docks: {station.docks}</p>
-          </Popup>
-        </Marker>
-      ))}
+      <MapController setMap={setMap} />
+      {filteredStations.map((station: any) => {
+        console.log('Renderizando estación:', station);
+        return (
+          <Marker
+            key={station.id}
+            position={[station.lat, station.lng]}
+            icon={createCustomIcon(station.status)} 
+          >
+            <Popup>
+              <h3 className="font-semibold">{station.name}</h3>
+              <p>Zone: {station.zone}</p>
+              <p>Status: {station.status}</p>
+              <p>Available Bikes: {station.bikes}</p>
+              <p>Available Docks: {station.docks}</p>
+            </Popup>
+          </Marker>
+        )
+      })}
     </MapContainer>
   )
 }
+
+export default MapComponent

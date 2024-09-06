@@ -86,3 +86,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-icon {
+  background: transparent;
+  border: none;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #c30b82;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+.status-green .marker-pin {
+  background: #00ff00;
+}
+
+.status-yellow .marker-pin {
+  background: #ffff00;
+}
+
+.status-red .marker-pin {
+  background: #ff0000;
+}
