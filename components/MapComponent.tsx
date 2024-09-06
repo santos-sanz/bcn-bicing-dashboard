@@ -35,15 +35,14 @@ const MapComponent = ({ filteredStations, selectedStation, setSelectedStation, s
       center={[41.3874, 2.1686]}
       zoom={13}
       style={{ height: '100%', width: '100%' }}
-      whenReady={setMap}
     >
+      <MapController setMap={setMap} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <MapController setMap={setMap} />
       {filteredStations.map((station: any) => {
-        console.log('Renderizando estación:', station);
+        console.log('Renderizando estación:', station); // Añade este log
         return (
           <Marker
             key={station.id}
