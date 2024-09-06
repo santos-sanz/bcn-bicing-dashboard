@@ -16,35 +16,35 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   loading: () => <p>Cargando mapa...</p>
 })
 
-// Mock data for bike stations
-const bikeStations = [
-  { id: 1, name: "Plaça Catalunya", lat: 41.3874, lng: 2.1686, status: "green", bikes: 15, docks: 5, zone: "Ciutat Vella" },
-  { id: 2, name: "Passeig de Gràcia", lat: 41.3915, lng: 2.1652, status: "yellow", bikes: 8, docks: 12, zone: "Eixample" },
-  { id: 3, name: "La Rambla", lat: 41.3797, lng: 2.1732, status: "red", bikes: 2, docks: 18, zone: "Ciutat Vella" },
-  { id: 4, name: "Barceloneta", lat: 41.3842, lng: 2.1872, status: "green", bikes: 20, docks: 0, zone: "Ciutat Vella" },
-  { id: 5, name: "Sagrada Família", lat: 41.4036, lng: 2.1744, status: "yellow", bikes: 10, docks: 10, zone: "Eixample" },
-]
-
-// Mock data for usage chart
-const usageData = [
-  { time: '00:00', users: 1000 },
-  { time: '04:00', users: 500 },
-  { time: '08:00', users: 3000 },
-  { time: '12:00', users: 2000 },
-  { time: '16:00', users: 4000 },
-  { time: '20:00', users: 3000 },
-]
 
 export default function Component() {
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('all')
   const [map, setMap] = useState<Map | null>(null) // Especifica el tipo correcto aquí
-  const [filteredStations, setFilteredStations] = useState(bikeStations)
+  const [filteredStations, setFilteredStations] = useState<Station[]>([])
   const [metrics, setMetrics] = useState({
     stations: 0,
     availableBikes: 0,
     availableDocks: 0
   })
+  const [bikeStations, setBikeStations] = useState<Station[]>([])
+  const [usageData, setUsageData] = useState([])
+
+  useEffect(() => {
+    fetch('/mock_data/mock_stations.json')
+      .then(response => response.json())
+      .then(data => {
+        setBikeStations(data)
+        setFilteredStations(data)
+        updateMetrics(data)
+      })
+  }, [])
+
+  useEffect(() => {
+    fetch('/mock_data/mock_flow.json')
+      .then(response => response.json())
+      .then(data => setUsageData(data))
+  }, [])
 
   useEffect(() => {
     if (map && typeof map.setView === 'function') {
@@ -58,7 +58,7 @@ export default function Component() {
     )
     setFilteredStations(filtered)
     updateMetrics(filtered)
-  }, [filter])
+  }, [filter, bikeStations])
 
   const updateMetrics = (stations: any[]) => {
     const totalStations = stations.length
@@ -74,7 +74,7 @@ export default function Component() {
   const handleStationSelect = (station: Station | null) => {
     setSelectedStation(station)
     if (station) {
-      const filtered = [station as unknown as { id: number; name: string; lat: number; lng: number; status: string; bikes: number; docks: number; zone: string; }]
+      const filtered: Station[] = [station]
       setFilteredStations(filtered)
       updateMetrics(filtered)
       if (station && 'lat' in station && 'lng' in station) {
@@ -132,7 +132,7 @@ export default function Component() {
           <div className="flex justify-between items-center flex-wrap gap-4">
             <CardTitle className="text-2xl">Stations Map</CardTitle>
             <div className="flex items-center gap-4">
-              <AutocompleteSearch onSelect={handleStationSelect} />
+              <AutocompleteSearch onSelect={handleStationSelect} bikeStations={bikeStations} />
               <Select value={filter} onValueChange={setFilter}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Filter stations" />
@@ -203,7 +203,7 @@ type Station = {
   zone: string;
 };
 
-const AutocompleteSearch = ({ onSelect }: { onSelect: (station: Station | null) => void }) => {
+const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: Station | null) => void, bikeStations: Station[] }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState<Station[]>([])
   const [isOpen, setIsOpen] = useState(false)
@@ -221,7 +221,7 @@ const AutocompleteSearch = ({ onSelect }: { onSelect: (station: Station | null) 
       setSuggestions([])
       setIsOpen(false)
     }
-  }, [searchTerm])
+  }, [searchTerm, bikeStations])
   const handleSelect = (station: Station | null) => {
     if (station) {
       setSearchTerm(station.name)
