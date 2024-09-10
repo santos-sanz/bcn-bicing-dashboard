@@ -1,7 +1,7 @@
 [
-  { "id": 1, "name": "Plaça Catalunya", "lat": 41.3874, "lng": 2.1686, "status": "green", "bikes": 15, "docks": 5, "zone": "Ciutat Vella" },
-  { "id": 2, "name": "Passeig de Gràcia", "lat": 41.3915, "lng": 2.1652, "status": "yellow", "bikes": 8, "docks": 12, "zone": "Eixample" },
-  { "id": 3, "name": "La Rambla", "lat": 41.3797, "lng": 2.1732, "status": "red", "bikes": 2, "docks": 18, "zone": "Ciutat Vella" },
-  { "id": 4, "name": "Barceloneta", "lat": 41.3842, "lng": 2.1872, "status": "green", "bikes": 20, "docks": 0, "zone": "Ciutat Vella" },
-  { "id": 5, "name": "Sagrada Família", "lat": 41.4036, "lng": 2.1744, "status": "yellow", "bikes": 10, "docks": 10, "zone": "Eixample" }
+  { "station_id": 1, "name": "Plaça Catalunya", "lat": 41.3874, "lng": 2.1686, "status": "green", "bikes": 15, "docks": 5, "zone": "Ciutat Vella" },
+  { "station_id": 2, "name": "Passeig de Gràcia", "lat": 41.3915, "lng": 2.1652, "status": "yellow", "bikes": 8, "docks": 12, "zone": "Eixample" },
+  { "station_id": 3, "name": "La Rambla", "lat": 41.3797, "lng": 2.1732, "status": "red", "bikes": 2, "docks": 18, "zone": "Ciutat Vella" },
+  { "station_id": 4, "name": "Barceloneta", "lat": 41.3842, "lng": 2.1872, "status": "green", "bikes": 20, "docks": 0, "zone": "Ciutat Vella" },
+  { "station_id": 5, "name": "Sagrada Família", "lat": 41.4036, "lng": 2.1744, "status": "yellow", "bikes": 10, "docks": 10, "zone": "Eixample" }
 ]

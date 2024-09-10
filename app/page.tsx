@@ -41,7 +41,7 @@ export default function Component() {
   }, [])
 
   useEffect(() => {
-    fetch('/mock_data/mock_flow.json')
+    fetch('/mock_data/mock_flow_real.json')
       .then(response => response.json())
       .then(data => setUsageData(data))
   }, [])
@@ -174,7 +174,7 @@ export default function Component() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Daily Usage</CardTitle>
+          <CardTitle className="text-2xl">Usage Flows</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-[300px]">
@@ -184,7 +184,8 @@ export default function Component() {
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="users" stroke="#3b82f6" strokeWidth={2} />
+                <Line type="monotone" dataKey="in_bikes" stroke="#3b82f6" strokeWidth={1} />
+                <Line type="monotone" dataKey="out_bikes" stroke="#f63b54" strokeWidth={1} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -195,7 +196,7 @@ export default function Component() {
 }
 
 type Station = {
-  id: number;
+  station_id: number;
   name: string;
   lat: number;
   lng: number;
@@ -266,7 +267,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
         <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
           {suggestions.map((station) => (
             <li
-              key={station.id}
+              key={station.station_id}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleSelect(station)}
             >
