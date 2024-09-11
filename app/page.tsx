@@ -182,7 +182,7 @@ export default function Component() {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={usageData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="time" />
+                <XAxis dataKey="time" tickFormatter={(value) => value.slice(0, 5)}/>
                 <YAxis />
                 <Tooltip />
                 <Line type="monotone" dataKey="in_bikes" stroke="#3b82f6" strokeWidth={1} />
