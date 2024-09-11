@@ -11,9 +11,9 @@ import 'leaflet/dist/leaflet.css'
 })
 
 const createCustomIcon = (status: string) => {
-  const color = status.toLowerCase() === 'green' ? '#00ff00' : 
-                status.toLowerCase() === 'yellow' ? '#ffbf00' : 
-                status.toLowerCase() === 'red' ? '#ff0000' : '#c30b82';
+  const color = status.toLowerCase() === 'in_service' ? '#00ff00' : 
+                status.toLowerCase() === 'full' ? '#ffbf00' : 
+                status.toLowerCase() === 'limited' ? '#ff0000' : '#c30b82';
 
   const svgIcon = ` 
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42">
@@ -75,10 +75,11 @@ const MapComponent = ({ filteredStations, selectedStation, setSelectedStation, s
             >
               <Popup>
                 <h3 className="font-semibold">{station.name}</h3>
-                <p>Zone: {station.zone}</p>
                 <p>Status: {station.status}</p>
-                <p>Available Bikes: {station.bikes}</p>
-                <p>Available Docks: {station.docks}</p>
+                <p>Available Bikes: {station.num_bikes_available}</p>
+                <p>Available Docks: {station.num_docks_available}</p>
+                <p>Suburb: {station.suburb}</p>
+                <p>District: {station.district}</p>
               </Popup>
             </Marker>
           )

@@ -31,7 +31,7 @@ export default function Component() {
   const [usageData, setUsageData] = useState([])
 
   useEffect(() => {
-    fetch('/mock_data/mock_stations.json')
+    fetch('/mock_data/mock_stations_real.json')
       .then(response => response.json())
       .then(data => {
         setBikeStations(data)
@@ -62,8 +62,8 @@ export default function Component() {
 
   const updateMetrics = (stations: any[]) => {
     const totalStations = stations.length
-    const availableBikes = stations.reduce((sum: any, station: { bikes: any }) => sum + station.bikes, 0)
-    const availableDocks = stations.reduce((sum: any, station: { docks: any }) => sum + station.docks, 0)
+    const availableBikes = stations.reduce((sum: any, station: { bikes: any }) => sum + station.num_bikes_available, 0)
+    const availableDocks = stations.reduce((sum: any, station: { docks: any }) => sum + station.num_docks_available, 0)
     setMetrics({
       stations: totalStations,
       availableBikes,
@@ -141,9 +141,9 @@ export default function Component() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Stations</SelectItem>
-                  <SelectItem value="green">Available</SelectItem>
-                  <SelectItem value="yellow">Limited</SelectItem>
-                  <SelectItem value="red">Full</SelectItem>
+                  <SelectItem value="IN_SERVICE">Available</SelectItem>
+                  <SelectItem value="LIMITED">Limited</SelectItem>
+                  <SelectItem value="FULL">Full</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -161,11 +161,12 @@ export default function Component() {
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
               <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
-              <p className="text-sm text-gray-600">Zona: {selectedStation.zone}</p>
-              <p className="text-sm text-gray-600">Estado: {selectedStation.status}</p>
+              <p className="text-sm text-gray-600">District: {selectedStation.district}</p>
+              <p className="text-sm text-gray-600">Suburb: {selectedStation.suburb}</p>
+              <p className="text-sm text-gray-600">Status: {selectedStation.status}</p>
               <div className="mt-2 flex justify-between">
-                <span className="text-green-600">Bicicletas Disponibles: {selectedStation.bikes}</span>
-                <span className="text-blue-600">Espacios Disponibles: {selectedStation.docks}</span>
+                <span className="text-green-600">Available bikes: {selectedStation.num_bikes_available}</span>
+                <span className="text-blue-600">Available docks: {selectedStation.num_docks_available}</span>
               </div>
             </div>
           )}
@@ -203,7 +204,8 @@ type Station = {
   status: string;
   bikes: number;
   docks: number;
-  zone: string;
+  district: string;
+  suburb: string;
 };
 
 const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: Station | null) => void, bikeStations: Station[] }) => {
@@ -216,7 +218,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
     if (searchTerm.length > 1) {
       const filteredSuggestions = bikeStations.filter(station => 
         station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        station.zone.toLowerCase().includes(searchTerm.toLowerCase())
+        station.district.toLowerCase().includes(searchTerm.toLowerCase())
       )
       setSuggestions(filteredSuggestions)
       setIsOpen(true)
@@ -246,7 +248,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search station or zone..."
+          placeholder="Search station or district..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-64"
