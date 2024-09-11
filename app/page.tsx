@@ -62,8 +62,8 @@ export default function Component() {
 
   const updateMetrics = (stations: any[]) => {
     const totalStations = stations.length
-    const availableBikes = stations.reduce((sum: any, station: { bikes: any }) => sum + station.num_bikes_available, 0)
-    const availableDocks = stations.reduce((sum: any, station: { docks: any }) => sum + station.num_docks_available, 0)
+    const availableBikes = stations.reduce((sum: any, station: { num_bikes_available: any }) => sum + station.num_bikes_available, 0)
+    const availableDocks = stations.reduce((sum: any, station: { num_docks_available: any }) => sum + station.num_docks_available, 0)
     setMetrics({
       stations: totalStations,
       availableBikes,
@@ -202,8 +202,8 @@ type Station = {
   lat: number;
   lng: number;
   status: string;
-  bikes: number;
-  docks: number;
+  num_bikes_available: number;
+  num_docks_available: number;
   district: string;
   suburb: string;
 };
