@@ -1,4 +1,5 @@
-Barcelona Bicing Dashboard
+# Barcelona Bicing Dashboard
+
 This project is a real-time dashboard for Barcelona's Bicing bike-sharing system. It provides users with up-to-date information on bike availability, station status, and usage patterns across the city.
 
 ## Features
