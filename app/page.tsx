@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, SetStateAction } from 'react'
 import { Bike, MapIcon, Lock, X } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -175,7 +175,7 @@ export default function Component() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Usage Flows</CardTitle>
+          <CardTitle className="text-2xl">Usage Flows - Last 24 hours</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-[300px]">
