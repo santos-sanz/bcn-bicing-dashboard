@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Barcelona Bicing Dashboard
+This project is a real-time dashboard for Barcelona's Bicing bike-sharing system. It provides users with up-to-date information on bike availability, station status, and usage patterns across the city.
+
+## Features
+- Interactive map showing all Bicing stations
+- Real-time updates on bike and dock availability
+- Filtering options for station status (in service, full, empty)
+- Usage statistics and trends visualization
+- Responsive design for desktop and mobile devices
+
+## Technologies Used
+- Next.js
+- React
+- TypeScript
+- Leaflet for map integration
+- Recharts for data visualization
+- Tailwind CSS for styling
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (v14 or later)
+- npm or yarn
 
-```bash
+### Installation
+1. Clone the repository:
+2. Navigate to the project directory:
+3. Install dependencies:
+    ```
+    npm install
+    ```
+    or
+    ```
+    yarn install
+    ```
+
+### Running the Application
+
+Start the development server:
+```
 npm run dev
-# or
+```
+or
+```
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+- `app/`: Contains the main application code
+- `components/`: Reusable React components
+- `public/`: Static assets and mock data
+- `styles/`: Global styles and Tailwind CSS configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Data Source
+The project currently uses mock data located in the public/mock_data/ directory. In a production environment, this would be replaced with real-time API calls to the official Bicing data source.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is open source and available under the MIT License.
