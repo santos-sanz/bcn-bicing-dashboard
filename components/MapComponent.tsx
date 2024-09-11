@@ -11,9 +11,9 @@ import 'leaflet/dist/leaflet.css'
 })
 
 const createCustomIcon = (status: string) => {
-  const color = status.toLowerCase() === 'in_service' ? '#00ff00' : 
-                status.toLowerCase() === 'full' ? '#ffbf00' : 
-                status.toLowerCase() === 'limited' ? '#ff0000' : '#c30b82';
+  const color = status.toLowerCase() === 'in_service' ? '#00FF00' : 
+                status.toLowerCase() === 'full' ? '#ff0000' :  
+                status.toLowerCase() === 'empty' ? '#ffbf00' : '#ffbf00';
 
   const svgIcon = ` 
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42">

@@ -142,7 +142,7 @@ export default function Component() {
                 <SelectContent>
                   <SelectItem value="all">All Stations</SelectItem>
                   <SelectItem value="IN_SERVICE">Available</SelectItem>
-                  <SelectItem value="LIMITED">Limited</SelectItem>
+                  <SelectItem value="EMPTY">Empty</SelectItem>
                   <SelectItem value="FULL">Full</SelectItem>
                 </SelectContent>
               </Select>
@@ -273,7 +273,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleSelect(station)}
             >
-              {station.name} - {station.zone}
+              {station.name} - {station.suburb} - {station.district}
             </li>
           ))}
         </ul>

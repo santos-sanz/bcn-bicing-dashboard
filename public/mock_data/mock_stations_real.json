@@ -155,7 +155,7 @@
   },
   {
     "station_id": "12",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 26,
     "name": "PG. MARITIM, 23 (HOSPITAL DEL MAR)",
@@ -477,7 +477,7 @@
   },
   {
     "station_id": "36",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 19,
     "num_docks_available": 0,
     "name": "AV. DE LA CATEDRAL, 6",
@@ -645,7 +645,7 @@
   },
   {
     "station_id": "50",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 14,
     "num_docks_available": 0,
     "name": "AV. PARAL.LEL, 54",
@@ -799,7 +799,7 @@
   },
   {
     "station_id": "62",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 22,
     "name": "PL. CATALUNYA, 5",
@@ -855,7 +855,7 @@
   },
   {
     "station_id": "66",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 15,
     "name": "GRAN VIA DE LES CORTS CATALANES, 609",
@@ -1219,7 +1219,7 @@
   },
   {
     "station_id": "92",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 16,
     "name": "C / PROVENu00c7A, 241",
@@ -1401,7 +1401,7 @@
   },
   {
     "station_id": "106",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 18,
     "name": "PL  JOANIC - C / BRUNIQUER, 59",
@@ -1415,7 +1415,7 @@
   },
   {
     "station_id": "107",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 15,
     "name": "TRAV. DE GRu00c0CIA, 92 / VIA AUGUSTA",
@@ -1653,7 +1653,7 @@
   },
   {
     "station_id": "124",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 28,
     "name": "C/ NOVA  BOCANA",
@@ -2297,7 +2297,7 @@
   },
   {
     "station_id": "171",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 48,
     "name": "AV. LITORAL, 172",
@@ -2311,7 +2311,7 @@
   },
   {
     "station_id": "173",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 25,
     "name": "AV.LITORAL, 84",
@@ -2535,7 +2535,7 @@
   },
   {
     "station_id": "190",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 25,
     "name": "AV. LITORAL, 72",
@@ -2717,7 +2717,7 @@
   },
   {
     "station_id": "203",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 29,
     "name": "ESIC-AV. DIAGONAL, 668",
@@ -2773,7 +2773,7 @@
   },
   {
     "station_id": "207",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 23,
     "name": "AV. DIAGONAL, 634",
@@ -3011,7 +3011,7 @@
   },
   {
     "station_id": "224",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 23,
     "name": "C / GIRONA, 176",
@@ -3081,7 +3081,7 @@
   },
   {
     "station_id": "229",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 24,
     "name": "C/ DE LA SANTACREU, 2 (PL.DE LA VIRREIN",
@@ -3893,7 +3893,7 @@
   },
   {
     "station_id": "287",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 16,
     "name": "GRAN VIA DE LES CORTS CATALANES, 632",
@@ -4215,7 +4215,7 @@
   },
   {
     "station_id": "310",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 27,
     "name": "C/ JOSEP SAMITIER / JOAN XXIII",
@@ -4383,7 +4383,7 @@
   },
   {
     "station_id": "322",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 24,
     "name": "C/ SANTALu00d3, 165",
@@ -4887,7 +4887,7 @@
   },
   {
     "station_id": "358",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 25,
     "num_docks_available": 0,
     "name": "C/ GOMBAU, 24",
@@ -5265,7 +5265,7 @@
   },
   {
     "station_id": "385",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 28,
     "name": "C/ CASANOVA, 119",
@@ -5461,7 +5461,7 @@
   },
   {
     "station_id": "399",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 25,
     "num_docks_available": 0,
     "name": "C/ PAVIA, 3",
@@ -5559,7 +5559,7 @@
   },
   {
     "station_id": "406",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 32,
     "name": "GRAN VIA DE LES CORTS CATALANES, 592",
@@ -5629,7 +5629,7 @@
   },
   {
     "station_id": "412",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 24,
     "name": "PL. URQUINAONA, 3",
@@ -5643,7 +5643,7 @@
   },
   {
     "station_id": "413",
-    "status": "IN_SERVICE",
+    "status": "EMPTY",
     "num_bikes_available": 0,
     "num_docks_available": 28,
     "name": "C/ BRUC, 66",
@@ -6007,7 +6007,7 @@
   },
   {
     "station_id": "439",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 16,
     "num_docks_available": 0,
     "name": "RBLA. BADAL, 73 | C/ CONSTITUCIu00d3",
@@ -6049,7 +6049,7 @@
   },
   {
     "station_id": "442",
-    "status": "IN_SERVICE",
+    "status": "FULL",
     "num_bikes_available": 17,
     "num_docks_available": 0,
     "name": "C/ MINERIA, 30",
