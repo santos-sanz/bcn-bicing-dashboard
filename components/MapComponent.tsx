@@ -1,92 +1,136 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 
-// Solución alternativa para el ícono de Leaflet en webpack
-(L.Icon.Default as any).mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png',
-  iconUrl: '/icon/bike.svg',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
-})
-
-const createCustomIcon = (status: string) => {
-  const color = status.toLowerCase() === 'in_service' ? '#00FF00' : 
-                status.toLowerCase() === 'full' ? '#ff0000' :  
-                status.toLowerCase() === 'empty' ? '#ffbf00' : '#ffbf00';
-
-  const svgIcon = ` 
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42">
-      <path fill="${color}" d="M15 0C6.716 0 0 6.716 0 15c0 8.284 15 27 15 27s15-18.716 15-27C30 6.716 23.284 0 15 0z"/>
-      <circle fill="white" cx="15" cy="15" r="7"/>
-    </svg>
-  `;
+const createCustomIcon = (online: boolean, freeBikes: number, emptySlots: number) => {
+  let color = '#ffbf00' // Color por defecto (amarillo)
+  
+  if (online) {
+    if (freeBikes === 0) {
+      color = '#ff0000' // Rojo para estaciones vacías
+    } else if (emptySlots === 0) {
+      color = '#FFA500' // Naranja para estaciones llenas
+    } else {
+      color = '#00FF00' // Verde para estaciones disponibles
+    }
+  }
 
   return L.divIcon({
     className: 'custom-icon',
-    html: svgIcon,
-    iconSize: [30, 42],
-    iconAnchor: [15, 42],
-    popupAnchor: [0, -42]
-  });
+    html: `<div style="background-color: ${color}; width: 10px; height: 10px; border-radius: 50%;"></div>`,
+    iconSize: [10, 10],
+    iconAnchor: [5, 5],
+  })
 }
 
-const MapController = ({ setMap }: { setMap: (map: L.Map) => void }) => {
-  const map = useMap()
+type Station = {
+  id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  free_bikes: number;
+  empty_slots: number;
+  timestamp: string;
+  extra: {
+    online: boolean;
+    uid: string;
+    normal_bikes: number;
+    ebikes: number;
+  };
+};
+
+type MapComponentProps = {
+  filteredStations: Station[];
+  selectedStation: Station | null;
+  setSelectedStation: (station: Station | null) => void;
+  setMap: (map: L.Map | null) => void;
+};
+
+function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null }) {
+  const map = useMap();
   useEffect(() => {
-    setMap(map)
-    
-    // Ajustar el z-index del contenedor del mapa
-    const mapPane = map.getPane('mapPane');
-    if (mapPane) {
-      mapPane.style.zIndex = '0';
+    if (selectedStation) {
+      map.setView([selectedStation.latitude, selectedStation.longitude], 15);
+    } else {
+      map.setView([41.3874, 2.1686], 13);
     }
-    
-    // Ajustar el z-index de los marcadores
-    const markerPane = map.getPane('markerPane');
-    if (markerPane) {
-      markerPane.style.zIndex = '1000';
-    }
-  }, [map, setMap])
-  return null
+  }, [selectedStation, map]);
+  return null;
 }
 
-const MapComponent = ({ filteredStations, selectedStation, setSelectedStation, setMap }: { filteredStations: any[], selectedStation: any, setSelectedStation: any, setMap: (map: L.Map) => void }) => {
+export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap }: MapComponentProps) {
+  const [lastUpdateTime, setLastUpdateTime] = useState<string>('')
+
+  const handleMapReady = useCallback(() => {
+    return (map: L.Map) => {
+      setMap(map)
+    }
+  }, [setMap])
+
+  useEffect(() => {
+    if (filteredStations.length > 0) {
+      const latestTimestamp = filteredStations.reduce((latest, station) => {
+        const stationTime = new Date(station.timestamp).getTime()
+        return stationTime > latest ? stationTime : latest
+      }, 0)
+
+      const latestDate = new Date(latestTimestamp)
+
+      const formattedDate = latestDate.toLocaleString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'Europe/Madrid'
+      })
+
+      setLastUpdateTime(formattedDate)
+    }
+  }, [filteredStations])
+
   return (
-    <div className="map-container" style={{ position: 'relative', zIndex: 0, height: '100vh', width: '100%' }}>
+    <div className="relative h-full w-full">
       <MapContainer
         center={[41.3874, 2.1686]}
         zoom={13}
         style={{ height: '100%', width: '100%' }}
-        zoomControl={false}
+        whenReady={handleMapReady}
       >
-        <MapController setMap={setMap} />
+        <UpdateMapCenter selectedStation={selectedStation} />
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {filteredStations.map((station: any) => {
-          console.log('Renderizando estación:', station, 'con estado:', station.status);
-          return (
-            <Marker
-              key={station.id}
-              position={[station.lat, station.lng]}
-              icon={createCustomIcon(station.status)}
-            >
-              <Popup>
-                <h3 className="font-semibold">{station.name}</h3>
-                <p>Status: {station.status}</p>
-                <p>Available Bikes: {station.num_bikes_available}</p>
-                <p>Available Docks: {station.num_docks_available}</p>
-                <p>Suburb: {station.suburb}</p>
-                <p>District: {station.district}</p>
-              </Popup>
-            </Marker>
-          )
-        })}
+        {filteredStations.map((station) => (
+          <Marker
+            key={station.id}
+            position={[station.latitude, station.longitude]}
+            icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
+            eventHandlers={{
+              click: () => setSelectedStation(station),
+            }}
+          >
+            <Popup>
+              <div>
+                <h3>{station.name}</h3>
+                <p>Available bikes: {station.free_bikes}</p>
+                <p>Normal bikes: {station.extra.normal_bikes}</p>
+                <p>E-bikes: {station.extra.ebikes}</p>
+                <p>Empty slots: {station.empty_slots}</p>
+                <p>Status: {station.extra.online ? 'Online' : 'Offline'}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
+      {lastUpdateTime && (
+        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2 m-2 rounded-md text-sm z-[1000] text-center">
+          Última actualización: {lastUpdateTime}
+        </div>
+      )}
     </div>
   )
 }
-
-export default MapComponent

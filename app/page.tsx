@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, SetStateAction } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Bike, MapIcon, Lock, X } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -8,19 +8,19 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import dynamic from 'next/dynamic'
-import { Map as LeafletMap } from 'leaflet' // Importa el tipo Map de Leaflet
+import { Map as LeafletMap } from 'leaflet'
+import axios from 'axios'
 
-// Carga dinámica del componente del mapa
+// Importación dinámica del componente del mapa (sin cambios)
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
   loading: () => <p>Cargando mapa...</p>
 })
 
-
 export default function Component() {
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('all')
-  const [map, setMap] = useState<LeafletMap | null>(null) // Especifica el tipo correcto aquí
+  const [map, setMap] = useState<LeafletMap | null>(null)
   const [filteredStations, setFilteredStations] = useState<Station[]>([])
   const [metrics, setMetrics] = useState({
     stations: 0,
@@ -31,13 +31,19 @@ export default function Component() {
   const [usageData, setUsageData] = useState([])
 
   useEffect(() => {
-    fetch('/mock_data/mock_stations_real.json')
-      .then(response => response.json())
-      .then(data => {
-        setBikeStations(data)
-        setFilteredStations(data)
-        updateMetrics(data)
-      })
+    const fetchBicingData = async () => {
+      try {
+        const response = await axios.get('/api/bicing')
+        const stations = response.data.network.stations
+        setBikeStations(stations)
+        setFilteredStations(stations)
+        updateMetrics(stations)
+      } catch (error) {
+        console.error('Error al obtener los datos de Bicing:', error)
+      }
+    }
+
+    fetchBicingData()
   }, [])
 
   useEffect(() => {
@@ -53,17 +59,26 @@ export default function Component() {
   }, [map])
 
   useEffect(() => {
-    const filtered = bikeStations.filter(station => 
-      filter === 'all' || station.status === filter
-    )
+    const filtered = bikeStations.filter(station => {
+      switch (filter) {
+        case 'EMPTY':
+          return station.free_bikes === 0 && station.extra.online;
+        case 'FULL':
+          return station.empty_slots === 0 && station.extra.online;
+        case 'AVAILABLE':
+          return station.free_bikes > 0 && station.empty_slots > 0 && station.extra.online;
+        default:
+          return true;
+      }
+    })
     setFilteredStations(filtered)
     updateMetrics(filtered)
   }, [filter, bikeStations])
 
-  const updateMetrics = (stations: any[]) => {
+  const updateMetrics = (stations: Station[]) => {
     const totalStations = stations.length
-    const availableBikes = stations.reduce((sum: any, station: { num_bikes_available: any }) => sum + station.num_bikes_available, 0)
-    const availableDocks = stations.reduce((sum: any, station: { num_docks_available: any }) => sum + station.num_docks_available, 0)
+    const availableBikes = stations.reduce((sum, station) => sum + station.free_bikes, 0)
+    const availableDocks = stations.reduce((sum, station) => sum + station.empty_slots, 0)
     setMetrics({
       stations: totalStations,
       availableBikes,
@@ -77,8 +92,8 @@ export default function Component() {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
       updateMetrics(filtered)
-      if (station && 'lat' in station && 'lng' in station && map) {
-        map.setView([station.lat, station.lng], 15)
+      if (station && 'latitude' in station && 'longitude' in station && map) {
+        map.setView([station.latitude, station.longitude], 15)
       }
     } else {
       setFilteredStations(bikeStations)
@@ -93,7 +108,7 @@ export default function Component() {
     <div className="container mx-auto p-4 space-y-8">
       <h1 className="text-4xl font-bold mb-6 text-center">Barcelona Bicing Analytics</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card>
           <CardContent className="p-6 flex items-center space-x-4">
             <div className="p-3 rounded-full bg-primary/10">
@@ -131,17 +146,17 @@ export default function Component() {
       
       <Card>
         <CardHeader>
-          <div className="flex justify-between items-center flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <CardTitle className="text-2xl">Stations Map</CardTitle>
-            <div className="flex items-center gap-4 relative z-10">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
               <AutocompleteSearch onSelect={handleStationSelect} bikeStations={bikeStations} />
               <Select value={filter} onValueChange={setFilter}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-full sm:w-[180px]">
                   <SelectValue placeholder="Filter stations" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Stations</SelectItem>
-                  <SelectItem value="IN_SERVICE">Available</SelectItem>
+                  <SelectItem value="AVAILABLE">Available</SelectItem>
                   <SelectItem value="EMPTY">Empty</SelectItem>
                   <SelectItem value="FULL">Full</SelectItem>
                 </SelectContent>
@@ -150,7 +165,7 @@ export default function Component() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
+          <div className="h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
             <MapComponent
               filteredStations={filteredStations}
               selectedStation={selectedStation}
@@ -161,12 +176,9 @@ export default function Component() {
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
               <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
-              <p className="text-sm text-gray-600">District: {selectedStation.district}</p>
-              <p className="text-sm text-gray-600">Suburb: {selectedStation.suburb}</p>
-              <p className="text-sm text-gray-600">Status: {selectedStation.status}</p>
-              <div className="mt-2 flex justify-between">
-                <span className="text-green-600">Available bikes: {selectedStation.num_bikes_available}</span>
-                <span className="text-blue-600">Available docks: {selectedStation.num_docks_available}</span>
+              <div className="mt-2 flex flex-col sm:flex-row justify-between gap-2">
+                <span className="text-green-600">Available bikes: {selectedStation.free_bikes}</span>
+                <span className="text-blue-600">Available docks: {selectedStation.empty_slots}</span>
               </div>
             </div>
           )}
@@ -182,11 +194,29 @@ export default function Component() {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={usageData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="time" tickFormatter={(value) => value.slice(0, 5)}/>
+                <XAxis 
+                  dataKey="time" 
+                  tickFormatter={(value) => value} 
+                  domain={['dataMin', 'dataMax']} 
+                  ticks={Array.from({ length: 13 }, (_, i) => `${(i * 2).toString().padStart(2, '0')}:00`)} 
+                  interval={0} 
+                />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="in_bikes" stroke="#3b82f6" strokeWidth={1} />
-                <Line type="monotone" dataKey="out_bikes" stroke="#f63b54" strokeWidth={1} />
+                <Line 
+                  type="natural" 
+                  dataKey="in_bikes" 
+                  stroke="#3b82f6" 
+                  strokeWidth={0.1} 
+                  dot={{ stroke: '#3b82f6', strokeWidth: 0.1, fill: '#000' }} 
+                />
+                <Line 
+                  type="natural" 
+                  dataKey="out_bikes" 
+                  stroke="#f63b54" 
+                  strokeWidth={0.1} 
+                  dot={{ stroke: '#f63b54', strokeWidth: 0.1, fill: '#fff' }} 
+                />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -197,15 +227,19 @@ export default function Component() {
 }
 
 type Station = {
-  station_id: number;
+  id: string;
   name: string;
-  lat: number;
-  lng: number;
-  status: string;
-  num_bikes_available: number;
-  num_docks_available: number;
-  district: string;
-  suburb: string;
+  latitude: number;
+  longitude: number;
+  free_bikes: number;
+  empty_slots: number;
+  timestamp: string;
+  extra: {
+    online: boolean;
+    uid: string;
+    normal_bikes: number;
+    ebikes: number;
+  };
 };
 
 const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: Station | null) => void, bikeStations: Station[] }) => {
@@ -217,8 +251,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
   useEffect(() => {
     if (searchTerm.length > 1) {
       const filteredSuggestions = bikeStations.filter(station => 
-        station.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        station.district.toLowerCase().includes(searchTerm.toLowerCase())
+        station.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
       setSuggestions(filteredSuggestions)
       setIsOpen(true)
@@ -227,6 +260,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
       setIsOpen(false)
     }
   }, [searchTerm, bikeStations])
+
   const handleSelect = (station: Station | null) => {
     if (station) {
       setSearchTerm(station.name)
@@ -243,15 +277,15 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
   }
 
   return (
-    <div className="relative z-20">
+    <div className="relative z-20 w-full sm:w-64">
       <div className="flex items-center">
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search station or district..."
+          placeholder="Search station..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-64"
+          className="w-full"
         />
         {searchTerm && (
           <Button 
@@ -269,11 +303,11 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
         <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
           {suggestions.map((station) => (
             <li
-              key={station.station_id}
+              key={station.id}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleSelect(station)}
             >
-              {station.name} - {station.suburb} - {station.district}
+              {station.name}
             </li>
           ))}
         </ul>
