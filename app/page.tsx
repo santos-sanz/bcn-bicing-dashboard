@@ -105,49 +105,49 @@ export default function Component() {
   }
 
   return (
-    <div className="container mx-auto p-4 space-y-8">
-      <h1 className="text-4xl font-bold mb-6 text-center">Barcelona Bicing Analytics</h1>
+    <div className="space-y-8">
+      <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Barcelona Bicing Dashboard</h1>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6 flex items-center space-x-4">
-            <div className="p-3 rounded-full bg-primary/10">
-              <MapIcon className="w-6 h-6 text-primary" />
+            <div className="p-3 rounded-full bg-blue-100">
+              <MapIcon className="w-8 h-8 text-blue-600" />
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Stations</p>
-              <p className="text-2xl font-bold">{metrics.stations}</p>
+              <p className="text-sm font-medium text-gray-500">Stations</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.stations}</p>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6 flex items-center space-x-4">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Bike className="w-6 h-6 text-primary" />
+            <div className="p-3 rounded-full bg-green-100">
+              <Bike className="w-8 h-8 text-green-600" />
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Available Bikes</p>
-              <p className="text-2xl font-bold">{metrics.availableBikes}</p>
+              <p className="text-sm font-medium text-gray-500">Available Bikes</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.availableBikes}</p>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6 flex items-center space-x-4">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Lock className="w-6 h-6 text-primary" />
+            <div className="p-3 rounded-full bg-purple-100">
+              <Lock className="w-8 h-8 text-purple-600" />
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Available Docks</p>
-              <p className="text-2xl font-bold">{metrics.availableDocks}</p>
+              <p className="text-sm font-medium text-gray-500">Available Docks</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.availableDocks}</p>
             </div>
           </CardContent>
         </Card>
       </div>
       
-      <Card>
+      <Card className="bg-white shadow-lg">
         <CardHeader>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <CardTitle className="text-2xl">Stations Map</CardTitle>
+            <CardTitle className="text-2xl text-gray-800">Stations Map</CardTitle>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
               <AutocompleteSearch onSelect={handleStationSelect} bikeStations={bikeStations} />
               <Select value={filter} onValueChange={setFilter}>
@@ -165,7 +165,7 @@ export default function Component() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
+          <div className="h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
             <MapComponent
               filteredStations={filteredStations}
               selectedStation={selectedStation}
@@ -175,51 +175,13 @@ export default function Component() {
           </div>
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
-              <h3 className="font-semibold text-lg">{selectedStation.name}</h3>
+              <h3 className="font-semibold text-lg text-gray-800">{selectedStation.name}</h3>
               <div className="mt-2 flex flex-col sm:flex-row justify-between gap-2">
                 <span className="text-green-600">Available bikes: {selectedStation.free_bikes}</span>
                 <span className="text-blue-600">Available docks: {selectedStation.empty_slots}</span>
               </div>
             </div>
           )}
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Usage Flows - Last 24 hours</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={usageData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis 
-                  dataKey="time" 
-                  tickFormatter={(value) => value} 
-                  domain={['dataMin', 'dataMax']} 
-                  ticks={Array.from({ length: 13 }, (_, i) => `${(i * 2).toString().padStart(2, '0')}:00`)} 
-                  interval={0} 
-                />
-                <YAxis />
-                <Tooltip />
-                <Line 
-                  type="natural" 
-                  dataKey="in_bikes" 
-                  stroke="#3b82f6" 
-                  strokeWidth={0.1} 
-                  dot={{ stroke: '#3b82f6', strokeWidth: 0.1, fill: '#000' }} 
-                />
-                <Line 
-                  type="natural" 
-                  dataKey="out_bikes" 
-                  stroke="#f63b54" 
-                  strokeWidth={0.1} 
-                  dot={{ stroke: '#f63b54', strokeWidth: 0.1, fill: '#fff' }} 
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
         </CardContent>
       </Card>
     </div>
