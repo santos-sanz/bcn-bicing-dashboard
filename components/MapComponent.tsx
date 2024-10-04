@@ -2,6 +2,8 @@ import { useEffect, useState, useCallback } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { RefreshCw } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
 const createCustomIcon = (online: boolean, freeBikes: number, emptySlots: number) => {
   let color = '#ffbf00' // Color por defecto (amarillo)
@@ -45,6 +47,7 @@ type MapComponentProps = {
   selectedStation: Station | null;
   setSelectedStation: (station: Station | null) => void;
   setMap: (map: L.Map | null) => void;
+  onRefresh: () => void;
 };
 
 function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null }) {
@@ -59,8 +62,9 @@ function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null 
   return null;
 }
 
-export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap }: MapComponentProps) {
+export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap, onRefresh }: MapComponentProps & { onRefresh: () => void }) {
   const [lastUpdateTime, setLastUpdateTime] = useState<string>('')
+  const [isRefreshing, setIsRefreshing] = useState(false)
 
   const handleMapReady = useCallback(() => {
     return (map: L.Map) => {
@@ -90,6 +94,12 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
       setLastUpdateTime(formattedDate)
     }
   }, [filteredStations])
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true)
+    await onRefresh()
+    setIsRefreshing(false)
+  }
 
   return (
     <div className="relative h-full w-full">
@@ -126,11 +136,19 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           </Marker>
         ))}
       </MapContainer>
-      {lastUpdateTime && (
-        <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2 m-2 rounded-md text-sm z-[1000] text-center">
-          Última actualización: {lastUpdateTime}
-        </div>
-      )}
+      <div className="absolute bottom-4 right-4 left-4 bg-white bg-opacity-90 p-2 rounded-md text-sm z-[1000] flex justify-between items-center">
+        <span>Last update: {lastUpdateTime}</span>
+        <Button
+          onClick={handleRefresh}
+          variant="ghost"
+          size="sm"
+          disabled={isRefreshing}
+          className="ml-2"
+        >
+          <RefreshCw className={`h-4 w-4 mr-1 ${isRefreshing ? 'animate-spin' : ''}`} />
+          {isRefreshing ? 'Updating...' : 'Update'}
+        </Button>
+      </div>
     </div>
   )
 }

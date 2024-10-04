@@ -104,6 +104,18 @@ export default function Component() {
     }
   }
 
+  const refreshData = async () => {
+    try {
+      const response = await axios.get('/api/bicing')
+      const stations = response.data.network.stations
+      setBikeStations(stations)
+      setFilteredStations(stations)
+      updateMetrics(stations)
+    } catch (error) {
+      console.error('Error al obtener los datos de Bicing:', error)
+    }
+  }
+
   return (
     <div className="space-y-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Barcelona Bicing Dashboard</h1>
@@ -171,6 +183,7 @@ export default function Component() {
               selectedStation={selectedStation}
               setSelectedStation={setSelectedStation}
               setMap={setMap}
+              onRefresh={refreshData}
             />
           </div>
           {selectedStation && (
