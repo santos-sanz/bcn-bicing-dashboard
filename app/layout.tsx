@@ -10,10 +10,6 @@ export const metadata: Metadata = {
   description: 'Dashboard and analytics for Bicing Barcelona',
 }
 
-function NavigationWrapper() {
-  return <Navigation />
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100`}>
-        <NavigationWrapper />
+        <Navigation />
         <main className="container mx-auto p-4 mt-8">
           {children}
         </main>

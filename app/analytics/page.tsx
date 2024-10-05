@@ -13,6 +13,19 @@ export default function AnalyticsPage() {
       .then(data => setUsageData(data))
   }, [])
 
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip bg-white p-3 border border-gray-300 rounded shadow">
+          <p className="label">{`Time: ${label}`}</p>
+          <p className="intro">{`Bikes In: ${payload[0].value.toFixed(2)}`}</p>
+          <p className="intro">{`Bikes Out: ${payload[1].value.toFixed(2)}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className="space-y-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Bicing Analytics</h1>
@@ -34,7 +47,7 @@ export default function AnalyticsPage() {
                   interval={0} 
                 />
                 <YAxis />
-                <Tooltip />
+                <Tooltip content={<CustomTooltip />} />
                 <Legend />
                 <Line 
                   type="monotone" 
