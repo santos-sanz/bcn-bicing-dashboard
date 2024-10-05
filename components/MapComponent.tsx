@@ -20,9 +20,9 @@ const createCustomIcon = (online: boolean, freeBikes: number, emptySlots: number
 
   return L.divIcon({
     className: 'custom-icon',
-    html: `<div style="background-color: ${color}; width: 10px; height: 10px; border-radius: 50%;"></div>`,
-    iconSize: [10, 10],
-    iconAnchor: [5, 5],
+    html: `<div style="background-color: ${color}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid black;"></div>`,
+    iconSize: [12, 12],
+    iconAnchor: [6, 6],
   })
 }
 
@@ -56,7 +56,7 @@ function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null 
     if (selectedStation) {
       map.setView([selectedStation.latitude, selectedStation.longitude], 15);
     } else {
-      map.setView([41.3874, 2.1686], 13);
+      map.setView([41.3874, 2.1686], 12); // Cambiado de 11 a 12 para un zoom in ligero
     }
   }, [selectedStation, map]);
   return null;
@@ -102,42 +102,45 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
   }
 
   return (
-    <div className="relative h-full w-full">
-      <MapContainer
-        center={[41.3874, 2.1686]}
-        zoom={13}
-        style={{ height: '100%', width: '100%' }}
-        whenReady={handleMapReady}
-      >
-        <UpdateMapCenter selectedStation={selectedStation} />
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {filteredStations.map((station) => (
-          <Marker
-            key={station.id}
-            position={[station.latitude, station.longitude]}
-            icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
-            eventHandlers={{
-              click: () => setSelectedStation(station),
-            }}
-          >
-            <Popup>
-              <div>
-                <h3>{station.name}</h3>
-                <p>Available bikes: {station.free_bikes}</p>
-                <p>Normal bikes: {station.extra.normal_bikes}</p>
-                <p>E-bikes: {station.extra.ebikes}</p>
-                <p>Empty slots: {station.empty_slots}</p>
-                <p>Status: {station.extra.online ? 'Online' : 'Offline'}</p>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+    <div className="relative h-full w-full overflow-hidden">
+      <div className="absolute inset-[-20%] origin-center" style={{ transform: 'rotate(45deg) scale(1.7)' }}>
+        <MapContainer
+          center={[41.4054458, 2.1663172]}
+          zoom={12} // Cambiado de 11 a 12 para un zoom in ligero
+          style={{ height: '100%', width: '100%' }}
+          whenReady={handleMapReady}
+          zoomControl={false}
+          attributionControl={false}
+        >
+          <UpdateMapCenter selectedStation={selectedStation} />
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {filteredStations.map((station) => (
+            <Marker
+              key={station.id}
+              position={[station.latitude, station.longitude]}
+              icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
+              eventHandlers={{
+                click: () => setSelectedStation(station),
+              }}
+            >
+              <Popup>
+                <div style={{ transform: 'rotate(-45deg)', transformOrigin: 'center center' }}>
+                  <h3>{station.name}</h3>
+                  <p>Bicicletas disponibles: {station.free_bikes}</p>
+                  <p>Bicicletas normales: {station.extra.normal_bikes}</p>
+                  <p>E-bikes: {station.extra.ebikes}</p>
+                  <p>Espacios vacíos: {station.empty_slots}</p>
+                  <p>Estado: {station.extra.online ? 'En línea' : 'Fuera de línea'}</p>
+                </div>
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
+      </div>
       <div className="absolute bottom-4 right-4 left-4 bg-white bg-opacity-90 p-2 rounded-md text-sm z-[1000] flex justify-between items-center">
-        <span>Last update: {lastUpdateTime}</span>
+        <span>Última actualización: {lastUpdateTime}</span>
         <Button
           onClick={handleRefresh}
           variant="ghost"
@@ -146,8 +149,11 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           className="ml-2"
         >
           <RefreshCw className={`h-4 w-4 mr-1 ${isRefreshing ? 'animate-spin' : ''}`} />
-          {isRefreshing ? 'Updating...' : 'Update'}
+          {isRefreshing ? 'Actualizando...' : 'Actualizar'}
         </Button>
+      </div>
+      <div className="absolute bottom-1 right-1 text-xs text-gray-500 z-[1000]">
+        © OpenStreetMap contributors
       </div>
     </div>
   )
