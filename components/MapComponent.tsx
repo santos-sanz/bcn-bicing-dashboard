@@ -5,16 +5,19 @@ import { MapContainer, TileLayer, Marker, useMap, MapContainerProps } from 'reac
 import { RefreshCw } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
-const createCustomIcon = (online: boolean, freeBikes: number, emptySlots: number) => {
-  let color = '#ffbf00' // Color por defecto (amarillo)
-  
-  if (online) {
+// Function to create custom icons based on routeColor
+const createCustomIcon = (routeColor: string, online: boolean, freeBikes: number, emptySlots: number) => {
+  let color = '#ffbf00' // Default color (yellow)
+
+  if (routeColor) {
+    color = routeColor // Use route color if available
+  } else if (online) {
     if (freeBikes === 0) {
-      color = '#ff0000' // Rojo para estaciones vacías
+      color = '#ff0000' // Red for empty stations
     } else if (emptySlots === 0) {
-      color = '#FFA500' // Naranja para estaciones llenas
+      color = '#FFA500' // Orange for full stations
     } else {
-      color = '#00FF00' // Verde para estaciones disponibles
+      color = '#00FF00' // Green for available stations
     }
   }
 
@@ -39,6 +42,7 @@ export type Station = {
     uid: string;
     normal_bikes: number;
     ebikes: number;
+    routeColor?: string; // Optional property for route color
   };
 };
 
@@ -62,7 +66,7 @@ function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null 
   return null;
 }
 
-// Nuevo componente para establecer la referencia del mapa
+// Component to set map reference
 function SetMap({ setMap }: { setMap: (map: L.Map) => void }) {
   const map = useMap()
 
@@ -77,9 +81,11 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
   const [lastUpdateTime, setLastUpdateTime] = useState<string>('')
   const [isRefreshing, setIsRefreshing] = useState(false)
 
-  const handleMapReady = useCallback((map: L.Map) => {
-    setMap(map)
-  }, [setMap])
+  const handleRefresh = async () => {
+    setIsRefreshing(true)
+    await onRefresh()
+    setIsRefreshing(false)
+  }
 
   useEffect(() => {
     if (filteredStations.length > 0) {
@@ -90,7 +96,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
 
       const latestDate = new Date(latestTimestamp)
 
-      const formattedDate = latestDate.toLocaleString('es-ES', {
+      const formattedDate = latestDate.toLocaleString('en-US', {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',
@@ -104,12 +110,6 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
     }
   }, [filteredStations])
 
-  const handleRefresh = async () => {
-    setIsRefreshing(true)
-    await onRefresh()
-    setIsRefreshing(false)
-  }
-
   return (
     <div className="relative h-full w-full overflow-hidden">
       <div className="absolute inset-[-20%] origin-center" style={{ transform: 'rotate(45deg) scale(1.7)' }}>
@@ -120,7 +120,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           zoomControl={false}
           attributionControl={false}
         >
-          {/* Componente para establecer la referencia del mapa */}
+          {/* Component to set map reference */}
           <SetMap setMap={setMap} />
           <UpdateMapCenter selectedStation={selectedStation} />
           <TileLayer
@@ -131,14 +131,14 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
               <Marker
                 key={station.id}
                 position={[station.latitude, station.longitude]}
-                icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
+                icon={createCustomIcon(station.extra.routeColor || '', station.extra.online, station.free_bikes, station.empty_slots)}
                 eventHandlers={{
                   click: () => setSelectedStation(station),
                 }}
               />
             ))
           ) : (
-            <div>No hay estaciones para mostrar</div>
+            <div>No stations to display</div>
           )}
         </MapContainer>
       </div>
