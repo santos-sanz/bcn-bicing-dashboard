@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, useMap, MapContainerProps } from 'react-leaflet'
 import { RefreshCw } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
@@ -56,20 +56,29 @@ function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null 
     if (selectedStation) {
       map.setView([selectedStation.latitude, selectedStation.longitude], 15);
     } else {
-      map.setView([41.3874, 2.1686], 12); // Cambiado de 11 a 12 para un zoom in ligero
+      map.setView([41.3874, 2.1686], 12);
     }
   }, [selectedStation, map]);
   return null;
+}
+
+// Nuevo componente para establecer la referencia del mapa
+function SetMap({ setMap }: { setMap: (map: L.Map) => void }) {
+  const map = useMap()
+
+  useEffect(() => {
+    setMap(map)
+  }, [map, setMap])
+
+  return null
 }
 
 export default function MapComponent({ filteredStations, selectedStation, setSelectedStation, setMap, onRefresh }: MapComponentProps & { onRefresh: () => void }) {
   const [lastUpdateTime, setLastUpdateTime] = useState<string>('')
   const [isRefreshing, setIsRefreshing] = useState(false)
 
-  const handleMapReady = useCallback(() => {
-    return (map: L.Map) => {
-      setMap(map)
-    }
+  const handleMapReady = useCallback((map: L.Map) => {
+    setMap(map)
   }, [setMap])
 
   useEffect(() => {
@@ -106,12 +115,13 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
       <div className="absolute inset-[-20%] origin-center" style={{ transform: 'rotate(45deg) scale(1.7)' }}>
         <MapContainer
           center={[41.4054458, 2.1663172]}
-          zoom={12} // Cambiado de 11 a 12 para un zoom in ligero
+          zoom={12}
           style={{ height: '100%', width: '100%' }}
-          whenReady={handleMapReady}
           zoomControl={false}
           attributionControl={false}
         >
+          {/* Componente para establecer la referencia del mapa */}
+          <SetMap setMap={setMap} />
           <UpdateMapCenter selectedStation={selectedStation} />
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -124,23 +134,12 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
               eventHandlers={{
                 click: () => setSelectedStation(station),
               }}
-            >
-              <Popup>
-                <div style={{ transform: 'rotate(-45deg)', transformOrigin: 'center center' }}>
-                  <h3>{station.name}</h3>
-                  <p>Bicicletas disponibles: {station.free_bikes}</p>
-                  <p>Bicicletas normales: {station.extra.normal_bikes}</p>
-                  <p>E-bikes: {station.extra.ebikes}</p>
-                  <p>Espacios vacíos: {station.empty_slots}</p>
-                  <p>Estado: {station.extra.online ? 'En línea' : 'Fuera de línea'}</p>
-                </div>
-              </Popup>
-            </Marker>
+            />
           ))}
         </MapContainer>
       </div>
       <div className="absolute bottom-4 right-4 left-4 bg-white bg-opacity-90 p-2 rounded-md text-sm z-[1000] flex justify-between items-center">
-        <span>Última actualización: {lastUpdateTime}</span>
+        <span>Last update: {lastUpdateTime}</span>
         <Button
           onClick={handleRefresh}
           variant="ghost"
@@ -149,7 +148,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           className="ml-2"
         >
           <RefreshCw className={`h-4 w-4 mr-1 ${isRefreshing ? 'animate-spin' : ''}`} />
-          {isRefreshing ? 'Actualizando...' : 'Actualizar'}
+          {isRefreshing ? 'Updating...' : 'Update'}
         </Button>
       </div>
       <div className="absolute bottom-1 right-1 text-xs text-gray-500 z-[1000]">

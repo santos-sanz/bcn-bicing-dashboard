@@ -14,7 +14,7 @@ import axios from 'axios'
 // Importación dinámica del componente del mapa (sin cambios)
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
-  loading: () => <p>Cargando mapa...</p>
+  loading: () => <p>Loading map...</p>
 })
 
 export default function Component() {
@@ -188,10 +188,26 @@ export default function Component() {
           </div>
           {selectedStation && (
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
-              <h3 className="font-semibold text-lg text-gray-800">{selectedStation.name}</h3>
-              <div className="mt-2 flex flex-col sm:flex-row justify-between gap-2">
-                <span className="text-green-600">Available bikes: {selectedStation.free_bikes}</span>
-                <span className="text-blue-600">Available docks: {selectedStation.empty_slots}</span>
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <span className={selectedStation.free_bikes === 0 ? "text-red-600" : "text-gray-600"}>
+                  Available bikes: {selectedStation.free_bikes}
+                </span>
+                <span className={selectedStation.empty_slots === 0 ? "text-amber-500" : "text-gray-600"}>
+                  Empty slots: {selectedStation.empty_slots}
+                </span>
+                <span className="text-gray-600">Normal bikes: {selectedStation.extra.normal_bikes}</span>
+                <span className="text-gray-600">E-bikes: {selectedStation.extra.ebikes}</span>
+                <span className="text-gray-600">Status: {selectedStation.extra.online ? 'Online' : 'Offline'}</span>
+                <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('en-US', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  timeZone: 'Europe/Madrid'
+                })}</span>
               </div>
             </div>
           )}
