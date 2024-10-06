@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -9,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Auth } from '@/components/Auth'
 import { supabase } from '@/lib/supabase'
 import { User } from '@supabase/supabase-js'
+import { useState, useEffect } from 'react'
 
 export function Navigation() {
   const pathname = usePathname()
@@ -42,13 +42,6 @@ export function Navigation() {
 
   const NavLinks = () => (
     <div className={`${isMobile ? 'flex flex-col' : 'flex flex-row items-center space-x-4'}`}>
-      <Link 
-        href="/" 
-        className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/' ? 'text-blue-500 font-semibold' : ''}`}
-        onClick={() => setIsOpen(false)}
-      >
-        Dashboard
-      </Link>
       <Link 
         href="/analytics" 
         className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/analytics' ? 'text-blue-500 font-semibold' : ''}`}

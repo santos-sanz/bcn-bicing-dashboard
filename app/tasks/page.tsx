@@ -23,7 +23,7 @@ export default function TasksPage() {
   const [routeColors, setRouteColors] = useState<string[]>([])
   const [isPlanningExpanded, setIsPlanningExpanded] = useState(false)
 
-  const fetchStations = async () => {
+  const fetchStations = async () => { 
     setIsLoading(true)
     setError(null)
     try {
@@ -174,9 +174,9 @@ export default function TasksPage() {
       <Card className="bg-white shadow-lg mb-8">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-2xl text-gray-800">Empty Stations Map</CardTitle>
-          <Button onClick={handleRefresh} variant="outline" size="icon" disabled={isLoading}>
+          {/* <Button onClick={handleRefresh} variant="outline" size="icon" disabled={isLoading}>
             <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
-          </Button>
+          </Button> */}
         </CardHeader>
         <CardContent>
           <div className="h-[600px]">
