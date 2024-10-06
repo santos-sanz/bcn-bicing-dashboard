@@ -26,7 +26,7 @@ const createCustomIcon = (online: boolean, freeBikes: number, emptySlots: number
   })
 }
 
-type Station = {
+export type Station = {
   id: string;
   name: string;
   latitude: number;
@@ -126,16 +126,20 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {filteredStations.map((station) => (
-            <Marker
-              key={station.id}
-              position={[station.latitude, station.longitude]}
-              icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
-              eventHandlers={{
-                click: () => setSelectedStation(station),
-              }}
-            />
-          ))}
+          {filteredStations && filteredStations.length > 0 ? (
+            filteredStations.map((station) => (
+              <Marker
+                key={station.id}
+                position={[station.latitude, station.longitude]}
+                icon={createCustomIcon(station.extra.online, station.free_bikes, station.empty_slots)}
+                eventHandlers={{
+                  click: () => setSelectedStation(station),
+                }}
+              />
+            ))
+          ) : (
+            <div>No hay estaciones para mostrar</div>
+          )}
         </MapContainer>
       </div>
       <div className="absolute bottom-4 right-4 left-4 bg-white bg-opacity-90 p-2 rounded-md text-sm z-[1000] flex justify-between items-center">

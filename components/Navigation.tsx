@@ -56,6 +56,13 @@ export function Navigation() {
       >
         Analytics
       </Link>
+      <Link 
+        href="/tasks" 
+        className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/tasks' ? 'text-blue-500 font-semibold' : ''}`}
+        onClick={() => setIsOpen(false)}
+      >
+        Tasks
+      </Link>
       {isMobile && (
         user ? (
           <Button variant="outline" size="sm" onClick={handleLogout} className="mt-4">

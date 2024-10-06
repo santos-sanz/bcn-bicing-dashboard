@@ -34,12 +34,12 @@ export default function Component() {
     const fetchBicingData = async () => {
       try {
         const response = await axios.get('/api/bicing')
-        const stations = response.data.network.stations
+        const stations = response.data // The API now returns the stations directly
         setBikeStations(stations)
         setFilteredStations(stations)
         updateMetrics(stations)
       } catch (error) {
-        console.error('Error al obtener los datos de Bicing:', error)
+        console.error('Error fetching Bicing data:', error)
       }
     }
 
@@ -106,13 +106,14 @@ export default function Component() {
 
   const refreshData = async () => {
     try {
-      const response = await axios.get('/api/bicing')
-      const stations = response.data.network.stations
+      const timestamp = new Date().getTime();
+      const response = await axios.get(`/api/bicing?t=${timestamp}`)
+      const stations = response.data // The API now returns the stations directly
       setBikeStations(stations)
       setFilteredStations(stations)
       updateMetrics(stations)
     } catch (error) {
-      console.error('Error al obtener los datos de Bicing:', error)
+      console.error('Error fetching Bicing data:', error)
     }
   }
 
