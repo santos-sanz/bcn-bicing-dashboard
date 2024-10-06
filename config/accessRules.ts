@@ -1,5 +1,5 @@
 export const ACCESS_RULES = {
-  enableEmailRestriction: true, // Cambia a false para desactivar la verificación
+  enableEmailRestriction: false, // Cambia a false para desactivar la verificación
   allowedDomains: ['uoc.edu'],
 };
 
