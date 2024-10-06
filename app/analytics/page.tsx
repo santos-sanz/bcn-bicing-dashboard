@@ -1,17 +1,29 @@
 "use client"
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
+import { hasAccess } from '@/config/accessRules'
+import { supabase } from '@/lib/supabase'
 
 export default function AnalyticsPage() {
   const [usageData, setUsageData] = useState([])
+  const router = useRouter()
 
   useEffect(() => {
+    const checkAccess = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!hasAccess(user?.email)) {
+        router.push('/')
+      }
+    }
+
+    checkAccess()
     fetch('/mock_data/mock_flow_real.json')
       .then(response => response.json())
       .then(data => setUsageData(data))
-  }, [])
+  }, [router])
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {

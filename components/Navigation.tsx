@@ -9,6 +9,7 @@ import { Auth } from '@/components/Auth'
 import { supabase } from '@/lib/supabase'
 import { User } from '@supabase/supabase-js'
 import { useState, useEffect } from 'react'
+import { hasAccess } from '@/config/accessRules';
 
 export function Navigation() {
   const pathname = usePathname()
@@ -40,33 +41,41 @@ export function Navigation() {
     setIsOpen(false)
   }
 
-  const NavLinks = () => (
-    <div className={`${isMobile ? 'flex flex-col' : 'flex flex-row items-center space-x-4'}`}>
-      <Link 
-        href="/analytics" 
-        className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/analytics' ? 'text-blue-500 font-semibold' : ''}`}
-        onClick={() => setIsOpen(false)}
-      >
-        Analytics
-      </Link>
-      <Link 
-        href="/tasks" 
-        className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/tasks' ? 'text-blue-500 font-semibold' : ''}`}
-        onClick={() => setIsOpen(false)}
-      >
-        Tasks
-      </Link>
-      {isMobile && (
-        user ? (
-          <Button variant="outline" size="sm" onClick={handleLogout} className="mt-4">
-            Log out
-          </Button>
-        ) : (
-          <Auth />
-        )
-      )}
-    </div>
-  )
+  const NavLinks = () => {
+    const canAccessProtectedPages = hasAccess(user?.email);
+
+    return (
+      <div className={`${isMobile ? 'flex flex-col' : 'flex flex-row items-center space-x-4'}`}>
+        {canAccessProtectedPages && (
+          <>
+            <Link 
+              href="/analytics" 
+              className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/analytics' ? 'text-blue-500 font-semibold' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              Analytics
+            </Link>
+            <Link 
+              href="/tasks" 
+              className={`py-2 px-4 text-gray-600 hover:text-blue-500 ${pathname === '/tasks' ? 'text-blue-500 font-semibold' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              Tasks
+            </Link>
+          </>
+        )}
+        {isMobile && (
+          user ? (
+            <Button variant="outline" size="sm" onClick={handleLogout} className="mt-4">
+              Log out
+            </Button>
+          ) : (
+            <Auth />
+          )
+        )}
+      </div>
+    );
+  };
 
   return (
     <nav className="bg-white shadow-md">
