@@ -69,7 +69,9 @@ export default function TasksPage() {
 
   const colorPalette = [
     '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
-    '#33FFF3', '#FFC300', '#FF8C33', '#8DFF33', '#33FF8C'
+    '#33FFF3', '#FFC300', '#FF8C33', '#8DFF33', '#33FF8C',
+    '#FF33F5', '#33FFCC', '#FF5733', '#33A1FF', '#FFD700',
+    '#4B0082', '#00CED1', '#FF1493', '#32CD32', '#8A2BE2'
   ];
 
   const calculateRoutes = () => {
@@ -288,7 +290,12 @@ export default function TasksPage() {
                       <p className="font-medium text-green-800">Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:</p>
                       <ul className="list-disc list-inside ml-4 text-gray-700">
                         {route.map((station, idx) => (
-                          <li key={idx}>{station.name}</li>
+                          <li key={idx}>
+                            {station.name} - 
+                            <span className="font-semibold">
+                              {Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes)} bikes
+                            </span>
+                          </li>
                         ))}
                       </ul>
                     </div>
