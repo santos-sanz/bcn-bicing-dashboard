@@ -14,7 +14,7 @@ export function Navigation() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [user, setUser] = useState<User | null>(null)  // Cambia el tipo inicial a User | null
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -37,6 +37,7 @@ export function Navigation() {
 
   const handleLogout = async () => {
     await supabase.auth.signOut()
+    setIsOpen(false)
   }
 
   const NavLinks = () => (
@@ -55,6 +56,15 @@ export function Navigation() {
       >
         Analytics
       </Link>
+      {isMobile && (
+        user ? (
+          <Button variant="outline" size="sm" onClick={handleLogout} className="mt-4">
+            Log out
+          </Button>
+        ) : (
+          <Auth />
+        )
+      )}
     </div>
   )
 
@@ -82,18 +92,20 @@ export function Navigation() {
               />
             </Link>
           </div>
-          <div className="flex-1 flex justify-end">
-            {user ? (
-              <div className="flex items-center">
-                <span className="mr-4">Welcome, {user.email}</span>
-                <Button variant="outline" size="sm" onClick={handleLogout}>
-                  Log out
-                </Button>
-              </div>
-            ) : (
-              <Auth />
-            )}
-          </div>
+          {!isMobile && (
+            <div className="flex-1 flex justify-end">
+              {user ? (
+                <div className="flex items-center">
+                  <span className="mr-4">Welcome, {user.email}</span>
+                  <Button variant="outline" size="sm" onClick={handleLogout}>
+                    Log out
+                  </Button>
+                </div>
+              ) : (
+                <Auth />
+              )}
+            </div>
+          )}
         </div>
       </div>
       {isMobile && isOpen && (
