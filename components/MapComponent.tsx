@@ -96,7 +96,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
 
       const latestDate = new Date(latestTimestamp)
 
-      const formattedDate = latestDate.toLocaleString('en-US', {
+      const formattedDate = latestDate.toLocaleString('es-ES', {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',
@@ -115,7 +115,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
       <div className="absolute inset-[-20%] origin-center" style={{ transform: 'rotate(45deg) scale(1.7)' }}>
         <MapContainer
           center={[41.4054458, 2.1663172]}
-          zoom={12}
+          zoom={11}
           style={{ height: '100%', width: '100%' }}
           zoomControl={false}
           attributionControl={false}
