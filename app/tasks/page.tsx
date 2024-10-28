@@ -1,27 +1,42 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import dynamic from 'next/dynamic'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { RefreshCw, ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import type { Station } from '@/components/MapComponent'
+import { SupplyBikesContent } from '@/components/complex/SupplyBikesContent'
+import { ReallocateBikesContent } from '@/components/complex/ReallocateBikesContent'
+import { createPlusMarker, createMinusMarker } from '@/components/complex/CustomMarkers'
 
-const MapComponent = dynamic(() => import('@/components/MapComponent'), {
-  ssr: false,
-})
-
+// Eliminar la importación dinámica y las funciones wrapper
 export default function TasksPage() {
-  const [emptyStations, setEmptyStations] = useState<Station[]>([])
+  // Estados compartidos
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [selectedStation, setSelectedStation] = useState<Station | null>(null)
-
-  const [fillPercentage, setFillPercentage] = useState<number>(20) // Cambiado a 20%
-  const [truckCapacity, setTruckCapacity] = useState<number>(20) // Cambiado a 20
-  const [routes, setRoutes] = useState<Station[][]>([])
-  const [routeColors, setRouteColors] = useState<string[]>([])
+  
+  // Estados para Supply Bikes
+  const [emptyStations, setEmptyStations] = useState<Station[]>([])
+  const [selectedSupplyStation, setSelectedSupplyStation] = useState<Station | null>(null)
+  const [supplyRoutes, setSupplyRoutes] = useState<Station[][]>([])
+  const [supplyRouteColors, setSupplyRouteColors] = useState<string[]>([])
+  const [supplyFillPercentage, setSupplyFillPercentage] = useState<number>(20)
+  const [supplyTruckCapacity, setSupplyTruckCapacity] = useState<number>(20)
   const [isPlanningExpanded, setIsPlanningExpanded] = useState(false)
+  
+  // Estados para Reallocate Bikes
+  const [fullStations, setFullStations] = useState<Station[]>([])
+  const [reallocationEmptyStations, setReallocationEmptyStations] = useState<Station[]>([])
+  const [selectedReallocationStation, setSelectedReallocationStation] = useState<Station | null>(null)
+  const [reallocationRoutes, setReallocationRoutes] = useState<Station[][]>([])
+  const [reallocationRouteColors, setReallocationRouteColors] = useState<string[]>([])
+  const [reallocationFillPercentage, setReallocationFillPercentage] = useState<number>(20)
+  const [reallocationTruckCapacity, setReallocationTruckCapacity] = useState<number>(20)
+  const [isReallocationExpanded, setIsReallocationExpanded] = useState(false)
+
+  // Añadir estados para los iconos
+  const [supplyIcons, setSupplyIcons] = useState<{ [key: string]: any }>({})
+  const [reallocationIcons, setReallocationIcons] = useState<{ [key: string]: any }>({})
 
   const fetchStations = async () => { 
     setIsLoading(true)
@@ -32,7 +47,6 @@ export default function TasksPage() {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
       const data = await response.json()
-      console.log('Received data:', data)
 
       if (!Array.isArray(data)) {
         throw new Error('Received data is not an array')
@@ -40,18 +54,27 @@ export default function TasksPage() {
 
       const formattedStations: Station[] = data.map((station: any) => ({
         ...station,
+        name: station.name.replace(/\s*[\(\+\-\)]+\s*$/, ''),
         extra: {
           ...station.extra,
           online: station.extra.status === "OPEN",
+          routeColor: station.free_bikes === 0 ? '#FF0000' : 
+                     station.empty_slots === 0 ? '#0000FF' : 
+                     undefined
         }
       }))
 
       const empty = formattedStations.filter((station: Station) => station.free_bikes === 0)
+      const full = formattedStations.filter((station: Station) => station.empty_slots === 0)
+
       setEmptyStations(empty)
+      setFullStations(full)
+      setReallocationEmptyStations(empty) // Copia separada para reallocation
     } catch (error) {
       console.error('Error fetching stations:', error)
       setError(`Error loading stations: ${error instanceof Error ? error.message : 'Unknown error'}`)
       setEmptyStations([])
+      setFullStations([])
     } finally {
       setIsLoading(false)
     }
@@ -61,10 +84,18 @@ export default function TasksPage() {
     fetchStations()
   }, [])
 
-  const handleRefresh = () => {
+  const handleSupplyRefresh = () => {
     fetchStations()
-    setRoutes([])
-    setRouteColors([])
+    setSupplyRoutes([])
+    setSupplyRouteColors([])
+    setSelectedSupplyStation(null)
+  }
+
+  const handleReallocationRefresh = () => {
+    fetchStations()
+    setReallocationRoutes([])
+    setReallocationRouteColors([])
+    setSelectedReallocationStation(null)
   }
 
   const colorPalette = [
@@ -75,24 +106,24 @@ export default function TasksPage() {
   ];
 
   const calculateRoutes = () => {
-    if (truckCapacity <= 0) {
+    if (supplyTruckCapacity <= 0) {
       alert("Truck capacity must be greater than 0.")
       return
     }
 
     let totalBikesNeeded = 0
     const stationsNeedingBikes = emptyStations.map(station => {
-      const desiredBikes = Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots))
+      const desiredBikes = Math.ceil((supplyFillPercentage / 100) * (station.free_bikes + station.empty_slots))
       const bikesNeeded = desiredBikes - station.free_bikes
       return { ...station, bikesNeeded: bikesNeeded > 0 ? bikesNeeded : 0 }
     }).filter(station => station.bikesNeeded > 0)
 
     totalBikesNeeded = stationsNeedingBikes.reduce((acc, station) => acc + station.bikesNeeded, 0)
 
-    const routesNeeded = Math.ceil(totalBikesNeeded / truckCapacity)
+    const routesNeeded = Math.ceil(totalBikesNeeded / supplyTruckCapacity)
 
     const assignedRouteColors = colorPalette.slice(0, routesNeeded)
-    setRouteColors(assignedRouteColors)
+    setSupplyRouteColors(assignedRouteColors) // Cambiar a supplyRouteColors
 
     // Función para calcular la distancia entre dos puntos
     const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
@@ -116,7 +147,7 @@ export default function TasksPage() {
       let currentBikes = remainingStations[0].bikesNeeded
       remainingStations = remainingStations.slice(1)
 
-      while (currentBikes < truckCapacity && remainingStations.length > 0) {
+      while (currentBikes < supplyTruckCapacity && remainingStations.length > 0) {
         // Encontrar la estación más cercana
         let nearestIndex = 0
         let nearestDistance = Infinity
@@ -132,7 +163,7 @@ export default function TasksPage() {
         }
 
         const nextStation = remainingStations[nearestIndex]
-        if (currentBikes + nextStation.bikesNeeded <= truckCapacity) {
+        if (currentBikes + nextStation.bikesNeeded <= supplyTruckCapacity) {
           route.push(nextStation)
           currentBikes += nextStation.bikesNeeded
           remainingStations.splice(nearestIndex, 1)
@@ -144,88 +175,225 @@ export default function TasksPage() {
       assignedRoutes.push(route)
     }
 
-    // Asignar colores a las rutas
+    // Remover la creación de iconos de aquí
     const updatedStations = emptyStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
         route.some(routeStation => routeStation.id === station.id)
       )
+      const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : ''
       return {
         ...station,
         extra: {
           ...station.extra,
-          routeColor: routeIndex !== -1 ? assignedRouteColors[routeIndex] : ''
+          routeColor
         }
       }
     })
 
     setEmptyStations(updatedStations)
-    setRoutes(assignedRoutes)
+    setSupplyRoutes(assignedRoutes)
+    setSupplyRouteColors(assignedRouteColors)
   }
+
+  // Añadir función para calcular rutas de relocalización
+  const calculateReallocationRoutes = () => {
+    if (reallocationTruckCapacity <= 0) {
+      alert("Truck capacity must be greater than 0.")
+      return
+    }
+
+    // Calcular bicicletas disponibles para mover desde estaciones llenas
+    const stationsWithExcessBikes = fullStations.map(station => {
+      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.free_bikes + station.empty_slots))
+      const excessBikes = station.free_bikes - targetBikes
+      return { ...station, excessBikes: excessBikes > 0 ? excessBikes : 0 }
+    }).filter(station => station.excessBikes > 0)
+
+    // Calcular bicicletas necesarias en estaciones vacías
+    const stationsNeedingBikes = reallocationEmptyStations.map(station => {
+      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.free_bikes + station.empty_slots))
+      const bikesNeeded = targetBikes - station.free_bikes
+      return { ...station, bikesNeeded: bikesNeeded > 0 ? bikesNeeded : 0 }
+    }).filter(station => station.bikesNeeded > 0)
+
+    // Función para calcular la distancia entre dos puntos
+    const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+      const R = 6371 // Radio de la Tierra en km
+      const dLat = (lat2 - lat1) * Math.PI / 180
+      const dLon = (lon2 - lon1) * Math.PI / 180
+      const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+      return R * c // Distancia en km
+    }
+
+    // Crear rutas que conecten estaciones llenas con vacías
+    const assignedRoutes: Station[][] = []
+    let remainingFullStations = [...stationsWithExcessBikes]
+    let remainingEmptyStations = [...stationsNeedingBikes]
+
+    while (remainingFullStations.length > 0 && remainingEmptyStations.length > 0) {
+      const route: Station[] = []
+      let currentCapacity = reallocationTruckCapacity
+
+      // Comenzar con una estación llena
+      const sourceStation = remainingFullStations[0]
+      route.push(sourceStation)
+      const bikesToCollect = Math.min(sourceStation.excessBikes, currentCapacity)
+      currentCapacity = bikesToCollect
+
+      remainingFullStations = remainingFullStations.slice(1)
+
+      // Encontrar estaciones vacías cercanas para distribuir las bicicletas
+      while (currentCapacity > 0 && remainingEmptyStations.length > 0) {
+        // Encontrar la estación vacía más cercana
+        let nearestIndex = 0
+        let nearestDistance = Infinity
+        
+        for (let i = 0; i < remainingEmptyStations.length; i++) {
+          const distance = calculateDistance(
+            route[route.length - 1].latitude, route[route.length - 1].longitude,
+            remainingEmptyStations[i].latitude, remainingEmptyStations[i].longitude
+          )
+          if (distance < nearestDistance) {
+            nearestDistance = distance
+            nearestIndex = i
+          }
+        }
+
+        const targetStation = remainingEmptyStations[nearestIndex]
+        const bikesToDeliver = Math.min(currentCapacity, targetStation.bikesNeeded)
+        
+        if (bikesToDeliver > 0) {
+          route.push(targetStation)
+          currentCapacity -= bikesToDeliver
+        
+          if (bikesToDeliver >= targetStation.bikesNeeded) {
+            remainingEmptyStations.splice(nearestIndex, 1)
+          } else {
+            remainingEmptyStations[nearestIndex] = {
+              ...targetStation,
+              bikesNeeded: targetStation.bikesNeeded - bikesToDeliver
+            }
+          }
+        } else {
+          break
+        }
+      }
+
+      if (route.length > 1) { // Solo añadir rutas que conecten al menos 2 estaciones
+        assignedRoutes.push(route)
+      }
+    }
+
+    // Asignar colores a las rutas
+    const routesNeeded = assignedRoutes.length
+    const assignedRouteColors = colorPalette.slice(0, routesNeeded)
+
+    // Actualizar colores y labels de las estaciones según las rutas
+    const updatedFullStations = fullStations.map(station => {
+      const routeIndex = assignedRoutes.findIndex(route => 
+        route[0].id === station.id
+      )
+      const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#0000FF'
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor
+        }
+      }
+    })
+
+    const updatedEmptyStations = reallocationEmptyStations.map(station => {
+      const routeIndex = assignedRoutes.findIndex(route => 
+        route.slice(1).some(routeStation => routeStation.id === station.id)
+      )
+      const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#FF0000'
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor
+        }
+      }
+    })
+
+    setFullStations(updatedFullStations)
+    setReallocationEmptyStations(updatedEmptyStations)
+    setReallocationRoutes(assignedRoutes)
+    setReallocationRouteColors(assignedRouteColors)
+  }
+
+  // Crear los iconos cuando cambian las rutas
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const updatedStations = emptyStations.map(station => {
+      const routeIndex = supplyRoutes.findIndex(route => 
+        route.some(routeStation => routeStation.id === station.id)
+      )
+      const routeColor = routeIndex !== -1 ? supplyRouteColors[routeIndex] : ''
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor,
+          icon: createPlusMarker(routeColor)
+        }
+      }
+    })
+
+    setEmptyStations(updatedStations)
+  }, [supplyRoutes, supplyRouteColors, emptyStations])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const updatedFullStations = fullStations.map(station => {
+      const routeIndex = reallocationRoutes.findIndex(route => 
+        route[0].id === station.id
+      )
+      const routeColor = routeIndex !== -1 ? reallocationRouteColors[routeIndex] : '#0000FF'
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor,
+          icon: createMinusMarker(routeColor)
+        }
+      }
+    })
+
+    const updatedEmptyStations = reallocationEmptyStations.map(station => {
+      const routeIndex = reallocationRoutes.findIndex(route => 
+        route.slice(1).some(routeStation => routeStation.id === station.id)
+      )
+      const routeColor = routeIndex !== -1 ? reallocationRouteColors[routeIndex] : '#FF0000'
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor,
+          icon: createPlusMarker(routeColor)
+        }
+      }
+    })
+
+    setFullStations(updatedFullStations)
+    setReallocationEmptyStations(updatedEmptyStations)
+  }, [reallocationRoutes, reallocationRouteColors, fullStations, reallocationEmptyStations])
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Bicing Management Tasks</h1>
       
-      {/* Añadimos el contador de estaciones vacías aquí */}
-      <div className="text-2xl font-semibold text-center mb-4">
-        Empty Stations: <span className="text-red-600">{emptyStations.length}</span>
-      </div>
-      
-      <Card className="bg-white shadow-lg mb-8">
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl text-gray-800">Empty Stations Map</CardTitle>
-          {/* <Button onClick={handleRefresh} variant="outline" size="icon" disabled={isLoading}>
-            <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
-          </Button> */}
-        </CardHeader>
-        <CardContent>
-          <div className="h-[600px]">
-            {isLoading ? (
-              <p className="text-center">Loading stations...</p>
-            ) : error ? (
-              <p className="text-center text-red-500">{error}</p>
-            ) : (
-              <MapComponent 
-                filteredStations={emptyStations} 
-                selectedStation={selectedStation}
-                setSelectedStation={setSelectedStation}
-                setMap={() => {}}
-                onRefresh={handleRefresh}
-              />
-            )}
-          </div>
-          {selectedStation && (
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
-              <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <span className="text-red-600">
-                  Available bikes: {selectedStation.free_bikes}
-                </span>
-                <span className="text-gray-600">
-                  Empty slots: {selectedStation.empty_slots}
-                </span>
-                <span className="text-gray-600">Normal bikes: {selectedStation.extra.normal_bikes}</span>
-                <span className="text-gray-600">E-bikes: {selectedStation.extra.ebikes}</span>
-                <span className="text-gray-600">Status: {selectedStation.extra.online ? 'Online' : 'Offline'}</span>
-                <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('en-US', {
-                  day: '2-digit',
-                  month: '2-digit',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  second: '2-digit',
-                  timeZone: 'Europe/Madrid'
-                })}</span>
-              </div>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
       <Card className="bg-white shadow-lg mb-8">
         <CardHeader>
           <div className="flex justify-between items-center">
-            <CardTitle className="text-2xl text-gray-800">Supply Routes</CardTitle>
+            <CardTitle className="text-2xl text-gray-800">Supply Bikes</CardTitle>
             <Button
               onClick={() => setIsPlanningExpanded(!isPlanningExpanded)}
               variant="ghost"
@@ -236,74 +404,54 @@ export default function TasksPage() {
           </div>
         </CardHeader>
         {isPlanningExpanded && (
-          <CardContent>
-            <div className="space-y-4 md:space-y-0">
-              <div className="flex flex-col md:flex-row md:items-end md:space-x-4">
-                <div className="w-full md:w-2/5 mb-4 md:mb-0">
-                  <label htmlFor="fillPercentage" className="block text-sm font-medium text-gray-700 mb-1">
-                    Fill Percentage: {fillPercentage}%
-                  </label>
-                  <input
-                    type="range"
-                    id="fillPercentage"
-                    name="fillPercentage"
-                    min="0"
-                    max="100"
-                    value={fillPercentage}
-                    onChange={(e) => setFillPercentage(Number(e.target.value))}
-                    className="w-full"
-                  />
-                </div>
+          <SupplyBikesContent
+            emptyStations={emptyStations}
+            isLoading={isLoading}
+            error={error}
+            selectedStation={selectedSupplyStation}
+            setSelectedStation={setSelectedSupplyStation}
+            handleRefresh={handleSupplyRefresh}
+            fillPercentage={supplyFillPercentage}
+            setFillPercentage={setSupplyFillPercentage}
+            truckCapacity={supplyTruckCapacity}
+            setTruckCapacity={setSupplyTruckCapacity}
+            routes={supplyRoutes}
+            routeColors={supplyRouteColors}
+            calculateRoutes={calculateRoutes}
+          />
+        )}
+      </Card>
 
-                <div className="w-full md:w-2/5 mb-4 md:mb-0">
-                  <label htmlFor="truckCapacity" className="block text-sm font-medium text-gray-700 mb-1">
-                    Truck Capacity
-                  </label>
-                  <input
-                    type="number"
-                    id="truckCapacity"
-                    name="truckCapacity"
-                    value={truckCapacity}
-                    onChange={(e) => setTruckCapacity(Number(e.target.value))}
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2"
-                    placeholder="Enter truck capacity"
-                    min="1"
-                  />
-                </div>
-
-                <div className="w-full md:w-1/5">
-                  <Button 
-                    onClick={calculateRoutes} 
-                    disabled={isLoading || emptyStations.length === 0}
-                    className="w-full"
-                  >
-                    Calculate Routes
-                  </Button>
-                </div>
-              </div>
-
-              {routes.length > 0 && (
-                <div className="mt-4 p-4 bg-green-50 rounded-lg shadow">
-                  <h3 className="text-lg font-semibold text-green-700">Planning Results</h3>
-                  {routes.map((route, index) => (
-                    <div key={index} className="mt-2">
-                      <p className="font-medium text-green-800">Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:</p>
-                      <ul className="list-disc list-inside ml-4 text-gray-700">
-                        {route.map((station, idx) => (
-                          <li key={idx}>
-                            {station.name} - 
-                            <span className="font-semibold">
-                              {Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes)} bikes
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </CardContent>
+      <Card className="bg-white shadow-lg mb-8">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl text-gray-800">Reallocate Bikes</CardTitle>
+            <Button
+              onClick={() => setIsReallocationExpanded(!isReallocationExpanded)}
+              variant="ghost"
+              size="sm"
+            >
+              {isReallocationExpanded ? <ChevronUp /> : <ChevronDown />}
+            </Button>
+          </div>
+        </CardHeader>
+        {isReallocationExpanded && (
+          <ReallocateBikesContent
+            fullStations={fullStations}
+            emptyStations={reallocationEmptyStations}
+            isLoading={isLoading}
+            error={error}
+            selectedStation={selectedReallocationStation}
+            setSelectedStation={setSelectedReallocationStation}
+            handleRefresh={handleReallocationRefresh}
+            fillPercentage={reallocationFillPercentage}
+            setFillPercentage={setReallocationFillPercentage}
+            truckCapacity={reallocationTruckCapacity}
+            setTruckCapacity={setReallocationTruckCapacity}
+            routes={reallocationRoutes}
+            routeColors={reallocationRouteColors}
+            calculateReallocationRoutes={calculateReallocationRoutes}
+          />
         )}
       </Card>
     </div>
