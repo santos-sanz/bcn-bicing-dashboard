@@ -9,6 +9,9 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
 })
 
+// Actualiza el tipo para las estaciones en las rutas
+type StationWithDelivery = Station & { deliveredBikes?: number };
+
 interface ReallocateBikesContentProps {
   fullStations: Station[]
   emptyStations: Station[]
@@ -21,7 +24,7 @@ interface ReallocateBikesContentProps {
   setFillPercentage: (value: number) => void
   truckCapacity: number
   setTruckCapacity: (value: number) => void
-  routes: Station[][]
+  routes: StationWithDelivery[][]
   routeColors: string[]
   calculateReallocationRoutes: () => void
 }
@@ -143,22 +146,30 @@ export function ReallocateBikesContent({
         {routes.length > 0 && (
           <div className="mt-4 p-4 bg-green-50 rounded-lg shadow">
             <h3 className="text-lg font-semibold text-green-700">Reallocation Plan</h3>
-            {routes.map((route, index) => (
-              <div key={index} className="mt-2">
-                <p className="font-medium text-green-800">Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:</p>
-                <ul className="list-disc list-inside ml-4 text-gray-700">
-                  {route.map((station, idx) => (
-                    <li key={idx}>
-                      {station.name} - 
-                      <span className="font-semibold">
-                        {station.free_bikes === 0 ? 'Receive' : 'Remove'} {' '}
-                        {Math.abs(Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes))} bikes
-                      </span>
+            {routes.map((route, index) => {
+              const source = route[0] as StationWithDelivery;
+              const deliveries = route.slice(1) as StationWithDelivery[];
+              const totalPickedUp = source?.deliveredBikes ?? 0;
+              const totalDelivered = deliveries.reduce((acc, station) => acc + (station?.deliveredBikes ?? 0), 0);
+
+              return (
+                <div key={index} className="mt-2">
+                  <p className="font-medium text-green-800">
+                    Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:
+                  </p>
+                  <ul className="list-disc list-inside ml-4 text-gray-700">
+                    <li>
+                    <span className="font-semibold">{source.name} - {Math.abs(totalPickedUp)} bikes</span>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                    {deliveries.map((station, idx) => (
+                      <li key={idx}>
+                        {station.name} <span className="font-semibold">+ {station.deliveredBikes} bikes</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
           </div>
         )}
       </div>

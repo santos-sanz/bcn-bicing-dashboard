@@ -8,6 +8,8 @@ import type { Station } from '@/components/MapComponent'
 import { SupplyBikesContent } from '@/components/complex/SupplyBikesContent'
 import { ReallocateBikesContent } from '@/components/complex/ReallocateBikesContent'
 
+type StationWithExcess = Station & { excessBikes: number }
+
 export default function TasksPage() {
   // Estados compartidos
   const [isLoading, setIsLoading] = useState(true)
@@ -196,7 +198,7 @@ export default function TasksPage() {
   // Añadir función para calcular rutas de relocalización
   const calculateReallocationRoutes = () => {
     if (reallocationTruckCapacity <= 0) {
-      alert("Truck capacity must be greater than 0.")
+      alert("La capacidad del camión debe ser mayor que 0.")
       return
     }
 
@@ -228,31 +230,23 @@ export default function TasksPage() {
     }
 
     // Crear rutas que conecten estaciones llenas con vacías
-    const assignedRoutes: Station[][] = []
+    const assignedRoutes: { source: Station; targets: { station: Station; bikesToDeliver: number }[] }[] = []
     let remainingFullStations = [...stationsWithExcessBikes]
     let remainingEmptyStations = [...stationsNeedingBikes]
 
     while (remainingFullStations.length > 0 && remainingEmptyStations.length > 0) {
-      const route: Station[] = []
-      let currentCapacity = reallocationTruckCapacity
-
-      // Comenzar con una estación llena
       const sourceStation = remainingFullStations[0]
-      route.push(sourceStation)
-      const bikesToCollect = Math.min(sourceStation.excessBikes, currentCapacity)
-      currentCapacity = bikesToCollect
-
+      let bikesToMove = sourceStation.excessBikes
+      const route: { station: Station; bikesToDeliver: number }[] = []
       remainingFullStations = remainingFullStations.slice(1)
 
-      // Encontrar estaciones vacías cercanas para distribuir las bicicletas
-      while (currentCapacity > 0 && remainingEmptyStations.length > 0) {
+      while (bikesToMove > 0 && remainingEmptyStations.length > 0) {
         // Encontrar la estación vacía más cercana
         let nearestIndex = 0
         let nearestDistance = Infinity
-        
         for (let i = 0; i < remainingEmptyStations.length; i++) {
           const distance = calculateDistance(
-            route[route.length - 1].latitude, route[route.length - 1].longitude,
+            sourceStation.latitude, sourceStation.longitude,
             remainingEmptyStations[i].latitude, remainingEmptyStations[i].longitude
           )
           if (distance < nearestDistance) {
@@ -262,18 +256,19 @@ export default function TasksPage() {
         }
 
         const targetStation = remainingEmptyStations[nearestIndex]
-        const bikesToDeliver = Math.min(currentCapacity, targetStation.bikesNeeded)
-        
-        if (bikesToDeliver > 0) {
-          route.push(targetStation)
-          currentCapacity -= bikesToDeliver
-        
-          if (bikesToDeliver >= targetStation.bikesNeeded) {
+        const bikesNeeded = targetStation.bikesNeeded
+        const bikesDelivered = Math.min(bikesNeeded, bikesToMove, reallocationTruckCapacity)
+
+        if (bikesDelivered > 0) {
+          route.push({ station: targetStation, bikesToDeliver: bikesDelivered })
+          bikesToMove -= bikesDelivered
+
+          if (bikesDelivered >= bikesNeeded) {
             remainingEmptyStations.splice(nearestIndex, 1)
           } else {
             remainingEmptyStations[nearestIndex] = {
               ...targetStation,
-              bikesNeeded: targetStation.bikesNeeded - bikesToDeliver
+              bikesNeeded: targetStation.bikesNeeded - bikesDelivered
             }
           }
         } else {
@@ -281,8 +276,8 @@ export default function TasksPage() {
         }
       }
 
-      if (route.length > 1) { // Solo añadir rutas que conecten al menos 2 estaciones
-        assignedRoutes.push(route)
+      if (route.length > 0) {
+        assignedRoutes.push({ source: sourceStation, targets: route })
       }
     }
 
@@ -293,7 +288,7 @@ export default function TasksPage() {
     // Actualizar colores y labels de las estaciones según las rutas
     const updatedFullStations = fullStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route[0].id === station.id
+        route.source.id === station.id
       )
       const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#0000FF'
       return {
@@ -307,7 +302,7 @@ export default function TasksPage() {
 
     const updatedEmptyStations = reallocationEmptyStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route.slice(1).some(routeStation => routeStation.id === station.id)
+        route.targets.some(target => target.station.id === station.id)
       )
       const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#FF0000'
       return {
@@ -321,7 +316,13 @@ export default function TasksPage() {
 
     setFullStations(updatedFullStations)
     setReallocationEmptyStations(updatedEmptyStations)
-    setReallocationRoutes(assignedRoutes)
+    setReallocationRoutes(assignedRoutes.map(route => {
+      const sourceStation = stationsWithExcessBikes.find(s => s.id === route.source.id) as StationWithExcess
+      return [
+        { ...route.source, deliveredBikes: -(sourceStation.excessBikes) },
+        ...route.targets.map(target => ({ ...target.station, deliveredBikes: target.bikesToDeliver }))
+      ]
+    }))
     setReallocationRouteColors(assignedRouteColors)
   }
 

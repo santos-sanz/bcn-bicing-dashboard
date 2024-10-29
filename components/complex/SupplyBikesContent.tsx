@@ -142,13 +142,15 @@ export function SupplyBikesContent({
             <h3 className="text-lg font-semibold text-green-700">Planning Results</h3>
             {routes.map((route, index) => (
               <div key={index} className="mt-2">
-                <p className="font-medium text-green-800">Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:</p>
+                <p className="font-medium text-green-800">
+                  Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:
+                </p>
                 <ul className="list-disc list-inside ml-4 text-gray-700">
                   {route.map((station, idx) => (
                     <li key={idx}>
-                      {station.name} - 
+                      {station.name} 
                       <span className="font-semibold">
-                        {Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes)} bikes
+                        + {Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes)} bikes
                       </span>
                     </li>
                   ))}

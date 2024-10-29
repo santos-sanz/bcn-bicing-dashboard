@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, Marker, useMap, MapContainerProps } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, useMap, MapContainerProps, Popup } from 'react-leaflet'
 import { RefreshCw } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
@@ -46,6 +46,7 @@ export type Station = {
     ebikes: number;
     routeColor?: string; // Optional property for route color
   };
+  action?: 'add' | 'remove';
 };
 
 type MapComponentProps = {
@@ -137,7 +138,20 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
                 eventHandlers={{
                   click: () => setSelectedStation(station),
                 }}
-              />
+              >
+                <Popup>
+                  <div>
+                    <h3>{station.name}</h3>
+                    <p>
+                      {station.action === 'add' && '+'}
+                      {station.action === 'remove' && '-'}
+                      {Math.abs(Math.ceil((station.extra.normal_bikes + station.extra.ebikes)))} bicicletas disponibles
+                    </p>
+                    <p>Slots vacíos: {station.empty_slots}</p>
+                    {/* ... cualquier otro detalle existente ... */}
+                  </div>
+                </Popup>
+              </Marker>
             ))
           ) : (
             <div>No stations to display</div>
