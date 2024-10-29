@@ -1,3 +1,5 @@
+"use client"
+
 import { Station } from '@/components/MapComponent'
 import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"

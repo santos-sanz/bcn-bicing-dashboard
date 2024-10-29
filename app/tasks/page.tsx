@@ -7,9 +7,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"
 import type { Station } from '@/components/MapComponent'
 import { SupplyBikesContent } from '@/components/complex/SupplyBikesContent'
 import { ReallocateBikesContent } from '@/components/complex/ReallocateBikesContent'
-import { createPlusMarker, createMinusMarker } from '@/components/complex/CustomMarkers'
 
-// Eliminar la importación dinámica y las funciones wrapper
 export default function TasksPage() {
   // Estados compartidos
   const [isLoading, setIsLoading] = useState(true)
@@ -340,8 +338,7 @@ export default function TasksPage() {
         ...station,
         extra: {
           ...station.extra,
-          routeColor,
-          icon: createPlusMarker(routeColor)
+          routeColor
         }
       }
     })
@@ -362,7 +359,7 @@ export default function TasksPage() {
         extra: {
           ...station.extra,
           routeColor,
-          icon: createMinusMarker(routeColor)
+          icon: routeColor
         }
       }
     })
@@ -376,8 +373,7 @@ export default function TasksPage() {
         ...station,
         extra: {
           ...station.extra,
-          routeColor,
-          icon: createPlusMarker(routeColor)
+          routeColor
         }
       }
     })

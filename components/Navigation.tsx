@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, LogIn } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Auth } from '@/components/Auth'
 import { supabase } from '@/lib/supabase'
@@ -67,7 +67,7 @@ export function Navigation() {
         {isMobile && (
           user ? (
             <Button variant="outline" size="sm" onClick={handleLogout} className="mt-4">
-              Log out
+              Cerrar sesión
             </Button>
           ) : (
             <Auth />
@@ -105,9 +105,9 @@ export function Navigation() {
             <div className="flex-1 flex justify-end">
               {user ? (
                 <div className="flex items-center">
-                  <span className="mr-4">Welcome, {user.email}</span>
+                  <span className="mr-4">Bienvenido, {user.email}</span>
                   <Button variant="outline" size="sm" onClick={handleLogout}>
-                    Log out
+                    Cerrar sesión
                   </Button>
                 </div>
               ) : (

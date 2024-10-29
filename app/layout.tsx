@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${inter.className} bg-gray-100`}>
         <Navigation />
         <main className="container mx-auto p-4 mt-8">

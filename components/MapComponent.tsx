@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState, useCallback } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
