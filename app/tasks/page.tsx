@@ -1,12 +1,14 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
-import type { Station } from '@/components/MapComponent'
+import type { Station } from '@/types/station'
 import { SupplyBikesContent } from '@/components/complex/SupplyBikesContent'
 import { ReallocateBikesContent } from '@/components/complex/ReallocateBikesContent'
+import { DisabledBikesContent } from '@/components/complex/DisabledBikesContent'
+import { DisabledDocksContent } from '@/components/complex/DisabledDocksContent'
 
 type StationWithExcess = Station & { excessBikes: number }
 type StationWithDelivery = Station & { deliveredBikes: number }
@@ -39,6 +41,24 @@ export default function TasksPage() {
   const [supplyIcons, setSupplyIcons] = useState<{ [key: string]: any }>({})
   const [reallocationIcons, setReallocationIcons] = useState<{ [key: string]: any }>({})
 
+  // Estados para Disabled Bikes
+  const [disabledBikesStations, setDisabledBikesStations] = useState<Station[]>([])
+  const [selectedDisabledBikesStation, setSelectedDisabledBikesStation] = useState<Station | null>(null)
+  const [disabledBikesRoutes, setDisabledBikesRoutes] = useState<Station[][]>([])
+  const [disabledBikesRouteColors, setDisabledBikesRouteColors] = useState<string[]>([])
+  const [disabledBikesFillPercentage, setDisabledBikesFillPercentage] = useState<number>(20)
+  const [disabledBikesTruckCapacity, setDisabledBikesTruckCapacity] = useState<number>(20)
+  const [isDisabledBikesExpanded, setIsDisabledBikesExpanded] = useState(false)
+
+  // Estados para Disabled Docks
+  const [disabledDocksStations, setDisabledDocksStations] = useState<Station[]>([])
+  const [selectedDisabledDocksStation, setSelectedDisabledDocksStation] = useState<Station | null>(null)
+  const [disabledDocksRoutes, setDisabledDocksRoutes] = useState<Station[][]>([])
+  const [disabledDocksRouteColors, setDisabledDocksRouteColors] = useState<string[]>([])
+  const [disabledDocksFillPercentage, setDisabledDocksFillPercentage] = useState<number>(20)
+  const [disabledDocksTruckCapacity, setDisabledDocksTruckCapacity] = useState<number>(20)
+  const [isDisabledDocksExpanded, setIsDisabledDocksExpanded] = useState(false)
+
   const fetchStations = async () => { 
     setIsLoading(true)
     setError(null)
@@ -59,23 +79,30 @@ export default function TasksPage() {
         extra: {
           ...station.extra,
           online: station.extra.status === "OPEN",
-          routeColor: station.free_bikes === 0 ? '#FF0000' : 
-                     station.empty_slots === 0 ? '#0000FF' : 
-                     undefined
+          routeColor: undefined
         }
       }))
 
-      const empty = formattedStations.filter((station: Station) => station.free_bikes === 0)
-      const full = formattedStations.filter((station: Station) => station.empty_slots === 0)
+      // Filter stations with at least 1 disabled bike
+      const disabled = formattedStations.filter(station => 
+        station.num_bikes_disabled > 0
+      )
+
+      setDisabledBikesStations(disabled)
+      
+      // Filtrar estaciones según su estado
+      const empty = formattedStations.filter(station => station.free_bikes === 0)
+      const full = formattedStations.filter(station => station.empty_slots === 0)
 
       setEmptyStations(empty)
       setFullStations(full)
-      setReallocationEmptyStations(empty) // Copia separada para reallocation
+      setReallocationEmptyStations(empty)
     } catch (error) {
       console.error('Error fetching stations:', error)
       setError(`Error loading stations: ${error instanceof Error ? error.message : 'Unknown error'}`)
       setEmptyStations([])
       setFullStations([])
+      setDisabledBikesStations([])
     } finally {
       setIsLoading(false)
     }
@@ -99,12 +126,12 @@ export default function TasksPage() {
     setSelectedReallocationStation(null)
   }
 
-  const colorPalette = [
+  const colorPalette = useMemo(() => ([
     '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
     '#33FFF3', '#FFC300', '#FF8C33', '#8DFF33', '#33FF8C',
     '#FF33F5', '#33FFCC', '#FF5733', '#33A1FF', '#FFD700',
     '#4B0082', '#00CED1', '#FF1493', '#32CD32', '#8A2BE2'
-  ];
+  ]), [])
 
   const calculateRoutes = () => {
     if (supplyTruckCapacity <= 0) {
@@ -345,7 +372,14 @@ export default function TasksPage() {
       }
     })
 
-    setEmptyStations(updatedStations)
+    // Verificamos si realmente hay cambios antes de actualizar el estado
+    const hasChanges = updatedStations.some((station, index) => {
+      return station.extra.routeColor !== emptyStations[index].extra.routeColor
+    })
+
+    if (hasChanges) {
+      setEmptyStations(updatedStations)
+    }
   }, [supplyRoutes, supplyRouteColors, emptyStations])
 
   useEffect(() => {
@@ -380,9 +414,69 @@ export default function TasksPage() {
       }
     })
 
-    setFullStations(updatedFullStations)
-    setReallocationEmptyStations(updatedEmptyStations)
+    // Verificamos si hay cambios antes de actualizar el estado
+    const hasChangesFull = updatedFullStations.some((station, index) => {
+      return station.extra.routeColor !== fullStations[index].extra.routeColor
+    })
+    const hasChangesEmpty = updatedEmptyStations.some((station, index) => {
+      return station.extra.routeColor !== reallocationEmptyStations[index].extra.routeColor
+    })
+
+    if (hasChangesFull) {
+      setFullStations(updatedFullStations)
+    }
+    if (hasChangesEmpty) {
+      setReallocationEmptyStations(updatedEmptyStations)
+    }
   }, [reallocationRoutes, reallocationRouteColors, fullStations, reallocationEmptyStations])
+
+  const handleDisabledBikesRefresh = useCallback(() => {
+    fetchStations()
+    setDisabledBikesRoutes([])
+    setDisabledBikesRouteColors([])
+    setSelectedDisabledBikesStation(null)
+  }, [])
+
+  const calculateDisabledBikesRoutes = useCallback(() => {
+    if (disabledBikesTruckCapacity <= 0) {
+      alert("Truck capacity must be greater than 0.")
+      return
+    }
+
+    const stationsWithDisabledBikes = disabledBikesStations.filter(
+      station => station.num_bikes_disabled > 0
+    )
+
+    // Asignar colores a las rutas
+    const routesNeeded = Math.ceil(stationsWithDisabledBikes.length / 5) // 5 estaciones por ruta
+    const assignedRouteColors = colorPalette.slice(0, routesNeeded)
+
+    // Crear rutas agrupando estaciones
+    const assignedRoutes: Station[][] = []
+    for (let i = 0; i < stationsWithDisabledBikes.length; i += 5) {
+      assignedRoutes.push(stationsWithDisabledBikes.slice(i, i + 5))
+    }
+
+    // Actualizar estados
+    setDisabledBikesRoutes(assignedRoutes)
+    setDisabledBikesRouteColors(assignedRouteColors)
+
+    // Actualizar colores de las estaciones
+    const updatedStations = disabledBikesStations.map(station => {
+      const routeIndex = assignedRoutes.findIndex(route => 
+        route.some(routeStation => routeStation.id === station.id)
+      )
+      return {
+        ...station,
+        extra: {
+          ...station.extra,
+          routeColor: routeIndex !== -1 ? assignedRouteColors[routeIndex] : undefined
+        }
+      }
+    })
+
+    setDisabledBikesStations(updatedStations)
+  }, [disabledBikesStations, disabledBikesTruckCapacity, colorPalette])
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -449,6 +543,70 @@ export default function TasksPage() {
             routes={reallocationRoutes}
             routeColors={reallocationRouteColors}
             calculateReallocationRoutes={calculateReallocationRoutes}
+          />
+        )}
+      </Card>
+
+      <Card className="bg-white shadow-lg mb-8">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl text-gray-800">Disabled Bikes</CardTitle>
+            <Button
+              onClick={() => setIsDisabledBikesExpanded(!isDisabledBikesExpanded)}
+              variant="ghost"
+              size="sm"
+            >
+              {isDisabledBikesExpanded ? <ChevronUp /> : <ChevronDown />}
+            </Button>
+          </div>
+        </CardHeader>
+        {isDisabledBikesExpanded && (
+          <DisabledBikesContent
+            disabledStations={disabledBikesStations}
+            isLoading={isLoading}
+            error={error}
+            selectedStation={selectedDisabledBikesStation}
+            setSelectedStation={setSelectedDisabledBikesStation}
+            handleRefresh={handleDisabledBikesRefresh}
+            fillPercentage={disabledBikesFillPercentage}
+            setFillPercentage={setDisabledBikesFillPercentage}
+            truckCapacity={disabledBikesTruckCapacity}
+            setTruckCapacity={setDisabledBikesTruckCapacity}
+            routes={disabledBikesRoutes}
+            routeColors={disabledBikesRouteColors}
+            calculateRoutes={calculateDisabledBikesRoutes}
+          />
+        )}
+      </Card>
+
+      <Card className="bg-white shadow-lg mb-8">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl text-gray-800">Disabled Docks</CardTitle>
+            <Button
+              onClick={() => setIsDisabledDocksExpanded(!isDisabledDocksExpanded)}
+              variant="ghost"
+              size="sm"
+            >
+              {isDisabledDocksExpanded ? <ChevronUp /> : <ChevronDown />}
+            </Button>
+          </div>
+        </CardHeader>
+        {isDisabledDocksExpanded && (
+          <DisabledDocksContent
+            disabledStations={disabledDocksStations}
+            isLoading={isLoading}
+            error={error}
+            selectedStation={selectedDisabledDocksStation}
+            setSelectedStation={setSelectedDisabledDocksStation}
+            handleRefresh={() => { /* Función de refresco */ }}
+            fillPercentage={disabledDocksFillPercentage}
+            setFillPercentage={setDisabledDocksFillPercentage}
+            truckCapacity={disabledDocksTruckCapacity}
+            setTruckCapacity={setDisabledDocksTruckCapacity}
+            routes={disabledDocksRoutes}
+            routeColors={disabledDocksRouteColors}
+            calculateRoutes={() => { /* Función para calcular rutas */ }}
           />
         )}
       </Card>

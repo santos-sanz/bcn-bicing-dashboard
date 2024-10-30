@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, useMap, MapContainerProps, Popup } from 'react-leaflet'
 import { RefreshCw } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { Station } from '@/types/station'
 
 // Function to create custom icons based on routeColor
 const createCustomIcon = (routeColor: string, online: boolean, freeBikes: number, emptySlots: number) => {
@@ -30,26 +31,6 @@ const createCustomIcon = (routeColor: string, online: boolean, freeBikes: number
     iconAnchor: [6, 6],
   })
 }
-
-export type Station = {
-  id: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  free_bikes: number;
-  empty_slots: number;
-  timestamp: string;
-  extra: {
-    online: boolean;
-    uid: string;
-    normal_bikes: number;
-    ebikes: number;
-    routeColor?: string; // Optional property for route color
-  };
-  action?: 'add' | 'remove';
-  excessBikes?: number;
-  deliveredBikes?: number;
-};
 
 type MapComponentProps = {
   filteredStations: Station[];

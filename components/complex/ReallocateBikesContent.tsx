@@ -1,6 +1,6 @@
 "use client"
 
-import { Station } from '@/components/MapComponent'
+import { Station } from '@/types/station'
 import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"

@@ -10,6 +10,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import dynamic from 'next/dynamic'
 import { Map as LeafletMap } from 'leaflet'
 import axios from 'axios'
+import { Station } from '@/types/station'
 
 // Importación dinámica del componente del mapa (sin cambios)
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -217,22 +218,6 @@ export default function Component() {
     </div>
   )
 }
-
-type Station = {
-  id: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  free_bikes: number;
-  empty_slots: number;
-  timestamp: string;
-  extra: {
-    online: boolean;
-    uid: string;
-    normal_bikes: number;
-    ebikes: number;
-  };
-};
 
 const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: Station | null) => void, bikeStations: Station[] }) => {
   const [searchTerm, setSearchTerm] = useState('')
