@@ -47,6 +47,8 @@ export type Station = {
     routeColor?: string; // Optional property for route color
   };
   action?: 'add' | 'remove';
+  excessBikes?: number;
+  deliveredBikes?: number;
 };
 
 type MapComponentProps = {
@@ -139,18 +141,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
                   click: () => setSelectedStation(station),
                 }}
               >
-                <Popup>
-                  <div>
-                    <h3>{station.name}</h3>
-                    <p>
-                      {station.action === 'add' && '+'}
-                      {station.action === 'remove' && '-'}
-                      {Math.abs(Math.ceil((station.extra.normal_bikes + station.extra.ebikes)))} bicicletas disponibles
-                    </p>
-                    <p>Slots vacíos: {station.empty_slots}</p>
-                    {/* ... cualquier otro detalle existente ... */}
-                  </div>
-                </Popup>
+
               </Marker>
             ))
           ) : (

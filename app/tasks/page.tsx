@@ -9,6 +9,7 @@ import { SupplyBikesContent } from '@/components/complex/SupplyBikesContent'
 import { ReallocateBikesContent } from '@/components/complex/ReallocateBikesContent'
 
 type StationWithExcess = Station & { excessBikes: number }
+type StationWithDelivery = Station & { deliveredBikes: number }
 
 export default function TasksPage() {
   // Estados compartidos
