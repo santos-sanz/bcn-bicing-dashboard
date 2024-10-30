@@ -15,9 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Verifica que las variables de entorno estén correctamente accesibles
-  const MAP_API_KEY = process.env.NEXT_PUBLIC_MAP_API_KEY
-
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100`}>
