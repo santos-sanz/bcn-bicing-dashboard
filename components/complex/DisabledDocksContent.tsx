@@ -2,9 +2,11 @@ import React from 'react'
 import { Station } from '@/types/station'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
-import MapComponent from '@/components/MapComponent'
+import dynamic from 'next/dynamic'
 import { useCallback } from 'react'
 // ... otros imports necesarios ...
+
+const MapComponent = dynamic(() => import('@/components/MapComponent'), { ssr: false })
 
 interface DisabledDocksContentProps {
   disabledStations: Station[]
