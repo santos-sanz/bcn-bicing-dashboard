@@ -54,21 +54,14 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
     calculateRoutes()
   }, [calculateRoutes])
 
-  // Calculate the total number of disabled bikes and disabled stations
   const totalDisabledBikes = disabledStations.reduce((acc, station) => acc + station.num_bikes_disabled, 0)
   const numberOfDisabledStations = disabledStations.length
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Aquí está el código que utiliza `window`
-      // Por ejemplo:
-      // window.addEventListener('resize', handleResize)
     }
-
     return () => {
       if (typeof window !== 'undefined') {
-        // Limpia los event listeners si es necesario
-        // window.removeEventListener('resize', handleResize)
       }
     }
   }, [])
@@ -81,44 +74,10 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
         </Card>
       )}
 
-      <Card className="bg-white shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl">Configuration</CardTitle>
-        </CardHeader>
-        <div className="p-4 space-y-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Fill Percentage ({fillPercentage}%)
-            </label>
-            <Slider
-              value={[fillPercentage]}
-              onValueChange={(value) => setFillPercentage(value[0])}
-              min={0}
-              max={100}
-              step={1}
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Truck Capacity ({truckCapacity} bikes)
-            </label>
-            <Slider
-              value={[truckCapacity]}
-              onValueChange={(value) => setTruckCapacity(value[0])}
-              min={1}
-              max={40}
-              step={1}
-            />
-          </div>
-          <Button 
-            onClick={handleCalculateRoutes}
-            className="w-full"
-            disabled={isLoading}
-          >
-            Calculate Routes
-          </Button>
-        </div>
-      </Card>
+      <div className="text-2xl font-semibold text-center mb-4">
+        <div>Stations with Disabled Bikes: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
+        <div>Disabled Bikes: <span className="text-gray-600">{totalDisabledBikes}</span></div>
+      </div>
 
       <Card className="bg-white shadow-lg">
         <div className="h-[500px] relative">
@@ -126,74 +85,41 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
             filteredStations={disabledStations}
             selectedStation={selectedStation}
             setSelectedStation={setSelectedStation}
-                // Start of Selection
-                setMap={setMap}
-                onRefresh={handleMapRefresh}
-              />
-            </div>
-          </Card>
-
-      {/* Counters and Buttons below the map */}
-      <Card className="bg-white shadow-lg p-4 flex justify-between items-center">
-        <div>
-          <p className="text-lg font-semibold">Total Disabled Stations: {numberOfDisabledStations}</p>
-          <p className="text-lg font-semibold">Total Disabled Bikes: {totalDisabledBikes}</p>
-        </div>
-        <div className="flex space-x-2">
-          <Button onClick={handleMapRefresh} disabled={isLoading}>
-            Refresh Map
-          </Button>
-          <Button onClick={handleCalculateRoutes} disabled={isLoading}>
-            Calculate Routes
-          </Button>
+            setMap={setMap}
+            onRefresh={handleMapRefresh}
+          />
         </div>
       </Card>
 
-      {selectedStation && (
-        <Card className="bg-white shadow-lg p-4">
-          <CardHeader>
-            <CardTitle className="text-xl">Selected Station Details</CardTitle>
-          </CardHeader>
-          <div className="p-4 grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm font-medium">Name:</p>
-              <p>{selectedStation.name}</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium">Disabled Bikes:</p>
-              <p>{selectedStation.num_bikes_disabled}</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium">Empty Slots:</p>
-              <p>{selectedStation.empty_slots}</p>
-            </div>
+      <div className="space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:items-end md:space-x-4">
+          <div className="w-full md:w-2/5 mb-4 md:mb-0">
+            <label htmlFor="truckCapacity" className="block text-sm font-medium text-gray-700 mb-1">
+              Truck Capacity
+            </label>
+            <input
+              type="number"
+              id="truckCapacity"
+              name="truckCapacity"
+              value={truckCapacity}
+              onChange={(e) => setTruckCapacity(Number(e.target.value))}
+              className="w-full border border-gray-300 rounded-md shadow-sm p-2"
+              placeholder="Enter truck capacity"
+              min="1"
+            />
           </div>
-        </Card>
-      )}
 
-      {routes.length > 0 && (
-        <Card className="bg-white shadow-lg p-4">
-          <CardHeader>
-            <CardTitle className="text-xl">Route Information</CardTitle>
-          </CardHeader>
-          <div className="p-4 space-y-2">
-            {routes.map((route, index) => (
-              <Card key={index} className="bg-gray-50 p-2 rounded">
-                <p className="font-medium" style={{ color: routeColors[index] }}>
-                  Route {index + 1}:
-                </p>
-                <div className="ml-4">
-                  {route.map((station, stationIndex) => (
-                    <p key={stationIndex}>
-                      {station.name} - {station.num_bikes_disabled} disabled bikes
-                    </p>
-                  ))}
-                </div>
-              </Card>
-            ))}
+          <div className="w-full md:w-1/5">
+            <Button 
+              onClick={handleCalculateRoutes} 
+              disabled={isLoading}
+              className="w-full"
+            >
+              Calculate Routes
+            </Button>
           </div>
-        </Card>
-      )}
+        </div>
+      </div>
     </div>
   )
-} 
+}

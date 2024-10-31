@@ -143,9 +143,6 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           {isRefreshing ? 'Updating...' : 'Update'}
         </Button>
       </div>
-      <div className="absolute bottom-1 right-1 text-xs text-gray-500 z-[1000]">
-        © OpenStreetMap contributors
-      </div>
     </div>
   )
 }

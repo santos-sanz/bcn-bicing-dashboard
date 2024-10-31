@@ -201,7 +201,7 @@ export default function Component() {
                 <span className="text-gray-600">Normal bikes: {selectedStation.extra.normal_bikes}</span>
                 <span className="text-gray-600">E-bikes: {selectedStation.extra.ebikes}</span>
                 <span className="text-gray-600">Status: {selectedStation.extra.online ? 'Online' : 'Offline'}</span>
-                <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('en-US', {
+                <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('es-ES', {
                   day: '2-digit',
                   month: '2-digit',
                   year: 'numeric',

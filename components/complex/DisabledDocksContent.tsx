@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Station } from '@/types/station'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import dynamic from 'next/dynamic'
-import { useCallback } from 'react'
-// ... otros imports necesarios ...
-
 const MapComponent = dynamic(() => import('@/components/MapComponent'), { ssr: false })
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Slider } from "@/components/ui/slider"
 
 interface DisabledDocksContentProps {
   disabledStations: Station[]
@@ -39,25 +44,52 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
   routeColors,
   calculateRoutes,
 }) => {
+  const [map, setMap] = useState<any | null>(null)
+
   const handleMapRefresh = useCallback(() => {
     handleRefresh()
+  }, [handleRefresh])
+
+  const handleCalculateRoutes = useCallback(() => {
     calculateRoutes()
-  }, [handleRefresh, calculateRoutes])
+  }, [calculateRoutes])
+
+  const totalDisabledDocks = disabledStations.reduce((acc, station) => acc + station.num_docks_disabled, 0)
+  const numberOfDisabledStations = disabledStations.length
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+      }
+    }
+  }, [])
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-semibold mb-4">Stations with Disabled Docks</h2>
-      {/* Implementar la visualización de estaciones con muelles deshabilitados */}
-      {/* ... código de la visualización ... */}
+    <div className="space-y-6">
+      {error && (
+        <Card className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          {error}
+        </Card>
+      )}
 
-      {/* Integrar el mapa */}
-      <MapComponent
-        filteredStations={disabledStations}
-        selectedStation={selectedStation}
-        setSelectedStation={setSelectedStation}
-        setMap={() => { /* Opcional: implementar si es necesario */ }}
-        onRefresh={handleMapRefresh}
-      />
+      <div className="text-2xl font-semibold text-center mb-4">
+        <div>Stations with Disabled Docks: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
+        <div>Disabled Docks: <span className="text-gray-600">{totalDisabledDocks}</span></div>
+      </div>
+
+      <Card className="bg-white shadow-lg">
+        <div className="h-[500px] relative">
+          <MapComponent
+            filteredStations={disabledStations}
+            selectedStation={selectedStation}
+            setSelectedStation={setSelectedStation}
+            setMap={setMap}
+            onRefresh={handleMapRefresh}
+          />
+        </div>
+      </Card>
     </div>
   )
-} 
+}
