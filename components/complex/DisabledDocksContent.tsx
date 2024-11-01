@@ -54,14 +54,16 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
     calculateRoutes()
   }, [calculateRoutes])
 
-  const totalDisabledDocks = disabledStations.reduce((acc, station) => acc + station.num_docks_disabled, 0)
+  const totalDisabledDocks = disabledStations.reduce((acc, station) => acc + (station.num_docks_disabled || 0), 0)
   const numberOfDisabledStations = disabledStations.length
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // Aquí podrías añadir lógica adicional si es necesario
     }
     return () => {
       if (typeof window !== 'undefined') {
+        // Limpieza si es necesario
       }
     }
   }, [])
@@ -75,9 +77,14 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
       )}
 
       <div className="text-2xl font-semibold text-center mb-4">
-        <div>Stations with Disabled Docks: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
+        <div>Station with Disabled Docks: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
+      </div>
+
+      <div className="text-2xl font-semibold text-center mb-4">
         <div>Disabled Docks: <span className="text-gray-600">{totalDisabledDocks}</span></div>
       </div>
+
+  
 
       <Card className="bg-white shadow-lg">
         <div className="h-[500px] relative">

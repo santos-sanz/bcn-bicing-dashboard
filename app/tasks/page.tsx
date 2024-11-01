@@ -59,6 +59,9 @@ export default function TasksPage() {
   const [disabledDocksTruckCapacity, setDisabledDocksTruckCapacity] = useState<number>(20)
   const [isDisabledDocksExpanded, setIsDisabledDocksExpanded] = useState(false)
 
+  // Añadir nuevo estado para la fecha
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null)
+
   const fetchStations = async () => { 
     setIsLoading(true)
     setError(null)
@@ -68,6 +71,9 @@ export default function TasksPage() {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
       const data = await response.json()
+
+      // Actualizar la fecha
+      setLastUpdate(new Date())
 
       if (!Array.isArray(data)) {
         throw new Error('Received data is not an array')
@@ -97,12 +103,19 @@ export default function TasksPage() {
       setEmptyStations(empty)
       setFullStations(full)
       setReallocationEmptyStations(empty)
+
+      // Añadir filtrado para estaciones con docks deshabilitados
+      const disabledDocks = formattedStations.filter(station => 
+        station.num_docks_disabled > 0
+      )
+      setDisabledDocksStations(disabledDocks)
     } catch (error) {
       console.error('Error fetching stations:', error)
       setError(`Error loading stations: ${error instanceof Error ? error.message : 'Unknown error'}`)
       setEmptyStations([])
       setFullStations([])
       setDisabledBikesStations([])
+      setDisabledDocksStations([])
     } finally {
       setIsLoading(false)
     }

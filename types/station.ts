@@ -18,7 +18,7 @@ export interface Station {
   _ride_code_support?: boolean;
   rental_uris?: any;
   num_bikes_available: number;
-  num_bikes_available_types: {
+  num_bikes_available_types?: {
     mechanical: number;
     ebike: number;
   };

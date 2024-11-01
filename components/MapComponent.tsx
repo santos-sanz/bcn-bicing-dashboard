@@ -10,7 +10,7 @@ import { Station } from '@/types/station'
 
 // Function to create custom icons based on routeColor
 const createCustomIcon = (routeColor: string | undefined, online: boolean, freeBikes: number, emptySlots: number) => {
-  let color = '#ffbf00' // Color predeterminado (amarillo)
+  let color = '#000000' // Color predeterminado (negro)
 
   if (routeColor && routeColor.length > 0) {
     color = routeColor // Usar el color de ruta si está disponible
@@ -122,6 +122,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
                   station.status === 'IN_SERVICE',
                   station.num_bikes_available,
                   station.num_docks_available
+
                 )}
                 eventHandlers={{
                   click: () => setSelectedStation(station),

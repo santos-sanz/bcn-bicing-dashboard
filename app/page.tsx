@@ -68,6 +68,8 @@ export default function Component() {
           return station.num_docks_available === 0 && station.status === 'IN_SERVICE';
         case 'AVAILABLE':
           return station.num_bikes_available > 0 && station.num_docks_available > 0 && station.status === 'IN_SERVICE';
+        case 'OTHER':
+          return station.status !== 'IN_SERVICE';
         default:
           return true;
       }
@@ -182,6 +184,7 @@ export default function Component() {
                   <SelectItem value="AVAILABLE">Available</SelectItem>
                   <SelectItem value="EMPTY">Empty</SelectItem>
                   <SelectItem value="FULL">Full</SelectItem>
+                  <SelectItem value="OTHER">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -202,19 +205,34 @@ export default function Component() {
               <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <span className={selectedStation.num_bikes_available === 0 ? "text-red-600" : "text-gray-600"}>
-                  Available bikes: {selectedStation.num_bikes_available}
+                  Available bikes: {selectedStation.num_bikes_available ?? 0}
                 </span>
                 <span className={selectedStation.num_docks_available === 0 ? "text-amber-500" : "text-gray-600"}>
-                  Empty slots: {selectedStation.num_docks_available}
+                  Empty slots: {selectedStation.num_docks_available ?? 0}
                 </span>
                 <span className="text-gray-600">
-                  Normal bikes: {selectedStation.num_bikes_available_types.mechanical ?? 0}
+                  Disabled bikes: {selectedStation.num_bikes_disabled ?? 0}
                 </span>
                 <span className="text-gray-600">
-                  E-bikes: {selectedStation.num_bikes_available_types.ebike ?? 0}
+                  Disabled docks: {selectedStation.num_docks_disabled ?? 0}
                 </span>
                 <span className="text-gray-600">
+                  Mechanical bikes: {selectedStation.num_bikes_available_types?.mechanical ?? 0}
+                </span>
+                <span className="text-gray-600">
+                  Electric bikes: {selectedStation.num_bikes_available_types?.ebike ?? 0}
+                </span>
+                <span className={selectedStation.status !== 'IN_SERVICE' ? 'text-red-600' : 'text-gray-600'}>
                   Status: {selectedStation.status ?? 'Offline'}
+                </span>
+                <span className="text-gray-600">
+                  Station ID: {selectedStation.station_id ?? 'N/A'}
+                </span>
+                <span className="text-gray-600">
+                  Config: {selectedStation.physical_configuration ?? 'N/A'}
+                </span>
+                <span className="text-gray-600">
+                  Capacity: {selectedStation.capacity ?? 'N/A'}
                 </span>
                 <span className="text-gray-600">
                   Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('es-ES', {
@@ -227,6 +245,16 @@ export default function Component() {
                     timeZone: 'Europe/Madrid'
                   })}
                 </span>
+                <span className="text-gray-600">
+                  Post code: {selectedStation.post_code ?? 'N/A'}
+                </span>
+                <span className="text-gray-600">
+                  Suburb: {selectedStation.suburb ?? 'N/A'}
+                </span>
+                <span className="text-gray-600">
+                  District: {selectedStation.district ?? 'N/A'}
+                </span>
+
               </div>
             </div>
           )}
