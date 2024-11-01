@@ -26,7 +26,10 @@ export default function Component() {
   const [metrics, setMetrics] = useState({
     stations: 0,
     availableBikes: 0,
-    availableDocks: 0
+    availableDocks: 0,
+    disabledDocks: 0,
+    disabledBikes: 0,
+    disabledStations: 0
   })
   const [bikeStations, setBikeStations] = useState<Station[]>([])
   const [usageData, setUsageData] = useState([])
@@ -82,7 +85,10 @@ export default function Component() {
       setMetrics({
         stations: 0,
         availableBikes: 0,
-        availableDocks: 0
+        availableDocks: 0,
+        disabledDocks: 0,
+        disabledBikes: 0,
+        disabledStations: 0
       })
       return
     }
@@ -90,11 +96,17 @@ export default function Component() {
     const totalStations = stations.length
     const availableBikes = stations.reduce((sum, station) => sum + (station.num_bikes_available || 0), 0)
     const availableDocks = stations.reduce((sum, station) => sum + (station.num_docks_available || 0), 0)
+    const disabledDocks = stations.reduce((sum, station) => sum + (station.num_docks_disabled || 0), 0)
+    const disabledBikes = stations.reduce((sum, station) => sum + (station.num_bikes_disabled || 0), 0)
+    const disabledStationsCount = stations.filter(station => station.status !== 'IN_SERVICE').length
     
     setMetrics({
       stations: totalStations,
       availableBikes,
-      availableDocks
+      availableDocks,
+      disabledDocks,
+      disabledBikes,
+      disabledStations: disabledStationsCount
     })
   }
 
@@ -167,6 +179,39 @@ export default function Component() {
             </div>
           </CardContent>
         </Card>
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-gray-100">
+              <MapIcon className="w-8 h-8 text-gray-600" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-500">Disabled Stations</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.disabledStations}</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-gray-100">
+              <Bike className="w-8 h-8 text-gray-600" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-500">Disabled Bikes</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.disabledBikes}</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <CardContent className="p-6 flex items-center space-x-4">
+            <div className="p-3 rounded-full bg-gray-100">
+              <Lock className="w-8 h-8 text-gray-600" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-500">Disabled Docks</p>
+              <p className="text-3xl font-bold text-gray-800">{metrics.disabledDocks}</p>
+            </div>
+          </CardContent>
+          </Card>
       </div>
       
       <Card className="bg-white shadow-lg">
