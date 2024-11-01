@@ -67,7 +67,7 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
   }, [])
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6">
       {error && (
         <Card className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error}
@@ -91,8 +91,9 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
         </div>
       </Card>
 
-      <div className="space-y-4 md:space-y-0">
-        <div className="flex flex-col md:flex-row md:items-end md:space-x-4">
+      
+      <div className="space-y-4 md:space-y-0"> 
+        <div className="flex flex-col md:flex-row md:items-end md:space-x-4 md:justify-end">
           <div className="w-full md:w-2/5 mb-4 md:mb-0">
             <label htmlFor="truckCapacity" className="block text-sm font-medium text-gray-700 mb-1">
               Truck Capacity

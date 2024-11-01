@@ -69,7 +69,7 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
   }, [])
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6">
       {error && (
         <Card className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error}
@@ -77,14 +77,9 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
       )}
 
       <div className="text-2xl font-semibold text-center mb-4">
-        <div>Station with Disabled Docks: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
-      </div>
-
-      <div className="text-2xl font-semibold text-center mb-4">
+      <div>Station with Disabled Docks: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
         <div>Disabled Docks: <span className="text-gray-600">{totalDisabledDocks}</span></div>
       </div>
-
-  
 
       <Card className="bg-white shadow-lg">
         <div className="h-[500px] relative">
