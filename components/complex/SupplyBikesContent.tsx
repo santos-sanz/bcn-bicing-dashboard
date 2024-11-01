@@ -75,8 +75,6 @@ export function SupplyBikesContent({
             <span className="text-gray-600">
               Empty slots: {selectedStation.num_docks_available}
             </span>
-            <span className="text-gray-600">Normal bikes: {selectedStation.num_bikes_available_types?.mechanical}</span>
-            <span className="text-gray-600">E-bikes: {selectedStation.num_bikes_available_types?.ebike}</span>
             <span className="text-gray-600">Status: {selectedStation.status}</span>
             <span className="text-gray-600">Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('en-US', {
               day: '2-digit',

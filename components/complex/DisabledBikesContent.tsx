@@ -93,6 +93,30 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
           />
         </div>
       </Card>
+
+      {selectedStation && (
+        <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow mb-6">
+          <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <span className="text-red-600">
+              Disabled bikes: {selectedStation.num_bikes_disabled}
+            </span>
+            <span className="text-gray-600">
+              Available bikes: {selectedStation.num_bikes_available}
+            </span>
+            <span className="text-gray-600">Status: {selectedStation.status}</span>
+            <span className="text-gray-600">Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('es-ES', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+              timeZone: 'Europe/Madrid'
+            })}</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
