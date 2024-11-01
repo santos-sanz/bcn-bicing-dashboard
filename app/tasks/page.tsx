@@ -469,6 +469,54 @@ export default function TasksPage() {
     setDisabledBikesStations(updatedStations)
   }, [disabledBikesStations, disabledBikesTruckCapacity, colorPalette])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const getColorByDisabledDocks = (numDisabledDocks: number) => {
+      if (numDisabledDocks === 1) return '#FFFF00' // Amarillo canario
+      if (numDisabledDocks >= 2 && numDisabledDocks <= 4) return '#FFA500' // Ámbar
+      return '#FF0000' // Rojo para 5 o más
+    }
+
+    const updatedDisabledDocksStations = disabledDocksStations.map(station => ({
+      ...station,
+      routeColor: getColorByDisabledDocks(station.num_docks_disabled)
+    }))
+
+    // Verificamos si hay cambios antes de actualizar el estado
+    const hasChanges = updatedDisabledDocksStations.some((station, index) => {
+      return station.routeColor !== disabledDocksStations[index].routeColor
+    })
+
+    if (hasChanges) {
+      setDisabledDocksStations(updatedDisabledDocksStations)
+    }
+  }, [disabledDocksStations])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const getColorByDisabledBikes = (numDisabledBikes: number) => {
+      if (numDisabledBikes === 1) return '#FFFF00' // Amarillo
+      if (numDisabledBikes >= 2 && numDisabledBikes <= 4) return '#FFA500' // Ámbar
+      return '#FF0000' // Rojo para 5 o más
+    }
+
+    const updatedDisabledBikesStations = disabledBikesStations.map(station => ({
+      ...station,
+      routeColor: getColorByDisabledBikes(station.num_bikes_disabled)
+    }))
+
+    // Verificamos si hay cambios antes de actualizar el estado
+    const hasChanges = updatedDisabledBikesStations.some((station, index) => {
+      return station.routeColor !== disabledBikesStations[index].routeColor
+    })
+
+    if (hasChanges) {
+      setDisabledBikesStations(updatedDisabledBikesStations)
+    }
+  }, [disabledBikesStations])
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Bicing Management Tasks</h1>
