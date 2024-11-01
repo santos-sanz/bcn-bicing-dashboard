@@ -51,12 +51,6 @@ export default function Component() {
   }, [])
 
   useEffect(() => {
-    fetch('/mock_data/mock_flow_real.json')
-      .then(response => response.json())
-      .then(data => setUsageData(data))
-  }, [])
-
-  useEffect(() => {
     if (map && typeof map.setView === 'function') {
       map.setView([41.3874, 2.1686], 13)
     }
@@ -219,7 +213,12 @@ export default function Component() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <CardTitle className="text-2xl text-gray-800">Stations Map</CardTitle>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
-              <AutocompleteSearch onSelect={handleStationSelect} bikeStations={bikeStations} />
+              <AutocompleteSearch 
+                onSelect={handleStationSelect} 
+                bikeStations={bikeStations} 
+                setFilteredStations={setFilteredStations} 
+                updateMetrics={updateMetrics}
+              />
               <Select value={filter} onValueChange={setFilter}>
                 <SelectTrigger className="w-full sm:w-[180px]">
                   <SelectValue placeholder="Filter stations" />
@@ -309,37 +308,91 @@ export default function Component() {
   )
 }
 
-const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: Station | null) => void, bikeStations: Station[] }) => {
+const AutocompleteSearch = ({ onSelect, bikeStations, setFilteredStations, updateMetrics }: { 
+  onSelect: (station: Station | null) => void, 
+  bikeStations: Station[], 
+  setFilteredStations: React.Dispatch<React.SetStateAction<Station[]>>,
+  updateMetrics: (stations: Station[]) => void
+}) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [suggestions, setSuggestions] = useState<Station[]>([])
+  const [suggestions, setSuggestions] = useState<(Station | { type: 'post_code' | 'suburb' | 'district', value: string | undefined, label?: string })[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (searchTerm.length > 1) {
-      const filteredSuggestions = bikeStations.filter(station => 
-        station.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      setSuggestions(filteredSuggestions)
+      const lowerTerm = searchTerm.toLowerCase()
+      const stationMatches = bikeStations
+        .filter(station => station.name.toLowerCase().includes(lowerTerm))
+        .slice(0, 10) 
+
+      const postCodeMatches = Array.from(new Set(bikeStations.map(station => station.post_code)))
+        .filter(post_code => post_code && post_code.toLowerCase().includes(lowerTerm))
+        .map(post_code => ({ type: 'post_code' as const, value: post_code, label: `P-${post_code}` }))
+      
+      const suburbMatches = Array.from(new Set(bikeStations.map(station => station.suburb)))
+        .filter(suburb => suburb && suburb.toLowerCase().includes(lowerTerm))
+        .map(suburb => ({ type: 'suburb' as const, value: suburb, label: `S-${suburb}` }))
+  
+      const districtMatches = Array.from(new Set(bikeStations.map(station => station.district)))
+        .filter(district => district && district.toLowerCase().includes(lowerTerm))
+        .map(district => ({ type: 'district' as const, value: district, label: `D-${district}` }))
+  
+      const combinedSuggestions = [
+        ...stationMatches,
+        ...postCodeMatches,
+        ...suburbMatches,
+        ...districtMatches
+      ]
+  
+      setSuggestions(combinedSuggestions)
       setIsOpen(true)
     } else {
       setSuggestions([])
       setIsOpen(false)
     }
   }, [searchTerm, bikeStations])
-
-  const handleSelect = (station: Station | null) => {
-    if (station) {
-      setSearchTerm(station.name)
+  const handleSelect = (item: Station | { type: 'post_code' | 'suburb' | 'district', value: string | undefined, label?: string }) => {
+    if ('type' in item) {
+      // Es un post_code, suburb o district
+      const prefijo = item.type === 'post_code' ? 'P-' :
+                      item.type === 'suburb' ? 'S-' :
+                      'D-'
+      setSearchTerm(item.label || '')
+      setIsOpen(false)
+      
+      // Filtrar estaciones según el tipo seleccionado
+      let filtered: Station[] = []
+      switch(item.type) {
+        case 'post_code':
+          filtered = bikeStations.filter(station => station.post_code === item.value)
+          break
+        case 'suburb':
+          filtered = bikeStations.filter(station => station.suburb === item.value)
+          break
+        case 'district':
+          filtered = bikeStations.filter(station => station.district === item.value)
+          break
+      }
+      onSelect(null) // Limpiar estación seleccionada
+      setFilteredStations(filtered)
+      updateMetrics(filtered)
+    } else {
+      // Es una estación
+      if ('name' in item) {
+        setSearchTerm(item.name)
+        setIsOpen(false)
+        onSelect(item as Station)
+      }
     }
-    setIsOpen(false)
-    onSelect(station)
   }
 
   const handleClear = () => {
     setSearchTerm('')
     setIsOpen(false)
     onSelect(null)
+    setFilteredStations(bikeStations)
+    updateMetrics(bikeStations)
     inputRef.current?.focus()
   }
 
@@ -349,7 +402,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search station..."
+          placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full"
@@ -368,13 +421,13 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
       </div>
       {isOpen && suggestions.length > 0 && (
         <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
-          {suggestions.map((station) => (
+          {suggestions.map((item, index) => (
             <li
-              key={station.station_id}
+              key={index}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleSelect(station)}
+              onClick={() => handleSelect(item)}
             >
-              {station.name}
+              {'type' in item ? item.label : item.name}
             </li>
           ))}
         </ul>
