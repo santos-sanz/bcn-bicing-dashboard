@@ -34,7 +34,7 @@ export default function Component() {
   useEffect(() => {
     const fetchBicingData = async () => {
       try {
-        const response = await axios.get('/api/bicing')
+        const response = await axios.get('/api/bikesystem')
         const stations = response.data // The API now returns the stations directly
         setBikeStations(stations)
         setFilteredStations(stations)
@@ -63,11 +63,11 @@ export default function Component() {
     const filtered = bikeStations.filter(station => {
       switch (filter) {
         case 'EMPTY':
-          return station.free_bikes === 0 && station.extra.online;
+          return station.num_bikes_available === 0 && station.status === 'IN_SERVICE';
         case 'FULL':
-          return station.empty_slots === 0 && station.extra.online;
+          return station.num_docks_available === 0 && station.status === 'IN_SERVICE';
         case 'AVAILABLE':
-          return station.free_bikes > 0 && station.empty_slots > 0 && station.extra.online;
+          return station.num_bikes_available > 0 && station.num_docks_available > 0 && station.status === 'IN_SERVICE';
         default:
           return true;
       }
@@ -75,11 +75,20 @@ export default function Component() {
     setFilteredStations(filtered)
     updateMetrics(filtered)
   }, [filter, bikeStations])
-
   const updateMetrics = (stations: Station[]) => {
+    if (!stations || stations.length === 0) {
+      setMetrics({
+        stations: 0,
+        availableBikes: 0,
+        availableDocks: 0
+      })
+      return
+    }
+
     const totalStations = stations.length
-    const availableBikes = stations.reduce((sum, station) => sum + station.free_bikes, 0)
-    const availableDocks = stations.reduce((sum, station) => sum + station.empty_slots, 0)
+    const availableBikes = stations.reduce((sum, station) => sum + (station.num_bikes_available || 0), 0)
+    const availableDocks = stations.reduce((sum, station) => sum + (station.num_docks_available || 0), 0)
+    
     setMetrics({
       stations: totalStations,
       availableBikes,
@@ -93,8 +102,8 @@ export default function Component() {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
       updateMetrics(filtered)
-      if (station && 'latitude' in station && 'longitude' in station && map) {
-        map.setView([station.latitude, station.longitude], 15)
+      if (station && 'lat' in station && 'lon' in station && map) {
+        map.setView([station.lat, station.lon], 15)
       }
     } else {
       setFilteredStations(bikeStations)
@@ -108,7 +117,7 @@ export default function Component() {
   const refreshData = async () => {
     try {
       const timestamp = new Date().getTime();
-      const response = await axios.get(`/api/bicing?t=${timestamp}`)
+      const response = await axios.get(`/api/bikesystem?t=${timestamp}`)
       const stations = response.data // The API now returns the stations directly
       setBikeStations(stations)
       setFilteredStations(stations)
@@ -192,24 +201,32 @@ export default function Component() {
             <div className="mt-4 p-4 bg-gray-50 rounded-lg shadow">
               <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <span className={selectedStation.free_bikes === 0 ? "text-red-600" : "text-gray-600"}>
-                  Available bikes: {selectedStation.free_bikes}
+                <span className={selectedStation.num_bikes_available === 0 ? "text-red-600" : "text-gray-600"}>
+                  Available bikes: {selectedStation.num_bikes_available}
                 </span>
-                <span className={selectedStation.empty_slots === 0 ? "text-amber-500" : "text-gray-600"}>
-                  Empty slots: {selectedStation.empty_slots}
+                <span className={selectedStation.num_docks_available === 0 ? "text-amber-500" : "text-gray-600"}>
+                  Empty slots: {selectedStation.num_docks_available}
                 </span>
-                <span className="text-gray-600">Normal bikes: {selectedStation.extra.normal_bikes}</span>
-                <span className="text-gray-600">E-bikes: {selectedStation.extra.ebikes}</span>
-                <span className="text-gray-600">Status: {selectedStation.extra.online ? 'Online' : 'Offline'}</span>
-                <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('es-ES', {
-                  day: '2-digit',
-                  month: '2-digit',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  second: '2-digit',
-                  timeZone: 'Europe/Madrid'
-                })}</span>
+                <span className="text-gray-600">
+                  Normal bikes: {selectedStation.num_bikes_available_types.mechanical ?? 0}
+                </span>
+                <span className="text-gray-600">
+                  E-bikes: {selectedStation.num_bikes_available_types.ebike ?? 0}
+                </span>
+                <span className="text-gray-600">
+                  Status: {selectedStation.status ?? 'Offline'}
+                </span>
+                <span className="text-gray-600">
+                  Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('es-ES', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    timeZone: 'Europe/Madrid'
+                  })}
+                </span>
               </div>
             </div>
           )}
@@ -280,7 +297,7 @@ const AutocompleteSearch = ({ onSelect, bikeStations }: { onSelect: (station: St
         <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
           {suggestions.map((station) => (
             <li
-              key={station.id}
+              key={station.station_id}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleSelect(station)}
             >

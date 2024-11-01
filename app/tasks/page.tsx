@@ -63,7 +63,7 @@ export default function TasksPage() {
     setIsLoading(true)
     setError(null)
     try {
-      const response = await fetch('/api/bicing')
+      const response = await fetch('/api/bikesystem')
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
@@ -78,7 +78,7 @@ export default function TasksPage() {
         name: station.name.replace(/\s*[\(\+\-\)]+\s*$/, ''),
         extra: {
           ...station.extra,
-          online: station.extra.status === "OPEN",
+          online: station.status === "IN_SERVICE",
           routeColor: undefined
         }
       }))
@@ -91,8 +91,8 @@ export default function TasksPage() {
       setDisabledBikesStations(disabled)
       
       // Filtrar estaciones según su estado
-      const empty = formattedStations.filter(station => station.free_bikes === 0)
-      const full = formattedStations.filter(station => station.empty_slots === 0)
+      const empty = formattedStations.filter(station => station.num_bikes_available === 0)
+      const full = formattedStations.filter(station => station.num_docks_available === 0)
 
       setEmptyStations(empty)
       setFullStations(full)
@@ -141,8 +141,8 @@ export default function TasksPage() {
 
     let totalBikesNeeded = 0
     const stationsNeedingBikes = emptyStations.map(station => {
-      const desiredBikes = Math.ceil((supplyFillPercentage / 100) * (station.free_bikes + station.empty_slots))
-      const bikesNeeded = desiredBikes - station.free_bikes
+      const desiredBikes = Math.ceil((supplyFillPercentage / 100) * (station.num_bikes_available + station.num_docks_available))
+      const bikesNeeded = desiredBikes - station.num_bikes_available
       return { ...station, bikesNeeded: bikesNeeded > 0 ? bikesNeeded : 0 }
     }).filter(station => station.bikesNeeded > 0)
 
@@ -181,8 +181,8 @@ export default function TasksPage() {
         let nearestDistance = Infinity
         for (let i = 0; i < remainingStations.length; i++) {
           const distance = calculateDistance(
-            route[route.length - 1].latitude, route[route.length - 1].longitude,
-            remainingStations[i].latitude, remainingStations[i].longitude
+            route[route.length - 1].lat, route[route.length - 1].lon,
+            remainingStations[i].lat, remainingStations[i].lon
           )
           if (distance < nearestDistance) {
             nearestDistance = distance
@@ -206,15 +206,12 @@ export default function TasksPage() {
     // Remover la creación de iconos de aquí
     const updatedStations = emptyStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route.some(routeStation => routeStation.id === station.id)
+        route.some(routeStation => routeStation.station_id === station.station_id)
       )
       const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : ''
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor
-        }
+        routeColor
       }
     })
 
@@ -232,15 +229,15 @@ export default function TasksPage() {
 
     // Calcular bicicletas disponibles para mover desde estaciones llenas
     const stationsWithExcessBikes = fullStations.map(station => {
-      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.free_bikes + station.empty_slots))
-      const excessBikes = station.free_bikes - targetBikes
+      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.num_bikes_available + station.num_docks_available))
+      const excessBikes = station.num_bikes_available - targetBikes
       return { ...station, excessBikes: excessBikes > 0 ? excessBikes : 0 }
     }).filter(station => station.excessBikes > 0)
 
     // Calcular bicicletas necesarias en estaciones vacías
     const stationsNeedingBikes = reallocationEmptyStations.map(station => {
-      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.free_bikes + station.empty_slots))
-      const bikesNeeded = targetBikes - station.free_bikes
+      const targetBikes = Math.ceil((reallocationFillPercentage / 100) * (station.num_bikes_available + station.num_docks_available))
+      const bikesNeeded = targetBikes - station.num_bikes_available
       return { ...station, bikesNeeded: bikesNeeded > 0 ? bikesNeeded : 0 }
     }).filter(station => station.bikesNeeded > 0)
 
@@ -274,8 +271,8 @@ export default function TasksPage() {
         let nearestDistance = Infinity
         for (let i = 0; i < remainingEmptyStations.length; i++) {
           const distance = calculateDistance(
-            sourceStation.latitude, sourceStation.longitude,
-            remainingEmptyStations[i].latitude, remainingEmptyStations[i].longitude
+            sourceStation.lat, sourceStation.lon,
+            remainingEmptyStations[i].lat, remainingEmptyStations[i].lon
           )
           if (distance < nearestDistance) {
             nearestDistance = distance
@@ -316,36 +313,30 @@ export default function TasksPage() {
     // Actualizar colores y labels de las estaciones según las rutas
     const updatedFullStations = fullStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route.source.id === station.id
+        route.source.station_id === station.station_id
       )
       const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#0000FF'
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor
-        }
+        routeColor
       }
     })
 
     const updatedEmptyStations = reallocationEmptyStations.map(station => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route.targets.some(target => target.station.id === station.id)
+        route.targets.some(target => target.station.station_id === station.station_id)
       )
       const routeColor = routeIndex !== -1 ? assignedRouteColors[routeIndex] : '#FF0000'
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor
-        }
+        routeColor
       }
     })
 
     setFullStations(updatedFullStations)
     setReallocationEmptyStations(updatedEmptyStations)
     setReallocationRoutes(assignedRoutes.map(route => {
-      const sourceStation = stationsWithExcessBikes.find(s => s.id === route.source.id) as StationWithExcess
+      const sourceStation = stationsWithExcessBikes.find(s => s.station_id === route.source.station_id) as StationWithExcess
       return [
         { ...route.source, deliveredBikes: -(sourceStation.excessBikes) },
         ...route.targets.map(target => ({ ...target.station, deliveredBikes: target.bikesToDeliver }))
@@ -360,21 +351,18 @@ export default function TasksPage() {
 
     const updatedStations = emptyStations.map(station => {
       const routeIndex = supplyRoutes.findIndex(route => 
-        route.some(routeStation => routeStation.id === station.id)
+        route.some(routeStation => routeStation.station_id === station.station_id)
       )
       const routeColor = routeIndex !== -1 ? supplyRouteColors[routeIndex] : ''
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor
-        }
+        routeColor
       }
     })
 
     // Verificamos si realmente hay cambios antes de actualizar el estado
     const hasChanges = updatedStations.some((station, index) => {
-      return station.extra.routeColor !== emptyStations[index].extra.routeColor
+      return station.routeColor !== emptyStations[index].routeColor
     })
 
     if (hasChanges) {
@@ -387,39 +375,32 @@ export default function TasksPage() {
 
     const updatedFullStations = fullStations.map(station => {
       const routeIndex = reallocationRoutes.findIndex(route => 
-        route[0].id === station.id
+        route[0].station_id === station.station_id
       )
       const routeColor = routeIndex !== -1 ? reallocationRouteColors[routeIndex] : '#0000FF'
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor,
-          icon: routeColor
-        }
+        routeColor
       }
     })
 
     const updatedEmptyStations = reallocationEmptyStations.map(station => {
       const routeIndex = reallocationRoutes.findIndex(route => 
-        route.slice(1).some(routeStation => routeStation.id === station.id)
+        route.slice(1).some(routeStation => routeStation.station_id === station.station_id)
       )
       const routeColor = routeIndex !== -1 ? reallocationRouteColors[routeIndex] : '#FF0000'
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor
-        }
+        routeColor
       }
     })
 
     // Verificamos si hay cambios antes de actualizar el estado
     const hasChangesFull = updatedFullStations.some((station, index) => {
-      return station.extra.routeColor !== fullStations[index].extra.routeColor
+      return station.routeColor !== fullStations[index].routeColor
     })
     const hasChangesEmpty = updatedEmptyStations.some((station, index) => {
-      return station.extra.routeColor !== reallocationEmptyStations[index].extra.routeColor
+      return station.routeColor !== reallocationEmptyStations[index].routeColor
     })
 
     if (hasChangesFull) {
@@ -444,11 +425,11 @@ export default function TasksPage() {
     }
 
     const stationsWithDisabledBikes = disabledBikesStations.filter(
-      station => station.num_bikes_disabled > 0
+      (station: Station) => station.num_bikes_disabled > 0
     )
 
     // Asignar colores a las rutas
-    const routesNeeded = Math.ceil(stationsWithDisabledBikes.length / 5) // 5 estaciones por ruta
+    const routesNeeded = Math.ceil(stationsWithDisabledBikes.length / 5)
     const assignedRouteColors = colorPalette.slice(0, routesNeeded)
 
     // Crear rutas agrupando estaciones
@@ -462,16 +443,13 @@ export default function TasksPage() {
     setDisabledBikesRouteColors(assignedRouteColors)
 
     // Actualizar colores de las estaciones
-    const updatedStations = disabledBikesStations.map(station => {
+    const updatedStations = disabledBikesStations.map((station: Station) => {
       const routeIndex = assignedRoutes.findIndex(route => 
-        route.some(routeStation => routeStation.id === station.id)
+        route.some(routeStation => routeStation.station_id === station.station_id)
       )
       return {
         ...station,
-        extra: {
-          ...station.extra,
-          routeColor: routeIndex !== -1 ? assignedRouteColors[routeIndex] : undefined
-        }
+        routeColor: routeIndex !== -1 ? assignedRouteColors[routeIndex] : undefined
       }
     })
 

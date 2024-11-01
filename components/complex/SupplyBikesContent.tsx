@@ -70,15 +70,15 @@ export function SupplyBikesContent({
           <h3 className="font-semibold text-lg text-gray-800 mb-2">{selectedStation.name}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <span className="text-red-600">
-              Available bikes: {selectedStation.free_bikes}
+              Available bikes: {selectedStation.num_bikes_available}
             </span>
             <span className="text-gray-600">
-              Empty slots: {selectedStation.empty_slots}
+              Empty slots: {selectedStation.num_docks_available}
             </span>
-            <span className="text-gray-600">Normal bikes: {selectedStation.extra.normal_bikes}</span>
-            <span className="text-gray-600">E-bikes: {selectedStation.extra.ebikes}</span>
-            <span className="text-gray-600">Status: {selectedStation.extra.online ? 'Online' : 'Offline'}</span>
-            <span className="text-gray-600">Last update: {new Date(selectedStation.timestamp).toLocaleString('en-US', {
+            <span className="text-gray-600">Normal bikes: {selectedStation.num_bikes_available_types.mechanical}</span>
+            <span className="text-gray-600">E-bikes: {selectedStation.num_bikes_available_types.ebike}</span>
+            <span className="text-gray-600">Status: {selectedStation.status}</span>
+            <span className="text-gray-600">Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('en-US', {
               day: '2-digit',
               month: '2-digit',
               year: 'numeric',
@@ -150,7 +150,7 @@ export function SupplyBikesContent({
                     <li key={idx}>
                       {station.name} 
                       <span className="font-semibold">
-                        + {Math.ceil((fillPercentage / 100) * (station.free_bikes + station.empty_slots) - station.free_bikes)} bikes
+                        + {Math.ceil((fillPercentage / 100) * (station.num_bikes_available + station.num_docks_available) - station.num_bikes_available)} bikes
                       </span>
                     </li>
                   ))}

@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
+import stationsInfo from '../../public/data/stations_info.json';
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,10 +21,17 @@ export default async function handler(
       statusMap.set(status.station_id, status);
     });
 
+    // Crear un mapa de información por station_id desde stations_info.json
+    const infoMap = new Map<string, any>();
+    stationsInfo.forEach((station: any) => {
+      infoMap.set(station.station_id, { suburb: station.suburb, district: station.district });
+    });
+
     // Combinar la información de las estaciones
     const combinedStations = stationInfo.map((info: any) => ({
       ...info,
       ...statusMap.get(info.station_id),
+      ...infoMap.get(info.station_id),
     }));
 
     // Deshabilitar el caché para esta respuesta

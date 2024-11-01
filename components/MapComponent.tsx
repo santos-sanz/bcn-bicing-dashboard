@@ -9,18 +9,18 @@ import { Button } from "@/components/ui/button"
 import { Station } from '@/types/station'
 
 // Function to create custom icons based on routeColor
-const createCustomIcon = (routeColor: string, online: boolean, freeBikes: number, emptySlots: number) => {
-  let color = '#ffbf00' // Default color (yellow)
+const createCustomIcon = (routeColor: string | undefined, online: boolean, freeBikes: number, emptySlots: number) => {
+  let color = '#ffbf00' // Color predeterminado (amarillo)
 
-  if (routeColor) {
-    color = routeColor // Use route color if available
+  if (routeColor && routeColor.length > 0) {
+    color = routeColor // Usar el color de ruta si está disponible
   } else if (online) {
     if (freeBikes === 0) {
-      color = '#ff0000' // Red for empty stations
+      color = '#ff0000' // Rojo para estaciones vacías
     } else if (emptySlots === 0) {
-      color = '#FFA500' // Orange for full stations
+      color = '#FFA500' // Naranja para estaciones llenas
     } else {
-      color = '#00FF00' // Green for available stations
+      color = '#00FF00' // Verde para estaciones disponibles
     }
   }
 
@@ -44,7 +44,7 @@ function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null 
   const map = useMap();
   useEffect(() => {
     if (selectedStation) {
-      map.setView([selectedStation.latitude, selectedStation.longitude], 15);
+      map.setView([selectedStation.lat, selectedStation.lon], 15);
     } else {
       map.setView([41.3874, 2.1686], 12);
     }
@@ -76,7 +76,7 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
   useEffect(() => {
     if (filteredStations.length > 0) {
       const latestTimestamp = filteredStations.reduce((latest, station) => {
-        const stationTime = new Date(station.timestamp).getTime()
+        const stationTime = new Date(station.last_reported * 1000).getTime()
         return stationTime > latest ? stationTime : latest
       }, 0)
 
@@ -115,9 +115,14 @@ export default function MapComponent({ filteredStations, selectedStation, setSel
           {filteredStations && filteredStations.length > 0 ? (
             filteredStations.map((station) => (
               <Marker
-                key={station.id}
-                position={[station.latitude, station.longitude]}
-                icon={createCustomIcon(station.extra.routeColor || '', station.extra.online, station.free_bikes, station.empty_slots)}
+                key={station.station_id}
+                position={[station.lat, station.lon]}
+                icon={createCustomIcon(
+                  station.routeColor,
+                  station.status === 'IN_SERVICE',
+                  station.num_bikes_available,
+                  station.num_docks_available
+                )}
                 eventHandlers={{
                   click: () => setSelectedStation(station),
                 }}
