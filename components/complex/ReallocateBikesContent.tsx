@@ -79,7 +79,7 @@ export function ReallocateBikesContent({
               Available bikes: {selectedStation.num_bikes_available}
             </span>
             <span className="text-gray-600">
-              Empty slots: {selectedStation.num_docks_available}
+              Empty docks: {selectedStation.num_docks_available}
             </span>
             <span className="text-gray-600">Status: {selectedStation.status}</span>
             <span className="text-gray-600">Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('es-ES', {
@@ -157,13 +157,19 @@ export function ReallocateBikesContent({
                   </p>
                   <ul className="list-disc list-inside ml-4 text-gray-700">
                     <li>
-                    <span className="font-semibold">{source.name} - {Math.abs(totalPickedUp)} bikes</span>
+                      {source.name} <span className="font-semibold">- {Math.min(Math.abs(totalPickedUp || 0), truckCapacity)} bikes</span>
                     </li>
-                    {deliveries.map((station, idx) => (
-                      <li key={idx}>
-                        {station.name} <span className="font-semibold">+ {station.deliveredBikes} bikes</span>
-                      </li>
-                    ))}
+                    {deliveries.map((station, idx) => {
+                      const bikesLeft = Math.max(0, truckCapacity - deliveries.slice(0, idx).reduce((acc, s) => acc + (s.deliveredBikes || 0), 0));
+                      const bikesToDeliver = Math.min(station.deliveredBikes || 0, bikesLeft);
+                      return (
+                        <li key={idx}>
+                          {station.name} <span className="font-semibold">
+                            + {bikesToDeliver} bikes
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )

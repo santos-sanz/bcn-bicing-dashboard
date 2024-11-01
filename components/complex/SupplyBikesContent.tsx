@@ -73,7 +73,7 @@ export function SupplyBikesContent({
               Available bikes: {selectedStation.num_bikes_available}
             </span>
             <span className="text-gray-600">
-              Empty slots: {selectedStation.num_docks_available}
+              Empty docks: {selectedStation.num_docks_available}
             </span>
             <span className="text-gray-600">Status: {selectedStation.status}</span>
             <span className="text-gray-600">Last update: {new Date(selectedStation.last_reported * 1000).toLocaleString('en-US', {
@@ -138,23 +138,35 @@ export function SupplyBikesContent({
         {routes.length > 0 && (
           <div className="mt-4 p-4 bg-green-50 rounded-lg shadow">
             <h3 className="text-lg font-semibold text-green-700">Planning Results</h3>
-            {routes.map((route, index) => (
-              <div key={index} className="mt-2">
-                <p className="font-medium text-green-800">
-                  Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:
-                </p>
-                <ul className="list-disc list-inside ml-4 text-gray-700">
-                  {route.map((station, idx) => (
-                    <li key={idx}>
-                      {station.name} 
-                      <span className="font-semibold">
-                        + {Math.ceil((fillPercentage / 100) * (station.num_bikes_available + station.num_docks_available) - station.num_bikes_available)} bikes
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {routes.map((route, index) => {
+              let bikesDelivered = 0;
+              return (
+                <div key={index} className="mt-2">
+                  <p className="font-medium text-green-800">
+                    Route {index + 1} <span style={{ color: routeColors[index] }}>●</span>:
+                  </p>
+                  <ul className="list-disc list-inside ml-4 text-gray-700">
+                    {route.map((station, idx) => {
+                      const bikesNeeded = Math.ceil((fillPercentage / 100) * (station.num_bikes_available + station.num_docks_available) - station.num_bikes_available);
+                      const bikesForThisStation = Math.min(
+                        bikesNeeded,
+                        truckCapacity - bikesDelivered
+                      );
+                      bikesDelivered += bikesForThisStation;
+                      return (
+                        <li key={idx}>
+                          {station.name}
+                          <span> </span>  
+                          <span className="font-semibold">
+                             + {bikesForThisStation} bikes
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
