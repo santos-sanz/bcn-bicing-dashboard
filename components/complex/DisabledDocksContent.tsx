@@ -81,6 +81,10 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
         <div>Disabled Docks: <span className="text-gray-600">{totalDisabledDocks}</span></div>
       </div>
 
+      <div className="text-sm text-gray-500 text-center"> {/* Centrado*/}
+        <div>Legend: <span className="text-yellow-500">1 dock disabled</span>, <span className="text-orange-500">2-4 docks disabled</span>, <span className="text-red-500">5 or more docks disabled</span></div>
+      </div>
+
       <Card className="bg-white shadow-lg">
         <div className="h-[500px] relative">
           <MapComponent

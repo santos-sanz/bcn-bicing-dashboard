@@ -78,6 +78,9 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
         <div>Stations with Disabled Bikes: <span className="text-gray-600">{numberOfDisabledStations}</span></div>
         <div>Disabled Bikes: <span className="text-gray-600">{totalDisabledBikes}</span></div>
       </div>
+      <div className="text-sm text-gray-500 text-center"> {/* Centrado*/}
+        <div>Legend: <span className="text-yellow-500">1 bike disabled</span>, <span className="text-orange-500">2-4 bikes disabled</span>, <span className="text-red-500">5 or more bikes disabled</span></div>
+      </div>
 
       <Card className="bg-white shadow-lg">
         <div className="h-[500px] relative">
@@ -90,37 +93,6 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
           />
         </div>
       </Card>
-
-      
-      <div className="space-y-4 md:space-y-0"> 
-        <div className="flex flex-col md:flex-row md:items-end md:space-x-4 md:justify-end">
-          <div className="w-full md:w-2/5 mb-4 md:mb-0">
-            <label htmlFor="truckCapacity" className="block text-sm font-medium text-gray-700 mb-1">
-              Truck Capacity
-            </label>
-            <input
-              type="number"
-              id="truckCapacity"
-              name="truckCapacity"
-              value={truckCapacity}
-              onChange={(e) => setTruckCapacity(Number(e.target.value))}
-              className="w-full border border-gray-300 rounded-md shadow-sm p-2"
-              placeholder="Enter truck capacity"
-              min="1"
-            />
-          </div>
-
-          <div className="w-full md:w-1/5">
-            <Button 
-              onClick={handleCalculateRoutes} 
-              disabled={isLoading}
-              className="w-full"
-            >
-              Calculate Routes
-            </Button>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
