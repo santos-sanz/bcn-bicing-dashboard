@@ -40,6 +40,20 @@ export function SupplyBikesContent({
   routeColors,
   calculateRoutes
 }: SupplyBikesContentProps) {
+  const getStationColor = (station: Station): string => {
+    if (station.routeColor) {
+      return station.routeColor
+    }
+    
+    if (station.status === 'IN_SERVICE') {
+      if (station.num_bikes_available === 0) {
+        return '#ff0000' // Rojo para estaciones vacías
+      }
+    }
+    
+    return '#000000' // Negro para estaciones fuera de servicio
+  }
+
   return (
     <CardContent>
       {/* Contador de estaciones vacías */}
@@ -60,6 +74,7 @@ export function SupplyBikesContent({
             setSelectedStation={setSelectedStation}
             setMap={() => {}}
             onRefresh={handleRefresh}
+            getStationColor={getStationColor}
           />
         )}
       </div>

@@ -29,6 +29,22 @@ interface DisabledDocksContentProps {
   calculateRoutes: () => void
 }
 
+const getStationColor = (station: Station): string => {
+  const disabledDocks = station.num_docks_disabled || 0;
+  
+  if (station.status === 'IN_SERVICE') {
+    if (disabledDocks >= 5) {
+      return '#ff0000' // Rojo para 5 o más docks deshabilitados
+    } else if (disabledDocks >= 2) {
+      return '#FFA500' // Naranja para 2-4 docks deshabilitados
+    } else if (disabledDocks === 1) {
+      return '#FFFF00' // Amarillo para 1 dock deshabilitado
+    }
+  }
+  
+  return '#000000' // Negro para estaciones fuera de servicio
+}
+
 export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
   disabledStations,
   isLoading,
@@ -94,6 +110,7 @@ export const DisabledDocksContent: React.FC<DisabledDocksContentProps> = ({
             setSelectedStation={setSelectedStation}
             setMap={setMap}
             onRefresh={handleMapRefresh}
+            getStationColor={getStationColor}
           />
         </div>
       </Card>

@@ -19,6 +19,25 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   loading: () => <p>Loading map...</p>
 })
 
+// Añadir esta función antes del componente principal
+const getStationColor = (station: Station): string => {
+  if (station.routeColor && station.routeColor.length > 0) {
+    return station.routeColor
+  }
+  
+  if (station.status === 'IN_SERVICE') {
+    if (station.num_bikes_available === 0) {
+      return '#ff0000' // Rojo para estaciones vacías
+    } else if (station.num_docks_available === 0) {
+      return '#FFA500' // Naranja para estaciones llenas
+    } else {
+      return '#00FF00' // Verde para estaciones disponibles
+    }
+  }
+  
+  return '#000000' // Negro para estaciones fuera de servicio
+}
+
 export default function Component() {
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('all')
@@ -243,6 +262,7 @@ export default function Component() {
               setSelectedStation={setSelectedStation}
               setMap={setMap}
               onRefresh={refreshData}
+              getStationColor={getStationColor}
             />
           </div>
           {selectedStation && (

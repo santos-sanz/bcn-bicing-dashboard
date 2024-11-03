@@ -66,6 +66,22 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
     }
   }, [])
 
+  const getStationColor = (station: Station): string => {
+    const disabledBikes = station.num_bikes_disabled || 0;
+    
+    if (station.status === 'IN_SERVICE') {
+      if (disabledBikes >= 5) {
+        return '#ff0000' // Rojo para 5 o más bicicletas deshabilitadas
+      } else if (disabledBikes >= 2) {
+        return '#FFA500' // Naranja para 2-4 bicicletas deshabilitadas
+      } else if (disabledBikes === 1) {
+        return '#FFFF00' // Amarillo para 1 bicicleta deshabilitada
+      }
+    }
+    
+    return '#000000' // Negro para estaciones fuera de servicio
+  }
+
   return (
     <div className="space-y-6 p-6">
       {error && (
@@ -90,6 +106,7 @@ export const DisabledBikesContent: React.FC<DisabledBikesContentProps> = ({
             setSelectedStation={setSelectedStation}
             setMap={setMap}
             onRefresh={handleMapRefresh}
+            getStationColor={getStationColor}
           />
         </div>
       </Card>

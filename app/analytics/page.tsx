@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
@@ -15,12 +15,45 @@ import { LockKeyhole as Lock } from 'lucide-react'
 import { AutocompleteSearch } from '@/components/AutocompleteSearch'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import dynamic from 'next/dynamic'
+import { DefaultMapControls } from '@/components/complex/DefaultMapControls'
+import { HeatMapControls } from '@/components/complex/HeatMapControls'
+import { format } from 'date-fns'
+import { Input } from "@/components/ui/input"
+
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
   loading: () => <p>Loading map...</p>
 })
 
+const getStationColor = (station: Station): string => {
+  if (station.routeColor && station.routeColor.length > 0) {
+    return station.routeColor
+  }
+  
+  if (station.status === 'IN_SERVICE') {
+    if (station.num_bikes_available === 0) {
+      return '#ff0000' // Rojo para estaciones vacías
+    } else if (station.num_docks_available === 0) {
+      return '#FFA500' // Naranja para estaciones llenas
+    } else {
+      return '#00FF00' // Verde para estaciones disponibles
+    }
+  }
+  
+  return '#000000' // Negro para estaciones fuera de servicio
+}
+
 export default function AnalyticsPage() {
+  const formatCurrentDate = () => {
+    const now = new Date()
+    return now.getFullYear() +
+      '-' + String(now.getMonth() + 1).padStart(2, '0') +
+      '-' + String(now.getDate()).padStart(2, '0') +
+      ' ' + String(now.getHours()).padStart(2, '0') +
+      ':' + String(now.getMinutes()).padStart(2, '0') +
+      ':' + String(now.getSeconds()).padStart(2, '0')
+  }
+
   const [usageData, setUsageData] = useState([])
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('city')
@@ -35,64 +68,16 @@ export default function AnalyticsPage() {
     disabledStations: 0
   })
   const [bikeStations, setBikeStations] = useState<Station[]>([])
+  const [isHeatMap, setIsHeatMap] = useState(false)
+  const [heatMapMode, setHeatMapMode] = useState('all')
   const router = useRouter()
+  const [getMarkerColor, setGetMarkerColor] = useState<(station: Station) => string>(() => () => '#3b82f6')
+  const [fromDate, setFromDate] = useState<string>('')
+  const [toDate, setToDate] = useState<string>('')
+  const [tempFromDate, setTempFromDate] = useState<string>('2023-01-01 00:00:00')
+  const [tempToDate, setTempToDate] = useState<string>(formatCurrentDate())
 
-  useEffect(() => {
-    const checkAccess = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!hasAccess(user?.email)) {
-        router.push('/')
-      }
-    }
-
-    checkAccess()
-    fetch('/mock_data/mock_flow_real.json')
-      .then(response => response.json())
-      .then(data => setUsageData(data))
-  }, [router])
-
-  useEffect(() => {
-    const fetchBicingData = async () => {
-      try {
-        const response = await axios.get('/api/bikesystem')
-        const stations = response.data
-        setBikeStations(stations)
-        setFilteredStations(stations)
-        updateMetrics(stations)
-      } catch (error) {
-        console.error('Error fetching Bicing data:', error)
-      }
-    }
-
-    fetchBicingData()
-  }, [])
-
-  useEffect(() => {
-    if (map && typeof map.setView === 'function') {
-      map.setView([41.3874, 2.1686], 13)
-    }
-  }, [map])
-
-  useEffect(() => {
-    const filtered = bikeStations.filter(station => {
-      switch (filter) {
-        case 'EMPTY':
-          return station.num_bikes_available === 0 && station.status === 'IN_SERVICE';
-        case 'FULL':
-          return station.num_docks_available === 0 && station.status === 'IN_SERVICE';
-        case 'AVAILABLE':
-          return station.num_bikes_available > 0 && station.num_docks_available > 0 && station.status === 'IN_SERVICE';
-        case 'OTHER':
-          return station.status !== 'IN_SERVICE';
-        default:
-          return true;
-      }
-    })
-    setFilteredStations(filtered)
-    updateMetrics(filtered)
-  }, [filter, bikeStations])
-
-  const updateMetrics = (stations: Station[]) => {
+  const updateMetrics = useCallback((stations: Station[]) => {
     if (!stations || stations.length === 0) {
       setMetrics({
         stations: 0,
@@ -120,36 +105,124 @@ export default function AnalyticsPage() {
       disabledBikes,
       disabledStations: disabledStationsCount
     })
+  }, [])
+
+  const isValidTimestamp = (timestamp: string): boolean => {
+    const regex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/
+    if (!regex.test(timestamp)) return false
+    
+    const date = new Date(timestamp.replace(' ', 'T'))
+    return !isNaN(date.getTime())
   }
+
+  const handleFromDateChange = (value: string) => {
+    setTempFromDate(value)
+  }
+
+  const handleToDateChange = (value: string) => {
+    setTempToDate(value)
+  }
+
+  const handleApplyDates = () => {
+    if (
+      (!tempFromDate || isValidTimestamp(tempFromDate)) && 
+      (!tempToDate || isValidTimestamp(tempToDate))
+    ) {
+      setFromDate(tempFromDate)
+      setToDate(tempToDate)
+    }
+  }
+
+  const refreshData = useCallback(async () => {
+    try {
+      const params = new URLSearchParams()
+      
+      if (fromDate && isValidTimestamp(fromDate)) {
+        const fromTimestamp = new Date(fromDate.replace(' ', 'T')).toISOString()
+        params.append('from', fromTimestamp)
+      }
+      if (toDate && isValidTimestamp(toDate)) {
+        const toTimestamp = new Date(toDate.replace(' ', 'T')).toISOString()
+        params.append('to', toTimestamp)
+      }
+      
+      const timestamp = new Date().getTime()
+      params.append('t', timestamp.toString())
+      
+      const response = await axios.get(`/api/bikesystem?${params.toString()}`)
+      const stations = response.data
+      setBikeStations(stations)
+    } catch (error) {
+      console.error('Error fetching Bicing data:', error)
+    }
+  }, [fromDate, toDate])
+
+  useEffect(() => {
+    if (fromDate || toDate) {
+      refreshData();
+    }
+  }, [fromDate, toDate, refreshData]);
+
+  useEffect(() => {
+    const checkAccess = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!hasAccess(user?.email)) {
+        router.push('/')
+      }
+    }
+
+    checkAccess()
+    fetch('/mock_data/mock_flow_real.json')
+      .then(response => response.json())
+      .then(data => setUsageData(data))
+  }, [router])
+
+  useEffect(() => {
+    const fetchBicingData = async () => {
+      try {
+        const response = await axios.get('/api/bikesystem')
+        const stations = response.data
+        const stationsWithDefaultColor = stations.map((station: Station) => ({
+          ...station,
+          routeColor: '#3b82f6' // Color azul por defecto
+        }))
+        setBikeStations(stationsWithDefaultColor)
+        setFilteredStations(stationsWithDefaultColor)
+        updateMetrics(stationsWithDefaultColor)
+      } catch (error) {
+        console.error('Error fetching Bicing data:', error)
+      }
+    }
+
+    fetchBicingData()
+  }, [updateMetrics])
+
+  useEffect(() => {
+    if (map && typeof map.setView === 'function') {
+      map.setView([41.3874, 2.1686], 13)
+    }
+  }, [map])
+
+  useEffect(() => {
+    if (!bikeStations.length) return;
+    
+    setFilteredStations(bikeStations);
+    updateMetrics(bikeStations);
+  }, [bikeStations, updateMetrics])
 
   const handleStationSelect = (station: Station | null) => {
     setSelectedStation(station)
     if (station) {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
-      updateMetrics(filtered)
       if (station && 'lat' in station && 'lon' in station && map) {
         map.setView([station.lat, station.lon], 15)
       }
     } else {
       setFilteredStations(bikeStations)
-      updateMetrics(bikeStations)
       if (map) {
         map.setView([41.3874, 2.1686], 13)
       }
-    }
-  }
-
-  const refreshData = async () => {
-    try {
-      const timestamp = new Date().getTime();
-      const response = await axios.get(`/api/bikesystem?t=${timestamp}`)
-      const stations = response.data
-      setBikeStations(stations)
-      setFilteredStations(stations)
-      updateMetrics(stations)
-    } catch (error) {
-      console.error('Error fetching Bicing data:', error)
     }
   }
 
@@ -166,68 +239,55 @@ export default function AnalyticsPage() {
     return null;
   };
 
-  const getMarkerColor = (station: Station) => {
-    switch (filter) {
-      case 'city':
-        return '#3b82f6' // Un solo color para toda la ciudad
-      case 'district':
-        // Genera un color consistente basado en el distrito
-        return `hsl(${hashString(station.district || '') % 360}, 70%, 50%)`
-      case 'suburb':
-        // Genera un color consistente basado en el barrio
-        return `hsl(${hashString(station.suburb || '') % 360}, 70%, 50%)`
-      case 'postcode':
-        // Genera un color consistente basado en el código postal
-        return `hsl(${hashString(station.post_code || '') % 360}, 70%, 50%)`
-      default:
-        return '#3b82f6'
-    }
-  }
-
-  const hashString = (str: string): number => {
-    let hash = 0
-    for (let i = 0; i < str?.length || 0; i++) {
-      hash = ((hash << 5) - hash) + str.charCodeAt(i)
-      hash = hash & hash
-    }
-    return Math.abs(hash)
-  }
-
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Bicing Analytics</h1>
       
       <Card className="bg-white shadow-lg">
-        <CardHeader>
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <CardHeader className="flex flex-col gap-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             <CardTitle className="text-2xl text-gray-800">Stations Map</CardTitle>
-            <div className="w-[300px]">
-              <input
-                type="range"
-                min="0"
-                max="3" 
-                value={["city", "district", "suburb", "postcode"].indexOf(filter)}
-                onChange={(e) => {
-                  const values = ["city", "district", "suburb", "postcode"];
-                  setFilter(values[parseInt(e.target.value)]);
-                }}
-                className="w-full"
-                step="1"
-              />
-              <div className="flex justify-center gap-12 text-xs text-gray-600 mt-1">
-                <span>City</span>
-                <span>District</span>
-                <span>Suburb</span>
-                <span>Post_Code</span>
+            
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full lg:w-auto">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <span className="text-sm text-gray-500 whitespace-nowrap">From:</span>
+                  <Input
+                    type="text"
+                    placeholder="2023-01-01 00:00:00"
+                    value={tempFromDate}
+                    onChange={(e) => handleFromDateChange(e.target.value)}
+                    className={`w-full sm:w-[200px] ${!isValidTimestamp(tempFromDate) && tempFromDate !== "" ? "border-red-500" : ""}`}
+                  />
+                </div>
+
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <span className="text-sm text-gray-500 whitespace-nowrap">To:</span>
+                  <Input
+                    type="text"
+                    placeholder={formatCurrentDate()}
+                    value={tempToDate}
+                    onChange={(e) => handleToDateChange(e.target.value)}
+                    className={`w-full sm:w-[200px] ${!isValidTimestamp(tempToDate) && tempToDate !== "" ? "border-red-500" : ""}`}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
-              <AutocompleteSearch 
-                onSelect={handleStationSelect} 
-                bikeStations={bikeStations} 
-                setFilteredStations={setFilteredStations} 
-                updateMetrics={updateMetrics}
-              />
+
+              <button
+                onClick={handleApplyDates}
+                disabled={
+                  (tempFromDate !== "" && !isValidTimestamp(tempFromDate)) ||
+                  (tempToDate !== "" && !isValidTimestamp(tempToDate))
+                }
+                className={`px-4 py-2 rounded-md w-full sm:w-auto ${
+                  (tempFromDate !== "" && !isValidTimestamp(tempFromDate)) ||
+                  (tempToDate !== "" && !isValidTimestamp(tempToDate))
+                    ? "bg-gray-300 cursor-not-allowed"
+                    : "bg-blue-500 hover:bg-blue-600 text-white"
+                }`}
+              >
+                Apply
+              </button>
             </div>
           </div>
         </CardHeader>
@@ -239,9 +299,61 @@ export default function AnalyticsPage() {
               setSelectedStation={setSelectedStation}
               setMap={setMap}
               onRefresh={refreshData}
+              getStationColor={getStationColor}
+              showUpdateBar={false}
             />
           </div>
         </CardContent>
+        <CardHeader>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-8">
+              {/* Grupo 1: Botones Default/Heat Map */}
+              <div className="flex items-center shrink-0 mb-4 sm:mb-0">
+                <button 
+                  className={`px-3 py-1 rounded-l-md ${!isHeatMap ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                  onClick={() => setIsHeatMap(false)}
+                >
+                  Default
+                </button>
+                <button
+                  className={`px-3 py-1 rounded-r-md ${isHeatMap ? 'bg-blue-500 text-white' : 'bg-gray-200'}`} 
+                  onClick={() => setIsHeatMap(true)}
+                >
+                  Heat Map
+                </button>
+              </div>
+
+              {/* Grupo 2: Controles de Mapa */}
+              <div className="w-full sm:w-auto sm:mx-8 flex-shrink-0 mb-4 sm:mb-0">
+                {!isHeatMap ? (
+                  <DefaultMapControls 
+                    filter={filter}
+                    setFilter={setFilter}
+                    filteredStations={filteredStations}
+                    setFilteredStations={setFilteredStations}
+                  />
+                ) : (
+                  <HeatMapControls 
+                    heatMapMode={heatMapMode}
+                    setHeatMapMode={setHeatMapMode}
+                    filteredStations={filteredStations}
+                    setFilteredStations={setFilteredStations}
+                  />
+                )}
+              </div>
+
+              {/* Grupo 3: Búsqueda */}
+              <div className="w-full sm:w-[400px] flex justify-end">
+                <AutocompleteSearch 
+                  onSelect={handleStationSelect} 
+                  bikeStations={bikeStations} 
+                  setFilteredStations={setFilteredStations} 
+                  updateMetrics={updateMetrics}
+                />
+              </div>
+            </div>
+          </div>
+        </CardHeader>
       </Card>
       
       <Card className="bg-white shadow-lg">

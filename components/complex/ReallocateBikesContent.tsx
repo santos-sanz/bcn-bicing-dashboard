@@ -45,6 +45,22 @@ export function ReallocateBikesContent({
   routeColors,
   calculateReallocationRoutes
 }: ReallocateBikesContentProps) {
+  const getStationColor = (station: Station): string => {
+    if (station.routeColor) {
+      return station.routeColor
+    }
+    
+    if (station.status === 'IN_SERVICE') {
+      if (station.num_bikes_available === 0) {
+        return '#ff0000' // Rojo para estaciones vacías
+      } else if (station.num_docks_available === 0) {
+        return '#FFA500' // Naranja para estaciones llenas
+      }
+    }
+    
+    return '#000000' // Negro para estaciones fuera de servicio
+  }
+
   return (
     <CardContent>
       {/* Contador de estaciones */}
@@ -66,6 +82,7 @@ export function ReallocateBikesContent({
             setSelectedStation={setSelectedStation}
             setMap={() => {}}
             onRefresh={handleRefresh}
+            getStationColor={getStationColor}
           />
         )}
       </div>
