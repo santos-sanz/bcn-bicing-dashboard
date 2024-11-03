@@ -94,30 +94,32 @@ export function DefaultMapControls({
 
   return (
     <div className="flex justify-center">
-      <button 
-        className={`px-3 py-1 rounded-l-md ${activeFilter === 'city' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        onClick={() => updateMarkerColors('city')}
-      >
-        City
-      </button>
-      <button 
-        className={`px-3 py-1 ${activeFilter === 'district' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        onClick={() => updateMarkerColors('district')}
-      >
-        District
-      </button>
-      <button 
-        className={`px-3 py-1 ${activeFilter === 'suburb' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        onClick={() => updateMarkerColors('suburb')}
-      >
-        Suburb
-      </button>
-      <button 
-        className={`px-3 py-1 rounded-r-md ${activeFilter === 'postcode' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        onClick={() => updateMarkerColors('postcode')}
-      >
-        PostCode
-      </button>
+      <div className="flex overflow-hidden rounded-md">
+        <button 
+          className={`px-3 py-1 ${activeFilter === 'city' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => updateMarkerColors('city')}
+        >
+          City
+        </button>
+        <button 
+          className={`px-3 py-1 border-l border-white ${activeFilter === 'district' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => updateMarkerColors('district')}
+        >
+          District
+        </button>
+        <button 
+          className={`px-3 py-1 border-l border-white ${activeFilter === 'suburb' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => updateMarkerColors('suburb')}
+        >
+          Suburb
+        </button>
+        <button 
+          className={`px-3 py-1 border-l border-white ${activeFilter === 'postcode' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => updateMarkerColors('postcode')}
+        >
+          PostCode
+        </button>
+      </div>
     </div>
   )
 } 

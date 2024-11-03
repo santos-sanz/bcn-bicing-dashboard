@@ -19,6 +19,7 @@ import { DefaultMapControls } from '@/components/complex/DefaultMapControls'
 import { HeatMapControls } from '@/components/complex/HeatMapControls'
 import { format } from 'date-fns'
 import { Input } from "@/components/ui/input"
+import { DataTable } from "@/components/ui/DataTable"
 
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
@@ -43,6 +44,13 @@ const getStationColor = (station: Station): string => {
   return '#000000' // Negro para estaciones fuera de servicio
 }
 
+// Añade esta interfaz antes de la función AnalyticsPage
+interface Column<T> {
+  key: keyof T;
+  header: string;
+  render?: (value: any, item: T) => React.ReactNode;
+}
+
 export default function AnalyticsPage() {
   const formatCurrentDate = () => {
     const now = new Date()
@@ -57,6 +65,7 @@ export default function AnalyticsPage() {
   const [usageData, setUsageData] = useState([])
   const [selectedStation, setSelectedStation] = useState<Station | null>(null)
   const [filter, setFilter] = useState('city')
+  const [filterValue, setFilterValue] = useState<string>('')
   const [map, setMap] = useState<LeafletMap | null>(null)
   const [filteredStations, setFilteredStations] = useState<Station[]>([])
   const [metrics, setMetrics] = useState({
@@ -215,11 +224,15 @@ export default function AnalyticsPage() {
     if (station) {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
+      setFilter('station')
+      setFilterValue(station.name)
       if (station && 'lat' in station && 'lon' in station && map) {
         map.setView([station.lat, station.lon], 15)
       }
     } else {
       setFilteredStations(bikeStations)
+      setFilter('city')
+      setFilterValue('')
       if (map) {
         map.setView([41.3874, 2.1686], 13)
       }
@@ -237,6 +250,80 @@ export default function AnalyticsPage() {
       );
     }
     return null;
+  };
+
+  // Ejemplo de uso de la tabla
+  const columns: Column<Station>[] = [
+    {
+      key: 'name' as keyof Station,
+      header: 'Station',
+    },
+    {
+      key: 'num_bikes_available' as keyof Station,
+      header: 'Bikes Available',
+    },
+    {
+      key: 'num_docks_available' as keyof Station,
+      header: 'Docks Available',
+      render: (value: number, station: Station) => (
+        <span className={value === 0 ? 'text-red-500' : 'text-green-500'}>
+          {value}
+        </span>
+      ),
+    },
+    {
+      key: 'status' as keyof Station,
+      header: 'Status',
+    }
+  ]
+
+  // Añade esto justo antes de la definición de columns
+  const summaryColumns = [
+    {
+      key: 'location' as const,
+      header: 'Location',
+    },
+    {
+      key: 'total' as const,
+      header: 'Total Stations',
+    },
+    {
+      key: 'bikes' as const,
+      header: 'Available Bikes',
+    },
+    {
+      key: 'docks' as const,
+      header: 'Available Docks',
+    },
+    {
+      key: 'status' as const,
+      header: 'Active Stations',
+    }
+  ]
+
+  // Función auxiliar para obtener el nombre del filtro actual
+  const getFilterLocation = () => {
+    if (selectedStation) {
+      return selectedStation.name;
+    }
+    
+    // Si hay estaciones filtradas y son menos que el total, significa que hay un filtro activo
+    if (filteredStations.length > 0 && filteredStations.length < bikeStations.length) {
+      switch (filter) {
+        case 'district':
+          return `District: ${filterValue || 'Unknown'}`;
+        case 'neighborhood':
+          return `Neighborhood: ${filterValue || 'Unknown'}`;
+        case 'status':
+          return `Status: ${filterValue || 'Unknown'}`;
+        default:
+          // Si hay filtro pero no es ninguno de los anteriores
+          return `Filtered Stations (${filteredStations.length})`;
+      }
+    }
+
+    // Si no hay filtro activo o están todas las estaciones
+    return 'Barcelona (All Stations)';
   };
 
   return (
@@ -305,10 +392,11 @@ export default function AnalyticsPage() {
           </div>
         </CardContent>
         <CardHeader>
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-8">
+          <div className="flex flex-col gap-4">
+            {/* Reorganización de los controles en columna para móviles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
               {/* Grupo 1: Botones Default/Heat Map */}
-              <div className="flex items-center shrink-0 mb-4 sm:mb-0">
+              <div className="flex items-center justify-center sm:justify-end">
                 <button 
                   className={`px-3 py-1 rounded-l-md ${!isHeatMap ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                   onClick={() => setIsHeatMap(false)}
@@ -324,7 +412,7 @@ export default function AnalyticsPage() {
               </div>
 
               {/* Grupo 2: Controles de Mapa */}
-              <div className="w-full sm:w-auto sm:mx-8 flex-shrink-0 mb-4 sm:mb-0">
+              <div className="w-full">
                 {!isHeatMap ? (
                   <DefaultMapControls 
                     filter={filter}
@@ -343,7 +431,7 @@ export default function AnalyticsPage() {
               </div>
 
               {/* Grupo 3: Búsqueda */}
-              <div className="w-full sm:w-[400px] flex justify-end">
+              <div className="w-full">
                 <AutocompleteSearch 
                   onSelect={handleStationSelect} 
                   bikeStations={bikeStations} 
@@ -358,7 +446,7 @@ export default function AnalyticsPage() {
       
       <Card className="bg-white shadow-lg">
         <CardHeader>
-          <CardTitle className="text-2xl text-gray-800">Usage Flows - Last 24 hours</CardTitle>
+          <CardTitle className="text-2xl text-gray-800">Usage Flow</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-[600px]">
@@ -411,6 +499,32 @@ export default function AnalyticsPage() {
         </CardContent>
       </Card>
 
+      <Card className="bg-white shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl text-gray-800">Stations</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {/* Tabla de resumen - Actualizada para usar las estaciones filtradas */}
+          <DataTable 
+            data={[{
+              location: getFilterLocation(),
+              total: filteredStations.length,
+              bikes: filteredStations.reduce((sum, station) => sum + (station.num_bikes_available || 0), 0),
+              docks: filteredStations.reduce((sum, station) => sum + (station.num_docks_available || 0), 0),
+              status: `${filteredStations.filter(station => station.status === 'IN_SERVICE').length}/${filteredStations.length}`
+            }]} 
+            columns={summaryColumns}
+            className="mb-8"
+          />
+          
+          {/* Tabla original - Ya usa filteredStations */}
+          <DataTable 
+            data={filteredStations} 
+            columns={columns}
+            className="mt-4"
+          />
+        </CardContent>
+      </Card>
       
     </div>
   )

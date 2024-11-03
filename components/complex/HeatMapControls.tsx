@@ -50,16 +50,16 @@ export function HeatMapControls({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center items-center gap-4">
-      <div className="h-6 w-px bg-gray-300" />
+        <div className="h-6 w-px bg-gray-300" />
         <div className="flex">
           <button 
-            className={`px-3 py-1 rounded-l-md ${activeMode === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 rounded-l-md border-r border-white ${activeMode === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => updateHeatMapColors('all')}
           >
             All
           </button>
           <button 
-            className={`px-3 py-1 ${activeMode === 'in' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 border-r border-white ${activeMode === 'in' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => updateHeatMapColors('in')}
           >
             In
@@ -76,7 +76,7 @@ export function HeatMapControls({
 
         <div className="flex">
           <button 
-            className={`px-3 py-1 rounded-l-md ${activeValueMode === 'absolute' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 rounded-l-md border-r border-white ${activeValueMode === 'absolute' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => updateHeatMapColors(activeMode, 'absolute')}
           >
             Absolute
