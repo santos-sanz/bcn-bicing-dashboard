@@ -259,15 +259,24 @@ export default function AnalyticsPage() {
       header: 'Station',
     },
     {
+      key: 'capacity' as keyof Station,
+      header: 'Capacity',
+    },
+    {
       key: 'num_bikes_available' as keyof Station,
-      header: 'Bikes Available',
+      header: 'Avg. Bikes Available',
+      render: (value: number) => (
+        <span>
+          {value || 0}
+        </span>
+      ),
     },
     {
       key: 'num_docks_available' as keyof Station,
-      header: 'Docks Available',
-      render: (value: number, station: Station) => (
+      header: 'Avg. Docks Available',
+      render: (value: number) => (
         <span className={value === 0 ? 'text-red-500' : 'text-green-500'}>
-          {value}
+          {value || 0}
         </span>
       ),
     },
@@ -288,12 +297,16 @@ export default function AnalyticsPage() {
       header: 'Total Stations',
     },
     {
+      key: 'capacity' as const,
+      header: 'Avg. Capacity',
+    },
+    {
       key: 'bikes' as const,
-      header: 'Available Bikes',
+      header: 'Avg. Bikes Available',
     },
     {
       key: 'docks' as const,
-      header: 'Available Docks',
+      header: 'Avg. Docks Available',
     },
     {
       key: 'status' as const,
@@ -396,7 +409,7 @@ export default function AnalyticsPage() {
             {/* Reorganización de los controles en columna para móviles */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
               {/* Grupo 1: Botones Default/Heat Map */}
-              <div className="flex items-center justify-center sm:justify-end">
+              <div className="flex items-center justify-center sm:justify-start">
                 <button 
                   className={`px-3 py-1 rounded-l-md ${!isHeatMap ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
                   onClick={() => setIsHeatMap(false)}
@@ -431,7 +444,7 @@ export default function AnalyticsPage() {
               </div>
 
               {/* Grupo 3: Búsqueda */}
-              <div className="w-full">
+              <div className="flex justify-center sm:justify-end w-full">
                 <AutocompleteSearch 
                   onSelect={handleStationSelect} 
                   bikeStations={bikeStations} 
@@ -442,6 +455,34 @@ export default function AnalyticsPage() {
             </div>
           </div>
         </CardHeader>
+      </Card>
+
+      <Card className="bg-white shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl text-gray-800">Stations</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {/* Tabla de resumen - Actualizada para usar las estaciones filtradas */}
+          <DataTable 
+            data={[{
+              location: getFilterLocation(),
+              total: filteredStations.length,
+              capacity: Math.round(filteredStations.reduce((sum, station) => sum + (station.capacity || 0), 0) / filteredStations.length),
+              bikes: Math.round(filteredStations.reduce((sum, station) => sum + (station.num_bikes_available || 0), 0) / filteredStations.length),
+              docks: Math.round(filteredStations.reduce((sum, station) => sum + (station.num_docks_available || 0), 0) / filteredStations.length),
+              status: `${filteredStations.filter(station => station.status === 'IN_SERVICE').length}/${filteredStations.length}`
+            }]} 
+            columns={summaryColumns}
+            className="mb-8"
+          />
+          
+          {/* Tabla original - Ya usa filteredStations */}
+          <DataTable 
+            data={filteredStations} 
+            columns={columns}
+            className="mt-4"
+          />
+        </CardContent>
       </Card>
       
       <Card className="bg-white shadow-lg">
@@ -496,33 +537,6 @@ export default function AnalyticsPage() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-white shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl text-gray-800">Stations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {/* Tabla de resumen - Actualizada para usar las estaciones filtradas */}
-          <DataTable 
-            data={[{
-              location: getFilterLocation(),
-              total: filteredStations.length,
-              bikes: filteredStations.reduce((sum, station) => sum + (station.num_bikes_available || 0), 0),
-              docks: filteredStations.reduce((sum, station) => sum + (station.num_docks_available || 0), 0),
-              status: `${filteredStations.filter(station => station.status === 'IN_SERVICE').length}/${filteredStations.length}`
-            }]} 
-            columns={summaryColumns}
-            className="mb-8"
-          />
-          
-          {/* Tabla original - Ya usa filteredStations */}
-          <DataTable 
-            data={filteredStations} 
-            columns={columns}
-            className="mt-4"
-          />
         </CardContent>
       </Card>
       

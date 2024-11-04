@@ -49,7 +49,7 @@ export function HeatMapControls({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center sm:justify-start items-center gap-4">
         <div className="h-6 w-px bg-gray-300" />
         <div className="flex">
           <button 

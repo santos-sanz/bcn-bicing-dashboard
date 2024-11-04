@@ -93,7 +93,7 @@ export function DefaultMapControls({
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center sm:justify-start">
       <div className="flex overflow-hidden rounded-md">
         <button 
           className={`px-3 py-1 ${activeFilter === 'city' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
