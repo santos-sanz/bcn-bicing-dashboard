@@ -46,16 +46,18 @@ or
 yarn dev
 ```
 
-Open your browser and visit http://localhost:3000
+Open your browser and visit [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
 - `app/`: Contains the main application code
 - `components/`: Reusable React components
-- `public/`: Static assets and mock data
+- `public/`: Static assets and data
 - `styles/`: Global styles and Tailwind CSS configuration
 
 ## Data Source
-The project currently uses mock data located in the public/mock_data/ directory. In a production environment, this would be replaced with real-time API calls to the official Bicing data source.
+The project currently uses real-time data obtained through official Bicing API calls located in the `public/data/` directory. In a production environment, this ensures always up-to-date information about the bike-sharing system.
 
 ## License
 This project is open source and available under the MIT License.
+# End of Selection
+```
