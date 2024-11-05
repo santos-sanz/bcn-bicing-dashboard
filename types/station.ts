@@ -32,6 +32,8 @@ export interface Station {
   is_returning?: number;
   traffic?: any;
   suburb?: string;
+  suburb_id?: string;
   district?: string;
+  district_id?: string;
   routeColor?: string;
 }

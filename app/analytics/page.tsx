@@ -52,7 +52,7 @@ interface Column<T> {
 }
 
 export default function AnalyticsPage() {
-  const formatCurrentDate = () => {
+  const getCurrentFormattedDate = () => {
     const now = new Date()
     return now.getFullYear() +
       '-' + String(now.getMonth() + 1).padStart(2, '0') +
@@ -84,7 +84,7 @@ export default function AnalyticsPage() {
   const [fromDate, setFromDate] = useState<string>('')
   const [toDate, setToDate] = useState<string>('')
   const [tempFromDate, setTempFromDate] = useState<string>('2023-01-01 00:00:00')
-  const [tempToDate, setTempToDate] = useState<string>(formatCurrentDate())
+  const [tempToDate, setTempToDate] = useState<string>(getCurrentFormattedDate())
 
   const updateMetrics = useCallback((stations: Station[]) => {
     if (!stations || stations.length === 0) {
@@ -193,7 +193,7 @@ export default function AnalyticsPage() {
         const stations = response.data
         const stationsWithDefaultColor = stations.map((station: Station) => ({
           ...station,
-          routeColor: '#3b82f6' // Color azul por defecto
+          routeColor: '#3b82f6' // Default blue color
         }))
         setBikeStations(stationsWithDefaultColor)
         setFilteredStations(stationsWithDefaultColor)
@@ -252,7 +252,7 @@ export default function AnalyticsPage() {
     return null;
   };
 
-  // Ejemplo de uso de la tabla
+  // Example usage of the table
   const columns: Column<Station>[] = [
     {
       key: 'name' as keyof Station,
@@ -286,7 +286,7 @@ export default function AnalyticsPage() {
     }
   ]
 
-  // Añade esto justo antes de la definición de columns
+  // Add this just before the definition of columns
   const summaryColumns = [
     {
       key: 'location' as const,
@@ -314,13 +314,13 @@ export default function AnalyticsPage() {
     }
   ]
 
-  // Función auxiliar para obtener el nombre del filtro actual
+  // Helper function to get the current filter name
   const getFilterLocation = () => {
     if (selectedStation) {
       return selectedStation.name;
     }
     
-    // Si hay estaciones filtradas y son menos que el total, significa que hay un filtro activo
+    // If there are filtered stations and they are less than the total, it means a filter is active
     if (filteredStations.length > 0 && filteredStations.length < bikeStations.length) {
       switch (filter) {
         case 'district':
@@ -330,12 +330,12 @@ export default function AnalyticsPage() {
         case 'status':
           return `Status: ${filterValue || 'Unknown'}`;
         default:
-          // Si hay filtro pero no es ninguno de los anteriores
+          // If there is a filter but it is none of the above
           return `Filtered Stations (${filteredStations.length})`;
       }
     }
 
-    // Si no hay filtro activo o están todas las estaciones
+    // If no active filter or all stations are present
     return 'Barcelona (All Stations)';
   };
 
@@ -365,7 +365,7 @@ export default function AnalyticsPage() {
                   <span className="text-sm text-gray-500 whitespace-nowrap">To:</span>
                   <Input
                     type="text"
-                    placeholder={formatCurrentDate()}
+                    placeholder={getCurrentFormattedDate()}
                     value={tempToDate}
                     onChange={(e) => handleToDateChange(e.target.value)}
                     className={`w-full sm:w-[200px] ${!isValidTimestamp(tempToDate) && tempToDate !== "" ? "border-red-500" : ""}`}
@@ -406,9 +406,9 @@ export default function AnalyticsPage() {
         </CardContent>
         <CardHeader>
           <div className="flex flex-col gap-4">
-            {/* Reorganización de los controles en columna para móviles */}
+            {/* Reorganization of controls in a column for mobile */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-              {/* Grupo 1: Botones Default/Heat Map */}
+              {/* Group 1: Default/Heat Map Buttons */}
               <div className="flex items-center justify-center sm:justify-start">
                 <button 
                   className={`px-3 py-1 rounded-l-md ${!isHeatMap ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
@@ -424,7 +424,7 @@ export default function AnalyticsPage() {
                 </button>
               </div>
 
-              {/* Grupo 2: Controles de Mapa */}
+              {/* Group 2: Map Controls */}
               <div className="w-full">
                 {!isHeatMap ? (
                   <DefaultMapControls 
@@ -443,7 +443,7 @@ export default function AnalyticsPage() {
                 )}
               </div>
 
-              {/* Grupo 3: Búsqueda */}
+              {/* Group 3: Search */}
               <div className="flex justify-center sm:justify-end w-full">
                 <AutocompleteSearch 
                   onSelect={handleStationSelect} 
@@ -462,7 +462,7 @@ export default function AnalyticsPage() {
           <CardTitle className="text-2xl text-gray-800">Stations</CardTitle>
         </CardHeader>
         <CardContent>
-          {/* Tabla de resumen - Actualizada para usar las estaciones filtradas */}
+          {/* Summary table - Updated to use filtered stations */}
           <DataTable 
             data={[{
               location: getFilterLocation(),
@@ -476,7 +476,7 @@ export default function AnalyticsPage() {
             className="mb-8"
           />
           
-          {/* Tabla original - Ya usa filteredStations */}
+          {/* Original table - Already uses filteredStations */}
           <DataTable 
             data={filteredStations} 
             columns={columns}

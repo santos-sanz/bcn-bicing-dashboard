@@ -4,13 +4,13 @@ import fs from 'fs';
 import path from 'path';
 import { addStation, StationInfo } from '../../public/app/station_info';
 
-// Interfaz para la información de estaciones de la API
+// Interface for station information from the API
 interface ApiStationInfo {
     station_id: string;
     lon: number;
     lat: number;
     post_code?: string;
-    [key: string]: any; // para otros campos que pueda tener la API
+    [key: string]: any; // for other fields that the API might have
 }
 
 export default async function handler(
@@ -26,30 +26,33 @@ export default async function handler(
     const stationInfo: ApiStationInfo[] = infoResponse.data.data.stations;
     const stationStatus = statusResponse.data.data.stations;
 
-    // Crear un mapa de estado por station_id
+
     const statusMap = new Map<string, any>();
     stationStatus.forEach((status: any) => {
       statusMap.set(status.station_id, status);
     });
 
-    // Ruta del archivo stations_info.json
+
+    // File paths
     const dataDir = path.join(process.cwd(), 'public', 'data');
     const stationsPath = path.join(dataDir, 'stations_info.json');
 
-    // Leer el archivo inicial de estaciones_info.json
+ 
+    // Read or initialize stations file
     let stationsInfo: StationInfo[] = [];
     if (fs.existsSync(stationsPath)) {
       const fileContent = fs.readFileSync(stationsPath, 'utf-8');
       stationsInfo = fileContent ? JSON.parse(fileContent) : [];
     }
 
-    // Crear un conjunto de IDs de estaciones existentes
+
     const existingStationIds = new Set(stationsInfo.map(station => station.station_id));
 
-    // Encontrar nuevas estaciones que necesitan ser añadidas
+
+    // Filter new stations
     const newStations = stationInfo.filter((info: ApiStationInfo) => !existingStationIds.has(info.station_id));
 
-    // Procesar y añadir solo las nuevas estaciones
+
     for (const info of newStations) {
       const station: StationInfo = {
         station_id: info.station_id,
@@ -61,7 +64,8 @@ export default async function handler(
       await addStation(station);
     }
 
-    // Crear un mapa de información por station_id desde stations_info.json
+    
+    // Map suburb and district information
     const infoMap = new Map<string, any>();
     stationsInfo.forEach((station: any) => {
       infoMap.set(station.station_id, { 
@@ -70,12 +74,12 @@ export default async function handler(
       });
     });
 
-    // Leer el archivo actualizado de estaciones si se añadieron nuevas
+
     if (newStations.length > 0) {
       const updatedContent = fs.readFileSync(stationsPath, 'utf-8');
       const updatedStationsInfo = updatedContent ? JSON.parse(updatedContent) : [];
       
-      // Actualizar el mapa de información con las estaciones nuevas
+  
       updatedStationsInfo.forEach((station: any) => {
         infoMap.set(station.station_id, { 
           suburb: station.suburb, 
@@ -84,18 +88,47 @@ export default async function handler(
       });
     }
 
-    // Combinar la información de las estaciones
-    const combinedStations = stationInfo.map((info: any) => ({
-      ...info,
-      ...statusMap.get(info.station_id),
-      ...infoMap.get(info.station_id),
-    }));
 
-    // Deshabilitar el caché para esta respuesta
+    // Backup info map
+    const backupInfoMap = new Map<string, any>();
+    if (fs.existsSync(stationsPath)) {
+      const fileContent = fs.readFileSync(stationsPath, 'utf-8');
+      const stationsInfo = fileContent ? JSON.parse(fileContent) : [];
+      stationsInfo.forEach((station: any) => {
+        backupInfoMap.set(station.station_id, {
+          suburb: station.suburb,
+          district: station.district
+        });
+      });
+    }
+
+
+    // Combine station info
+    const combinedStations = stationInfo.map((info: any) => {
+
+      const [districtInfo, suburbInfo] = (info.cross_street || '').split('/');
+      const district_id = districtInfo ? districtInfo.split('-')[0]?.trim() : '';
+      const district = districtInfo ? districtInfo.split('-')[1]?.trim() : '';
+      const suburb_id = suburbInfo ? suburbInfo.split('-')[0]?.trim() : '';
+      const suburb = suburbInfo ? suburbInfo.split('-')[1]?.trim() : '';
+
+   
+      const backupInfo = backupInfoMap.get(info.station_id);
+      
+      return {
+        ...info,
+        ...statusMap.get(info.station_id),
+        district_id,
+        district: district || (backupInfo?.district || ''),
+        suburb_id,
+        suburb: suburb || (backupInfo?.suburb || ''),
+      };
+    });
+
     res.setHeader('Cache-Control', 'no-store, max-age=0');
     res.status(200).json(combinedStations);
   } catch (error) {
-    console.error('Error al obtener datos de las APIs:', error);
-    res.status(500).json({ error: 'Error al obtener datos de las APIs' });
+    console.error('Error getting data from APIs:', error);
+    res.status(500).json({ error: 'Error getting data from APIs' });
   }
 }
