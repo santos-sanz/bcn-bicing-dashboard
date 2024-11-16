@@ -4,4135 +4,5159 @@
     "lon": 2.1801069,
     "lat": 41.3979779,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "2",
     "lon": 2.1771985,
     "lat": 41.3954877,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "3",
     "lon": 2.1813305,
     "lat": 41.3941557,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "4",
     "lon": 2.1812483,
     "lat": 41.3933173,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "5",
     "lon": 2.1801763,
     "lat": 41.3911035,
     "post_code": "08018",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "6",
     "lon": 2.1805685,
     "lat": 41.3914292,
     "post_code": "08018",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "7",
     "lon": 2.18329,
     "lat": 41.388885,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "8",
     "lon": 2.183489,
     "lat": 41.389135,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "9",
     "lon": 2.184922,
     "lat": 41.384546,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "10",
     "lon": 2.1436235,
     "lat": 41.3467746,
     "post_code": "08040",
-    "suburb": "la Marina del Prat Vermell",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "12",
+    "suburb": "la Marina del Prat Vermell"
   },
   {
     "station_id": "11",
     "lon": 2.194294,
     "lat": 41.382398,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "12",
     "lon": 2.1946255,
     "lat": 41.3833653,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "13",
     "lon": 2.195551,
     "lat": 41.388143,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "01",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "14",
     "lon": 2.185085,
     "lat": 41.384844,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "15",
     "lon": 2.1689031978751205,
     "lat": 41.39161170092347,
     "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "17",
     "lon": 2.1866517,
     "lat": 41.3982615,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "66",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "18",
     "lon": 2.1740472,
     "lat": 41.4060589,
     "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "19",
     "lon": 2.1707947,
     "lat": 41.4031491,
     "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "20",
     "lon": 2.1757334,
     "lat": 41.410314,
     "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "21",
     "lon": 2.1740575,
     "lat": 41.4108439,
     "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "22",
     "lon": 2.175767,
     "lat": 41.4016969,
     "post_code": "08013",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "23",
     "lon": 2.1717397,
     "lat": 41.3924661,
     "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "24",
     "lon": 2.1788855,
     "lat": 41.4005784,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "25",
     "lon": 2.1681961,
     "lat": 41.3954041,
     "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "26",
     "lon": 2.1820722,
     "lat": 41.4071692,
     "post_code": "08013",
-    "suburb": "el Camp de l'Arpa del Clot",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "64",
+    "suburb": "el Camp de l'Arpa del Clot"
   },
   {
     "station_id": "27",
     "lon": 2.1646338,
     "lat": 41.3967524,
     "post_code": "08037",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "28",
     "lon": 2.1706498,
     "lat": 41.4055143,
     "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "29",
     "lon": 2.169941,
     "lat": 41.401061,
     "post_code": "08025",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "30",
     "lon": 2.1829894,
     "lat": 41.4021805,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "31",
     "lon": 2.1889045,
     "lat": 41.3748001,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "32",
     "lon": 2.188928,
     "lat": 41.3736911,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "33",
     "lon": 2.19067,
     "lat": 41.37686,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "34",
     "lon": 2.1753364,
     "lat": 41.3871079,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "35",
     "lon": 2.2206913,
     "lat": 41.4134833,
     "post_code": "08930",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
   },
   {
     "station_id": "36",
     "lon": 2.1766834,
     "lat": 41.3850616,
     "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
   },
   {
     "station_id": "37",
     "lon": 2.1820675,
     "lat": 41.380624,
     "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "el Barri Gòtic"
   },
   {
     "station_id": "39",
     "lon": 2.186576,
     "lat": 41.381046,
     "post_code": "08039",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "40",
     "lon": 2.187093,
     "lat": 41.382335,
     "post_code": "08039",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "41",
     "lon": 2.189906,
     "lat": 41.379326,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "42",
     "lon": 2.189881,
     "lat": 41.404511,
     "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
   },
   {
     "station_id": "43",
     "lon": 2.1874404,
     "lat": 41.4063864,
     "post_code": "08018",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
   },
   {
     "station_id": "45",
     "lon": 2.189371,
     "lat": 41.391466,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "46",
     "lon": 2.1921945084594707,
     "lat": 41.38860659692564,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "47",
     "lon": 2.1904003,
     "lat": 41.3902194,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "48",
     "lon": 2.1871959,
     "lat": 41.3960652,
     "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
   },
   {
     "station_id": "49",
     "lon": 2.1965766,
     "lat": 41.3910756,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "50",
     "lon": 2.1709386,
     "lat": 41.3751145,
     "post_code": "08004",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "51",
     "lon": 2.1692556,
     "lat": 41.3842634,
     "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "52",
     "lon": 2.177292,
     "lat": 41.381708,
     "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
   },
   {
     "station_id": "53",
     "lon": 2.174016,
     "lat": 41.385086,
     "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
   },
   {
     "station_id": "54",
     "lon": 2.1707321,
     "lat": 41.3775319,
     "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "56",
     "lon": 2.1758261,
     "lat": 41.3770715,
     "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "57",
     "lon": 2.176971,
     "lat": 41.376326,
     "post_code": "08002",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Raval"
   },
   {
     "station_id": "58",
     "lon": 2.16712,
     "lat": 41.38268,
     "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "60",
     "lon": 2.164035,
     "lat": 41.3902625,
     "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "61",
     "lon": 2.166797,
     "lat": 41.39352,
     "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "62",
     "lon": 2.168819,
     "lat": 41.387235,
     "post_code": "08002",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "63",
     "lon": 2.169427,
     "lat": 41.386543,
     "post_code": "08002",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "64",
     "lon": 2.1690686,
     "lat": 41.387493,
     "post_code": "08002",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "65",
     "lon": 2.1696543,
     "lat": 41.387696,
     "post_code": "08002",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "66",
     "lon": 2.1678388,
     "lat": 41.3893222,
     "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "67",
     "lon": 2.1454802,
     "lat": 41.3852864,
     "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "68",
     "lon": 2.1572953,
     "lat": 41.3953894,
     "post_code": "08008",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "69",
     "lon": 2.195073,
     "lat": 41.388507,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "01",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "70",
     "lon": 2.1606506,
     "lat": 41.380393,
     "post_code": "08011",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "71",
     "lon": 2.1629146,
     "lat": 41.3819459,
     "post_code": "08011",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "72",
     "lon": 2.1586273,
     "lat": 41.3927771,
     "post_code": "08008",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "73",
     "lon": 2.1563542,
     "lat": 41.392135,
     "post_code": "08008",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "74",
     "lon": 2.1432105,
     "lat": 41.3900085,
     "post_code": "08029",
-    "suburb": "les Corts",
-    "district": "Les Corts"
+    "district_id": "02",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
   },
   {
     "station_id": "75",
     "lon": 2.1429115,
     "lat": 41.385004,
     "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "76",
     "lon": 2.1532163,
     "lat": 41.3917666,
     "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "77",
     "lon": 2.1773214,
     "lat": 41.3855644,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "78",
     "lon": 2.1634306,
     "lat": 41.3856474,
     "post_code": "08011",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "79",
     "lon": 2.1634768,
     "lat": 41.385503,
     "post_code": "08007",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "80",
     "lon": 2.1599078,
     "lat": 41.389668,
     "post_code": "08007",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "81",
     "lon": 2.1490553,
     "lat": 41.3790718,
     "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "82",
     "lon": 2.1544371248113956,
     "lat": 41.38031805998654,
     "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "83",
     "lon": 2.1520645,
     "lat": 41.3821658,
     "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "84",
     "lon": 2.1571646,
     "lat": 41.3830299,
     "post_code": "08011",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "85",
     "lon": 2.1592394,
     "lat": 41.3751852,
     "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "86",
     "lon": 2.1629349,
     "lat": 41.3755747,
     "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "87",
     "lon": 2.1479931916296557,
     "lat": 41.38322238887374,
     "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "88",
     "lon": 2.1507739,
     "lat": 41.3936144,
     "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "89",
     "lon": 2.149131,
     "lat": 41.3871904,
     "post_code": "08036",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "90",
     "lon": 2.150878,
     "lat": 41.388296,
     "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "91",
     "lon": 2.1594741,
     "lat": 41.3812504,
     "post_code": "08011",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "92",
     "lon": 2.1601641,
     "lat": 41.3938861,
     "post_code": "08008",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "94",
     "lon": 2.1499102,
     "lat": 41.3757914,
     "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "95",
     "lon": 2.1473272,
     "lat": 41.3763948,
     "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
   },
   {
     "station_id": "96",
     "lon": 2.1481993,
     "lat": 41.3741093,
     "post_code": "08010",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "el Poble-sec"
   },
   {
     "station_id": "97",
     "lon": 2.1450491,
     "lat": 41.3779613,
     "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
   },
   {
     "station_id": "98",
     "lon": 2.1408633,
     "lat": 41.3806074,
     "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
   },
   {
     "station_id": "99",
     "lon": 2.141539,
     "lat": 41.3808222,
     "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
   },
   {
     "station_id": "100",
     "lon": 2.143868,
     "lat": 41.379363,
     "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
   },
   {
     "station_id": "101",
     "lon": 2.143411,
     "lat": 41.392878,
     "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
   },
   {
     "station_id": "102",
     "lon": 2.1422174,
     "lat": 41.392567,
     "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
   },
   {
     "station_id": "103",
     "lon": 2.1884487,
     "lat": 41.410098,
     "post_code": "08026",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
   },
   {
     "station_id": "104",
     "lon": 2.1872438,
     "lat": 41.4108005,
     "post_code": "08026",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
   },
   {
     "station_id": "105",
     "lon": 2.17425,
     "lat": 41.389492,
     "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
   },
   {
     "station_id": "106",
     "lon": 2.1622548,
     "lat": 41.4055198,
     "post_code": "08024",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
   },
   {
     "station_id": "107",
     "lon": 2.1531031,
     "lat": 41.3982304,
     "post_code": "08006",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
   },
   {
     "station_id": "108",
     "lon": 2.1649035,
     "lat": 41.4022081,
     "post_code": "08037",
-    "suburb": "el Camp d'en Grassot i Gràcia Nova",
-    "district": "Gràcia"
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "32",
+    "suburb": "el Camp d'en Grassot i Gràcia Nova"
   },
   {
     "station_id": "109",
     "lon": 2.1476308,
     "lat": 41.3912605,
     "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "110",
     "lon": 2.155089,
     "lat": 41.3852585,
     "post_code": "08011",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
   },
   {
     "station_id": "111",
     "lon": 2.1546746,
     "lat": 41.3847528,
     "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
   },
   {
     "station_id": "112",
     "lon": 2.157233,
     "lat": 41.3776721,
     "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "113",
     "lon": 2.1646742,
     "lat": 41.3773113,
     "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
   },
   {
     "station_id": "114",
     "lon": 2.1740082,
     "lat": 41.376735,
     "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   },
   {
     "station_id": "115",
     "lon": 2.184171,
     "lat": 41.383597,
     "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
   },
   {
     "station_id": "116",
     "lon": 2.1914756,
     "lat": 41.3838369,
     "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
   },
   {
     "station_id": "117",
     "lon": 2.1972309,
     "lat": 41.3906051,
     "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
   },
   {
     "station_id": "118",
     "lon": 2.1874966,
     "lat": 41.39212,
     "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
   },
   {
     "station_id": "119",
     "lon": 2.1825085,
     "lat": 41.3967169,
     "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
   },
   {
     "station_id": "120",
     "lon": 2.1765126,
     "lat": 41.4047056,
     "post_code": "08013",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "121",
     "lon": 2.1785364,
     "lat": 41.4064529,
     "post_code": "08013",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "123",
-    "lon": 2.166735224916682,
-    "lat": 41.3988184485363,
-    "post_code": "08037",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "124",
-    "lon": 2.1878126,
-    "lat": 41.3702483,
-    "post_code": "08039",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "125",
-    "lon": 2.194735,
-    "lat": 41.3834753,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "126",
-    "lon": 2.1822815,
-    "lat": 41.380628,
-    "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "127",
-    "lon": 2.1907524,
-    "lat": 41.4120681,
-    "post_code": "08026",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "128",
-    "lon": 2.1959771,
-    "lat": 41.4158412,
-    "post_code": "08020",
-    "suburb": "Sant Martí de Provençals",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "129",
-    "lon": 2.16113608,
-    "lat": 41.377046,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "130",
-    "lon": 2.2016699,
-    "lat": 41.4200135,
-    "post_code": "08020",
-    "suburb": "la Verneda i la Pau",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "131",
-    "lon": 2.2060317,
-    "lat": 41.4227912,
-    "post_code": "08020",
-    "suburb": "la Verneda i la Pau",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "132",
-    "lon": 2.192042,
-    "lat": 41.4084796,
-    "post_code": "08018",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "133",
-    "lon": 2.1930174,
-    "lat": 41.4075013,
-    "post_code": "08018",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "134",
-    "lon": 2.1987258,
-    "lat": 41.4113024,
-    "post_code": "08018",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "135",
-    "lon": 2.1972673,
-    "lat": 41.4120452,
-    "post_code": "08018",
-    "suburb": "Sant Martí de Provençals",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "136",
-    "lon": 2.2017955,
-    "lat": 41.4139298,
-    "post_code": "08020",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "137",
-    "lon": 2.2008139,
-    "lat": 41.4145805,
-    "post_code": "08020",
-    "suburb": "Sant Martí de Provençals",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "138",
-    "lon": 2.2058345,
-    "lat": 41.4167933,
-    "post_code": "08020",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "139",
-    "lon": 2.2058133,
-    "lat": 41.4183999,
-    "post_code": "08020",
-    "suburb": "la Verneda i la Pau",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "140",
-    "lon": 2.1559939,
-    "lat": 41.3808772,
-    "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "141",
-    "lon": 2.1954152,
-    "lat": 41.4090202,
-    "post_code": "08018",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "142",
-    "lon": 2.1924144,
-    "lat": 41.4003793,
-    "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "143",
-    "lon": 2.1956161,
-    "lat": 41.4027907,
-    "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "144",
-    "lon": 2.1977119,
-    "lat": 41.4056269,
-    "post_code": "08018",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "145",
-    "lon": 2.2024461,
-    "lat": 41.4093405,
-    "post_code": "08020",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "146",
-    "lon": 2.207186,
-    "lat": 41.4148983,
-    "post_code": "08019",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "147",
-    "lon": 2.2124993,
-    "lat": 41.416043,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "148",
-    "lon": 2.1633139,
-    "lat": 41.3783467,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "149",
-    "lon": 2.192952,
-    "lat": 41.3958685,
-    "post_code": "08019",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "150",
-    "lon": 2.203028,
-    "lat": 41.4065912,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "151",
-    "lon": 2.1969105,
-    "lat": 41.4003471,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "152",
-    "lon": 2.1974184,
-    "lat": 41.3993329,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "153",
-    "lon": 2.20077,
-    "lat": 41.4018686,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "154",
-    "lon": 2.2017694,
-    "lat": 41.4026275,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "155",
-    "lon": 2.2074469,
-    "lat": 41.4070139,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "156",
-    "lon": 2.2088179,
-    "lat": 41.4091355,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "157",
-    "lon": 2.2177652,
-    "lat": 41.4132316,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "158",
-    "lon": 2.2183313,
-    "lat": 41.4116634,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "159",
-    "lon": 2.2163136,
-    "lat": 41.4110822,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "160",
-    "lon": 2.2193724,
-    "lat": 41.4109763,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "161",
-    "lon": 2.1965965,
-    "lat": 41.3953011,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "162",
-    "lon": 2.2084257,
-    "lat": 41.4038559,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "163",
-    "lon": 2.2008756,
-    "lat": 41.3942108,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "164",
-    "lon": 2.1778852,
-    "lat": 41.4118378,
-    "post_code": "08026",
-    "suburb": "el Camp de l'Arpa del Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "165",
-    "lon": 2.2041415,
-    "lat": 41.3992169,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "166",
-    "lon": 2.206645,
-    "lat": 41.4008312,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "167",
-    "lon": 2.2105777,
-    "lat": 41.4023354,
-    "post_code": "08005",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "168",
-    "lon": 2.2135818,
-    "lat": 41.4053697,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "170",
-    "lon": 2.1999572,
-    "lat": 41.3896642,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "171",
-    "lon": 2.2037136,
-    "lat": 41.3919877,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "173",
-    "lon": 2.2088454,
-    "lat": 41.3979002,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "174",
-    "lon": 2.210191,
-    "lat": 41.400654,
-    "post_code": "08005",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "175",
-    "lon": 2.2091221,
-    "lat": 41.4065291,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "176",
-    "lon": 2.2136,
-    "lat": 41.403216,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "177",
-    "lon": 2.1809764,
-    "lat": 41.4110754,
-    "post_code": "08026",
-    "suburb": "el Camp de l'Arpa del Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "178",
-    "lon": 2.2162094,
-    "lat": 41.4053649,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "179",
-    "lon": 2.1369015,
-    "lat": 41.36352,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "180",
-    "lon": 2.1388216,
-    "lat": 41.3675574,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "182",
-    "lon": 2.143565,
-    "lat": 41.371366,
-    "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "183",
-    "lon": 2.1419494,
-    "lat": 41.3723682,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "184",
-    "lon": 2.1342316,
-    "lat": 41.3675438,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "185",
-    "lon": 2.1389439,
-    "lat": 41.3703717,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "186",
-    "lon": 2.1439036,
-    "lat": 41.3755503,
-    "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "187",
-    "lon": 2.1698206,
-    "lat": 41.3768806,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "188",
-    "lon": 2.1358571,
-    "lat": 41.3756948,
-    "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "189",
-    "lon": 2.1661852,
-    "lat": 41.3969839,
-    "post_code": "08037",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "190",
-    "lon": 2.2078439,
-    "lat": 41.3961412,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "191",
-    "lon": 2.147474,
-    "lat": 41.381951,
-    "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "192",
-    "lon": 2.1335494,
-    "lat": 41.3786364,
-    "post_code": "08028",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "193",
-    "lon": 2.1289917,
-    "lat": 41.3812979,
-    "post_code": "08028",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "194",
-    "lon": 2.1323612,
-    "lat": 41.3812001,
-    "post_code": "08028",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "195",
-    "lon": 2.1354149,
-    "lat": 41.3821371,
-    "post_code": "08014",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "196",
-    "lon": 2.1392662,
-    "lat": 41.3832609,
-    "post_code": "08029",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "197",
-    "lon": 2.1410945,
-    "lat": 41.3871579,
-    "post_code": "08029",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "198",
-    "lon": 2.1334379,
-    "lat": 41.3847113,
-    "post_code": "08014",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "199",
-    "lon": 2.1268625,
-    "lat": 41.3819739,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "200",
-    "lon": 2.1312876,
-    "lat": 41.3839045,
-    "post_code": "08028",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "201",
-    "lon": 2.1344218,
-    "lat": 41.3878061,
-    "post_code": "08029",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "202",
-    "lon": 2.1288753,
-    "lat": 41.3854466,
-    "post_code": "08028",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "203",
-    "lon": 2.1285766,
-    "lat": 41.3887069,
-    "post_code": "08034",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "204",
-    "lon": 2.1256248,
-    "lat": 41.3880355,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "205",
-    "lon": 2.1306737,
-    "lat": 41.387561,
-    "post_code": "08028",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "206",
-    "lon": 2.1328634,
-    "lat": 41.3897943,
-    "post_code": "08017",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "207",
-    "lon": 2.136579,
-    "lat": 41.3908477,
-    "post_code": "08017",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "208",
-    "lon": 2.1390667,
-    "lat": 41.3915195,
-    "post_code": "08017",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "209",
-    "lon": 2.1610515,
-    "lat": 41.3857425,
-    "post_code": "08011",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "210",
-    "lon": 2.1422556,
-    "lat": 41.3745238,
-    "post_code": "08014",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "211",
-    "lon": 2.1902116,
-    "lat": 41.3987543,
-    "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "213",
-    "lon": 2.1345892,
-    "lat": 41.3935816,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "214",
-    "lon": 2.1334873,
-    "lat": 41.3952027,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "215",
-    "lon": 2.1380304,
-    "lat": 41.3939378,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "216",
-    "lon": 2.1445567,
-    "lat": 41.3967824,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "217",
-    "lon": 2.1440826,
-    "lat": 41.3985735,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "218",
-    "lon": 2.183145,
-    "lat": 41.4040364,
-    "post_code": "08013",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "219",
-    "lon": 2.1471724,
-    "lat": 41.3976165,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "220",
-    "lon": 2.1513154,
-    "lat": 41.3960982,
-    "post_code": "08006",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "221",
-    "lon": 2.1524704,
-    "lat": 41.4025392,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "222",
-    "lon": 2.1574439,
-    "lat": 41.4013296,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "223",
-    "lon": 2.1598243,
-    "lat": 41.3983444,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "224",
-    "lon": 2.1644531,
-    "lat": 41.3999967,
-    "post_code": "08037",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "225",
-    "lon": 2.1508071246452154,
-    "lat": 41.384810211467105,
-    "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "226",
-    "lon": 2.1609345,
-    "lat": 41.4035608,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "227",
-    "lon": 2.1586704,
-    "lat": 41.4078456,
-    "post_code": "08024",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "228",
-    "lon": 2.1558354,
-    "lat": 41.4068417,
-    "post_code": "08024",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "229",
-    "lon": 2.1569161,
-    "lat": 41.4050968,
-    "post_code": "08024",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "230",
-    "lon": 2.1517977,
-    "lat": 41.4059356,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "232",
-    "lon": 2.1730255457161096,
-    "lat": 41.37449997033759,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "233",
-    "lon": 2.1667829,
-    "lat": 41.3719688,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "234",
-    "lon": 2.162203,
-    "lat": 41.371532,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "235",
-    "lon": 2.1658972,
-    "lat": 41.3751767,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "236",
-    "lon": 2.1523091,
-    "lat": 41.3751161,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "237",
-    "lon": 2.1539198,
-    "lat": 41.3727426,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "238",
-    "lon": 2.1908473,
-    "lat": 41.4158807,
-    "post_code": "08027",
-    "suburb": "Navas",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "239",
-    "lon": 2.1844769,
-    "lat": 41.4172922,
-    "post_code": "08027",
-    "suburb": "Navas",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "240",
-    "lon": 2.1877153,
-    "lat": 41.4175595,
-    "post_code": "08027",
-    "suburb": "Navas",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "241",
-    "lon": 2.18018,
-    "lat": 41.419178,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "242",
-    "lon": 2.1773157,
-    "lat": 41.4244527,
-    "post_code": "08027",
-    "suburb": "el Congrés i els Indians",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "243",
-    "lon": 2.1812399,
-    "lat": 41.4239719,
-    "post_code": "08027",
-    "suburb": "el Congrés i els Indians",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "244",
-    "lon": 2.1786224,
-    "lat": 41.426925,
-    "post_code": "08027",
-    "suburb": "el Congrés i els Indians",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "245",
-    "lon": 2.1717083,
-    "lat": 41.3826647,
-    "post_code": "08002",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "246",
-    "lon": 2.1866363,
-    "lat": 41.4228449,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "247",
-    "lon": 2.1849107,
-    "lat": 41.4219291,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "248",
-    "lon": 2.1904005,
-    "lat": 41.4182129,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "249",
-    "lon": 2.1872818,
-    "lat": 41.4250835,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "250",
-    "lon": 2.191206,
-    "lat": 41.4258248,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "251",
-    "lon": 2.1852073,
-    "lat": 41.4253643,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "252",
-    "lon": 2.1932159,
-    "lat": 41.4298991,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "253",
-    "lon": 2.1922011,
-    "lat": 41.4298614,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "254",
-    "lon": 2.190246,
-    "lat": 41.4299999,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "255",
-    "lon": 2.18579,
-    "lat": 41.4315,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "256",
-    "lon": 2.1894423,
-    "lat": 41.4361251,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "257",
-    "lon": 2.1896502,
-    "lat": 41.433934,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "258",
-    "lon": 2.1929677,
-    "lat": 41.4425034,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "259",
-    "lon": 2.1858025,
-    "lat": 41.4391174,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "260",
-    "lon": 2.1920873,
-    "lat": 41.4356895,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "261",
-    "lon": 2.1606534,
-    "lat": 41.3821314,
-    "post_code": "08011",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "262",
-    "lon": 2.1516210083711993,
-    "lat": 41.3790954665734,
-    "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "263",
-    "lon": 2.1910691,
-    "lat": 41.4378773,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "264",
-    "lon": 2.1970692,
-    "lat": 41.439929,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "265",
-    "lon": 2.1592566,
-    "lat": 41.3847738,
-    "post_code": "08011",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "266",
-    "lon": 2.1842572,
-    "lat": 41.4268952,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "267",
-    "lon": 2.1906302,
-    "lat": 41.4433647,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "268",
-    "lon": 2.1929816,
-    "lat": 41.4457195,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "269",
-    "lon": 2.19294,
-    "lat": 41.448152,
-    "post_code": "08033",
-    "suburb": "la Trinitat Vella",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "270",
-    "lon": 2.1898372,
-    "lat": 41.4486328,
-    "post_code": "08033",
-    "suburb": "la Trinitat Vella",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "271",
-    "lon": 2.1935229,
-    "lat": 41.4519872,
-    "post_code": "08033",
-    "suburb": "la Trinitat Vella",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "272",
-    "lon": 2.1842021,
-    "lat": 41.4325013,
-    "post_code": "08033",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "273",
-    "lon": 2.1834174,
-    "lat": 41.4304126,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "274",
-    "lon": 2.1849813,
-    "lat": 41.4299201,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "275",
-    "lon": 2.1821802,
-    "lat": 41.43068,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "276",
-    "lon": 2.1652216,
-    "lat": 41.4121345,
-    "post_code": "08024",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "277",
-    "lon": 2.1689962,
-    "lat": 41.4082107,
-    "post_code": "08025",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "278",
-    "lon": 2.1715285,
-    "lat": 41.4098842,
-    "post_code": "08025",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "279",
-    "lon": 2.1745567,
-    "lat": 41.4158995,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "280",
-    "lon": 2.1777274,
-    "lat": 41.4138664,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "281",
-    "lon": 2.1763994,
-    "lat": 41.4180789,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "282",
-    "lon": 2.1659881,
-    "lat": 41.4275514,
-    "post_code": "08031",
-    "suburb": "la Font d'en Fargues",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "283",
-    "lon": 2.1617032,
-    "lat": 41.4297231,
-    "post_code": "08032",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "284",
-    "lon": 2.1314948,
-    "lat": 41.389462,
-    "post_code": "08034",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "285",
-    "lon": 2.186105,
-    "lat": 41.4366708,
-    "post_code": "08030",
-    "suburb": "Sant Andreu",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "286",
-    "lon": 2.1913538,
-    "lat": 41.4030225,
-    "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "287",
-    "lon": 2.1679313,
-    "lat": 41.3890626,
-    "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "288",
-    "lon": 2.174444,
-    "lat": 41.4296439,
-    "post_code": "08016",
-    "suburb": "Vilapicina i la Torre Llobeta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "289",
-    "lon": 2.1909952,
-    "lat": 41.4166982,
-    "post_code": "08027",
-    "suburb": "Navas",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "290",
-    "lon": 2.1740962,
-    "lat": 41.4373376,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "291",
-    "lon": 2.1751572,
-    "lat": 41.426078,
-    "post_code": "08031",
-    "suburb": "Vilapicina i la Torre Llobeta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "292",
-    "lon": 2.1720191,
-    "lat": 41.4300161,
-    "post_code": "08031",
-    "suburb": "Vilapicina i la Torre Llobeta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "293",
-    "lon": 2.1629889,
-    "lat": 41.4283127,
-    "post_code": "08032",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "294",
-    "lon": 2.1706752,
-    "lat": 41.4363473,
-    "post_code": "08042",
-    "suburb": "la Guineueta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "295",
-    "lon": 2.1716309,
-    "lat": 41.433384,
-    "post_code": "08031",
-    "suburb": "el Turó de la Peira",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "296",
-    "lon": 2.1841014,
-    "lat": 41.4364887,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "297",
-    "lon": 2.1767828,
-    "lat": 41.4388223,
-    "post_code": "08016",
-    "suburb": "la Prosperitat",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "298",
-    "lon": 2.1817718,
-    "lat": 41.4347233,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "299",
-    "lon": 2.1748267,
-    "lat": 41.4340849,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "300",
-    "lon": 2.1769107,
-    "lat": 41.4315843,
-    "post_code": "08016",
-    "suburb": "Porta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "301",
-    "lon": 2.1693134,
-    "lat": 41.4366871,
-    "post_code": "08042",
-    "suburb": "la Guineueta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "302",
-    "lon": 2.111541,
-    "lat": 41.3906352,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "303",
-    "lon": 2.115107,
-    "lat": 41.3934324,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "304",
-    "lon": 2.121,
-    "lat": 41.39038,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "305",
-    "lon": 2.1237141,
-    "lat": 41.3875297,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "306",
-    "lon": 2.122893,
-    "lat": 41.3853868,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "307",
-    "lon": 2.1135824,
-    "lat": 41.3791986,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "308",
-    "lon": 2.114029,
-    "lat": 41.37684,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "309",
-    "lon": 2.1169828,
-    "lat": 41.3770199,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "310",
-    "lon": 2.1190863,
-    "lat": 41.3812111,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "311",
-    "lon": 2.1202487,
-    "lat": 41.3785631,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "312",
-    "lon": 2.1233038,
-    "lat": 41.3789061,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "313",
-    "lon": 2.1297823,
-    "lat": 41.3754188,
-    "post_code": "08028",
-    "suburb": "Sants - Badal",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "314",
-    "lon": 2.1297303,
-    "lat": 41.3783067,
-    "post_code": "08028",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "315",
-    "lon": 2.1817876,
-    "lat": 41.4156285,
-    "post_code": "08041",
-    "suburb": "el Camp de l'Arpa del Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "316",
-    "lon": 2.198071,
-    "lat": 41.4224015,
-    "post_code": "08020",
-    "suburb": "la Verneda i la Pau",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "317",
-    "lon": 2.2008632,
-    "lat": 41.4256626,
-    "post_code": "08020",
-    "suburb": "la Verneda i la Pau",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "318",
-    "lon": 2.170592,
-    "lat": 41.412427,
-    "post_code": "08025",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "319",
-    "lon": 2.1455022,
-    "lat": 41.3937414,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "320",
-    "lon": 2.149144,
-    "lat": 41.400305,
-    "post_code": "08006",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "321",
-    "lon": 2.1445843,
-    "lat": 41.4031529,
-    "post_code": "08006",
-    "suburb": "el Putxet i el Farró",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "322",
-    "lon": 2.13892,
-    "lat": 41.4009,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "323",
-    "lon": 2.1386719,
-    "lat": 41.3981616,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "324",
-    "lon": 2.136346,
-    "lat": 41.3969455,
-    "post_code": "08021",
-    "suburb": "Sant Gervasi - Galvany",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "325",
-    "lon": 2.1302775,
-    "lat": 41.3949601,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "326",
-    "lon": 2.1381069,
-    "lat": 41.4074131,
-    "post_code": "08022",
-    "suburb": "Sant Gervasi - la Bonanova",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "327",
-    "lon": 2.134603,
-    "lat": 41.4050074,
-    "post_code": "08022",
-    "suburb": "Sant Gervasi - la Bonanova",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "328",
-    "lon": 2.1344691,
-    "lat": 41.402988,
-    "post_code": "08022",
-    "suburb": "Sant Gervasi - la Bonanova",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "329",
-    "lon": 2.1283866,
-    "lat": 41.4029965,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "330",
-    "lon": 2.131524,
-    "lat": 41.401883,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "331",
-    "lon": 2.1279409,
-    "lat": 41.3970497,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "332",
-    "lon": 2.1281922,
-    "lat": 41.3998981,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "333",
-    "lon": 2.1250451,
-    "lat": 41.3954723,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "334",
-    "lon": 2.122889,
-    "lat": 41.400793,
-    "post_code": "08017",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "335",
-    "lon": 2.1231228,
-    "lat": 41.3935355,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "336",
-    "lon": 2.1205394,
-    "lat": 41.3948771,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "337",
-    "lon": 2.1204941,
-    "lat": 41.3986238,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "338",
-    "lon": 2.1194557,
-    "lat": 41.3977227,
-    "post_code": "08034",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "339",
-    "lon": 2.2053803,
-    "lat": 41.4017084,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "340",
-    "lon": 2.2047037,
-    "lat": 41.4361782,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "341",
-    "lon": 2.2062245,
-    "lat": 41.4339212,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "342",
-    "lon": 2.1936584,
-    "lat": 41.4034967,
-    "post_code": "08018",
-    "suburb": "el Parc i la Llacuna del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "343",
-    "lon": 2.1996179,
-    "lat": 41.4389609,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "344",
-    "lon": 2.1996045,
-    "lat": 41.4431441,
-    "post_code": "08030",
-    "suburb": "Baró de Viver",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "345",
-    "lon": 2.1398322,
-    "lat": 41.3631066,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "346",
-    "lon": 2.138931,
-    "lat": 41.360798,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "347",
-    "lon": 2.1417765,
-    "lat": 41.3595484,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "348",
-    "lon": 2.141563,
-    "lat": 41.357067,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "349",
-    "lon": 2.1371996,
-    "lat": 41.3573288,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "350",
-    "lon": 2.1480223,
-    "lat": 41.392052,
-    "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "351",
-    "lon": 2.1356187,
-    "lat": 41.3621232,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "352",
-    "lon": 2.1341586,
-    "lat": 41.363279,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "354",
-    "lon": 2.1299539,
-    "lat": 41.3759419,
-    "post_code": "08028",
-    "suburb": "Sants - Badal",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "355",
-    "lon": 2.127854,
-    "lat": 41.371459,
-    "post_code": "08028",
-    "suburb": "Sants - Badal",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "356",
-    "lon": 2.1631012,
-    "lat": 41.4134503,
-    "post_code": "08024",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "357",
-    "lon": 2.1579897,
-    "lat": 41.4105956,
-    "post_code": "08024",
-    "suburb": "la Salut",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "358",
-    "lon": 2.1793035,
-    "lat": 41.3872437,
-    "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "359",
-    "lon": 2.1775594,
-    "lat": 41.3900544,
-    "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "360",
-    "lon": 2.1730023,
-    "lat": 41.3952527,
-    "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "361",
-    "lon": 2.17881,
-    "lat": 41.37652,
-    "post_code": "08039",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "362",
-    "lon": 2.1706323,
-    "lat": 41.396994,
-    "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "363",
-    "lon": 2.1743743,
-    "lat": 41.3908381,
-    "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "364",
-    "lon": 2.1633226,
-    "lat": 41.393062,
-    "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "365",
-    "lon": 2.1469336,
-    "lat": 41.3875712,
-    "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "366",
-    "lon": 2.1729755,
-    "lat": 41.3811389,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "367",
-    "lon": 2.1376205,
-    "lat": 41.384972,
-    "post_code": "08029",
-    "suburb": "les Corts",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "368",
-    "lon": 2.1756598,
-    "lat": 41.3968391,
-    "post_code": "08013",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "369",
-    "lon": 2.1780175,
-    "lat": 41.40013,
-    "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "370",
-    "lon": 2.1729061,
-    "lat": 41.4039698,
-    "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "371",
-    "lon": 2.181199,
-    "lat": 41.4040525,
-    "post_code": "08013",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "372",
-    "lon": 2.1841711,
-    "lat": 41.4001015,
-    "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "373",
-    "lon": 2.1613897,
-    "lat": 41.3750995,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "374",
-    "lon": 2.1612814,
-    "lat": 41.3949729,
-    "post_code": "08008",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "375",
-    "lon": 2.1804468,
-    "lat": 41.3720293,
-    "post_code": "08039",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "376",
-    "lon": 2.180302,
-    "lat": 41.3718728,
-    "post_code": "08039",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "377",
-    "lon": 2.1836886,
-    "lat": 41.3776292,
-    "post_code": "08039",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "378",
-    "lon": 2.1767427,
-    "lat": 41.3785379,
-    "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "379",
-    "lon": 2.1420704,
-    "lat": 41.3829333,
-    "post_code": "08029",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "380",
-    "lon": 2.1740155,
-    "lat": 41.3854094,
-    "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "381",
-    "lon": 2.1677697,
-    "lat": 41.3816139,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "382",
-    "lon": 2.2041137,
-    "lat": 41.4038902,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "383",
-    "lon": 2.141767,
-    "lat": 41.381219,
-    "post_code": "08029",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "384",
-    "lon": 2.1468381,
-    "lat": 41.3807072,
-    "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "385",
-    "lon": 2.1552902,
-    "lat": 41.387888,
-    "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "386",
-    "lon": 2.1568773,
-    "lat": 41.3751866,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "387",
-    "lon": 2.1787074,
-    "lat": 41.3957813,
-    "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "388",
-    "lon": 2.1671611,
-    "lat": 41.3806411,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "389",
-    "lon": 2.1875446,
-    "lat": 41.3873901,
-    "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "390",
-    "lon": 2.1820169,
-    "lat": 41.3869612,
-    "post_code": "08003",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "391",
-    "lon": 2.1913753,
-    "lat": 41.4230551,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "392",
-    "lon": 2.1906339,
-    "lat": 41.3905303,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "393",
-    "lon": 2.1976297,
-    "lat": 41.4022657,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "394",
-    "lon": 2.1631263,
-    "lat": 41.3873057,
-    "post_code": "08007",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "395",
-    "lon": 2.1702467,
-    "lat": 41.3860607,
-    "post_code": "08002",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "396",
-    "lon": 2.1968267,
-    "lat": 41.3890253,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "397",
-    "lon": 2.1993105,
-    "lat": 41.3889129,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "398",
-    "lon": 2.1934636,
-    "lat": 41.380955,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "399",
-    "lon": 2.1332694,
-    "lat": 41.3734706,
-    "post_code": "08028",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "400",
-    "lon": 2.1879597,
-    "lat": 41.3694508,
-    "post_code": "08039",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "401",
-    "lon": 2.183723,
-    "lat": 41.382418,
-    "post_code": "08002",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "402",
-    "lon": 2.1821917,
-    "lat": 41.380628,
-    "post_code": "08002",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "403",
-    "lon": 2.1368202,
-    "lat": 41.3796421,
-    "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "404",
-    "lon": 2.1331357,
-    "lat": 41.3653426,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "405",
-    "lon": 2.1521802,
-    "lat": 41.3854003,
-    "post_code": "08029",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "406",
-    "lon": 2.1646697,
-    "lat": 41.3863747,
-    "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "408",
-    "lon": 2.1923283,
-    "lat": 41.3889972,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "409",
-    "lon": 2.1925059,
-    "lat": 41.392384,
-    "post_code": "08005",
-    "suburb": "la Vila Olímpica del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "410",
-    "lon": 2.17871,
-    "lat": 41.376433,
-    "post_code": "08039",
-    "suburb": "el Barri Gòtic",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "411",
-    "lon": 2.2122054,
-    "lat": 41.411381,
-    "post_code": "08019",
-    "suburb": "Diagonal Mar i el Front Marítim del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "412",
-    "lon": 2.1727457,
-    "lat": 41.3893094,
-    "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "413",
-    "lon": 2.1707419,
-    "lat": 41.393489,
-    "post_code": "08009",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "414",
-    "lon": 2.1764275,
-    "lat": 41.3937234,
-    "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "415",
-    "lon": 2.1689592,
-    "lat": 41.3793558,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "416",
-    "lon": 2.1696744,
-    "lat": 41.3781065,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "417",
-    "lon": 2.1801094,
-    "lat": 41.4164824,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "418",
-    "lon": 2.1801142,
-    "lat": 41.391062,
-    "post_code": "08018",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "419",
-    "lon": 2.1808391,
-    "lat": 41.391313,
-    "post_code": "08018",
-    "suburb": "Sant Pere, Santa Caterina i la Ribera",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "420",
-    "lon": 2.1479385,
-    "lat": 41.3743329,
-    "post_code": "08010",
-    "suburb": "Hostafrancs",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "421",
-    "lon": 2.1378667,
-    "lat": 41.378118,
-    "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "422",
-    "lon": 2.1154135,
-    "lat": 41.3881175,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "423",
-    "lon": 2.1894852,
-    "lat": 41.4202459,
-    "post_code": "08027",
-    "suburb": "la Sagrera",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "424",
-    "lon": 2.1925198,
-    "lat": 41.3795862,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "425",
-    "lon": 2.1748621,
-    "lat": 41.3765618,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "426",
-    "lon": 2.1830315,
-    "lat": 41.39828,
-    "post_code": "08013",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "427",
-    "lon": 2.1680021,
-    "lat": 41.3754047,
-    "post_code": "08001",
-    "suburb": "el Raval",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "428",
-    "lon": 2.1960799,
-    "lat": 41.3983902,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "429",
-    "lon": 2.1091535,
-    "lat": 41.3881262,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "430",
-    "lon": 2.113096,
-    "lat": 41.385641,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "431",
-    "lon": 2.122175,
-    "lat": 41.383467,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "432",
-    "lon": 2.1170751,
-    "lat": 41.3847061,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "433",
-    "lon": 2.1168609,
-    "lat": 41.3862258,
-    "post_code": "08034",
-    "suburb": "Pedralbes",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "434",
-    "lon": 2.1269152,
-    "lat": 41.3767538,
-    "post_code": "08028",
-    "suburb": "Sants - Badal",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "435",
-    "lon": 2.112186,
-    "lat": 41.383585,
-    "post_code": "08028",
-    "suburb": "la Maternitat i Sant Ramon",
-    "district": "Les Corts"
-  },
-  {
-    "station_id": "436",
-    "lon": 2.1433038,
-    "lat": 41.3545425,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "437",
-    "lon": 2.1450958,
-    "lat": 41.3513237,
-    "post_code": "08038",
-    "suburb": "la Marina del Prat Vermell",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "438",
-    "lon": 2.1754896,
-    "lat": 41.3981669,
-    "post_code": "08013",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "439",
-    "lon": 2.1328403,
-    "lat": 41.3685394,
-    "post_code": "08014",
-    "suburb": "la Bordeta",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "440",
-    "lon": 2.1976864,
-    "lat": 41.417694,
-    "post_code": "08020",
-    "suburb": "Sant Martí de Provençals",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "441",
-    "lon": 2.1398409,
-    "lat": 41.3754426,
-    "post_code": "08014",
-    "suburb": "Sants",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "442",
-    "lon": 2.138599,
-    "lat": 41.3649272,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "443",
-    "lon": 2.1542277,
-    "lat": 41.3887127,
-    "post_code": "08036",
-    "suburb": "l'Antiga Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "444",
-    "lon": 2.1554047,
-    "lat": 41.3717304,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "445",
-    "lon": 2.154004,
-    "lat": 41.3755016,
-    "post_code": "08015",
-    "suburb": "Sant Antoni",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "446",
-    "lon": 2.1884228,
-    "lat": 41.3779974,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "Ciutat Vella"
-  },
-  {
-    "station_id": "447",
-    "lon": 2.1860256,
-    "lat": 41.3943033,
-    "post_code": "08018",
-    "suburb": "el Fort Pienc",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "448",
-    "lon": 2.1997869,
-    "lat": 41.3972809,
-    "post_code": "08005",
-    "suburb": "el Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "449",
-    "lon": 2.1949461,
-    "lat": 41.4058109,
-    "post_code": "08018",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "450",
-    "lon": 2.2061691,
-    "lat": 41.410712,
-    "post_code": "08019",
-    "suburb": "Provençals del Poblenou",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "451",
-    "lon": 2.2150487,
-    "lat": 41.4140598,
-    "post_code": "08019",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "452",
-    "lon": 2.20934,
-    "lat": 41.4194972,
-    "post_code": "08020",
-    "suburb": "el Besòs i el Maresme",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "454",
-    "lon": 2.1684799,
-    "lat": 41.4072349,
-    "post_code": "08025",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "455",
-    "lon": 2.1826833,
-    "lat": 41.4105848,
-    "post_code": "08026",
-    "suburb": "el Camp de l'Arpa del Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "456",
-    "lon": 2.1874539,
-    "lat": 41.4143392,
-    "post_code": "08026",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "457",
-    "lon": 2.2039823,
-    "lat": 41.4383117,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "458",
-    "lon": 2.2010422,
-    "lat": 41.4457962,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "459",
-    "lon": 2.1976757,
-    "lat": 41.4479402,
-    "post_code": "08030",
-    "suburb": "la Trinitat Vella",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "460",
-    "lon": 2.1894717,
-    "lat": 41.4513863,
-    "post_code": "08033",
-    "suburb": "la Trinitat Vella",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "461",
-    "lon": 2.185727,
-    "lat": 41.442489,
-    "post_code": "08016",
-    "suburb": "la Prosperitat",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "462",
-    "lon": 2.184857,
-    "lat": 41.446923,
-    "post_code": "08033",
-    "suburb": "la Trinitat Nova",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "463",
-    "lon": 2.1833801,
-    "lat": 41.4490679,
-    "post_code": "08033",
-    "suburb": "la Trinitat Nova",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "464",
-    "lon": 2.182335,
-    "lat": 41.439692,
-    "post_code": "08016",
-    "suburb": "la Prosperitat",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "465",
-    "lon": 2.1599427,
-    "lat": 41.3954094,
-    "post_code": "08008",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "466",
-    "lon": 2.1813051,
-    "lat": 41.443387,
-    "post_code": "08016",
-    "suburb": "la Prosperitat",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "467",
-    "lon": 2.176726,
-    "lat": 41.4450463,
-    "post_code": "08042",
-    "suburb": "Verdun",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "468",
-    "lon": 2.1775154,
-    "lat": 41.4480464,
-    "post_code": "08042",
-    "suburb": "les Roquetes",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "469",
-    "lon": 2.1781553,
-    "lat": 41.4417001,
-    "post_code": "08016",
-    "suburb": "la Prosperitat",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "470",
-    "lon": 2.1746238,
-    "lat": 41.4432762,
-    "post_code": "08042",
-    "suburb": "Verdun",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "471",
-    "lon": 2.1715576,
-    "lat": 41.4389014,
-    "post_code": "08042",
-    "suburb": "la Guineueta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "472",
-    "lon": 2.170393,
-    "lat": 41.4427374,
-    "post_code": "08042",
-    "suburb": "la Guineueta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "473",
-    "lon": 2.1657506,
-    "lat": 41.4388644,
-    "post_code": "08042",
-    "suburb": "la Guineueta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "474",
-    "lon": 2.1664224,
-    "lat": 41.4418604,
-    "post_code": "08042",
-    "suburb": "Canyelles",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "475",
-    "lon": 2.1799878,
-    "lat": 41.4216738,
-    "post_code": "08027",
-    "suburb": "el Congrés i els Indians",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "476",
-    "lon": 2.174401,
-    "lat": 41.422037,
-    "post_code": "08032",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "477",
-    "lon": 2.1722534,
-    "lat": 41.4260751,
-    "post_code": "08032",
-    "suburb": "la Font d'en Fargues",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "478",
-    "lon": 2.1697582,
-    "lat": 41.4276076,
-    "post_code": "08031",
-    "suburb": "Vilapicina i la Torre Llobeta",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "479",
-    "lon": 2.1671068,
-    "lat": 41.430623,
-    "post_code": "08031",
-    "suburb": "el Turó de la Peira",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "480",
-    "lon": 2.1629258,
-    "lat": 41.4333259,
-    "post_code": "08031",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "481",
-    "lon": 2.163872,
-    "lat": 41.4357978,
-    "post_code": "08031",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "482",
-    "lon": 2.1620235,
-    "lat": 41.4372022,
-    "post_code": "08042",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "483",
-    "lon": 2.1589684563445877,
-    "lat": 41.429561735076526,
-    "post_code": "08032",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "484",
-    "lon": 2.1585268,
-    "lat": 41.4345997,
-    "post_code": "08031",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "485",
-    "lon": 2.1565742,
-    "lat": 41.4374904,
-    "post_code": "08031",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "486",
-    "lon": 2.1564551,
-    "lat": 41.4306102,
-    "post_code": "08032",
-    "suburb": "Horta",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "487",
-    "lon": 2.1521909,
-    "lat": 41.4267638,
-    "post_code": "08032",
-    "suburb": "el Carmel",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "488",
-    "lon": 2.147904,
-    "lat": 41.4347859,
-    "post_code": "08035",
-    "suburb": "la Vall d'Hebron",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "489",
-    "lon": 2.1499103,
-    "lat": 41.4312335,
-    "post_code": "08035",
-    "suburb": "la Vall d'Hebron",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "490",
-    "lon": 2.1443777,
-    "lat": 41.4280668,
-    "post_code": "08035",
-    "suburb": "la Vall d'Hebron",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "491",
-    "lon": 2.1456449,
-    "lat": 41.4306689,
-    "post_code": "08035",
-    "suburb": "la Vall d'Hebron",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "492",
-    "lon": 2.1751709,
-    "lat": 41.3943454,
-    "post_code": "08010",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "493",
-    "lon": 2.1401823,
-    "lat": 41.419965,
-    "post_code": "08023",
-    "suburb": "Vallcarca i els Penitents",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "494",
-    "lon": 2.1652199,
-    "lat": 41.3896967,
-    "post_code": "08007",
-    "suburb": "la Dreta de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "495",
-    "lon": 2.150523,
-    "lat": 41.377846,
-    "post_code": "08015",
-    "suburb": "la Nova Esquerra de l'Eixample",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "496",
-    "lon": 2.174799,
-    "lat": 41.4048623,
-    "post_code": "08025",
-    "suburb": "la Sagrada Família",
-    "district": "Eixample"
-  },
-  {
-    "station_id": "497",
-    "lon": 2.1360313,
-    "lat": 41.4095489,
-    "post_code": "08022",
-    "suburb": "Sant Gervasi - la Bonanova",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "498",
-    "lon": 2.1402433,
-    "lat": 41.4144967,
-    "post_code": "08023",
-    "suburb": "Vallcarca i els Penitents",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "499",
-    "lon": 2.1421504,
-    "lat": 41.4160558,
-    "post_code": "08023",
-    "suburb": "Vallcarca i els Penitents",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "500",
-    "lon": 2.1453424,
-    "lat": 41.4117633,
-    "post_code": "08023",
-    "suburb": "Vallcarca i els Penitents",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "501",
-    "lon": 2.1420204,
-    "lat": 41.4052698,
-    "post_code": "08023",
-    "suburb": "el Putxet i el Farró",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "502",
-    "lon": 2.1492066,
-    "lat": 41.4074444,
-    "post_code": "08023",
-    "suburb": "Vallcarca i els Penitents",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "503",
-    "lon": 2.1524953,
-    "lat": 41.4095926,
-    "post_code": "08024",
-    "suburb": "la Salut",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "504",
-    "lon": 2.1557747,
-    "lat": 41.4092333,
-    "post_code": "08024",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "505",
-    "lon": 2.1658677,
-    "lat": 41.4145614,
-    "post_code": "08024",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "506",
-    "lon": 2.1718497,
-    "lat": 41.4191957,
-    "post_code": "08041",
-    "suburb": "el Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "507",
-    "lon": 2.1640965,
-    "lat": 41.4107641,
-    "post_code": "08024",
-    "suburb": "el Baix Guinardó",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "508",
-    "lon": 2.1656378,
-    "lat": 41.4090922,
-    "post_code": "08025",
-    "suburb": "el Camp d'en Grassot i Gràcia Nova",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "509",
-    "lon": 2.1606736,
-    "lat": 41.3989713,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "510",
-    "lon": 2.1564253,
-    "lat": 41.3989151,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "511",
-    "lon": 2.1543317,
-    "lat": 41.4006862,
-    "post_code": "08012",
-    "suburb": "la Vila de Gràcia",
-    "district": "Gràcia"
-  },
-  {
-    "station_id": "512",
-    "lon": 2.1326911,
-    "lat": 41.4000778,
-    "post_code": "08017",
-    "suburb": "les Tres Torres",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "513",
-    "lon": 2.124329,
-    "lat": 41.399017,
-    "post_code": "08017",
-    "suburb": "Sarrià",
-    "district": "Sarrià-Sant Gervasi"
-  },
-  {
-    "station_id": "514",
-    "lon": 2.1885055,
-    "lat": 41.4095069,
-    "post_code": "08018",
-    "suburb": "el Clot",
-    "district": "Sant Martí"
-  },
-  {
-    "station_id": "515",
-    "lon": 2.1948002,
-    "lat": 41.4352071,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "516",
-    "lon": 2.2001569,
-    "lat": 41.4354601,
-    "post_code": "08030",
-    "suburb": "el Bon Pastor",
-    "district": "Sant Andreu"
-  },
-  {
-    "station_id": "517",
-    "lon": 2.178959,
-    "lat": 41.462095,
-    "post_code": "08033",
-    "suburb": "Ciutat Meridiana",
-    "district": "Nou Barris"
-  },
-  {
-    "station_id": "518",
-    "lon": 2.1570492,
-    "lat": 41.4246885,
-    "post_code": "08032",
-    "suburb": "el Carmel",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "519",
-    "lon": 2.166289,
-    "lat": 41.4246548,
-    "post_code": "08032",
-    "suburb": "la Font d'en Fargues",
-    "district": "Horta-Guinardó"
-  },
-  {
-    "station_id": "526",
-    "lon": 2.1645038,
-    "lat": 41.3683855,
-    "post_code": "08038",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "527",
-    "lon": 2.1543216104507534,
-    "lat": 41.361972900539186,
-    "post_code": "08038",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "537",
-    "lon": 2.1476099,
-    "lat": 41.3653602,
-    "post_code": "08038",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "538",
-    "lon": 2.1522059,
-    "lat": 41.3663147,
-    "post_code": "08038",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "539",
-    "lon": 2.1602153,
-    "lat": 41.3721749,
-    "post_code": "08004",
-    "suburb": "el Poble-sec",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "540",
-    "lon": 2.1426008,
-    "lat": 41.3693483,
-    "post_code": "08004",
-    "suburb": "la Font de la Guatlla",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "541",
-    "lon": 2.1476169,
-    "lat": 41.3614158,
-    "post_code": "08038",
-    "suburb": "la Marina de Port",
-    "district": "Sants-Montjuïc"
-  },
-  {
-    "station_id": "542",
-    "lon": 2.189216913266181,
-    "lat": 41.374538091110196,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "CiutatVella"
-  },
-  {
-    "station_id": "543",
-    "lon": 2.191370993848407,
-    "lat": 41.38382985640722,
-    "post_code": "08003",
-    "suburb": "la Barceloneta",
-    "district": "CiutatVella"
-  },
-  {
-    "station_id": "544",
-    "lon": 2.148729,
-    "lat": 41.37049,
-    "post_code": "08004",
-    "suburb": "la Font de la Guatlla",
-    "district": "Sants-Montjuïc"
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
   },
   {
     "station_id": "122",
     "lon": 2.1663172,
     "lat": 41.4054458,
     "post_code": "08025",
-    "suburb": "el Camp d'en Grassot i Gràcia Nova",
-    "district": "Gràcia"
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "32",
+    "suburb": "el Camp d'en Grassot i Gràcia Nova"
+  },
+  {
+    "station_id": "123",
+    "lon": 2.166735224916682,
+    "lat": 41.3988184485363,
+    "post_code": "08037",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "124",
+    "lon": 2.1878126,
+    "lat": 41.3702483,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "125",
+    "lon": 2.194735,
+    "lat": 41.3834753,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "126",
+    "lon": 2.1822815,
+    "lat": 41.380628,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "127",
+    "lon": 2.1907524,
+    "lat": 41.4120681,
+    "post_code": "08026",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
+  },
+  {
+    "station_id": "128",
+    "lon": 2.1959771,
+    "lat": 41.4158412,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "72",
+    "suburb": "Sant Martí de Provençals"
+  },
+  {
+    "station_id": "129",
+    "lon": 2.16113608,
+    "lat": 41.377046,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "130",
+    "lon": 2.2016699,
+    "lat": 41.4200135,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "la Verneda i la Pau"
+  },
+  {
+    "station_id": "131",
+    "lon": 2.2060317,
+    "lat": 41.4227912,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "la Verneda i la Pau"
+  },
+  {
+    "station_id": "133",
+    "lon": 2.1930174,
+    "lat": 41.4075013,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "134",
+    "lon": 2.1987258,
+    "lat": 41.4113024,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "135",
+    "lon": 2.1972673,
+    "lat": 41.4120452,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "72",
+    "suburb": "Sant Martí de Provençals"
+  },
+  {
+    "station_id": "136",
+    "lon": 2.2017955,
+    "lat": 41.4139298,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "137",
+    "lon": 2.2008139,
+    "lat": 41.4145805,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "72",
+    "suburb": "Sant Martí de Provençals"
+  },
+  {
+    "station_id": "138",
+    "lon": 2.2058345,
+    "lat": 41.4167933,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "139",
+    "lon": 2.2058133,
+    "lat": 41.4183999,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "la Verneda i la Pau"
+  },
+  {
+    "station_id": "140",
+    "lon": 2.1559939,
+    "lat": 41.3808772,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "141",
+    "lon": 2.1954152,
+    "lat": 41.4090202,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "142",
+    "lon": 2.1924144,
+    "lat": 41.4003793,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
+  },
+  {
+    "station_id": "143",
+    "lon": 2.1956161,
+    "lat": 41.4027907,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Parc i la Llacuna del Poblenou"
+  },
+  {
+    "station_id": "144",
+    "lon": 2.1977119,
+    "lat": 41.4056269,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "145",
+    "lon": 2.2024461,
+    "lat": 41.4093405,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "146",
+    "lon": 2.207186,
+    "lat": 41.4148983,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "147",
+    "lon": 2.2124993,
+    "lat": 41.416043,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "148",
+    "lon": 2.1633139,
+    "lat": 41.3783467,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "149",
+    "lon": 2.192952,
+    "lat": 41.3958685,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
+  },
+  {
+    "station_id": "150",
+    "lon": 2.203028,
+    "lat": 41.4065912,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "151",
+    "lon": 2.1969105,
+    "lat": 41.4003471,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "152",
+    "lon": 2.1974184,
+    "lat": 41.3993329,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "153",
+    "lon": 2.20077,
+    "lat": 41.4018686,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "154",
+    "lon": 2.2017694,
+    "lat": 41.4026275,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "155",
+    "lon": 2.2074469,
+    "lat": 41.4070139,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "156",
+    "lon": 2.2088179,
+    "lat": 41.4091355,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "157",
+    "lon": 2.2177652,
+    "lat": 41.4132316,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "158",
+    "lon": 2.2183313,
+    "lat": 41.4116634,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "159",
+    "lon": 2.2163136,
+    "lat": 41.4110822,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "160",
+    "lon": 2.2193724,
+    "lat": 41.4109763,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "161",
+    "lon": 2.1965965,
+    "lat": 41.3953011,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "162",
+    "lon": 2.2084257,
+    "lat": 41.4038559,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "163",
+    "lon": 2.2008756,
+    "lat": 41.3942108,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "164",
+    "lon": 2.1778852,
+    "lat": 41.4118378,
+    "post_code": "08026",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "64",
+    "suburb": "el Camp de l'Arpa del Clot"
+  },
+  {
+    "station_id": "165",
+    "lon": 2.2041415,
+    "lat": 41.3992169,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "166",
+    "lon": 2.206645,
+    "lat": 41.4008312,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "167",
+    "lon": 2.2105777,
+    "lat": 41.4023354,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "168",
+    "lon": 2.2135818,
+    "lat": 41.4053697,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "170",
+    "lon": 2.1999572,
+    "lat": 41.3896642,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "171",
+    "lon": 2.2037136,
+    "lat": 41.3919877,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "173",
+    "lon": 2.2088454,
+    "lat": 41.3979002,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "174",
+    "lon": 2.210191,
+    "lat": 41.400654,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "175",
+    "lon": 2.2091221,
+    "lat": 41.4065291,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "176",
+    "lon": 2.2136,
+    "lat": 41.403216,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "177",
+    "lon": 2.1809764,
+    "lat": 41.4110754,
+    "post_code": "08026",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "64",
+    "suburb": "el Camp de l'Arpa del Clot"
+  },
+  {
+    "station_id": "178",
+    "lon": 2.2162094,
+    "lat": 41.4053649,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "179",
+    "lon": 2.1369015,
+    "lat": 41.36352,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "180",
+    "lon": 2.1388216,
+    "lat": 41.3675574,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "182",
+    "lon": 2.143565,
+    "lat": 41.371366,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
+  },
+  {
+    "station_id": "183",
+    "lon": 2.1419494,
+    "lat": 41.3723682,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "184",
+    "lon": 2.1342316,
+    "lat": 41.3675438,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "185",
+    "lon": 2.1389439,
+    "lat": 41.3703717,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "186",
+    "lon": 2.1439036,
+    "lat": 41.3755503,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
+  },
+  {
+    "station_id": "187",
+    "lon": 2.1698206,
+    "lat": 41.3768806,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "188",
+    "lon": 2.1358571,
+    "lat": 41.3756948,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "189",
+    "lon": 2.1661852,
+    "lat": 41.3969839,
+    "post_code": "08037",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "190",
+    "lon": 2.2078439,
+    "lat": 41.3961412,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "191",
+    "lon": 2.147474,
+    "lat": 41.381951,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "192",
+    "lon": 2.1335494,
+    "lat": 41.3786364,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "193",
+    "lon": 2.1289917,
+    "lat": 41.3812979,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "194",
+    "lon": 2.1323612,
+    "lat": 41.3812001,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "195",
+    "lon": 2.1354149,
+    "lat": 41.3821371,
+    "post_code": "08014",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "196",
+    "lon": 2.1392662,
+    "lat": 41.3832609,
+    "post_code": "08029",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "197",
+    "lon": 2.1410945,
+    "lat": 41.3871579,
+    "post_code": "08029",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "198",
+    "lon": 2.1334379,
+    "lat": 41.3847113,
+    "post_code": "08014",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "199",
+    "lon": 2.1268625,
+    "lat": 41.3819739,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "200",
+    "lon": 2.1312876,
+    "lat": 41.3839045,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "201",
+    "lon": 2.1344218,
+    "lat": 41.3878061,
+    "post_code": "08029",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "202",
+    "lon": 2.1288753,
+    "lat": 41.3854466,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "203",
+    "lon": 2.1285766,
+    "lat": 41.3887069,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "204",
+    "lon": 2.1256248,
+    "lat": 41.3880355,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "205",
+    "lon": 2.1306737,
+    "lat": 41.387561,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "206",
+    "lon": 2.1328634,
+    "lat": 41.3897943,
+    "post_code": "08017",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "207",
+    "lon": 2.136579,
+    "lat": 41.3908477,
+    "post_code": "08017",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "208",
+    "lon": 2.1390667,
+    "lat": 41.3915195,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "209",
+    "lon": 2.1610515,
+    "lat": 41.3857425,
+    "post_code": "08011",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "210",
+    "lon": 2.1422556,
+    "lat": 41.3745238,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "15",
+    "suburb": "Hostafrancs"
+  },
+  {
+    "station_id": "211",
+    "lon": 2.1902116,
+    "lat": 41.3987543,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
   },
   {
     "station_id": "212",
     "lon": 2.1309272,
     "lat": 41.3922355,
     "post_code": "08017",
-    "suburb": "les Corts",
-    "district": "Les Corts"
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "213",
+    "lon": 2.1345892,
+    "lat": 41.3935816,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "214",
+    "lon": 2.1334873,
+    "lat": 41.3952027,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "215",
+    "lon": 2.1380304,
+    "lat": 41.3939378,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "216",
+    "lon": 2.1445567,
+    "lat": 41.3967824,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "217",
+    "lon": 2.1440826,
+    "lat": 41.3985735,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "218",
+    "lon": 2.183145,
+    "lat": 41.4040364,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
+  },
+  {
+    "station_id": "219",
+    "lon": 2.1471724,
+    "lat": 41.3976165,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "220",
+    "lon": 2.1513154,
+    "lat": 41.3960982,
+    "post_code": "08006",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "221",
+    "lon": 2.1524704,
+    "lat": 41.4025392,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "222",
+    "lon": 2.1574439,
+    "lat": 41.4013296,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "223",
+    "lon": 2.1598243,
+    "lat": 41.3983444,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "224",
+    "lon": 2.1644531,
+    "lat": 41.3999967,
+    "post_code": "08037",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "225",
+    "lon": 2.1508071246452154,
+    "lat": 41.384810211467105,
+    "post_code": "08029",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "226",
+    "lon": 2.1609345,
+    "lat": 41.4035608,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "227",
+    "lon": 2.1586704,
+    "lat": 41.4078456,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "228",
+    "lon": 2.1558354,
+    "lat": 41.4068417,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "229",
+    "lon": 2.1569161,
+    "lat": 41.4050968,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "230",
+    "lon": 2.1517977,
+    "lat": 41.4059356,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "232",
+    "lon": 2.1730255457161096,
+    "lat": 41.37449997033759,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "233",
+    "lon": 2.1667829,
+    "lat": 41.3719688,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "234",
+    "lon": 2.162203,
+    "lat": 41.371532,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "235",
+    "lon": 2.1658972,
+    "lat": 41.3751767,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "11",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "236",
+    "lon": 2.1523091,
+    "lat": 41.3751161,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "237",
+    "lon": 2.1539198,
+    "lat": 41.3727426,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "238",
+    "lon": 2.1908473,
+    "lat": 41.4158807,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "63",
+    "suburb": "Navas"
+  },
+  {
+    "station_id": "239",
+    "lon": 2.1844769,
+    "lat": 41.4172922,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "63",
+    "suburb": "Navas"
+  },
+  {
+    "station_id": "240",
+    "lon": 2.1877153,
+    "lat": 41.4175595,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "63",
+    "suburb": "Navas"
+  },
+  {
+    "station_id": "241",
+    "lon": 2.18018,
+    "lat": 41.419178,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "242",
+    "lon": 2.1773157,
+    "lat": 41.4244527,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "62",
+    "suburb": "el Congrés i els Indians"
+  },
+  {
+    "station_id": "243",
+    "lon": 2.1812399,
+    "lat": 41.4239719,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "62",
+    "suburb": "el Congrés i els Indians"
+  },
+  {
+    "station_id": "244",
+    "lon": 2.1786224,
+    "lat": 41.426925,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "62",
+    "suburb": "el Congrés i els Indians"
+  },
+  {
+    "station_id": "245",
+    "lon": 2.1717083,
+    "lat": 41.3826647,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "246",
+    "lon": 2.1866363,
+    "lat": 41.4228449,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "247",
+    "lon": 2.1849107,
+    "lat": 41.4219291,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "248",
+    "lon": 2.1904005,
+    "lat": 41.4182129,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "249",
+    "lon": 2.1872818,
+    "lat": 41.4250835,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "250",
+    "lon": 2.191206,
+    "lat": 41.4258248,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "251",
+    "lon": 2.1852073,
+    "lat": 41.4253643,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "252",
+    "lon": 2.1932159,
+    "lat": 41.4298991,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "253",
+    "lon": 2.1922011,
+    "lat": 41.4298614,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "254",
+    "lon": 2.190246,
+    "lat": 41.4299999,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "255",
+    "lon": 2.18579,
+    "lat": 41.4315,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "256",
+    "lon": 2.1894423,
+    "lat": 41.4361251,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "257",
+    "lon": 2.1896502,
+    "lat": 41.433934,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "258",
+    "lon": 2.1929677,
+    "lat": 41.4425034,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "259",
+    "lon": 2.1858025,
+    "lat": 41.4391174,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "260",
+    "lon": 2.1920873,
+    "lat": 41.4356895,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "261",
+    "lon": 2.1606534,
+    "lat": 41.3821314,
+    "post_code": "08011",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "262",
+    "lon": 2.1516210083711993,
+    "lat": 41.3790954665734,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "263",
+    "lon": 2.1910691,
+    "lat": 41.4378773,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "264",
+    "lon": 2.1970692,
+    "lat": 41.439929,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "265",
+    "lon": 2.1592566,
+    "lat": 41.3847738,
+    "post_code": "08011",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "266",
+    "lon": 2.1842572,
+    "lat": 41.4268952,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "267",
+    "lon": 2.1906302,
+    "lat": 41.4433647,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "268",
+    "lon": 2.1929816,
+    "lat": 41.4457195,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "269",
+    "lon": 2.19294,
+    "lat": 41.448152,
+    "post_code": "08033",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "57",
+    "suburb": "la Trinitat Vella"
+  },
+  {
+    "station_id": "270",
+    "lon": 2.1898372,
+    "lat": 41.4486328,
+    "post_code": "08033",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "57",
+    "suburb": "la Trinitat Vella"
+  },
+  {
+    "station_id": "271",
+    "lon": 2.1935229,
+    "lat": 41.4519872,
+    "post_code": "08033",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "57",
+    "suburb": "la Trinitat Vella"
+  },
+  {
+    "station_id": "272",
+    "lon": 2.1842021,
+    "lat": 41.4325013,
+    "post_code": "08033",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "273",
+    "lon": 2.1834174,
+    "lat": 41.4304126,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "274",
+    "lon": 2.1849813,
+    "lat": 41.4299201,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "275",
+    "lon": 2.1821802,
+    "lat": 41.43068,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "276",
+    "lon": 2.1652216,
+    "lat": 41.4121345,
+    "post_code": "08024",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "277",
+    "lon": 2.1689962,
+    "lat": 41.4082107,
+    "post_code": "08025",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "278",
+    "lon": 2.1715285,
+    "lat": 41.4098842,
+    "post_code": "08025",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "279",
+    "lon": 2.1745567,
+    "lat": 41.4158995,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "280",
+    "lon": 2.1777274,
+    "lat": 41.4138664,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "281",
+    "lon": 2.1763994,
+    "lat": 41.4180789,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "282",
+    "lon": 2.1659881,
+    "lat": 41.4275514,
+    "post_code": "08031",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "36",
+    "suburb": "la Font d'en Fargues"
+  },
+  {
+    "station_id": "283",
+    "lon": 2.1617032,
+    "lat": 41.4297231,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "284",
+    "lon": 2.1314948,
+    "lat": 41.389462,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "285",
+    "lon": 2.186105,
+    "lat": 41.4366708,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "60",
+    "suburb": "Sant Andreu"
+  },
+  {
+    "station_id": "286",
+    "lon": 2.1913538,
+    "lat": 41.4030225,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
+  },
+  {
+    "station_id": "287",
+    "lon": 2.1679313,
+    "lat": 41.3890626,
+    "post_code": "08007",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "288",
+    "lon": 2.174444,
+    "lat": 41.4296439,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "44",
+    "suburb": "Vilapicina i la Torre Llobeta"
+  },
+  {
+    "station_id": "289",
+    "lon": 2.1909952,
+    "lat": 41.4166982,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "63",
+    "suburb": "Navas"
+  },
+  {
+    "station_id": "290",
+    "lon": 2.1740962,
+    "lat": 41.4373376,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "291",
+    "lon": 2.1751572,
+    "lat": 41.426078,
+    "post_code": "08031",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "44",
+    "suburb": "Vilapicina i la Torre Llobeta"
+  },
+  {
+    "station_id": "292",
+    "lon": 2.1720191,
+    "lat": 41.4300161,
+    "post_code": "08031",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "44",
+    "suburb": "Vilapicina i la Torre Llobeta"
+  },
+  {
+    "station_id": "293",
+    "lon": 2.1629889,
+    "lat": 41.4283127,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "294",
+    "lon": 2.1706752,
+    "lat": 41.4363473,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "48",
+    "suburb": "la Guineueta"
+  },
+  {
+    "station_id": "295",
+    "lon": 2.1716309,
+    "lat": 41.433384,
+    "post_code": "08031",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "46",
+    "suburb": "el Turó de la Peira"
+  },
+  {
+    "station_id": "296",
+    "lon": 2.1841014,
+    "lat": 41.4364887,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "297",
+    "lon": 2.1767828,
+    "lat": 41.4388223,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "52",
+    "suburb": "la Prosperitat"
+  },
+  {
+    "station_id": "298",
+    "lon": 2.1817718,
+    "lat": 41.4347233,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "299",
+    "lon": 2.1748267,
+    "lat": 41.4340849,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "300",
+    "lon": 2.1769107,
+    "lat": 41.4315843,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "45",
+    "suburb": "Porta"
+  },
+  {
+    "station_id": "301",
+    "lon": 2.1693134,
+    "lat": 41.4366871,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "48",
+    "suburb": "la Guineueta"
+  },
+  {
+    "station_id": "302",
+    "lon": 2.111541,
+    "lat": 41.3906352,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "303",
+    "lon": 2.115107,
+    "lat": 41.3934324,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "304",
+    "lon": 2.121,
+    "lat": 41.39038,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "305",
+    "lon": 2.1237141,
+    "lat": 41.3875297,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "306",
+    "lon": 2.122893,
+    "lat": 41.3853868,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "307",
+    "lon": 2.1135824,
+    "lat": 41.3791986,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "308",
+    "lon": 2.114029,
+    "lat": 41.37684,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "309",
+    "lon": 2.1169828,
+    "lat": 41.3770199,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "310",
+    "lon": 2.1190863,
+    "lat": 41.3812111,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "311",
+    "lon": 2.1202487,
+    "lat": 41.3785631,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "312",
+    "lon": 2.1233038,
+    "lat": 41.3789061,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "313",
+    "lon": 2.1297823,
+    "lat": 41.3754188,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "17",
+    "suburb": "Sants - Badal"
+  },
+  {
+    "station_id": "314",
+    "lon": 2.1297303,
+    "lat": 41.3783067,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "315",
+    "lon": 2.1817876,
+    "lat": 41.4156285,
+    "post_code": "08041",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "64",
+    "suburb": "el Camp de l'Arpa del Clot"
+  },
+  {
+    "station_id": "316",
+    "lon": 2.198071,
+    "lat": 41.4224015,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "la Verneda i la Pau"
+  },
+  {
+    "station_id": "317",
+    "lon": 2.2008632,
+    "lat": 41.4256626,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "la Verneda i la Pau"
+  },
+  {
+    "station_id": "318",
+    "lon": 2.170592,
+    "lat": 41.412427,
+    "post_code": "08025",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "319",
+    "lon": 2.1455022,
+    "lat": 41.3937414,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "320",
+    "lon": 2.149144,
+    "lat": 41.400305,
+    "post_code": "08006",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "321",
+    "lon": 2.1445843,
+    "lat": 41.4031529,
+    "post_code": "08006",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "27",
+    "suburb": "el Putxet i el Farró"
+  },
+  {
+    "station_id": "322",
+    "lon": 2.13892,
+    "lat": 41.4009,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "323",
+    "lon": 2.1386719,
+    "lat": 41.3981616,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "324",
+    "lon": 2.136346,
+    "lat": 41.3969455,
+    "post_code": "08021",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "26",
+    "suburb": "Sant Gervasi - Galvany"
+  },
+  {
+    "station_id": "325",
+    "lon": 2.1302775,
+    "lat": 41.3949601,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "326",
+    "lon": 2.1381069,
+    "lat": 41.4074131,
+    "post_code": "08022",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "25",
+    "suburb": "Sant Gervasi - la Bonanova"
+  },
+  {
+    "station_id": "327",
+    "lon": 2.134603,
+    "lat": 41.4050074,
+    "post_code": "08022",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "25",
+    "suburb": "Sant Gervasi - la Bonanova"
+  },
+  {
+    "station_id": "328",
+    "lon": 2.1344691,
+    "lat": 41.402988,
+    "post_code": "08022",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "25",
+    "suburb": "Sant Gervasi - la Bonanova"
+  },
+  {
+    "station_id": "329",
+    "lon": 2.1283866,
+    "lat": 41.4029965,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "330",
+    "lon": 2.131524,
+    "lat": 41.401883,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "331",
+    "lon": 2.1279409,
+    "lat": 41.3970497,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "332",
+    "lon": 2.1281922,
+    "lat": 41.3998981,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "333",
+    "lon": 2.1250451,
+    "lat": 41.3954723,
+    "post_code": "08034",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "334",
+    "lon": 2.122889,
+    "lat": 41.400793,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "335",
+    "lon": 2.1231228,
+    "lat": 41.3935355,
+    "post_code": "08034",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "336",
+    "lon": 2.1205394,
+    "lat": 41.3948771,
+    "post_code": "08034",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "337",
+    "lon": 2.1204941,
+    "lat": 41.3986238,
+    "post_code": "08034",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "338",
+    "lon": 2.1194557,
+    "lat": 41.3977227,
+    "post_code": "08034",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "23",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "339",
+    "lon": 2.2053803,
+    "lat": 41.4017084,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "340",
+    "lon": 2.2047037,
+    "lat": 41.4361782,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "341",
+    "lon": 2.2062245,
+    "lat": 41.4339212,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "342",
+    "lon": 2.1936584,
+    "lat": 41.4034967,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "66",
+    "suburb": "el Parc i la Llacuna del Poblenou"
+  },
+  {
+    "station_id": "343",
+    "lon": 2.1996179,
+    "lat": 41.4389609,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "344",
+    "lon": 2.1996045,
+    "lat": 41.4431441,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "58",
+    "suburb": "Baró de Viver"
+  },
+  {
+    "station_id": "345",
+    "lon": 2.1398322,
+    "lat": 41.3631066,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "346",
+    "lon": 2.138931,
+    "lat": 41.360798,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "347",
+    "lon": 2.1417765,
+    "lat": 41.3595484,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "348",
+    "lon": 2.141563,
+    "lat": 41.357067,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "349",
+    "lon": 2.1371996,
+    "lat": 41.3573288,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "350",
+    "lon": 2.1480223,
+    "lat": 41.392052,
+    "post_code": "08036",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "351",
+    "lon": 2.1356187,
+    "lat": 41.3621232,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "352",
+    "lon": 2.1341586,
+    "lat": 41.363279,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
   },
   {
     "station_id": "353",
     "lon": 2.1232547,
     "lat": 41.37541,
     "post_code": "08028",
-    "suburb": "Sants - Badal",
-    "district": "Sants-Montjuïc"
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "17",
+    "suburb": "Sants - Badal"
+  },
+  {
+    "station_id": "354",
+    "lon": 2.1299539,
+    "lat": 41.3759419,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "17",
+    "suburb": "Sants - Badal"
+  },
+  {
+    "station_id": "355",
+    "lon": 2.127854,
+    "lat": 41.371459,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "17",
+    "suburb": "Sants - Badal"
+  },
+  {
+    "station_id": "356",
+    "lon": 2.1631012,
+    "lat": 41.4134503,
+    "post_code": "08024",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "357",
+    "lon": 2.1579897,
+    "lat": 41.4105956,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Salut"
+  },
+  {
+    "station_id": "358",
+    "lon": 2.1793035,
+    "lat": 41.3872437,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "359",
+    "lon": 2.1775594,
+    "lat": 41.3900544,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "360",
+    "lon": 2.1730023,
+    "lat": 41.3952527,
+    "post_code": "08009",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "361",
+    "lon": 2.17881,
+    "lat": 41.37652,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "362",
+    "lon": 2.1706323,
+    "lat": 41.396994,
+    "post_code": "08009",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "363",
+    "lon": 2.1743743,
+    "lat": 41.3908381,
+    "post_code": "08010",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "364",
+    "lon": 2.1633226,
+    "lat": 41.393062,
+    "post_code": "08007",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "365",
+    "lon": 2.1469336,
+    "lat": 41.3875712,
+    "post_code": "08029",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "366",
+    "lon": 2.1729755,
+    "lat": 41.3811389,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "367",
+    "lon": 2.1376205,
+    "lat": 41.384972,
+    "post_code": "08029",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "19",
+    "suburb": "les Corts"
+  },
+  {
+    "station_id": "368",
+    "lon": 2.1756598,
+    "lat": 41.3968391,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "369",
+    "lon": 2.1780175,
+    "lat": 41.40013,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
+  },
+  {
+    "station_id": "370",
+    "lon": 2.1729061,
+    "lat": 41.4039698,
+    "post_code": "08025",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
+  },
+  {
+    "station_id": "371",
+    "lon": 2.181199,
+    "lat": 41.4040525,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
+  },
+  {
+    "station_id": "372",
+    "lon": 2.1841711,
+    "lat": 41.4001015,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
+  },
+  {
+    "station_id": "373",
+    "lon": 2.1613897,
+    "lat": 41.3750995,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "374",
+    "lon": 2.1612814,
+    "lat": 41.3949729,
+    "post_code": "08008",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "375",
+    "lon": 2.1804468,
+    "lat": 41.3720293,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "376",
+    "lon": 2.180302,
+    "lat": 41.3718728,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "377",
+    "lon": 2.1836886,
+    "lat": 41.3776292,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "378",
+    "lon": 2.1767427,
+    "lat": 41.3785379,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "379",
+    "lon": 2.1420704,
+    "lat": 41.3829333,
+    "post_code": "08029",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "380",
+    "lon": 2.1740155,
+    "lat": 41.3854094,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "381",
+    "lon": 2.1677697,
+    "lat": 41.3816139,
+    "post_code": "8001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "382",
+    "lon": 2.2041137,
+    "lat": 41.4038902,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "383",
+    "lon": 2.141767,
+    "lat": 41.381219,
+    "post_code": "08029",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "384",
+    "lon": 2.1468381,
+    "lat": 41.3807072,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "385",
+    "lon": 2.1552902,
+    "lat": 41.387888,
+    "post_code": "08036",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "386",
+    "lon": 2.1568773,
+    "lat": 41.3751866,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "387",
+    "lon": 2.1787074,
+    "lat": 41.3957813,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
+  },
+  {
+    "station_id": "388",
+    "lon": 2.1671611,
+    "lat": 41.3806411,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "389",
+    "lon": 2.1875446,
+    "lat": 41.3873901,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "390",
+    "lon": 2.1820169,
+    "lat": 41.3869612,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "391",
+    "lon": 2.1913753,
+    "lat": 41.4230551,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "392",
+    "lon": 2.1906339,
+    "lat": 41.3905303,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "393",
+    "lon": 2.1976297,
+    "lat": 41.4022657,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "394",
+    "lon": 2.1631263,
+    "lat": 41.3873057,
+    "post_code": "08007",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "395",
+    "lon": 2.1702467,
+    "lat": 41.3860607,
+    "post_code": "08002",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "02",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "396",
+    "lon": 2.1968267,
+    "lat": 41.3890253,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "397",
+    "lon": 2.1993105,
+    "lat": 41.3889129,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "398",
+    "lon": 2.1934636,
+    "lat": 41.380955,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "399",
+    "lon": 2.1332694,
+    "lat": 41.3734706,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "400",
+    "lon": 2.1879597,
+    "lat": 41.3694508,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "401",
+    "lon": 2.183723,
+    "lat": 41.382418,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "402",
+    "lon": 2.1821917,
+    "lat": 41.380628,
+    "post_code": "08002",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "403",
+    "lon": 2.1368202,
+    "lat": 41.3796421,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "404",
+    "lon": 2.1331357,
+    "lat": 41.3653426,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "405",
+    "lon": 2.1521802,
+    "lat": 41.3854003,
+    "post_code": "08029",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "406",
+    "lon": 2.1646697,
+    "lat": 41.3863747,
+    "post_code": "08007",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "408",
+    "lon": 2.1923283,
+    "lat": 41.3889972,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "409",
+    "lon": 2.1925059,
+    "lat": 41.392384,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "67",
+    "suburb": "la Vila Olímpica del Poblenou"
+  },
+  {
+    "station_id": "410",
+    "lon": 2.17871,
+    "lat": 41.376433,
+    "post_code": "08039",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "02",
+    "suburb": "el Barri Gòtic"
+  },
+  {
+    "station_id": "411",
+    "lon": 2.2122054,
+    "lat": 41.411381,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "69",
+    "suburb": "Diagonal Mar i el Front Marítim del Poblenou"
+  },
+  {
+    "station_id": "412",
+    "lon": 2.1727457,
+    "lat": 41.3893094,
+    "post_code": "08010",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "413",
+    "lon": 2.1707419,
+    "lat": 41.393489,
+    "post_code": "08009",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "414",
+    "lon": 2.1764275,
+    "lat": 41.3937234,
+    "post_code": "08010",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "415",
+    "lon": 2.1689592,
+    "lat": 41.3793558,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "416",
+    "lon": 2.1696744,
+    "lat": 41.3781065,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "417",
+    "lon": 2.1801094,
+    "lat": 41.4164824,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "418",
+    "lon": 2.1801142,
+    "lat": 41.391062,
+    "post_code": "08018",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "419",
+    "lon": 2.1808391,
+    "lat": 41.391313,
+    "post_code": "08018",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "04",
+    "suburb": "Sant Pere, Santa Caterina i la Ribera"
+  },
+  {
+    "station_id": "420",
+    "lon": 2.1479385,
+    "lat": 41.3743329,
+    "post_code": "08010",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "Hostafrancs"
+  },
+  {
+    "station_id": "421",
+    "lon": 2.1378667,
+    "lat": 41.378118,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "422",
+    "lon": 2.1154135,
+    "lat": 41.3881175,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "423",
+    "lon": 2.1894852,
+    "lat": 41.4202459,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "61",
+    "suburb": "la Sagrera"
+  },
+  {
+    "station_id": "424",
+    "lon": 2.1925198,
+    "lat": 41.3795862,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "425",
+    "lon": 2.1748621,
+    "lat": 41.3765618,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "426",
+    "lon": 2.1830315,
+    "lat": 41.39828,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
+  },
+  {
+    "station_id": "427",
+    "lon": 2.1680021,
+    "lat": 41.3754047,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
+  },
+  {
+    "station_id": "428",
+    "lon": 2.1960799,
+    "lat": 41.3983902,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "429",
+    "lon": 2.1091535,
+    "lat": 41.3881262,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "430",
+    "lon": 2.113096,
+    "lat": 41.385641,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "431",
+    "lon": 2.122175,
+    "lat": 41.383467,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "432",
+    "lon": 2.1170751,
+    "lat": 41.3847061,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "433",
+    "lon": 2.1168609,
+    "lat": 41.3862258,
+    "post_code": "08034",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "21",
+    "suburb": "Pedralbes"
+  },
+  {
+    "station_id": "434",
+    "lon": 2.1269152,
+    "lat": 41.3767538,
+    "post_code": "08028",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "17",
+    "suburb": "Sants - Badal"
+  },
+  {
+    "station_id": "435",
+    "lon": 2.112186,
+    "lat": 41.383585,
+    "post_code": "08028",
+    "district_id": "04",
+    "district": "Les Corts",
+    "suburb_id": "20",
+    "suburb": "la Maternitat i Sant Ramon"
+  },
+  {
+    "station_id": "436",
+    "lon": 2.1433038,
+    "lat": 41.3545425,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "12",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "437",
+    "lon": 2.1450958,
+    "lat": 41.3513237,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "12",
+    "suburb": "la Marina del Prat Vermell"
+  },
+  {
+    "station_id": "438",
+    "lon": 2.1754896,
+    "lat": 41.3981669,
+    "post_code": "08013",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "439",
+    "lon": 2.1328403,
+    "lat": 41.3685394,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "16",
+    "suburb": "la Bordeta"
+  },
+  {
+    "station_id": "440",
+    "lon": 2.1976864,
+    "lat": 41.417694,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "72",
+    "suburb": "Sant Martí de Provençals"
+  },
+  {
+    "station_id": "441",
+    "lon": 2.1398409,
+    "lat": 41.3754426,
+    "post_code": "08014",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "18",
+    "suburb": "Sants"
+  },
+  {
+    "station_id": "442",
+    "lon": 2.138599,
+    "lat": 41.3649272,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "443",
+    "lon": 2.1542277,
+    "lat": 41.3887127,
+    "post_code": "08036",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "08",
+    "suburb": "l'Antiga Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "444",
+    "lon": 2.1554047,
+    "lat": 41.3717304,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "445",
+    "lon": 2.154004,
+    "lat": 41.3755016,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "10",
+    "suburb": "Sant Antoni"
+  },
+  {
+    "station_id": "446",
+    "lon": 2.1884228,
+    "lat": 41.3779974,
+    "post_code": "08003",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "03",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "447",
+    "lon": 2.1860256,
+    "lat": 41.3943033,
+    "post_code": "08018",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "05",
+    "suburb": "el Fort Pienc"
+  },
+  {
+    "station_id": "448",
+    "lon": 2.1997869,
+    "lat": 41.3972809,
+    "post_code": "08005",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "68",
+    "suburb": "el Poblenou"
+  },
+  {
+    "station_id": "449",
+    "lon": 2.1949461,
+    "lat": 41.4058109,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "450",
+    "lon": 2.2061691,
+    "lat": 41.410712,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "71",
+    "suburb": "Provençals del Poblenou"
+  },
+  {
+    "station_id": "451",
+    "lon": 2.2150487,
+    "lat": 41.4140598,
+    "post_code": "08019",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "70",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "452",
+    "lon": 2.20934,
+    "lat": 41.4194972,
+    "post_code": "08020",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "73",
+    "suburb": "el Besòs i el Maresme"
+  },
+  {
+    "station_id": "454",
+    "lon": 2.1684799,
+    "lat": 41.4072349,
+    "post_code": "08025",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "455",
+    "lon": 2.1826833,
+    "lat": 41.4105848,
+    "post_code": "08026",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "64",
+    "suburb": "el Camp de l'Arpa del Clot"
+  },
+  {
+    "station_id": "456",
+    "lon": 2.1874539,
+    "lat": 41.4143392,
+    "post_code": "08026",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
+  },
+  {
+    "station_id": "457",
+    "lon": 2.2039823,
+    "lat": 41.4383117,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "458",
+    "lon": 2.2010422,
+    "lat": 41.4457962,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "459",
+    "lon": 2.1976757,
+    "lat": 41.4479402,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "57",
+    "suburb": "la Trinitat Vella"
+  },
+  {
+    "station_id": "460",
+    "lon": 2.1894717,
+    "lat": 41.4513863,
+    "post_code": "08033",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "57",
+    "suburb": "la Trinitat Vella"
+  },
+  {
+    "station_id": "461",
+    "lon": 2.185727,
+    "lat": 41.442489,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "52",
+    "suburb": "la Prosperitat"
+  },
+  {
+    "station_id": "462",
+    "lon": 2.184857,
+    "lat": 41.446923,
+    "post_code": "08033",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "53",
+    "suburb": "la Trinitat Nova"
+  },
+  {
+    "station_id": "463",
+    "lon": 2.1833801,
+    "lat": 41.4490679,
+    "post_code": "08033",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "53",
+    "suburb": "la Trinitat Nova"
+  },
+  {
+    "station_id": "464",
+    "lon": 2.182335,
+    "lat": 41.439692,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "52",
+    "suburb": "la Prosperitat"
+  },
+  {
+    "station_id": "465",
+    "lon": 2.1599427,
+    "lat": 41.3954094,
+    "post_code": "08008",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "466",
+    "lon": 2.1813051,
+    "lat": 41.443387,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "52",
+    "suburb": "la Prosperitat"
+  },
+  {
+    "station_id": "467",
+    "lon": 2.176726,
+    "lat": 41.4450463,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "51",
+    "suburb": "Verdun"
+  },
+  {
+    "station_id": "468",
+    "lon": 2.1775154,
+    "lat": 41.4480464,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "50",
+    "suburb": "les Roquetes"
+  },
+  {
+    "station_id": "469",
+    "lon": 2.1781553,
+    "lat": 41.4417001,
+    "post_code": "08016",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "52",
+    "suburb": "la Prosperitat"
+  },
+  {
+    "station_id": "470",
+    "lon": 2.1746238,
+    "lat": 41.4432762,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "51",
+    "suburb": "Verdun"
+  },
+  {
+    "station_id": "471",
+    "lon": 2.1715576,
+    "lat": 41.4389014,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "48",
+    "suburb": "la Guineueta"
+  },
+  {
+    "station_id": "472",
+    "lon": 2.170393,
+    "lat": 41.4427374,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "48",
+    "suburb": "la Guineueta"
+  },
+  {
+    "station_id": "473",
+    "lon": 2.1657506,
+    "lat": 41.4388644,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "48",
+    "suburb": "la Guineueta"
+  },
+  {
+    "station_id": "474",
+    "lon": 2.1664224,
+    "lat": 41.4418604,
+    "post_code": "08042",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "49",
+    "suburb": "Canyelles"
+  },
+  {
+    "station_id": "475",
+    "lon": 2.1799878,
+    "lat": 41.4216738,
+    "post_code": "08027",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "62",
+    "suburb": "el Congrés i els Indians"
+  },
+  {
+    "station_id": "476",
+    "lon": 2.174401,
+    "lat": 41.422037,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "477",
+    "lon": 2.1722534,
+    "lat": 41.4260751,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "36",
+    "suburb": "la Font d'en Fargues"
+  },
+  {
+    "station_id": "478",
+    "lon": 2.1697582,
+    "lat": 41.4276076,
+    "post_code": "08031",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "44",
+    "suburb": "Vilapicina i la Torre Llobeta"
+  },
+  {
+    "station_id": "479",
+    "lon": 2.1671068,
+    "lat": 41.430623,
+    "post_code": "08031",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "46",
+    "suburb": "el Turó de la Peira"
+  },
+  {
+    "station_id": "480",
+    "lon": 2.1629258,
+    "lat": 41.4333259,
+    "post_code": "08031",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "481",
+    "lon": 2.163872,
+    "lat": 41.4357978,
+    "post_code": "08031",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "482",
+    "lon": 2.1620235,
+    "lat": 41.4372022,
+    "post_code": "08042",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "483",
+    "lon": 2.1589684563445877,
+    "lat": 41.429561735076526,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "484",
+    "lon": 2.1585268,
+    "lat": 41.4345997,
+    "post_code": "08031",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "485",
+    "lon": 2.1565742,
+    "lat": 41.4374904,
+    "post_code": "08031",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "486",
+    "lon": 2.1564551,
+    "lat": 41.4306102,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "43",
+    "suburb": "Horta"
+  },
+  {
+    "station_id": "487",
+    "lon": 2.1521909,
+    "lat": 41.4267638,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "42",
+    "suburb": "el Carmel"
+  },
+  {
+    "station_id": "488",
+    "lon": 2.147904,
+    "lat": 41.4347859,
+    "post_code": "08035",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "41",
+    "suburb": "la Vall d'Hebron"
+  },
+  {
+    "station_id": "489",
+    "lon": 2.1499103,
+    "lat": 41.4312335,
+    "post_code": "08035",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "41",
+    "suburb": "la Vall d'Hebron"
+  },
+  {
+    "station_id": "490",
+    "lon": 2.1443777,
+    "lat": 41.4280668,
+    "post_code": "08035",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "41",
+    "suburb": "la Vall d'Hebron"
+  },
+  {
+    "station_id": "491",
+    "lon": 2.1456449,
+    "lat": 41.4306689,
+    "post_code": "08035",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "41",
+    "suburb": "la Vall d'Hebron"
+  },
+  {
+    "station_id": "492",
+    "lon": 2.1751709,
+    "lat": 41.3943454,
+    "post_code": "08010",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "493",
+    "lon": 2.1401823,
+    "lat": 41.419965,
+    "post_code": "08023",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "28",
+    "suburb": "Vallcarca i els Penitents"
+  },
+  {
+    "station_id": "494",
+    "lon": 2.1652199,
+    "lat": 41.3896967,
+    "post_code": "08007",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "07",
+    "suburb": "la Dreta de l'Eixample"
+  },
+  {
+    "station_id": "495",
+    "lon": 2.150523,
+    "lat": 41.377846,
+    "post_code": "08015",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "09",
+    "suburb": "la Nova Esquerra de l'Eixample"
+  },
+  {
+    "station_id": "496",
+    "lon": 2.174799,
+    "lat": 41.4048623,
+    "post_code": "08025",
+    "district_id": "02",
+    "district": "Eixample",
+    "suburb_id": "06",
+    "suburb": "la Sagrada Família"
+  },
+  {
+    "station_id": "497",
+    "lon": 2.1360313,
+    "lat": 41.4095489,
+    "post_code": "08022",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "25",
+    "suburb": "Sant Gervasi - la Bonanova"
+  },
+  {
+    "station_id": "498",
+    "lon": 2.1402433,
+    "lat": 41.4144967,
+    "post_code": "08023",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "28",
+    "suburb": "Vallcarca i els Penitents"
+  },
+  {
+    "station_id": "499",
+    "lon": 2.1421504,
+    "lat": 41.4160558,
+    "post_code": "08023",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "28",
+    "suburb": "Vallcarca i els Penitents"
+  },
+  {
+    "station_id": "500",
+    "lon": 2.1453424,
+    "lat": 41.4117633,
+    "post_code": "08023",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "28",
+    "suburb": "Vallcarca i els Penitents"
+  },
+  {
+    "station_id": "501",
+    "lon": 2.1420204,
+    "lat": 41.4052698,
+    "post_code": "08023",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "27",
+    "suburb": "el Putxet i el Farró"
+  },
+  {
+    "station_id": "502",
+    "lon": 2.1492066,
+    "lat": 41.4074444,
+    "post_code": "08023",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "28",
+    "suburb": "Vallcarca i els Penitents"
+  },
+  {
+    "station_id": "503",
+    "lon": 2.1524953,
+    "lat": 41.4095926,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "30",
+    "suburb": "la Salut"
+  },
+  {
+    "station_id": "504",
+    "lon": 2.1557747,
+    "lat": 41.4092333,
+    "post_code": "08024",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "505",
+    "lon": 2.1658677,
+    "lat": 41.4145614,
+    "post_code": "08024",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "506",
+    "lon": 2.1718497,
+    "lat": 41.4191957,
+    "post_code": "08041",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "35",
+    "suburb": "el Guinardó"
+  },
+  {
+    "station_id": "507",
+    "lon": 2.1640965,
+    "lat": 41.4107641,
+    "post_code": "08024",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "508",
+    "lon": 2.1656378,
+    "lat": 41.4090922,
+    "post_code": "08025",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "32",
+    "suburb": "el Camp d'en Grassot i Gràcia Nova"
+  },
+  {
+    "station_id": "509",
+    "lon": 2.1606736,
+    "lat": 41.3989713,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "510",
+    "lon": 2.1564253,
+    "lat": 41.3989151,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "511",
+    "lon": 2.1543317,
+    "lat": 41.4006862,
+    "post_code": "08012",
+    "district_id": "06",
+    "district": "Gràcia",
+    "suburb_id": "31",
+    "suburb": "la Vila de Gràcia"
+  },
+  {
+    "station_id": "512",
+    "lon": 2.1326911,
+    "lat": 41.4000778,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "les Tres Torres"
+  },
+  {
+    "station_id": "513",
+    "lon": 2.124329,
+    "lat": 41.399017,
+    "post_code": "08017",
+    "district_id": "05",
+    "district": "Sarrià-Sant Gervasi",
+    "suburb_id": "24",
+    "suburb": "Sarrià"
+  },
+  {
+    "station_id": "514",
+    "lon": 2.1885055,
+    "lat": 41.4095069,
+    "post_code": "08018",
+    "district_id": "10",
+    "district": "Sant Martí",
+    "suburb_id": "65",
+    "suburb": "el Clot"
+  },
+  {
+    "station_id": "515",
+    "lon": 2.1948002,
+    "lat": 41.4352071,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "516",
+    "lon": 2.2001569,
+    "lat": 41.4354601,
+    "post_code": "08030",
+    "district_id": "09",
+    "district": "Sant Andreu",
+    "suburb_id": "59",
+    "suburb": "el Bon Pastor"
+  },
+  {
+    "station_id": "517",
+    "lon": 2.178959,
+    "lat": 41.462095,
+    "post_code": "08033",
+    "district_id": "08",
+    "district": "Nou Barris",
+    "suburb_id": "55",
+    "suburb": "Ciutat Meridiana"
+  },
+  {
+    "station_id": "518",
+    "lon": 2.1570492,
+    "lat": 41.4246885,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "37",
+    "suburb": "el Carmel"
+  },
+  {
+    "station_id": "519",
+    "lon": 2.166289,
+    "lat": 41.4246548,
+    "post_code": "08032",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "36",
+    "suburb": "la Font d'en Fargues"
+  },
+  {
+    "station_id": "526",
+    "lon": 2.1645038,
+    "lat": 41.3683855,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "527",
+    "lon": 2.1543216104507534,
+    "lat": 41.361972900539186,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "537",
+    "lon": 2.1476099,
+    "lat": 41.3653602,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "538",
+    "lon": 2.1522059,
+    "lat": 41.3663147,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "539",
+    "lon": 2.1602153,
+    "lat": 41.3721749,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "540",
+    "lon": 2.1426008,
+    "lat": 41.3693483,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "14",
+    "suburb": "la Font de la Guatlla"
+  },
+  {
+    "station_id": "541",
+    "lon": 2.1476169,
+    "lat": 41.3614158,
+    "post_code": "08038",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "13",
+    "suburb": "la Marina de Port"
+  },
+  {
+    "station_id": "542",
+    "lon": 2.189216913266181,
+    "lat": 41.374538091110196,
+    "post_code": "Unknown",
+    "district_id": "",
+    "district": "Ciutat Vella",
+    "suburb_id": "",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "543",
+    "lon": 2.191370993848407,
+    "lat": 41.38382985640722,
+    "post_code": "Unknown",
+    "district_id": "",
+    "district": "Ciutat Vella",
+    "suburb_id": "",
+    "suburb": "la Barceloneta"
+  },
+  {
+    "station_id": "544",
+    "lon": 2.148729,
+    "lat": 41.37049,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "14",
+    "suburb": "la Font de la Guatlla"
   }
 ]

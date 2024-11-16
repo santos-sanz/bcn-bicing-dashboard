@@ -5,14 +5,16 @@ import { point } from '@turf/helpers';
 import { GeoJSON } from 'geojson';
 type FeatureCollection = GeoJSON.FeatureCollection;
 
-export type StationInfo = {
+export interface StationInfo {
     station_id: string;
     lon: number;
     lat: number;
     post_code: string;
-    suburb?: string;
-    district?: string;
-};
+    district_id: string;
+    district: string;
+    suburb_id: string;
+    suburb: string;
+}
 
 export async function addStation(station: StationInfo): Promise<void> {
     const dataDir = path.join(process.cwd(), 'public', 'data');

@@ -54,11 +54,21 @@ export default async function handler(
 
 
     for (const info of newStations) {
+      const [districtInfo, suburbInfo] = (info.cross_street || '').split('/');
+      const district_id = districtInfo ? districtInfo.split('-')[0]?.trim() : '';
+      const district = districtInfo ? districtInfo.split('-')[1]?.trim() : '';
+      const suburb_id = suburbInfo ? suburbInfo.split('-')[0]?.trim() : '';
+      const suburb = suburbInfo ? suburbInfo.split('-')[1]?.trim() : '';
+
       const station: StationInfo = {
         station_id: info.station_id,
         lon: info.lon,
         lat: info.lat,
         post_code: info.post_code || "Unknown",
+        district_id,
+        district,
+        suburb_id,
+        suburb
       };
 
       await addStation(station);
@@ -69,8 +79,10 @@ export default async function handler(
     const infoMap = new Map<string, any>();
     stationsInfo.forEach((station: any) => {
       infoMap.set(station.station_id, { 
-        suburb: station.suburb, 
-        district: station.district 
+        suburb: station.suburb,
+        suburb_id: station.suburb_id,
+        district: station.district,
+        district_id: station.district_id
       });
     });
 
@@ -82,8 +94,10 @@ export default async function handler(
   
       updatedStationsInfo.forEach((station: any) => {
         infoMap.set(station.station_id, { 
-          suburb: station.suburb, 
-          district: station.district 
+          suburb: station.suburb,
+          suburb_id: station.suburb_id,
+          district: station.district,
+          district_id: station.district_id
         });
       });
     }
@@ -97,7 +111,9 @@ export default async function handler(
       stationsInfo.forEach((station: any) => {
         backupInfoMap.set(station.station_id, {
           suburb: station.suburb,
-          district: station.district
+          suburb_id: station.suburb_id,
+          district: station.district,
+          district_id: station.district_id
         });
       });
     }
@@ -118,9 +134,9 @@ export default async function handler(
       return {
         ...info,
         ...statusMap.get(info.station_id),
-        district_id,
+        district_id: district_id || (backupInfo?.district_id || ''),
         district: district || (backupInfo?.district || ''),
-        suburb_id,
+        suburb_id: suburb_id || (backupInfo?.suburb_id || ''),
         suburb: suburb || (backupInfo?.suburb || ''),
       };
     });
