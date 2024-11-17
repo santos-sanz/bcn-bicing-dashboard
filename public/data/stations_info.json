@@ -1,6 +1,7 @@
 [
   {
     "station_id": "1",
+    "name": "GRAN VIA CORTS CATALANES, 760",
     "lon": 2.1801069,
     "lat": 41.3979779,
     "post_code": "08013",
@@ -11,6 +12,7 @@
   },
   {
     "station_id": "2",
+    "name": "C/ ROGER DE FLOR, 126",
     "lon": 2.1771985,
     "lat": 41.3954877,
     "post_code": "08013",
@@ -21,6 +23,7 @@
   },
   {
     "station_id": "3",
+    "name": "C/ NÀPOLS, 82",
     "lon": 2.1813305,
     "lat": 41.3941557,
     "post_code": "08013",
@@ -31,6 +34,7 @@
   },
   {
     "station_id": "4",
+    "name": "C/ RIBES, 13",
     "lon": 2.1812483,
     "lat": 41.3933173,
     "post_code": "08013",
@@ -41,6 +45,7 @@
   },
   {
     "station_id": "5",
+    "name": "PG. LLUIS COMPANYS, 11 (ARC TRIOMF)",
     "lon": 2.1801763,
     "lat": 41.3911035,
     "post_code": "08018",
@@ -51,6 +56,7 @@
   },
   {
     "station_id": "6",
+    "name": "PG. LLUIS COMPANYS, 18 (ARC TRIOMF)",
     "lon": 2.1805685,
     "lat": 41.3914292,
     "post_code": "08018",
@@ -61,6 +67,7 @@
   },
   {
     "station_id": "7",
+    "name": "PG. PUJADES,  1 (JUTJATS)",
     "lon": 2.18329,
     "lat": 41.388885,
     "post_code": "08003",
@@ -71,6 +78,7 @@
   },
   {
     "station_id": "8",
+    "name": "PG. PUJADES, 2",
     "lon": 2.183489,
     "lat": 41.389135,
     "post_code": "08003",
@@ -81,6 +89,7 @@
   },
   {
     "station_id": "9",
+    "name": "AV. MARQUÉS DE L'ARGENTERA,13",
     "lon": 2.184922,
     "lat": 41.384546,
     "post_code": "08003",
@@ -91,6 +100,7 @@
   },
   {
     "station_id": "10",
+    "name": "C/ 60, NÚMERO 25",
     "lon": 2.1436235,
     "lat": 41.3467746,
     "post_code": "08040",
@@ -101,6 +111,7 @@
   },
   {
     "station_id": "11",
+    "name": "PG. MARITIM, 11 (DAVANT PL. BRUGADA)",
     "lon": 2.194294,
     "lat": 41.382398,
     "post_code": "08003",
@@ -111,6 +122,7 @@
   },
   {
     "station_id": "12",
+    "name": "PG. MARITIM, 23 (HOSPITAL DEL MAR)",
     "lon": 2.1946255,
     "lat": 41.3833653,
     "post_code": "08003",
@@ -121,6 +133,7 @@
   },
   {
     "station_id": "13",
+    "name": "C/ MARINA, 25-33",
     "lon": 2.195551,
     "lat": 41.388143,
     "post_code": "08005",
@@ -131,6 +144,7 @@
   },
   {
     "station_id": "14",
+    "name": "AV. MARQUÉS DE  L'ARGENTERA, 15",
     "lon": 2.185085,
     "lat": 41.384844,
     "post_code": "08003",
@@ -141,6 +155,7 @@
   },
   {
     "station_id": "15",
+    "name": "C/ DIPUTACIÓ, 272",
     "lon": 2.1689031978751205,
     "lat": 41.39161170092347,
     "post_code": "08009",
@@ -151,6 +166,7 @@
   },
   {
     "station_id": "17",
+    "name": "AV. MERIDIANA, 47 (D)",
     "lon": 2.1866517,
     "lat": 41.3982615,
     "post_code": "08013",
@@ -161,6 +177,7 @@
   },
   {
     "station_id": "18",
+    "name": "C/ ROSSELLÓ, 453",
     "lon": 2.1740472,
     "lat": 41.4060589,
     "post_code": "08025",
@@ -171,6 +188,7 @@
   },
   {
     "station_id": "19",
+    "name": "C/ ROSSELLÓ, 354",
     "lon": 2.1707947,
     "lat": 41.4031491,
     "post_code": "08025",
@@ -181,6 +199,7 @@
   },
   {
     "station_id": "20",
+    "name": "C/ CARTAGENA, 308",
     "lon": 2.1757334,
     "lat": 41.410314,
     "post_code": "08025",
@@ -191,6 +210,7 @@
   },
   {
     "station_id": "21",
+    "name": "C/ SANT ANTONI MARIA CLARET, 214",
     "lon": 2.1740575,
     "lat": 41.4108439,
     "post_code": "08025",
@@ -201,6 +221,7 @@
   },
   {
     "station_id": "22",
+    "name": "C/ SARDENYA, 292",
     "lon": 2.175767,
     "lat": 41.4016969,
     "post_code": "08013",
@@ -211,6 +232,7 @@
   },
   {
     "station_id": "23",
+    "name": "C/ BRUC, 45",
     "lon": 2.1717397,
     "lat": 41.3924661,
     "post_code": "08010",
@@ -221,6 +243,7 @@
   },
   {
     "station_id": "24",
+    "name": "C/ MARINA, 199",
     "lon": 2.1788855,
     "lat": 41.4005784,
     "post_code": "08013",
@@ -231,6 +254,7 @@
   },
   {
     "station_id": "25",
+    "name": "C/ BRUC, 102",
     "lon": 2.1681961,
     "lat": 41.3954041,
     "post_code": "08009",
@@ -241,6 +265,7 @@
   },
   {
     "station_id": "26",
+    "name": "C/ DOS DE MAIG, 230-232",
     "lon": 2.1820722,
     "lat": 41.4071692,
     "post_code": "08013",
@@ -251,6 +276,7 @@
   },
   {
     "station_id": "27",
+    "name": "C/ PROVENÇA, 322",
     "lon": 2.1646338,
     "lat": 41.3967524,
     "post_code": "08037",
@@ -261,6 +287,7 @@
   },
   {
     "station_id": "28",
+    "name": "C/ SARDENYA, 362",
     "lon": 2.1706498,
     "lat": 41.4055143,
     "post_code": "08025",
@@ -271,6 +298,7 @@
   },
   {
     "station_id": "29",
+    "name": "C/ PROVENÇA, 388-390",
     "lon": 2.169941,
     "lat": 41.401061,
     "post_code": "08025",
@@ -281,6 +309,7 @@
   },
   {
     "station_id": "30",
+    "name": "C/ CASTILLEJOS, 184",
     "lon": 2.1829894,
     "lat": 41.4021805,
     "post_code": "08013",
@@ -291,6 +320,7 @@
   },
   {
     "station_id": "31",
+    "name": "PL. DEL MAR",
     "lon": 2.1889045,
     "lat": 41.3748001,
     "post_code": "08003",
@@ -301,6 +331,7 @@
   },
   {
     "station_id": "32",
+    "name": "LA BARCELONETA (CN BARCELONETA)",
     "lon": 2.188928,
     "lat": 41.3736911,
     "post_code": "08003",
@@ -311,6 +342,7 @@
   },
   {
     "station_id": "33",
+    "name": "C/ PONTEVEDRA, 58B | C/ JUDICI",
     "lon": 2.19067,
     "lat": 41.37686,
     "post_code": "08003",
@@ -321,6 +353,7 @@
   },
   {
     "station_id": "34",
+    "name": "C/ SANT PERE MÉS ALT, 4",
     "lon": 2.1753364,
     "lat": 41.3871079,
     "post_code": "08003",
@@ -331,6 +364,7 @@
   },
   {
     "station_id": "35",
+    "name": "C/ SANT RAMON DE PENYAFORT, 1",
     "lon": 2.2206913,
     "lat": 41.4134833,
     "post_code": "08930",
@@ -341,6 +375,7 @@
   },
   {
     "station_id": "36",
+    "name": "AV. DE LA CATEDRAL, 6",
     "lon": 2.1766834,
     "lat": 41.3850616,
     "post_code": "08002",
@@ -351,6 +386,7 @@
   },
   {
     "station_id": "37",
+    "name": "PG. DE COLOM - VIA LAIETANA",
     "lon": 2.1820675,
     "lat": 41.380624,
     "post_code": "08002",
@@ -361,6 +397,7 @@
   },
   {
     "station_id": "39",
+    "name": "PL. PAU VILA (D)",
     "lon": 2.186576,
     "lat": 41.381046,
     "post_code": "08039",
@@ -371,6 +408,7 @@
   },
   {
     "station_id": "40",
+    "name": "C/ DOCTOR AIGUADER, 2",
     "lon": 2.187093,
     "lat": 41.382335,
     "post_code": "08039",
@@ -381,6 +419,7 @@
   },
   {
     "station_id": "41",
+    "name": "PL. POETA BOSCÀ | C/ ATLÀNTIDA",
     "lon": 2.189906,
     "lat": 41.379326,
     "post_code": "08003",
@@ -391,6 +430,7 @@
   },
   {
     "station_id": "42",
+    "name": "C/ CIUTAT DE GRANADA, 168 | AV. DIAGONAL",
     "lon": 2.189881,
     "lat": 41.404511,
     "post_code": "08018",
@@ -401,6 +441,7 @@
   },
   {
     "station_id": "43",
+    "name": "C/ CLOT, 1",
     "lon": 2.1874404,
     "lat": 41.4063864,
     "post_code": "08018",
@@ -411,6 +452,7 @@
   },
   {
     "station_id": "45",
+    "name": "C/ SARDENYA, 66",
     "lon": 2.189371,
     "lat": 41.391466,
     "post_code": "08005",
@@ -421,6 +463,7 @@
   },
   {
     "station_id": "46",
+    "name": "C/ VILLENA, 1",
     "lon": 2.1921945084594707,
     "lat": 41.38860659692564,
     "post_code": "08005",
@@ -431,6 +474,7 @@
   },
   {
     "station_id": "47",
+    "name": "C/ RAMON TRIAS FARGAS, 21",
     "lon": 2.1904003,
     "lat": 41.3902194,
     "post_code": "08005",
@@ -441,6 +485,7 @@
   },
   {
     "station_id": "48",
+    "name": "AV. MERIDIANA, 40",
     "lon": 2.1871959,
     "lat": 41.3960652,
     "post_code": "08018",
@@ -451,6 +496,7 @@
   },
   {
     "station_id": "49",
+    "name": "C/ ROSA SENSAT, 20",
     "lon": 2.1965766,
     "lat": 41.3910756,
     "post_code": "08005",
@@ -461,6 +507,7 @@
   },
   {
     "station_id": "50",
+    "name": "AV. PARAL.LEL, 54",
     "lon": 2.1709386,
     "lat": 41.3751145,
     "post_code": "08004",
@@ -471,6 +518,7 @@
   },
   {
     "station_id": "51",
+    "name": "PL. VICENÇ MARTORELL",
     "lon": 2.1692556,
     "lat": 41.3842634,
     "post_code": "08001",
@@ -481,6 +529,7 @@
   },
   {
     "station_id": "52",
+    "name": "PL. SANT MIQUEL, 4",
     "lon": 2.177292,
     "lat": 41.381708,
     "post_code": "08002",
@@ -491,6 +540,7 @@
   },
   {
     "station_id": "53",
+    "name": "PL. CARLES PI I SUNYER",
     "lon": 2.174016,
     "lat": 41.385086,
     "post_code": "08002",
@@ -501,6 +551,7 @@
   },
   {
     "station_id": "54",
+    "name": "C/ SANT OLEGUER, 2",
     "lon": 2.1707321,
     "lat": 41.3775319,
     "post_code": "08001",
@@ -511,6 +562,7 @@
   },
   {
     "station_id": "56",
+    "name": "PORTAL DE SANTA MADRONA, 2-4",
     "lon": 2.1758261,
     "lat": 41.3770715,
     "post_code": "08001",
@@ -521,6 +573,7 @@
   },
   {
     "station_id": "57",
+    "name": "LA RAMBLA, 1",
     "lon": 2.176971,
     "lat": 41.376326,
     "post_code": "08002",
@@ -531,6 +584,7 @@
   },
   {
     "station_id": "58",
+    "name": "PLAÇA DELS ÀNGELS (MACBA)",
     "lon": 2.16712,
     "lat": 41.38268,
     "post_code": "08001",
@@ -541,6 +595,7 @@
   },
   {
     "station_id": "60",
+    "name": "RBLA. CATALUNYA, 47",
     "lon": 2.164035,
     "lat": 41.3902625,
     "post_code": "08007",
@@ -551,6 +606,7 @@
   },
   {
     "station_id": "61",
+    "name": "C/ ARAGÓ, 288",
     "lon": 2.166797,
     "lat": 41.39352,
     "post_code": "08009",
@@ -561,6 +617,7 @@
   },
   {
     "station_id": "62",
+    "name": "PL. CATALUNYA, 5",
     "lon": 2.168819,
     "lat": 41.387235,
     "post_code": "08002",
@@ -571,6 +628,7 @@
   },
   {
     "station_id": "63",
+    "name": "PL. CATALUNYA, 7",
     "lon": 2.169427,
     "lat": 41.386543,
     "post_code": "08002",
@@ -581,6 +639,7 @@
   },
   {
     "station_id": "64",
+    "name": "PL. CATALUNYA, 10-11 (LA RAMBLA)",
     "lon": 2.1690686,
     "lat": 41.387493,
     "post_code": "08002",
@@ -591,6 +650,7 @@
   },
   {
     "station_id": "65",
+    "name": "PL. CATALUNYA, 10-11 (PG. DE GRÀCIA)",
     "lon": 2.1696543,
     "lat": 41.387696,
     "post_code": "08002",
@@ -601,6 +661,7 @@
   },
   {
     "station_id": "66",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 609",
     "lon": 2.1678388,
     "lat": 41.3893222,
     "post_code": "08007",
@@ -611,6 +672,7 @@
   },
   {
     "station_id": "67",
+    "name": "C/ ROCAFORT, 214 | C/ ROSSELLÓ",
     "lon": 2.1454802,
     "lat": 41.3852864,
     "post_code": "08029",
@@ -621,6 +683,7 @@
   },
   {
     "station_id": "68",
+    "name": "RAMBLA CATALUNYA, 133 /  CÒRSEGA",
     "lon": 2.1572953,
     "lat": 41.3953894,
     "post_code": "08008",
@@ -631,6 +694,7 @@
   },
   {
     "station_id": "69",
+    "name": "CARRER DE LA MARINA,25-33",
     "lon": 2.195073,
     "lat": 41.388507,
     "post_code": "08005",
@@ -641,6 +705,7 @@
   },
   {
     "station_id": "70",
+    "name": "C/ COMTE URGELL, 23",
     "lon": 2.1606506,
     "lat": 41.380393,
     "post_code": "08011",
@@ -651,6 +716,7 @@
   },
   {
     "station_id": "71",
+    "name": "C/ FLORIDABLANCA, 145",
     "lon": 2.1629146,
     "lat": 41.3819459,
     "post_code": "08011",
@@ -661,6 +727,7 @@
   },
   {
     "station_id": "72",
+    "name": "C/ PROVENÇA, 215",
     "lon": 2.1586273,
     "lat": 41.3927771,
     "post_code": "08008",
@@ -671,6 +738,7 @@
   },
   {
     "station_id": "73",
+    "name": "C/ ENRIC GRANADOS, 93",
     "lon": 2.1563542,
     "lat": 41.392135,
     "post_code": "08008",
@@ -681,6 +749,7 @@
   },
   {
     "station_id": "74",
+    "name": "AV. JOSEP TARRADELLAS, 133",
     "lon": 2.1432105,
     "lat": 41.3900085,
     "post_code": "08029",
@@ -691,6 +760,7 @@
   },
   {
     "station_id": "75",
+    "name": "AV. JOSEP TARRADELLAS, 58",
     "lon": 2.1429115,
     "lat": 41.385004,
     "post_code": "08029",
@@ -701,6 +771,7 @@
   },
   {
     "station_id": "76",
+    "name": "C/ CÒRSEGA, 216",
     "lon": 2.1532163,
     "lat": 41.3917666,
     "post_code": "08036",
@@ -711,6 +782,7 @@
   },
   {
     "station_id": "77",
+    "name": "AV. FRANCESC CAMBÓ, 10",
     "lon": 2.1773214,
     "lat": 41.3855644,
     "post_code": "08003",
@@ -721,6 +793,7 @@
   },
   {
     "station_id": "78",
+    "name": "PL. UNIVERSITAT /  ARIBAU",
     "lon": 2.1634306,
     "lat": 41.3856474,
     "post_code": "08011",
@@ -731,6 +804,7 @@
   },
   {
     "station_id": "79",
+    "name": " PL.  UNIVERSITAT",
     "lon": 2.1634768,
     "lat": 41.385503,
     "post_code": "08007",
@@ -741,6 +815,7 @@
   },
   {
     "station_id": "80",
+    "name": "C/ ENRIC  GRANADOS, 35",
     "lon": 2.1599078,
     "lat": 41.389668,
     "post_code": "08007",
@@ -751,6 +826,7 @@
   },
   {
     "station_id": "81",
+    "name": "C/ VILAMARÍ,  61",
     "lon": 2.1490553,
     "lat": 41.3790718,
     "post_code": "08015",
@@ -761,6 +837,7 @@
   },
   {
     "station_id": "82",
+    "name": "C/ CALÀBRIA, 112",
     "lon": 2.1544371248113956,
     "lat": 41.38031805998654,
     "post_code": "08015",
@@ -771,6 +848,7 @@
   },
   {
     "station_id": "83",
+    "name": "C/ CALABRIA, 158",
     "lon": 2.1520645,
     "lat": 41.3821658,
     "post_code": "08015",
@@ -781,6 +859,7 @@
   },
   {
     "station_id": "84",
+    "name": "C/ DEL COMTE D'URGELL 75 B",
     "lon": 2.1571646,
     "lat": 41.3830299,
     "post_code": "08011",
@@ -791,6 +870,7 @@
   },
   {
     "station_id": "85",
+    "name": "AV. PARAL·LEL, 146 BIS",
     "lon": 2.1592394,
     "lat": 41.3751852,
     "post_code": "08015",
@@ -801,6 +881,7 @@
   },
   {
     "station_id": "86",
+    "name": "C/ VILADOMAT,  2",
     "lon": 2.1629349,
     "lat": 41.3755747,
     "post_code": "08015",
@@ -811,6 +892,7 @@
   },
   {
     "station_id": "87",
+    "name": "C/ ROCAFORT, 187",
     "lon": 2.1479931916296557,
     "lat": 41.38322238887374,
     "post_code": "08029",
@@ -821,6 +903,7 @@
   },
   {
     "station_id": "88",
+    "name": "C/ LONDRES, 101-103",
     "lon": 2.1507739,
     "lat": 41.3936144,
     "post_code": "08036",
@@ -831,6 +914,7 @@
   },
   {
     "station_id": "89",
+    "name": "C/ ROSSELLÓ,  101",
     "lon": 2.149131,
     "lat": 41.3871904,
     "post_code": "08036",
@@ -841,6 +925,7 @@
   },
   {
     "station_id": "90",
+    "name": "C/ ROSSELLÓ, 108-110",
     "lon": 2.150878,
     "lat": 41.388296,
     "post_code": "08036",
@@ -851,6 +936,7 @@
   },
   {
     "station_id": "91",
+    "name": "C/ COMTE D'URGELL, 43",
     "lon": 2.1594741,
     "lat": 41.3812504,
     "post_code": "08011",
@@ -861,6 +947,7 @@
   },
   {
     "station_id": "92",
+    "name": "C / PROVENÇA, 241",
     "lon": 2.1601641,
     "lat": 41.3938861,
     "post_code": "08008",
@@ -871,6 +958,7 @@
   },
   {
     "station_id": "94",
+    "name": "GRAN VIA DE LES CORTS CATALANES,375",
     "lon": 2.1499102,
     "lat": 41.3757914,
     "post_code": "08015",
@@ -881,6 +969,7 @@
   },
   {
     "station_id": "95",
+    "name": "C/ TARRAGONA, 103-115",
     "lon": 2.1473272,
     "lat": 41.3763948,
     "post_code": "08014",
@@ -891,6 +980,7 @@
   },
   {
     "station_id": "96",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  368",
     "lon": 2.1481993,
     "lat": 41.3741093,
     "post_code": "08010",
@@ -901,6 +991,7 @@
   },
   {
     "station_id": "97",
+    "name": "C/ TARRAGONA, 141",
     "lon": 2.1450491,
     "lat": 41.3779613,
     "post_code": "08014",
@@ -911,6 +1002,7 @@
   },
   {
     "station_id": "98",
+    "name": "C/ VIRIAT, 43",
     "lon": 2.1408633,
     "lat": 41.3806074,
     "post_code": "08014",
@@ -921,6 +1013,7 @@
   },
   {
     "station_id": "99",
+    "name": "C/ VIRIAT,  53",
     "lon": 2.141539,
     "lat": 41.3808222,
     "post_code": "08014",
@@ -931,6 +1024,7 @@
   },
   {
     "station_id": "100",
+    "name": "C/ TARRAGONA,  159-173",
     "lon": 2.143868,
     "lat": 41.379363,
     "post_code": "08014",
@@ -941,6 +1035,7 @@
   },
   {
     "station_id": "101",
+    "name": "AV. DIAGONAL,  602",
     "lon": 2.143411,
     "lat": 41.392878,
     "post_code": "08021",
@@ -951,6 +1046,7 @@
   },
   {
     "station_id": "102",
+    "name": "AV. DIAGONAL,  612",
     "lon": 2.1422174,
     "lat": 41.392567,
     "post_code": "08021",
@@ -961,6 +1057,7 @@
   },
   {
     "station_id": "103",
+    "name": "C/ ARAGÓ, 629",
     "lon": 2.1884487,
     "lat": 41.410098,
     "post_code": "08026",
@@ -971,6 +1068,7 @@
   },
   {
     "station_id": "104",
+    "name": "C/ VALÈNCIA,  621",
     "lon": 2.1872438,
     "lat": 41.4108005,
     "post_code": "08026",
@@ -981,6 +1079,7 @@
   },
   {
     "station_id": "105",
+    "name": "RDA. DE SANT PERE, 26",
     "lon": 2.17425,
     "lat": 41.389492,
     "post_code": "08010",
@@ -991,6 +1090,7 @@
   },
   {
     "station_id": "106",
+    "name": "PL JOANIC - C / BRUNIQUER, 59",
     "lon": 2.1622548,
     "lat": 41.4055198,
     "post_code": "08024",
@@ -1001,6 +1101,7 @@
   },
   {
     "station_id": "107",
+    "name": "TRAV. DE GRÀCIA, 92 / VIA AUGUSTA",
     "lon": 2.1531031,
     "lat": 41.3982304,
     "post_code": "08006",
@@ -1011,6 +1112,7 @@
   },
   {
     "station_id": "108",
+    "name": "C / INDÚSTRIA, 10",
     "lon": 2.1649035,
     "lat": 41.4022081,
     "post_code": "08037",
@@ -1021,6 +1123,7 @@
   },
   {
     "station_id": "109",
+    "name": "C/ LONDRES,  53",
     "lon": 2.1476308,
     "lat": 41.3912605,
     "post_code": "08036",
@@ -1031,6 +1134,7 @@
   },
   {
     "station_id": "110",
+    "name": "AV. ROMA,  136",
     "lon": 2.155089,
     "lat": 41.3852585,
     "post_code": "08011",
@@ -1041,6 +1145,7 @@
   },
   {
     "station_id": "111",
+    "name": "C/ ARAGÓN 147",
     "lon": 2.1546746,
     "lat": 41.3847528,
     "post_code": "08015",
@@ -1051,6 +1156,7 @@
   },
   {
     "station_id": "112",
+    "name": "C/ FLORIDABLANCA,  49",
     "lon": 2.157233,
     "lat": 41.3776721,
     "post_code": "08015",
@@ -1061,6 +1167,7 @@
   },
   {
     "station_id": "113",
+    "name": "RONDA DE SANT PAU , 51",
     "lon": 2.1646742,
     "lat": 41.3773113,
     "post_code": "08015",
@@ -1071,6 +1178,7 @@
   },
   {
     "station_id": "114",
+    "name": "PL. JEAN GENET,  1",
     "lon": 2.1740082,
     "lat": 41.376735,
     "post_code": "08001",
@@ -1081,6 +1189,7 @@
   },
   {
     "station_id": "115",
+    "name": "AV. MARQUÉS DE L'ARGENTERA,  3",
     "lon": 2.184171,
     "lat": 41.383597,
     "post_code": "08003",
@@ -1091,6 +1200,7 @@
   },
   {
     "station_id": "116",
+    "name": "C/ DEL DR. AIGUADER, 72 / PG. SALVAT",
     "lon": 2.1914756,
     "lat": 41.3838369,
     "post_code": "08003",
@@ -1101,6 +1211,7 @@
   },
   {
     "station_id": "117",
+    "name": "C/ ROSA SENSAT, 12",
     "lon": 2.1972309,
     "lat": 41.3906051,
     "post_code": "08005",
@@ -1111,6 +1222,7 @@
   },
   {
     "station_id": "118",
+    "name": "C/ PUJADES,  3",
     "lon": 2.1874966,
     "lat": 41.39212,
     "post_code": "08018",
@@ -1121,6 +1233,7 @@
   },
   {
     "station_id": "119",
+    "name": "C/ SARDENYA,  178",
     "lon": 2.1825085,
     "lat": 41.3967169,
     "post_code": "08013",
@@ -1131,6 +1244,7 @@
   },
   {
     "station_id": "120",
+    "name": "C/ LEPANT,  278",
     "lon": 2.1765126,
     "lat": 41.4047056,
     "post_code": "08013",
@@ -1141,6 +1255,7 @@
   },
   {
     "station_id": "121",
+    "name": "C/ CASTILLEJOS, 258",
     "lon": 2.1785364,
     "lat": 41.4064529,
     "post_code": "08013",
@@ -1151,6 +1266,7 @@
   },
   {
     "station_id": "122",
+    "name": "C/ NÀPOLS, 344",
     "lon": 2.1663172,
     "lat": 41.4054458,
     "post_code": "08025",
@@ -1161,6 +1277,7 @@
   },
   {
     "station_id": "123",
+    "name": "C/ PROVENÇA, 317",
     "lon": 2.166735224916682,
     "lat": 41.3988184485363,
     "post_code": "08037",
@@ -1171,6 +1288,7 @@
   },
   {
     "station_id": "124",
+    "name": "C/ NOVA  BOCANA",
     "lon": 2.1878126,
     "lat": 41.3702483,
     "post_code": "08039",
@@ -1181,6 +1299,7 @@
   },
   {
     "station_id": "125",
+    "name": "PG. MARíTIM, 31 B (ANNEXA A LA 12)",
     "lon": 2.194735,
     "lat": 41.3834753,
     "post_code": "08003",
@@ -1191,6 +1310,7 @@
   },
   {
     "station_id": "126",
+    "name": "PG. DE COLOM /VIA LAIETANA",
     "lon": 2.1822815,
     "lat": 41.380628,
     "post_code": "08002",
@@ -1201,6 +1321,7 @@
   },
   {
     "station_id": "127",
+    "name": "C/ ARAGÓ, 659 / NAVAS DE TOLOSA",
     "lon": 2.1907524,
     "lat": 41.4120681,
     "post_code": "08026",
@@ -1211,6 +1332,7 @@
   },
   {
     "station_id": "128",
+    "name": "RAMBLA DE GUIPÚSCOA, 43/FLUVIA",
     "lon": 2.1959771,
     "lat": 41.4158412,
     "post_code": "08020",
@@ -1221,6 +1343,7 @@
   },
   {
     "station_id": "129",
+    "name": "C/ MANSO, 46",
     "lon": 2.16113608,
     "lat": 41.377046,
     "post_code": "08015",
@@ -1231,6 +1354,7 @@
   },
   {
     "station_id": "130",
+    "name": "RAMBLA DE GUIPÚSCOA, 103 / CANTÀBRIA",
     "lon": 2.2016699,
     "lat": 41.4200135,
     "post_code": "08020",
@@ -1241,6 +1365,7 @@
   },
   {
     "station_id": "131",
+    "name": "RAMBLA  DE GUIPÚSCOA, 158/ CA N'OLIVA",
     "lon": 2.2060317,
     "lat": 41.4227912,
     "post_code": "08020",
@@ -1251,6 +1376,7 @@
   },
   {
     "station_id": "133",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  902",
     "lon": 2.1930174,
     "lat": 41.4075013,
     "post_code": "08018",
@@ -1261,6 +1387,7 @@
   },
   {
     "station_id": "134",
+    "name": "C/ BAC DE RODA, 157",
     "lon": 2.1987258,
     "lat": 41.4113024,
     "post_code": "08018",
@@ -1271,6 +1398,7 @@
   },
   {
     "station_id": "135",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  981",
     "lon": 2.1972673,
     "lat": 41.4120452,
     "post_code": "08018",
@@ -1281,6 +1409,7 @@
   },
   {
     "station_id": "136",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  1062",
     "lon": 2.2017955,
     "lat": 41.4139298,
     "post_code": "08020",
@@ -1291,6 +1420,7 @@
   },
   {
     "station_id": "137",
+    "name": "GRAN VIA DE LES CORTS CATALANES , 1041",
     "lon": 2.2008139,
     "lat": 41.4145805,
     "post_code": "08020",
@@ -1301,6 +1431,7 @@
   },
   {
     "station_id": "138",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  1118",
     "lon": 2.2058345,
     "lat": 41.4167933,
     "post_code": "08020",
@@ -1311,6 +1442,7 @@
   },
   {
     "station_id": "139",
+    "name": "GRAN VIA DE LES CORTS CATALANES,  1131",
     "lon": 2.2058133,
     "lat": 41.4183999,
     "post_code": "08020",
@@ -1321,6 +1453,7 @@
   },
   {
     "station_id": "140",
+    "name": "C/ VILADOMAT,  122",
     "lon": 2.1559939,
     "lat": 41.3808772,
     "post_code": "08015",
@@ -1331,6 +1464,7 @@
   },
   {
     "station_id": "141",
+    "name": "C/ BILBAO, 174",
     "lon": 2.1954152,
     "lat": 41.4090202,
     "post_code": "08018",
@@ -1341,6 +1475,7 @@
   },
   {
     "station_id": "142",
+    "name": "C/ SANCHO DE ÁVILA,  104 - C/ BADAJOZ",
     "lon": 2.1924144,
     "lat": 41.4003793,
     "post_code": "08018",
@@ -1351,6 +1486,7 @@
   },
   {
     "station_id": "143",
+    "name": "C/ SANCHO DE ÁVILA, 170 / LLACUNA",
     "lon": 2.1956161,
     "lat": 41.4027907,
     "post_code": "08018",
@@ -1361,6 +1497,7 @@
   },
   {
     "station_id": "144",
+    "name": "C/ CASTELLA,  28 / DIAGONAL",
     "lon": 2.1977119,
     "lat": 41.4056269,
     "post_code": "08018",
@@ -1371,6 +1508,7 @@
   },
   {
     "station_id": "145",
+    "name": "C/ PERE IV,  301 / FLUVIÀ",
     "lon": 2.2024461,
     "lat": 41.4093405,
     "post_code": "08020",
@@ -1381,6 +1519,7 @@
   },
   {
     "station_id": "146",
+    "name": "C/ PERE IV, 488",
     "lon": 2.207186,
     "lat": 41.4148983,
     "post_code": "08019",
@@ -1391,6 +1530,7 @@
   },
   {
     "station_id": "147",
+    "name": "RAMBLA PRIM, 79",
     "lon": 2.2124993,
     "lat": 41.416043,
     "post_code": "08019",
@@ -1401,6 +1541,7 @@
   },
   {
     "station_id": "148",
+    "name": "RONDA SANT PAU, 79",
     "lon": 2.1633139,
     "lat": 41.3783467,
     "post_code": "08015",
@@ -1411,6 +1552,7 @@
   },
   {
     "station_id": "149",
+    "name": "C/ PUJADES, 57B",
     "lon": 2.192952,
     "lat": 41.3958685,
     "post_code": "08019",
@@ -1421,6 +1563,7 @@
   },
   {
     "station_id": "150",
+    "name": "C/ ESPRONCEDA, 124",
     "lon": 2.203028,
     "lat": 41.4065912,
     "post_code": "08005",
@@ -1431,6 +1574,7 @@
   },
   {
     "station_id": "151",
+    "name": "C/ PALLARS, 182",
     "lon": 2.1969105,
     "lat": 41.4003471,
     "post_code": "08005",
@@ -1441,6 +1585,7 @@
   },
   {
     "station_id": "152",
+    "name": "C/ PUJADES, 121",
     "lon": 2.1974184,
     "lat": 41.3993329,
     "post_code": "08005",
@@ -1451,6 +1596,7 @@
   },
   {
     "station_id": "153",
+    "name": "C/ PUJADES, 173/RBLA POBLE NOU",
     "lon": 2.20077,
     "lat": 41.4018686,
     "post_code": "08005",
@@ -1461,6 +1607,7 @@
   },
   {
     "station_id": "154",
+    "name": "C/ PUJADES, 191",
     "lon": 2.2017694,
     "lat": 41.4026275,
     "post_code": "08005",
@@ -1471,6 +1618,7 @@
   },
   {
     "station_id": "155",
+    "name": "C/ PUJADES, 311/ FLUVIÀ",
     "lon": 2.2074469,
     "lat": 41.4070139,
     "post_code": "08019",
@@ -1481,6 +1629,7 @@
   },
   {
     "station_id": "156",
+    "name": "C/ SELVA DE MAR, 46",
     "lon": 2.2088179,
     "lat": 41.4091355,
     "post_code": "08019",
@@ -1491,6 +1640,7 @@
   },
   {
     "station_id": "157",
+    "name": "C/ LLULL, 465",
     "lon": 2.2177652,
     "lat": 41.4132316,
     "post_code": "08019",
@@ -1501,6 +1651,7 @@
   },
   {
     "station_id": "158",
+    "name": "RAMBLA DE PRIM, 19",
     "lon": 2.2183313,
     "lat": 41.4116634,
     "post_code": "08019",
@@ -1511,6 +1662,7 @@
   },
   {
     "station_id": "159",
+    "name": "AV. DIAGONAL, 26",
     "lon": 2.2163136,
     "lat": 41.4110822,
     "post_code": "08019",
@@ -1521,6 +1673,7 @@
   },
   {
     "station_id": "160",
+    "name": "AV. D'EDUARD MARISTANY, 1 /FORUM",
     "lon": 2.2193724,
     "lat": 41.4109763,
     "post_code": "08019",
@@ -1531,6 +1684,7 @@
   },
   {
     "station_id": "161",
+    "name": "C/ RAMON TURRÓ, 91",
     "lon": 2.1965965,
     "lat": 41.3953011,
     "post_code": "08005",
@@ -1541,6 +1695,7 @@
   },
   {
     "station_id": "162",
+    "name": "C/ RAMON TURRÓ, 292",
     "lon": 2.2084257,
     "lat": 41.4038559,
     "post_code": "08005",
@@ -1551,6 +1706,7 @@
   },
   {
     "station_id": "163",
+    "name": "AV. ICÀRIA, 202",
     "lon": 2.2008756,
     "lat": 41.3942108,
     "post_code": "08005",
@@ -1561,6 +1717,7 @@
   },
   {
     "station_id": "164",
+    "name": "C/ INDEPENDÈNCIA, 379",
     "lon": 2.1778852,
     "lat": 41.4118378,
     "post_code": "08026",
@@ -1571,6 +1728,7 @@
   },
   {
     "station_id": "165",
+    "name": "C/ DEL DOCTOR TRUETA, 222",
     "lon": 2.2041415,
     "lat": 41.3992169,
     "post_code": "08005",
@@ -1581,6 +1739,7 @@
   },
   {
     "station_id": "166",
+    "name": "C/ BILBAO, 2",
     "lon": 2.206645,
     "lat": 41.4008312,
     "post_code": "08005",
@@ -1591,6 +1750,7 @@
   },
   {
     "station_id": "167",
+    "name": "C/ BAC DE RODA, 11",
     "lon": 2.2105777,
     "lat": 41.4023354,
     "post_code": "08005",
@@ -1601,6 +1761,7 @@
   },
   {
     "station_id": "168",
+    "name": "SELVA DE MAR / PG. DEL TAULAT",
     "lon": 2.2135818,
     "lat": 41.4053697,
     "post_code": "08019",
@@ -1611,6 +1772,7 @@
   },
   {
     "station_id": "170",
+    "name": "AV. LITORAL, 40 (D)",
     "lon": 2.1999572,
     "lat": 41.3896642,
     "post_code": "08005",
@@ -1621,6 +1783,7 @@
   },
   {
     "station_id": "171",
+    "name": "AV. LITORAL, 172",
     "lon": 2.2037136,
     "lat": 41.3919877,
     "post_code": "08005",
@@ -1631,6 +1794,7 @@
   },
   {
     "station_id": "173",
+    "name": "AV.LITORAL, 84",
     "lon": 2.2088454,
     "lat": 41.3979002,
     "post_code": "08005",
@@ -1641,6 +1805,7 @@
   },
   {
     "station_id": "174",
+    "name": "PG. DE GARCIA FÀRIA, 21/ESPRONCEDA",
     "lon": 2.210191,
     "lat": 41.400654,
     "post_code": "08005",
@@ -1651,6 +1816,7 @@
   },
   {
     "station_id": "175",
+    "name": "C/ LLULL, 309",
     "lon": 2.2091221,
     "lat": 41.4065291,
     "post_code": "08019",
@@ -1661,6 +1827,7 @@
   },
   {
     "station_id": "176",
+    "name": "PG. DE GARCIA FÀRIA, 37/JOSEP FERRATER",
     "lon": 2.2136,
     "lat": 41.403216,
     "post_code": "08019",
@@ -1671,6 +1838,7 @@
   },
   {
     "station_id": "177",
+    "name": "C/ ROSSELLÓ, 557",
     "lon": 2.1809764,
     "lat": 41.4110754,
     "post_code": "08026",
@@ -1681,6 +1849,7 @@
   },
   {
     "station_id": "178",
+    "name": "PG. DE GARCIA FÀRIA, 85",
     "lon": 2.2162094,
     "lat": 41.4053649,
     "post_code": "08019",
@@ -1691,6 +1860,7 @@
   },
   {
     "station_id": "179",
+    "name": "PG. ZONA FRANCA, 244",
     "lon": 2.1369015,
     "lat": 41.36352,
     "post_code": "08038",
@@ -1701,6 +1871,7 @@
   },
   {
     "station_id": "180",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 179 (D)",
     "lon": 2.1388216,
     "lat": 41.3675574,
     "post_code": "08014",
@@ -1711,6 +1882,7 @@
   },
   {
     "station_id": "182",
+    "name": "C/ SANT PERE D´ABANTO, 2",
     "lon": 2.143565,
     "lat": 41.371366,
     "post_code": "08014",
@@ -1721,6 +1893,7 @@
   },
   {
     "station_id": "183",
+    "name": "C/ GAVÀ, 1",
     "lon": 2.1419494,
     "lat": 41.3723682,
     "post_code": "08014",
@@ -1731,6 +1904,7 @@
   },
   {
     "station_id": "184",
+    "name": "C/ QUETZAL, 22-24",
     "lon": 2.1342316,
     "lat": 41.3675438,
     "post_code": "08014",
@@ -1741,6 +1915,7 @@
   },
   {
     "station_id": "185",
+    "name": "C/GAVÀ, 81",
     "lon": 2.1389439,
     "lat": 41.3703717,
     "post_code": "08014",
@@ -1751,6 +1926,7 @@
   },
   {
     "station_id": "186",
+    "name": "C/CONSELL DE CENT, 6",
     "lon": 2.1439036,
     "lat": 41.3755503,
     "post_code": "08014",
@@ -1761,6 +1937,7 @@
   },
   {
     "station_id": "187",
+    "name": "C/ DE SANT PAU, 89 - 97",
     "lon": 2.1698206,
     "lat": 41.3768806,
     "post_code": "08001",
@@ -1771,6 +1948,7 @@
   },
   {
     "station_id": "188",
+    "name": "PG. SANT ANTONI /PL. SANTS",
     "lon": 2.1358571,
     "lat": 41.3756948,
     "post_code": "08014",
@@ -1781,6 +1959,7 @@
   },
   {
     "station_id": "189",
+    "name": "C/ BRUC, 130",
     "lon": 2.1661852,
     "lat": 41.3969839,
     "post_code": "08037",
@@ -1791,6 +1970,7 @@
   },
   {
     "station_id": "190",
+    "name": "AV. LITORAL, 72",
     "lon": 2.2078439,
     "lat": 41.3961412,
     "post_code": "08005",
@@ -1801,6 +1981,7 @@
   },
   {
     "station_id": "191",
+    "name": "C/ ENTENÇA, 137",
     "lon": 2.147474,
     "lat": 41.381951,
     "post_code": "08015",
@@ -1811,6 +1992,7 @@
   },
   {
     "station_id": "192",
+    "name": "C/ JOAN GÜELL, 50",
     "lon": 2.1335494,
     "lat": 41.3786364,
     "post_code": "08028",
@@ -1821,6 +2003,7 @@
   },
   {
     "station_id": "193",
+    "name": "C/ FÍGOLS, 1",
     "lon": 2.1289917,
     "lat": 41.3812979,
     "post_code": "08028",
@@ -1831,6 +2014,7 @@
   },
   {
     "station_id": "194",
+    "name": "C/ JOAN GÜELL, 98",
     "lon": 2.1323612,
     "lat": 41.3812001,
     "post_code": "08028",
@@ -1841,6 +2025,7 @@
   },
   {
     "station_id": "195",
+    "name": "C/ VALLESPIR, 130",
     "lon": 2.1354149,
     "lat": 41.3821371,
     "post_code": "08014",
@@ -1851,6 +2036,7 @@
   },
   {
     "station_id": "196",
+    "name": "C/ BERLÍN, 38",
     "lon": 2.1392662,
     "lat": 41.3832609,
     "post_code": "08029",
@@ -1861,6 +2047,7 @@
   },
   {
     "station_id": "197",
+    "name": "C/ GELABERT, 1",
     "lon": 2.1410945,
     "lat": 41.3871579,
     "post_code": "08029",
@@ -1871,6 +2058,7 @@
   },
   {
     "station_id": "198",
+    "name": "C/ VALLESPIR, 194",
     "lon": 2.1334379,
     "lat": 41.3847113,
     "post_code": "08014",
@@ -1881,6 +2069,7 @@
   },
   {
     "station_id": "199",
+    "name": "C/ MEJÍA LEQUERICA, 2",
     "lon": 2.1268625,
     "lat": 41.3819739,
     "post_code": "08028",
@@ -1891,6 +2080,7 @@
   },
   {
     "station_id": "200",
+    "name": "C/ JOAN GÜELL, 174",
     "lon": 2.1312876,
     "lat": 41.3839045,
     "post_code": "08028",
@@ -1901,6 +2091,7 @@
   },
   {
     "station_id": "201",
+    "name": "C/ NUMÀNCIA, 136",
     "lon": 2.1344218,
     "lat": 41.3878061,
     "post_code": "08029",
@@ -1911,6 +2102,7 @@
   },
   {
     "station_id": "202",
+    "name": "C/ DE LES CORTS, 20",
     "lon": 2.1288753,
     "lat": 41.3854466,
     "post_code": "08028",
@@ -1921,6 +2113,7 @@
   },
   {
     "station_id": "203",
+    "name": "AV. DIAGONAL, 668",
     "lon": 2.1285766,
     "lat": 41.3887069,
     "post_code": "08034",
@@ -1931,6 +2124,7 @@
   },
   {
     "station_id": "204",
+    "name": "AV. DIAGONAL, 672",
     "lon": 2.1256248,
     "lat": 41.3880355,
     "post_code": "08034",
@@ -1941,6 +2135,7 @@
   },
   {
     "station_id": "205",
+    "name": "C/ EUROPA, 25",
     "lon": 2.1306737,
     "lat": 41.387561,
     "post_code": "08028",
@@ -1951,6 +2146,7 @@
   },
   {
     "station_id": "206",
+    "name": "AV. DIAGONAL, 650",
     "lon": 2.1328634,
     "lat": 41.3897943,
     "post_code": "08017",
@@ -1961,6 +2157,7 @@
   },
   {
     "station_id": "207",
+    "name": "AV. DIAGONAL, 634",
     "lon": 2.136579,
     "lat": 41.3908477,
     "post_code": "08017",
@@ -1971,6 +2168,7 @@
   },
   {
     "station_id": "208",
+    "name": "AV. DIAGONAL, 630",
     "lon": 2.1390667,
     "lat": 41.3915195,
     "post_code": "08017",
@@ -1981,6 +2179,7 @@
   },
   {
     "station_id": "209",
+    "name": "C/ DIPUTACIÓ, 200",
     "lon": 2.1610515,
     "lat": 41.3857425,
     "post_code": "08011",
@@ -1991,6 +2190,7 @@
   },
   {
     "station_id": "210",
+    "name": "C/ VILARDELL, 18",
     "lon": 2.1422556,
     "lat": 41.3745238,
     "post_code": "08014",
@@ -2001,6 +2201,7 @@
   },
   {
     "station_id": "211",
+    "name": "C/ SANCHO DE ÁVILA, 60-64",
     "lon": 2.1902116,
     "lat": 41.3987543,
     "post_code": "08018",
@@ -2011,6 +2212,7 @@
   },
   {
     "station_id": "212",
+    "name": "AV. SARRIÀ, 163",
     "lon": 2.1309272,
     "lat": 41.3922355,
     "post_code": "08017",
@@ -2021,6 +2223,7 @@
   },
   {
     "station_id": "213",
+    "name": "C/ SANTA FE DE NOU MÈXIC, 2",
     "lon": 2.1345892,
     "lat": 41.3935816,
     "post_code": "08017",
@@ -2031,6 +2234,7 @@
   },
   {
     "station_id": "214",
+    "name": "C/ JOSÉ DE  AGULLÓ, 9",
     "lon": 2.1334873,
     "lat": 41.3952027,
     "post_code": "08017",
@@ -2041,6 +2245,7 @@
   },
   {
     "station_id": "215",
+    "name": "C/ GANDUXER, 29",
     "lon": 2.1380304,
     "lat": 41.3939378,
     "post_code": "08021",
@@ -2051,6 +2256,7 @@
   },
   {
     "station_id": "216",
+    "name": "C/ MADRAZO, 131",
     "lon": 2.1445567,
     "lat": 41.3967824,
     "post_code": "08021",
@@ -2061,6 +2267,7 @@
   },
   {
     "station_id": "217",
+    "name": "C/ RECTOR UBACH, 24",
     "lon": 2.1440826,
     "lat": 41.3985735,
     "post_code": "08021",
@@ -2071,6 +2278,7 @@
   },
   {
     "station_id": "218",
+    "name": "C/ CONSELL DE CENT, 566",
     "lon": 2.183145,
     "lat": 41.4040364,
     "post_code": "08013",
@@ -2081,6 +2289,7 @@
   },
   {
     "station_id": "219",
+    "name": "C/ LAFORJA, 74-76",
     "lon": 2.1471724,
     "lat": 41.3976165,
     "post_code": "08021",
@@ -2091,6 +2300,7 @@
   },
   {
     "station_id": "220",
+    "name": "C/ TUSET, 19",
     "lon": 2.1513154,
     "lat": 41.3960982,
     "post_code": "08006",
@@ -2101,6 +2311,7 @@
   },
   {
     "station_id": "221",
+    "name": "GRAN DE GRÀCIA, 155 (METRO FONTANA)",
     "lon": 2.1524704,
     "lat": 41.4025392,
     "post_code": "08012",
@@ -2111,6 +2322,7 @@
   },
   {
     "station_id": "222",
+    "name": "C/ DEL CANÓ, 1",
     "lon": 2.1574439,
     "lat": 41.4013296,
     "post_code": "08012",
@@ -2121,6 +2333,7 @@
   },
   {
     "station_id": "223",
+    "name": "C/ DE BONAVISTA, 14",
     "lon": 2.1598243,
     "lat": 41.3983444,
     "post_code": "08012",
@@ -2131,6 +2344,7 @@
   },
   {
     "station_id": "224",
+    "name": "C / GIRONA, 176",
     "lon": 2.1644531,
     "lat": 41.3999967,
     "post_code": "08037",
@@ -2141,6 +2355,7 @@
   },
   {
     "station_id": "225",
+    "name": "C/ VILADOMAT, 200",
     "lon": 2.1508071246452154,
     "lat": 41.384810211467105,
     "post_code": "08029",
@@ -2151,6 +2366,7 @@
   },
   {
     "station_id": "226",
+    "name": "C/ MONTMANY, 1",
     "lon": 2.1609345,
     "lat": 41.4035608,
     "post_code": "08012",
@@ -2161,6 +2377,7 @@
   },
   {
     "station_id": "227",
+    "name": "C/ DEL TORRENT DE LES FLORS, 102",
     "lon": 2.1586704,
     "lat": 41.4078456,
     "post_code": "08024",
@@ -2171,6 +2388,7 @@
   },
   {
     "station_id": "228",
+    "name": "PL. DEL NORD, 5",
     "lon": 2.1558354,
     "lat": 41.4068417,
     "post_code": "08024",
@@ -2181,6 +2399,7 @@
   },
   {
     "station_id": "229",
+    "name": "C/ DE LA SANTACREU, 2 (PL. DE LA VIRREINA)",
     "lon": 2.1569161,
     "lat": 41.4050968,
     "post_code": "08024",
@@ -2191,6 +2410,7 @@
   },
   {
     "station_id": "230",
+    "name": "C/ DE NIL FABRA, 16-20",
     "lon": 2.1517977,
     "lat": 41.4059356,
     "post_code": "08012",
@@ -2201,6 +2421,7 @@
   },
   {
     "station_id": "232",
+    "name": "C/ PALAUDÀRIES, 2",
     "lon": 2.1730255457161096,
     "lat": 41.37449997033759,
     "post_code": "08004",
@@ -2211,6 +2432,7 @@
   },
   {
     "station_id": "233",
+    "name": "C/ NOU DE LA RAMBLA, 164",
     "lon": 2.1667829,
     "lat": 41.3719688,
     "post_code": "08004",
@@ -2221,6 +2443,7 @@
   },
   {
     "station_id": "234",
+    "name": "PG. DE L´EXPOSICIÓ, 38 | BLASCO GARAY",
     "lon": 2.162203,
     "lat": 41.371532,
     "post_code": "08004",
@@ -2231,6 +2454,7 @@
   },
   {
     "station_id": "235",
+    "name": "AV. PARAL.LEL, 98",
     "lon": 2.1658972,
     "lat": 41.3751767,
     "post_code": "08015",
@@ -2241,6 +2465,7 @@
   },
   {
     "station_id": "236",
+    "name": "AV. PARAL.LEL, 194",
     "lon": 2.1523091,
     "lat": 41.3751161,
     "post_code": "08015",
@@ -2250,17 +2475,8 @@
     "suburb": "Sant Antoni"
   },
   {
-    "station_id": "237",
-    "lon": 2.1539198,
-    "lat": 41.3727426,
-    "post_code": "08004",
-    "district_id": "03",
-    "district": "Sants-Montjuïc",
-    "suburb_id": "11",
-    "suburb": "el Poble-sec"
-  },
-  {
     "station_id": "238",
+    "name": "C/ ESPRONCEDA, 298",
     "lon": 2.1908473,
     "lat": 41.4158807,
     "post_code": "08027",
@@ -2271,6 +2487,7 @@
   },
   {
     "station_id": "239",
+    "name": "C/ INDÚSTRIA, 329",
     "lon": 2.1844769,
     "lat": 41.4172922,
     "post_code": "08027",
@@ -2281,6 +2498,7 @@
   },
   {
     "station_id": "240",
+    "name": "C/ JOSEP ESTIVILL, 32",
     "lon": 2.1877153,
     "lat": 41.4175595,
     "post_code": "08027",
@@ -2291,6 +2509,7 @@
   },
   {
     "station_id": "241",
+    "name": "C/ TEODOR LLORENTE, 1",
     "lon": 2.18018,
     "lat": 41.419178,
     "post_code": "08041",
@@ -2301,6 +2520,7 @@
   },
   {
     "station_id": "242",
+    "name": "C/ RAMON ALBÓ, 1",
     "lon": 2.1773157,
     "lat": 41.4244527,
     "post_code": "08027",
@@ -2311,6 +2531,7 @@
   },
   {
     "station_id": "243",
+    "name": "C/ ALEXANDRE GALÍ, 1-5",
     "lon": 2.1812399,
     "lat": 41.4239719,
     "post_code": "08027",
@@ -2321,6 +2542,7 @@
   },
   {
     "station_id": "244",
+    "name": "C/ FELIP II, 214",
     "lon": 2.1786224,
     "lat": 41.426925,
     "post_code": "08027",
@@ -2331,6 +2553,7 @@
   },
   {
     "station_id": "245",
+    "name": "LA RAMBLA, 101",
     "lon": 2.1717083,
     "lat": 41.3826647,
     "post_code": "08002",
@@ -2341,6 +2564,7 @@
   },
   {
     "station_id": "246",
+    "name": " C/ GARCILASO, 77",
     "lon": 2.1866363,
     "lat": 41.4228449,
     "post_code": "08027",
@@ -2351,6 +2575,7 @@
   },
   {
     "station_id": "247",
+    "name": "C/ FELIPE II, 112",
     "lon": 2.1849107,
     "lat": 41.4219291,
     "post_code": "08027",
@@ -2361,6 +2586,7 @@
   },
   {
     "station_id": "248",
+    "name": "C/ PALÈNCIA, 31",
     "lon": 2.1904005,
     "lat": 41.4182129,
     "post_code": "08027",
@@ -2371,6 +2597,7 @@
   },
   {
     "station_id": "249",
+    "name": "C/ ANTILLES, 8",
     "lon": 2.1872818,
     "lat": 41.4250835,
     "post_code": "08027",
@@ -2381,6 +2608,7 @@
   },
   {
     "station_id": "250",
+    "name": "C/ PORTUGAL, 3",
     "lon": 2.191206,
     "lat": 41.4258248,
     "post_code": "08027",
@@ -2391,6 +2619,7 @@
   },
   {
     "station_id": "251",
+    "name": "C/ CARDENAL TEDESCHINI, 13",
     "lon": 2.1852073,
     "lat": 41.4253643,
     "post_code": "08027",
@@ -2401,6 +2630,7 @@
   },
   {
     "station_id": "252",
+    "name": "RAMBLA DE L'ONZE DE SETEMBRE, 31",
     "lon": 2.1932159,
     "lat": 41.4298991,
     "post_code": "08030",
@@ -2411,6 +2641,7 @@
   },
   {
     "station_id": "253",
+    "name": "C/ ONZE DE SETEMBRE, 37-39",
     "lon": 2.1922011,
     "lat": 41.4298614,
     "post_code": "08030",
@@ -2421,6 +2652,7 @@
   },
   {
     "station_id": "254",
+    "name": "RAMBLA DE L'ONZE DE SETEMBRE, 69",
     "lon": 2.190246,
     "lat": 41.4299999,
     "post_code": "08030",
@@ -2431,6 +2663,7 @@
   },
   {
     "station_id": "255",
+    "name": "C/ IRLANDA, 34",
     "lon": 2.18579,
     "lat": 41.4315,
     "post_code": "08030",
@@ -2441,6 +2674,7 @@
   },
   {
     "station_id": "256",
+    "name": "C/ MALATS, 28-30",
     "lon": 2.1894423,
     "lat": 41.4361251,
     "post_code": "08030",
@@ -2451,6 +2685,7 @@
   },
   {
     "station_id": "257",
+    "name": "C/ SANT ADRIÀ, 2-8",
     "lon": 2.1896502,
     "lat": 41.433934,
     "post_code": "08030",
@@ -2461,6 +2696,7 @@
   },
   {
     "station_id": "258",
+    "name": "C/ FERNANDO PESSOA, 45",
     "lon": 2.1929677,
     "lat": 41.4425034,
     "post_code": "08030",
@@ -2471,6 +2707,7 @@
   },
   {
     "station_id": "259",
+    "name": "C/ DE BARTRINA, 14",
     "lon": 2.1858025,
     "lat": 41.4391174,
     "post_code": "08030",
@@ -2481,6 +2718,7 @@
   },
   {
     "station_id": "260",
+    "name": "CARRER DEL CINCA, 7",
     "lon": 2.1920873,
     "lat": 41.4356895,
     "post_code": "08030",
@@ -2491,6 +2729,7 @@
   },
   {
     "station_id": "261",
+    "name": "C/ VILLARROEL, 39",
     "lon": 2.1606534,
     "lat": 41.3821314,
     "post_code": "08011",
@@ -2501,6 +2740,7 @@
   },
   {
     "station_id": "262",
+    "name": "C/ ENTENÇA, 70",
     "lon": 2.1516210083711993,
     "lat": 41.3790954665734,
     "post_code": "08015",
@@ -2511,6 +2751,7 @@
   },
   {
     "station_id": "263",
+    "name": "PG. TORRAS I BAGES, 29",
     "lon": 2.1910691,
     "lat": 41.4378773,
     "post_code": "08030",
@@ -2521,6 +2762,7 @@
   },
   {
     "station_id": "264",
+    "name": "C/REPÚBLICA DOMINICANA, 25 (CENTRE COMERCIAL)",
     "lon": 2.1970692,
     "lat": 41.439929,
     "post_code": "08030",
@@ -2531,6 +2773,7 @@
   },
   {
     "station_id": "265",
+    "name": "C/ CASANOVA, 55",
     "lon": 2.1592566,
     "lat": 41.3847738,
     "post_code": "08011",
@@ -2541,6 +2784,7 @@
   },
   {
     "station_id": "266",
+    "name": "C/ CONCEPCIÓ ARENAL, 176",
     "lon": 2.1842572,
     "lat": 41.4268952,
     "post_code": "08027",
@@ -2551,6 +2795,7 @@
   },
   {
     "station_id": "267",
+    "name": "PG. TORRAS I BAGES, 129",
     "lon": 2.1906302,
     "lat": 41.4433647,
     "post_code": "08030",
@@ -2561,6 +2806,7 @@
   },
   {
     "station_id": "268",
+    "name": "C/ FERNANDO PESSOA, 72",
     "lon": 2.1929816,
     "lat": 41.4457195,
     "post_code": "08030",
@@ -2571,6 +2817,7 @@
   },
   {
     "station_id": "269",
+    "name": "VIA BARCINO, 121",
     "lon": 2.19294,
     "lat": 41.448152,
     "post_code": "08033",
@@ -2581,6 +2828,7 @@
   },
   {
     "station_id": "270",
+    "name": "CRTA. DE RIBES, 77 (TRINITAT VELLA)",
     "lon": 2.1898372,
     "lat": 41.4486328,
     "post_code": "08033",
@@ -2591,6 +2839,7 @@
   },
   {
     "station_id": "271",
+    "name": "VIA BARCINO, 69",
     "lon": 2.1935229,
     "lat": 41.4519872,
     "post_code": "08033",
@@ -2601,6 +2850,7 @@
   },
   {
     "station_id": "272",
+    "name": "C/ CONCEPCIÓ ARENAL, 281",
     "lon": 2.1842021,
     "lat": 41.4325013,
     "post_code": "08033",
@@ -2611,6 +2861,7 @@
   },
   {
     "station_id": "273",
+    "name": "AV. MERIDIANA, 404",
     "lon": 2.1834174,
     "lat": 41.4304126,
     "post_code": "08030",
@@ -2621,6 +2872,7 @@
   },
   {
     "station_id": "274",
+    "name": "RAMBLA FABRA I PUIG, 67",
     "lon": 2.1849813,
     "lat": 41.4299201,
     "post_code": "08030",
@@ -2631,6 +2883,7 @@
   },
   {
     "station_id": "275",
+    "name": "AV. RIO DE JANEIRO, 3",
     "lon": 2.1821802,
     "lat": 41.43068,
     "post_code": "08016",
@@ -2640,17 +2893,8 @@
     "suburb": "Porta"
   },
   {
-    "station_id": "276",
-    "lon": 2.1652216,
-    "lat": 41.4121345,
-    "post_code": "08024",
-    "district_id": "07",
-    "district": "Horta-Guinardó",
-    "suburb_id": "33",
-    "suburb": "el Baix Guinardó"
-  },
-  {
     "station_id": "277",
+    "name": "TRAVESSERA DE GRÀCIA, 328",
     "lon": 2.1689962,
     "lat": 41.4082107,
     "post_code": "08025",
@@ -2661,6 +2905,7 @@
   },
   {
     "station_id": "278",
+    "name": "TRAVESSERA DE GRÀCIA, 368",
     "lon": 2.1715285,
     "lat": 41.4098842,
     "post_code": "08025",
@@ -2671,6 +2916,7 @@
   },
   {
     "station_id": "279",
+    "name": "C/ MAS CASANOVAS, 137",
     "lon": 2.1745567,
     "lat": 41.4158995,
     "post_code": "08041",
@@ -2681,6 +2927,7 @@
   },
   {
     "station_id": "280",
+    "name": "C/ SANT ANTONI Mª CLARET, 290-296",
     "lon": 2.1777274,
     "lat": 41.4138664,
     "post_code": "08041",
@@ -2691,6 +2938,7 @@
   },
   {
     "station_id": "281",
+    "name": "C/ D'ESCORNALBOU, 51",
     "lon": 2.1763994,
     "lat": 41.4180789,
     "post_code": "08041",
@@ -2701,6 +2949,7 @@
   },
   {
     "station_id": "282",
+    "name": "PG. FONT D´EN- FARGAS, 1",
     "lon": 2.1659881,
     "lat": 41.4275514,
     "post_code": "08031",
@@ -2711,6 +2960,7 @@
   },
   {
     "station_id": "283",
+    "name": "C/ FULTON, 1",
     "lon": 2.1617032,
     "lat": 41.4297231,
     "post_code": "08032",
@@ -2721,6 +2971,7 @@
   },
   {
     "station_id": "284",
+    "name": "AV. DIAGONAL, 652",
     "lon": 2.1314948,
     "lat": 41.389462,
     "post_code": "08034",
@@ -2731,6 +2982,7 @@
   },
   {
     "station_id": "285",
+    "name": "C/ MALATS, 98-100",
     "lon": 2.186105,
     "lat": 41.4366708,
     "post_code": "08030",
@@ -2741,6 +2993,7 @@
   },
   {
     "station_id": "286",
+    "name": "C/ BOLÍVIA, 76",
     "lon": 2.1913538,
     "lat": 41.4030225,
     "post_code": "08018",
@@ -2751,6 +3004,7 @@
   },
   {
     "station_id": "287",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 632",
     "lon": 2.1679313,
     "lat": 41.3890626,
     "post_code": "08007",
@@ -2761,6 +3015,7 @@
   },
   {
     "station_id": "288",
+    "name": "PL. VIRREI AMAT",
     "lon": 2.174444,
     "lat": 41.4296439,
     "post_code": "08016",
@@ -2771,6 +3026,7 @@
   },
   {
     "station_id": "289",
+    "name": "C/ MÚRCIA, 64",
     "lon": 2.1909952,
     "lat": 41.4166982,
     "post_code": "08027",
@@ -2781,6 +3037,7 @@
   },
   {
     "station_id": "290",
+    "name": "PL. DELS JARDINS D'ALFÀBIA, 1",
     "lon": 2.1740962,
     "lat": 41.4373376,
     "post_code": "08016",
@@ -2791,6 +3048,7 @@
   },
   {
     "station_id": "291",
+    "name": "C/ CUBELLES, 2",
     "lon": 2.1751572,
     "lat": 41.426078,
     "post_code": "08031",
@@ -2801,6 +3059,7 @@
   },
   {
     "station_id": "292",
+    "name": "C/ AMILCAR, 1",
     "lon": 2.1720191,
     "lat": 41.4300161,
     "post_code": "08031",
@@ -2811,6 +3070,7 @@
   },
   {
     "station_id": "293",
+    "name": "C/ GRANOLLERS, 1",
     "lon": 2.1629889,
     "lat": 41.4283127,
     "post_code": "08032",
@@ -2821,6 +3081,7 @@
   },
   {
     "station_id": "294",
+    "name": "SEU DEL DISTRICTE (NOU BARRIS)",
     "lon": 2.1706752,
     "lat": 41.4363473,
     "post_code": "08042",
@@ -2831,6 +3092,7 @@
   },
   {
     "station_id": "295",
+    "name": "C/ SANT ISCLE, 60",
     "lon": 2.1716309,
     "lat": 41.433384,
     "post_code": "08031",
@@ -2841,6 +3103,7 @@
   },
   {
     "station_id": "296",
+    "name": "C/ DE ROSSELLÓ I PORCEL, 1 | AV. MERIDIANA",
     "lon": 2.1841014,
     "lat": 41.4364887,
     "post_code": "08016",
@@ -2851,6 +3114,7 @@
   },
   {
     "station_id": "297",
+    "name": "C/ TURÓ BLAU, 1-3",
     "lon": 2.1767828,
     "lat": 41.4388223,
     "post_code": "08016",
@@ -2861,6 +3125,7 @@
   },
   {
     "station_id": "298",
+    "name": "C/ ANDREU NIN, 22",
     "lon": 2.1817718,
     "lat": 41.4347233,
     "post_code": "08016",
@@ -2871,6 +3136,7 @@
   },
   {
     "station_id": "299",
+    "name": "C/ DE L'ESCULTOR ORDÓÑEZ, 55",
     "lon": 2.1748267,
     "lat": 41.4340849,
     "post_code": "08016",
@@ -2881,6 +3147,7 @@
   },
   {
     "station_id": "300",
+    "name": "C/ DE MALADETA, 1",
     "lon": 2.1769107,
     "lat": 41.4315843,
     "post_code": "08016",
@@ -2891,6 +3158,7 @@
   },
   {
     "station_id": "301",
+    "name": "C/ MARIE CURIE, 8-14",
     "lon": 2.1693134,
     "lat": 41.4366871,
     "post_code": "08042",
@@ -2901,6 +3169,7 @@
   },
   {
     "station_id": "302",
+    "name": "SEIDOR-C/ CAVALLERS, 41",
     "lon": 2.111541,
     "lat": 41.3906352,
     "post_code": "08034",
@@ -2911,6 +3180,7 @@
   },
   {
     "station_id": "303",
+    "name": "C/ CAVALLERS, 67",
     "lon": 2.115107,
     "lat": 41.3934324,
     "post_code": "08034",
@@ -2921,6 +3191,7 @@
   },
   {
     "station_id": "304",
+    "name": "PG. MANUEL GIRONA, 7",
     "lon": 2.121,
     "lat": 41.39038,
     "post_code": "08034",
@@ -2931,6 +3202,7 @@
   },
   {
     "station_id": "305",
+    "name": "AV. DIAGONAL, 680",
     "lon": 2.1237141,
     "lat": 41.3875297,
     "post_code": "08034",
@@ -2941,6 +3213,7 @@
   },
   {
     "station_id": "306",
+    "name": "C/ DOCTOR SALVADOR CARDENAL, 1-5",
     "lon": 2.122893,
     "lat": 41.3853868,
     "post_code": "08028",
@@ -2951,6 +3224,7 @@
   },
   {
     "station_id": "307",
+    "name": "C/ PINTOR RIBALTA | AV. XILE",
     "lon": 2.1135824,
     "lat": 41.3791986,
     "post_code": "08028",
@@ -2961,6 +3235,7 @@
   },
   {
     "station_id": "308",
+    "name": "C/ CARDENAL REIG, 11",
     "lon": 2.114029,
     "lat": 41.37684,
     "post_code": "08028",
@@ -2971,6 +3246,7 @@
   },
   {
     "station_id": "309",
+    "name": "C/ SANT RAMON NONAT,  26",
     "lon": 2.1169828,
     "lat": 41.3770199,
     "post_code": "08028",
@@ -2981,6 +3257,7 @@
   },
   {
     "station_id": "310",
+    "name": "C/ JOSEP SAMITIER | AV. JOAN XXIII",
     "lon": 2.1190863,
     "lat": 41.3812111,
     "post_code": "08028",
@@ -2991,6 +3268,7 @@
   },
   {
     "station_id": "311",
+    "name": "C/ GALLEGO, 2",
     "lon": 2.1202487,
     "lat": 41.3785631,
     "post_code": "08028",
@@ -3001,6 +3279,7 @@
   },
   {
     "station_id": "312",
+    "name": "C/ ARIZALA, 77",
     "lon": 2.1233038,
     "lat": 41.3789061,
     "post_code": "08028",
@@ -3011,6 +3290,7 @@
   },
   {
     "station_id": "313",
+    "name": "C/ FELIU DE CASANOVA, 1",
     "lon": 2.1297823,
     "lat": 41.3754188,
     "post_code": "08028",
@@ -3021,6 +3301,7 @@
   },
   {
     "station_id": "314",
+    "name": "RAMBLA DEL BRASIL, 44",
     "lon": 2.1297303,
     "lat": 41.3783067,
     "post_code": "08028",
@@ -3031,6 +3312,7 @@
   },
   {
     "station_id": "315",
+    "name": "C/ DEL GUINARDÓ, 32-38",
     "lon": 2.1817876,
     "lat": 41.4156285,
     "post_code": "08041",
@@ -3041,6 +3323,7 @@
   },
   {
     "station_id": "316",
+    "name": "C/ CANTÀBRIA, 55",
     "lon": 2.198071,
     "lat": 41.4224015,
     "post_code": "08020",
@@ -3051,6 +3334,7 @@
   },
   {
     "station_id": "317",
+    "name": "RAMBLA DE PRIM, 256",
     "lon": 2.2008632,
     "lat": 41.4256626,
     "post_code": "08020",
@@ -3061,6 +3345,7 @@
   },
   {
     "station_id": "318",
+    "name": "C/ CASTILLEJOS, 388",
     "lon": 2.170592,
     "lat": 41.412427,
     "post_code": "08025",
@@ -3071,6 +3356,7 @@
   },
   {
     "station_id": "319",
+    "name": "C/ SAGUÉS, 1",
     "lon": 2.1455022,
     "lat": 41.3937414,
     "post_code": "08021",
@@ -3081,6 +3367,7 @@
   },
   {
     "station_id": "320",
+    "name": "C/ MADRAZO, 39",
     "lon": 2.149144,
     "lat": 41.400305,
     "post_code": "08006",
@@ -3091,6 +3378,7 @@
   },
   {
     "station_id": "321",
+    "name": "C/ SANT HERMENEGILD, 30",
     "lon": 2.1445843,
     "lat": 41.4031529,
     "post_code": "08006",
@@ -3101,6 +3389,7 @@
   },
   {
     "station_id": "322",
+    "name": "C/ SANTALÓ, 165",
     "lon": 2.13892,
     "lat": 41.4009,
     "post_code": "08021",
@@ -3111,6 +3400,7 @@
   },
   {
     "station_id": "323",
+    "name": "C/ VALLMAJOR, 13",
     "lon": 2.1386719,
     "lat": 41.3981616,
     "post_code": "08021",
@@ -3121,6 +3411,7 @@
   },
   {
     "station_id": "324",
+    "name": "C/ REINA VICTORIA, 31",
     "lon": 2.136346,
     "lat": 41.3969455,
     "post_code": "08021",
@@ -3131,6 +3422,7 @@
   },
   {
     "station_id": "325",
+    "name": "C/ ALT DE GIRONELLA, 13",
     "lon": 2.1302775,
     "lat": 41.3949601,
     "post_code": "08017",
@@ -3141,6 +3433,7 @@
   },
   {
     "station_id": "326",
+    "name": "C/ BALMES, 409",
     "lon": 2.1381069,
     "lat": 41.4074131,
     "post_code": "08022",
@@ -3151,6 +3444,7 @@
   },
   {
     "station_id": "327",
+    "name": "C/ REUS, 23",
     "lon": 2.134603,
     "lat": 41.4050074,
     "post_code": "08022",
@@ -3161,6 +3455,7 @@
   },
   {
     "station_id": "328",
+    "name": "C/ ARTESA DE SEGRE, 2",
     "lon": 2.1344691,
     "lat": 41.402988,
     "post_code": "08022",
@@ -3171,6 +3466,7 @@
   },
   {
     "station_id": "329",
+    "name": "C/ DE LES ESCOLES PIES, 99",
     "lon": 2.1283866,
     "lat": 41.4029965,
     "post_code": "08017",
@@ -3181,6 +3477,7 @@
   },
   {
     "station_id": "330",
+    "name": "C/ PAU ALCOVER, 94",
     "lon": 2.131524,
     "lat": 41.401883,
     "post_code": "08017",
@@ -3191,6 +3488,7 @@
   },
   {
     "station_id": "331",
+    "name": "C/ CASTELLNOU, 65",
     "lon": 2.1279409,
     "lat": 41.3970497,
     "post_code": "08017",
@@ -3201,6 +3499,7 @@
   },
   {
     "station_id": "332",
+    "name": "C/ DOCTOR ROUX, 86",
     "lon": 2.1281922,
     "lat": 41.3998981,
     "post_code": "08017",
@@ -3211,6 +3510,7 @@
   },
   {
     "station_id": "333",
+    "name": "PASSATGE DE SENILLOSA, 3-5",
     "lon": 2.1250451,
     "lat": 41.3954723,
     "post_code": "08034",
@@ -3221,6 +3521,7 @@
   },
   {
     "station_id": "334",
+    "name": "PG. BONANOVA, 100",
     "lon": 2.122889,
     "lat": 41.400793,
     "post_code": "08017",
@@ -3231,6 +3532,7 @@
   },
   {
     "station_id": "335",
+    "name": "C/ SANTA AMÈLIA, 2",
     "lon": 2.1231228,
     "lat": 41.3935355,
     "post_code": "08034",
@@ -3241,6 +3543,7 @@
   },
   {
     "station_id": "336",
+    "name": "AV. JOSEP VICENÇ FOIX, 52",
     "lon": 2.1205394,
     "lat": 41.3948771,
     "post_code": "08034",
@@ -3251,6 +3554,7 @@
   },
   {
     "station_id": "337",
+    "name": "C/ CARME KARR, 12-14",
     "lon": 2.1204941,
     "lat": 41.3986238,
     "post_code": "08034",
@@ -3261,6 +3565,7 @@
   },
   {
     "station_id": "338",
+    "name": "AV. JOSEP VICENÇ FOIX, 63",
     "lon": 2.1194557,
     "lat": 41.3977227,
     "post_code": "08034",
@@ -3271,6 +3576,7 @@
   },
   {
     "station_id": "339",
+    "name": "C/ RAMON TURRÓ, 246",
     "lon": 2.2053803,
     "lat": 41.4017084,
     "post_code": "08005",
@@ -3281,6 +3587,7 @@
   },
   {
     "station_id": "340",
+    "name": "C/ SANT ADRIÀ, 113",
     "lon": 2.2047037,
     "lat": 41.4361782,
     "post_code": "08030",
@@ -3291,6 +3598,7 @@
   },
   {
     "station_id": "341",
+    "name": "PG. D'ENRIC SANCHIS, 33",
     "lon": 2.2062245,
     "lat": 41.4339212,
     "post_code": "08030",
@@ -3301,6 +3609,7 @@
   },
   {
     "station_id": "342",
+    "name": "C/ ROC BORONAT, 134",
     "lon": 2.1936584,
     "lat": 41.4034967,
     "post_code": "08018",
@@ -3311,6 +3620,7 @@
   },
   {
     "station_id": "343",
+    "name": "CAMPANA DE LA MAQUINISTA (SAO PAULO I P",
     "lon": 2.1996179,
     "lat": 41.4389609,
     "post_code": "08030",
@@ -3321,6 +3631,7 @@
   },
   {
     "station_id": "344",
+    "name": "C/ CIUTAT D'ASUNCIÓN, 73 / POTOSÍ",
     "lon": 2.1996045,
     "lat": 41.4431441,
     "post_code": "08030",
@@ -3331,6 +3642,7 @@
   },
   {
     "station_id": "345",
+    "name": "PL. TERESA DE CLARAMUNT/C/ DELS FERROCA",
     "lon": 2.1398322,
     "lat": 41.3631066,
     "post_code": "08038",
@@ -3341,6 +3653,7 @@
   },
   {
     "station_id": "346",
+    "name": "PG. ZONA FRANCA, 182",
     "lon": 2.138931,
     "lat": 41.360798,
     "post_code": "08038",
@@ -3351,6 +3664,7 @@
   },
   {
     "station_id": "347",
+    "name": "C/ ALTS FORNS, 77",
     "lon": 2.1417765,
     "lat": 41.3595484,
     "post_code": "08038",
@@ -3361,6 +3675,7 @@
   },
   {
     "station_id": "348",
+    "name": "JARDINS DE CAN FERRERO/PG.DE LA ZONA FR",
     "lon": 2.141563,
     "lat": 41.357067,
     "post_code": "08038",
@@ -3371,6 +3686,7 @@
   },
   {
     "station_id": "349",
+    "name": "C/ DE L'ENERGIA, 2 / ALTS FORNS",
     "lon": 2.1371996,
     "lat": 41.3573288,
     "post_code": "08038",
@@ -3381,6 +3697,7 @@
   },
   {
     "station_id": "350",
+    "name": "C/ VILLARROEL, 208",
     "lon": 2.1480223,
     "lat": 41.392052,
     "post_code": "08036",
@@ -3391,6 +3708,7 @@
   },
   {
     "station_id": "351",
+    "name": "C/ JANE ADDAMS, 26/ CRTA. DEL PRAT",
     "lon": 2.1356187,
     "lat": 41.3621232,
     "post_code": "08038",
@@ -3401,6 +3719,7 @@
   },
   {
     "station_id": "352",
+    "name": "C/RADI,10/GRAN VIA DE LES CORTS CATALA",
     "lon": 2.1341586,
     "lat": 41.363279,
     "post_code": "08038",
@@ -3411,6 +3730,7 @@
   },
   {
     "station_id": "353",
+    "name": "C/ MUNNÉ  2-6",
     "lon": 2.1232547,
     "lat": 41.37541,
     "post_code": "08028",
@@ -3421,6 +3741,7 @@
   },
   {
     "station_id": "354",
+    "name": "RAMBLA DEL BRASIL, 5",
     "lon": 2.1299539,
     "lat": 41.3759419,
     "post_code": "08028",
@@ -3431,6 +3752,7 @@
   },
   {
     "station_id": "355",
+    "name": "C/ RIERA BLANCA, 123",
     "lon": 2.127854,
     "lat": 41.371459,
     "post_code": "08028",
@@ -3441,6 +3763,7 @@
   },
   {
     "station_id": "356",
+    "name": "C/ CAMÈLIES, 73",
     "lon": 2.1631012,
     "lat": 41.4134503,
     "post_code": "08024",
@@ -3451,6 +3774,7 @@
   },
   {
     "station_id": "357",
+    "name": "C/ CARDENER, 59",
     "lon": 2.1579897,
     "lat": 41.4105956,
     "post_code": "08024",
@@ -3461,6 +3785,7 @@
   },
   {
     "station_id": "358",
+    "name": "C/ GOMBAU, 24",
     "lon": 2.1793035,
     "lat": 41.3872437,
     "post_code": "08003",
@@ -3471,6 +3796,7 @@
   },
   {
     "station_id": "359",
+    "name": "C/ MÉNDEZ NÚÑEZ, 16",
     "lon": 2.1775594,
     "lat": 41.3900544,
     "post_code": "08003",
@@ -3481,6 +3807,7 @@
   },
   {
     "station_id": "360",
+    "name": "C/ BAILÉN, 62",
     "lon": 2.1730023,
     "lat": 41.3952527,
     "post_code": "08009",
@@ -3491,6 +3818,7 @@
   },
   {
     "station_id": "361",
+    "name": "PG. DE COLOM (LES RAMBLES)",
     "lon": 2.17881,
     "lat": 41.37652,
     "post_code": "08039",
@@ -3501,6 +3829,7 @@
   },
   {
     "station_id": "362",
+    "name": "C/ BAILÉN, 100",
     "lon": 2.1706323,
     "lat": 41.396994,
     "post_code": "08009",
@@ -3511,6 +3840,7 @@
   },
   {
     "station_id": "363",
+    "name": "C/ BRUC, 20",
     "lon": 2.1743743,
     "lat": 41.3908381,
     "post_code": "08010",
@@ -3521,6 +3851,7 @@
   },
   {
     "station_id": "364",
+    "name": "PG. DE GRÀCIA, 61",
     "lon": 2.1633226,
     "lat": 41.393062,
     "post_code": "08007",
@@ -3531,6 +3862,7 @@
   },
   {
     "station_id": "365",
+    "name": "C/ VILADOMAT, 244",
     "lon": 2.1469336,
     "lat": 41.3875712,
     "post_code": "08029",
@@ -3541,6 +3873,7 @@
   },
   {
     "station_id": "366",
+    "name": "LA RAMBLA, 75",
     "lon": 2.1729755,
     "lat": 41.3811389,
     "post_code": "08001",
@@ -3551,6 +3884,7 @@
   },
   {
     "station_id": "367",
+    "name": "C/ MARQUÈS DE SENTMENAT, 46",
     "lon": 2.1376205,
     "lat": 41.384972,
     "post_code": "08029",
@@ -3561,6 +3895,7 @@
   },
   {
     "station_id": "368",
+    "name": "C/ DIPUTACIÓ, 373",
     "lon": 2.1756598,
     "lat": 41.3968391,
     "post_code": "08013",
@@ -3571,6 +3906,7 @@
   },
   {
     "station_id": "369",
+    "name": "C/ CONSELL DE CENT, 482",
     "lon": 2.1780175,
     "lat": 41.40013,
     "post_code": "08013",
@@ -3581,6 +3917,7 @@
   },
   {
     "station_id": "370",
+    "name": "C/ SARDENYA, 326",
     "lon": 2.1729061,
     "lat": 41.4039698,
     "post_code": "08025",
@@ -3591,6 +3928,7 @@
   },
   {
     "station_id": "371",
+    "name": "C/ DELS ENAMORATS, 49",
     "lon": 2.181199,
     "lat": 41.4040525,
     "post_code": "08013",
@@ -3601,6 +3939,7 @@
   },
   {
     "station_id": "372",
+    "name": "C/ RIBES, 77",
     "lon": 2.1841711,
     "lat": 41.4001015,
     "post_code": "08013",
@@ -3611,6 +3950,7 @@
   },
   {
     "station_id": "373",
+    "name": "AV. PARAL.LEL, 132",
     "lon": 2.1613897,
     "lat": 41.3750995,
     "post_code": "08015",
@@ -3621,6 +3961,7 @@
   },
   {
     "station_id": "374",
+    "name": "PG. DE GRÀCIA, 89",
     "lon": 2.1612814,
     "lat": 41.3949729,
     "post_code": "08008",
@@ -3631,6 +3972,7 @@
   },
   {
     "station_id": "375",
+    "name": "WORLD TRADE CENTER",
     "lon": 2.1804468,
     "lat": 41.3720293,
     "post_code": "08039",
@@ -3641,6 +3983,7 @@
   },
   {
     "station_id": "376",
+    "name": "WORLD  TRADE CENTER",
     "lon": 2.180302,
     "lat": 41.3718728,
     "post_code": "08039",
@@ -3651,6 +3994,7 @@
   },
   {
     "station_id": "377",
+    "name": "PL. ICTÍNEO",
     "lon": 2.1836886,
     "lat": 41.3776292,
     "post_code": "08039",
@@ -3661,6 +4005,7 @@
   },
   {
     "station_id": "378",
+    "name": "PL. JOAQUIM XIRAU I PALAU, 1",
     "lon": 2.1767427,
     "lat": 41.3785379,
     "post_code": "08002",
@@ -3671,6 +4016,7 @@
   },
   {
     "station_id": "379",
+    "name": "AV. JOSEP TARRADELLAS, 27",
     "lon": 2.1420704,
     "lat": 41.3829333,
     "post_code": "08029",
@@ -3681,6 +4027,7 @@
   },
   {
     "station_id": "380",
+    "name": "C/ DURAN I BAS, 2",
     "lon": 2.1740155,
     "lat": 41.3854094,
     "post_code": "08002",
@@ -3691,6 +4038,7 @@
   },
   {
     "station_id": "381",
+    "name": "C/ AGUSTÍ DURAN I SANPERE, 10",
     "lon": 2.1677697,
     "lat": 41.3816139,
     "post_code": "8001",
@@ -3701,6 +4049,7 @@
   },
   {
     "station_id": "382",
+    "name": "C/ LOPE DE VEGA, 79",
     "lon": 2.2041137,
     "lat": 41.4038902,
     "post_code": "08005",
@@ -3711,6 +4060,7 @@
   },
   {
     "station_id": "383",
+    "name": "C/ NUMÀNCIA, 2",
     "lon": 2.141767,
     "lat": 41.381219,
     "post_code": "08029",
@@ -3721,6 +4071,7 @@
   },
   {
     "station_id": "384",
+    "name": "C/ VILAMARÍ, 85",
     "lon": 2.1468381,
     "lat": 41.3807072,
     "post_code": "08015",
@@ -3731,6 +4082,7 @@
   },
   {
     "station_id": "385",
+    "name": "C/ CASANOVA, 119",
     "lon": 2.1552902,
     "lat": 41.387888,
     "post_code": "08036",
@@ -3741,6 +4093,7 @@
   },
   {
     "station_id": "386",
+    "name": "AV. PARAL.LEL 164",
     "lon": 2.1568773,
     "lat": 41.3751866,
     "post_code": "08015",
@@ -3751,6 +4104,7 @@
   },
   {
     "station_id": "387",
+    "name": "C/ NÀPOLS, 125",
     "lon": 2.1787074,
     "lat": 41.3957813,
     "post_code": "08013",
@@ -3761,6 +4115,7 @@
   },
   {
     "station_id": "388",
+    "name": "C/ RIERA ALTA, 6",
     "lon": 2.1671611,
     "lat": 41.3806411,
     "post_code": "08001",
@@ -3771,6 +4126,7 @@
   },
   {
     "station_id": "389",
+    "name": "RECINTE PARC DE LA CIUTADELLA",
     "lon": 2.1875446,
     "lat": 41.3873901,
     "post_code": "08003",
@@ -3781,6 +4137,7 @@
   },
   {
     "station_id": "390",
+    "name": "C/ COMERÇ, 36",
     "lon": 2.1820169,
     "lat": 41.3869612,
     "post_code": "08003",
@@ -3791,6 +4148,7 @@
   },
   {
     "station_id": "391",
+    "name": "C/ GRAN DE LA SAGRERA, 74",
     "lon": 2.1913753,
     "lat": 41.4230551,
     "post_code": "08027",
@@ -3801,6 +4159,7 @@
   },
   {
     "station_id": "392",
+    "name": "C/ RAMON TURRÓ, 4",
     "lon": 2.1906339,
     "lat": 41.3905303,
     "post_code": "08005",
@@ -3811,6 +4170,7 @@
   },
   {
     "station_id": "393",
+    "name": "C/ LLACUNA, 86",
     "lon": 2.1976297,
     "lat": 41.4022657,
     "post_code": "08005",
@@ -3821,6 +4181,7 @@
   },
   {
     "station_id": "394",
+    "name": "C/ DIPUTACIÓ, 226",
     "lon": 2.1631263,
     "lat": 41.3873057,
     "post_code": "08007",
@@ -3831,6 +4192,7 @@
   },
   {
     "station_id": "395",
+    "name": "PL. CATALUNYA, 22",
     "lon": 2.1702467,
     "lat": 41.3860607,
     "post_code": "08002",
@@ -3841,6 +4203,7 @@
   },
   {
     "station_id": "396",
+    "name": "C/ JOAN MIRÓ, 2-12",
     "lon": 2.1968267,
     "lat": 41.3890253,
     "post_code": "08005",
@@ -3851,6 +4214,7 @@
   },
   {
     "station_id": "397",
+    "name": "AV. LITORAL (PG MARÍTIM DEL PORT OLÍMPI",
     "lon": 2.1993105,
     "lat": 41.3889129,
     "post_code": "08005",
@@ -3861,6 +4225,7 @@
   },
   {
     "station_id": "398",
+    "name": "PG. MARÍTIM DE LA BARCELONETA/ANDREA DÒ",
     "lon": 2.1934636,
     "lat": 41.380955,
     "post_code": "08003",
@@ -3871,6 +4236,7 @@
   },
   {
     "station_id": "399",
+    "name": "C/ PAVIA, 3",
     "lon": 2.1332694,
     "lat": 41.3734706,
     "post_code": "08028",
@@ -3881,6 +4247,7 @@
   },
   {
     "station_id": "400",
+    "name": "MOLL ORIENTAL",
     "lon": 2.1879597,
     "lat": 41.3694508,
     "post_code": "08039",
@@ -3891,6 +4258,7 @@
   },
   {
     "station_id": "401",
+    "name": "PLA DE PALAU",
     "lon": 2.183723,
     "lat": 41.382418,
     "post_code": "08002",
@@ -3901,6 +4269,7 @@
   },
   {
     "station_id": "402",
+    "name": "PG. DE COLOM (VIA LAIETANA)",
     "lon": 2.1821917,
     "lat": 41.380628,
     "post_code": "08002",
@@ -3911,6 +4280,7 @@
   },
   {
     "station_id": "403",
+    "name": "C/ VALLESPIR, 49",
     "lon": 2.1368202,
     "lat": 41.3796421,
     "post_code": "08014",
@@ -3921,6 +4291,7 @@
   },
   {
     "station_id": "404",
+    "name": "C/ JUAN GRIS, 28",
     "lon": 2.1331357,
     "lat": 41.3653426,
     "post_code": "08014",
@@ -3931,6 +4302,7 @@
   },
   {
     "station_id": "405",
+    "name": "C/ COMTE BORRELL, 198",
     "lon": 2.1521802,
     "lat": 41.3854003,
     "post_code": "08029",
@@ -3941,6 +4313,7 @@
   },
   {
     "station_id": "406",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 592",
     "lon": 2.1646697,
     "lat": 41.3863747,
     "post_code": "08007",
@@ -3951,6 +4324,7 @@
   },
   {
     "station_id": "408",
+    "name": "C/ RAMON TRIAS FARGAS, 23",
     "lon": 2.1923283,
     "lat": 41.3889972,
     "post_code": "08005",
@@ -3961,6 +4335,7 @@
   },
   {
     "station_id": "409",
+    "name": "C/ JOAN D'ÀUSTRIA, 31B",
     "lon": 2.1925059,
     "lat": 41.392384,
     "post_code": "08005",
@@ -3971,6 +4346,7 @@
   },
   {
     "station_id": "410",
+    "name": "PG.DE COLOM (LES RAMBLES)",
     "lon": 2.17871,
     "lat": 41.376433,
     "post_code": "08039",
@@ -3981,6 +4357,7 @@
   },
   {
     "station_id": "411",
+    "name": "C/ JOSEP PLA, 67",
     "lon": 2.2122054,
     "lat": 41.411381,
     "post_code": "08019",
@@ -3991,6 +4368,7 @@
   },
   {
     "station_id": "412",
+    "name": "PL. URQUINAONA, 3",
     "lon": 2.1727457,
     "lat": 41.3893094,
     "post_code": "08010",
@@ -4001,6 +4379,7 @@
   },
   {
     "station_id": "413",
+    "name": "C/ BRUC, 66",
     "lon": 2.1707419,
     "lat": 41.393489,
     "post_code": "08009",
@@ -4011,6 +4390,7 @@
   },
   {
     "station_id": "414",
+    "name": "C/ CASP, 67",
     "lon": 2.1764275,
     "lat": 41.3937234,
     "post_code": "08010",
@@ -4021,6 +4401,7 @@
   },
   {
     "station_id": "415",
+    "name": "RAMBLA DEL RAVAL, 13",
     "lon": 2.1689592,
     "lat": 41.3793558,
     "post_code": "08001",
@@ -4031,6 +4412,7 @@
   },
   {
     "station_id": "416",
+    "name": "RAMBLA DEL RAVAL, 20",
     "lon": 2.1696744,
     "lat": 41.3781065,
     "post_code": "08001",
@@ -4041,6 +4423,7 @@
   },
   {
     "station_id": "417",
+    "name": "C/ VILLAR, 2",
     "lon": 2.1801094,
     "lat": 41.4164824,
     "post_code": "08041",
@@ -4051,6 +4434,7 @@
   },
   {
     "station_id": "418",
+    "name": "PG. DE LLUíS COMPANYS (ARC DE TRIOMF)",
     "lon": 2.1801142,
     "lat": 41.391062,
     "post_code": "08018",
@@ -4061,6 +4445,7 @@
   },
   {
     "station_id": "419",
+    "name": "PG. DE LLUIS COMPAYNS (ARC DE TRIOMF)",
     "lon": 2.1808391,
     "lat": 41.391313,
     "post_code": "08018",
@@ -4071,6 +4456,7 @@
   },
   {
     "station_id": "420",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 368",
     "lon": 2.1479385,
     "lat": 41.3743329,
     "post_code": "08010",
@@ -4081,6 +4467,7 @@
   },
   {
     "station_id": "421",
+    "name": "C/ VALLESPIR, 13",
     "lon": 2.1378667,
     "lat": 41.378118,
     "post_code": "08014",
@@ -4091,6 +4478,7 @@
   },
   {
     "station_id": "422",
+    "name": "C/ JORDI GIRONA, 29",
     "lon": 2.1154135,
     "lat": 41.3881175,
     "post_code": "08034",
@@ -4101,6 +4489,7 @@
   },
   {
     "station_id": "423",
+    "name": "C/ HONDURAS, 32-34",
     "lon": 2.1894852,
     "lat": 41.4202459,
     "post_code": "08027",
@@ -4111,6 +4500,7 @@
   },
   {
     "station_id": "424",
+    "name": "PG. MARÍTIM DE LA BARCELONETA",
     "lon": 2.1925198,
     "lat": 41.3795862,
     "post_code": "08003",
@@ -4121,6 +4511,7 @@
   },
   {
     "station_id": "425",
+    "name": "C/ DE CERVELLÓ, 5",
     "lon": 2.1748621,
     "lat": 41.3765618,
     "post_code": "08001",
@@ -4131,6 +4522,7 @@
   },
   {
     "station_id": "426",
+    "name": "C/ DE RIBES, 59 B",
     "lon": 2.1830315,
     "lat": 41.39828,
     "post_code": "08013",
@@ -4141,6 +4533,7 @@
   },
   {
     "station_id": "427",
+    "name": "C/ DE SANT PAU, 119/ RONDA SANT PAU",
     "lon": 2.1680021,
     "lat": 41.3754047,
     "post_code": "08001",
@@ -4151,6 +4544,7 @@
   },
   {
     "station_id": "428",
+    "name": "C/ PUJADES, 103",
     "lon": 2.1960799,
     "lat": 41.3983902,
     "post_code": "08005",
@@ -4161,6 +4555,7 @@
   },
   {
     "station_id": "429",
+    "name": "C/ GRAN CAPITÀ, 9",
     "lon": 2.1091535,
     "lat": 41.3881262,
     "post_code": "08034",
@@ -4171,6 +4566,7 @@
   },
   {
     "station_id": "430",
+    "name": " C/ ALFAMBRA, 2 | AV. DIAGONAL",
     "lon": 2.113096,
     "lat": 41.385641,
     "post_code": "08034",
@@ -4181,6 +4577,7 @@
   },
   {
     "station_id": "431",
+    "name": "AV. JOAN XXIII, 17",
     "lon": 2.122175,
     "lat": 41.383467,
     "post_code": "08028",
@@ -4191,6 +4588,7 @@
   },
   {
     "station_id": "432",
+    "name": "C/ MARTÍ I FRANQUÈS, 1",
     "lon": 2.1170751,
     "lat": 41.3847061,
     "post_code": "08028",
@@ -4201,6 +4599,7 @@
   },
   {
     "station_id": "433",
+    "name": "C/ J. MAYNARD KEYNES, 2|AV. DGNAL.",
     "lon": 2.1168609,
     "lat": 41.3862258,
     "post_code": "08034",
@@ -4211,6 +4610,7 @@
   },
   {
     "station_id": "434",
+    "name": "C/ ROGER, 24",
     "lon": 2.1269152,
     "lat": 41.3767538,
     "post_code": "08028",
@@ -4221,6 +4621,7 @@
   },
   {
     "station_id": "435",
+    "name": "AV. DOCTOR MARAÑON, 25 | C/ PAU GARGALLO",
     "lon": 2.112186,
     "lat": 41.383585,
     "post_code": "08028",
@@ -4231,6 +4632,7 @@
   },
   {
     "station_id": "436",
+    "name": "PG. ZONA FRANCA, 54",
     "lon": 2.1433038,
     "lat": 41.3545425,
     "post_code": "08038",
@@ -4241,6 +4643,7 @@
   },
   {
     "station_id": "437",
+    "name": "PG. ZONA FRANCA, 9",
     "lon": 2.1450958,
     "lat": 41.3513237,
     "post_code": "08038",
@@ -4251,6 +4654,7 @@
   },
   {
     "station_id": "438",
+    "name": "C/ NÀPOLS, 183",
     "lon": 2.1754896,
     "lat": 41.3981669,
     "post_code": "08013",
@@ -4261,6 +4665,7 @@
   },
   {
     "station_id": "439",
+    "name": "RBLA. BADAL, 73 | C/ CONSTITUCIÓ",
     "lon": 2.1328403,
     "lat": 41.3685394,
     "post_code": "08014",
@@ -4271,6 +4676,7 @@
   },
   {
     "station_id": "440",
+    "name": "C/ SELVA DE MAR, 230",
     "lon": 2.1976864,
     "lat": 41.417694,
     "post_code": "08020",
@@ -4281,6 +4687,7 @@
   },
   {
     "station_id": "441",
+    "name": "C/ WATT, 2",
     "lon": 2.1398409,
     "lat": 41.3754426,
     "post_code": "08014",
@@ -4291,6 +4698,7 @@
   },
   {
     "station_id": "442",
+    "name": "C/ MINERIA, 30",
     "lon": 2.138599,
     "lat": 41.3649272,
     "post_code": "08038",
@@ -4301,6 +4709,7 @@
   },
   {
     "station_id": "443",
+    "name": "C/ CASANOVA, 139",
     "lon": 2.1542277,
     "lat": 41.3887127,
     "post_code": "08036",
@@ -4311,6 +4720,7 @@
   },
   {
     "station_id": "444",
+    "name": "C/ LLEIDA, 40",
     "lon": 2.1554047,
     "lat": 41.3717304,
     "post_code": "08004",
@@ -4321,6 +4731,7 @@
   },
   {
     "station_id": "445",
+    "name": "C/ VILAMARÍ, 2",
     "lon": 2.154004,
     "lat": 41.3755016,
     "post_code": "08015",
@@ -4331,6 +4742,7 @@
   },
   {
     "station_id": "446",
+    "name": "PG. JOAN DE BORBÓ, 42",
     "lon": 2.1884228,
     "lat": 41.3779974,
     "post_code": "08003",
@@ -4341,6 +4753,7 @@
   },
   {
     "station_id": "447",
+    "name": "C/ ALMOGÀVERS, 63",
     "lon": 2.1860256,
     "lat": 41.3943033,
     "post_code": "08018",
@@ -4351,6 +4764,7 @@
   },
   {
     "station_id": "448",
+    "name": "C/ RAMÓN TURRÓ, 160",
     "lon": 2.1997869,
     "lat": 41.3972809,
     "post_code": "08005",
@@ -4361,6 +4775,7 @@
   },
   {
     "station_id": "449",
+    "name": "C/ BOLIVIA, 120",
     "lon": 2.1949461,
     "lat": 41.4058109,
     "post_code": "08018",
@@ -4371,6 +4786,7 @@
   },
   {
     "station_id": "450",
+    "name": "C/ CRISTOBAL DE MOURA, 84",
     "lon": 2.2061691,
     "lat": 41.410712,
     "post_code": "08019",
@@ -4381,6 +4797,7 @@
   },
   {
     "station_id": "451",
+    "name": "C/ PALLARS, 504",
     "lon": 2.2150487,
     "lat": 41.4140598,
     "post_code": "08019",
@@ -4391,6 +4808,7 @@
   },
   {
     "station_id": "452",
+    "name": "GRAN VIA DE LES CORTS CATALANES, 1157 (D)",
     "lon": 2.20934,
     "lat": 41.4194972,
     "post_code": "08020",
@@ -4401,6 +4819,7 @@
   },
   {
     "station_id": "454",
+    "name": "C/ SARDENYA, 402",
     "lon": 2.1684799,
     "lat": 41.4072349,
     "post_code": "08025",
@@ -4411,6 +4830,7 @@
   },
   {
     "station_id": "455",
+    "name": "C/ PROVENÇA, 595",
     "lon": 2.1826833,
     "lat": 41.4105848,
     "post_code": "08026",
@@ -4421,6 +4841,7 @@
   },
   {
     "station_id": "456",
+    "name": "C/ MÚRCIA, 1",
     "lon": 2.1874539,
     "lat": 41.4143392,
     "post_code": "08026",
@@ -4431,6 +4852,7 @@
   },
   {
     "station_id": "457",
+    "name": "C/ GRANADELLA, 10-19 | C/ SAS",
     "lon": 2.2039823,
     "lat": 41.4383117,
     "post_code": "08030",
@@ -4441,6 +4863,7 @@
   },
   {
     "station_id": "458",
+    "name": "C/ TUCUMÁN, 21",
     "lon": 2.2010422,
     "lat": 41.4457962,
     "post_code": "08030",
@@ -4451,6 +4874,7 @@
   },
   {
     "station_id": "459",
+    "name": "PG. SANTA COLOMA, 105",
     "lon": 2.1976757,
     "lat": 41.4479402,
     "post_code": "08030",
@@ -4461,6 +4885,7 @@
   },
   {
     "station_id": "460",
+    "name": "C/ MIREIA, 28",
     "lon": 2.1894717,
     "lat": 41.4513863,
     "post_code": "08033",
@@ -4471,6 +4896,7 @@
   },
   {
     "station_id": "461",
+    "name": "AV. RIO DE JANEIRO, 118",
     "lon": 2.185727,
     "lat": 41.442489,
     "post_code": "08016",
@@ -4481,6 +4907,7 @@
   },
   {
     "station_id": "462",
+    "name": "C/ PALAMÓS, 33",
     "lon": 2.184857,
     "lat": 41.446923,
     "post_code": "08033",
@@ -4491,6 +4918,7 @@
   },
   {
     "station_id": "463",
+    "name": "C/ PEDROSA, 24",
     "lon": 2.1833801,
     "lat": 41.4490679,
     "post_code": "08033",
@@ -4501,6 +4929,7 @@
   },
   {
     "station_id": "464",
+    "name": "AV. RIO DE JANEIRO, 96",
     "lon": 2.182335,
     "lat": 41.439692,
     "post_code": "08016",
@@ -4511,6 +4940,7 @@
   },
   {
     "station_id": "465",
+    "name": "C/ ROSSELLÓ, 261",
     "lon": 2.1599427,
     "lat": 41.3954094,
     "post_code": "08008",
@@ -4521,6 +4951,7 @@
   },
   {
     "station_id": "466",
+    "name": "C/ PABLO IGLESIAS, 21",
     "lon": 2.1813051,
     "lat": 41.443387,
     "post_code": "08016",
@@ -4531,6 +4962,7 @@
   },
   {
     "station_id": "467",
+    "name": "PL. JESÚS CARRASCO",
     "lon": 2.176726,
     "lat": 41.4450463,
     "post_code": "08042",
@@ -4541,6 +4973,7 @@
   },
   {
     "station_id": "468",
+    "name": "C/ NOU BARRIS, 23",
     "lon": 2.1775154,
     "lat": 41.4480464,
     "post_code": "08042",
@@ -4551,6 +4984,7 @@
   },
   {
     "station_id": "469",
+    "name": "C/ SANT FRANCESC XAVIER, 1",
     "lon": 2.1781553,
     "lat": 41.4417001,
     "post_code": "08016",
@@ -4561,6 +4995,7 @@
   },
   {
     "station_id": "470",
+    "name": "C/ GÒNGORA, 23",
     "lon": 2.1746238,
     "lat": 41.4432762,
     "post_code": "08042",
@@ -4571,6 +5006,7 @@
   },
   {
     "station_id": "471",
+    "name": "PG. VALLDAURA, 171",
     "lon": 2.1715576,
     "lat": 41.4389014,
     "post_code": "08042",
@@ -4581,6 +5017,7 @@
   },
   {
     "station_id": "472",
+    "name": "VIA FAVÈNCIA, 186",
     "lon": 2.170393,
     "lat": 41.4427374,
     "post_code": "08042",
@@ -4591,6 +5028,7 @@
   },
   {
     "station_id": "473",
+    "name": "PG. FABRA I PUIG, 449",
     "lon": 2.1657506,
     "lat": 41.4388644,
     "post_code": "08042",
@@ -4601,6 +5039,7 @@
   },
   {
     "station_id": "474",
+    "name": "VIA FAVÈNCIA, 47",
     "lon": 2.1664224,
     "lat": 41.4418604,
     "post_code": "08042",
@@ -4611,6 +5050,7 @@
   },
   {
     "station_id": "475",
+    "name": "C/ CAMPO FLORIDO, 66",
     "lon": 2.1799878,
     "lat": 41.4216738,
     "post_code": "08027",
@@ -4621,6 +5061,7 @@
   },
   {
     "station_id": "476",
+    "name": "C/ PERIODISTES, 9",
     "lon": 2.174401,
     "lat": 41.422037,
     "post_code": "08032",
@@ -4631,6 +5072,7 @@
   },
   {
     "station_id": "477",
+    "name": "C/ AMILCAR, 78",
     "lon": 2.1722534,
     "lat": 41.4260751,
     "post_code": "08032",
@@ -4641,6 +5083,7 @@
   },
   {
     "station_id": "478",
+    "name": "C/ ESCULTOR LLIMONA, 7",
     "lon": 2.1697582,
     "lat": 41.4276076,
     "post_code": "08031",
@@ -4651,6 +5094,7 @@
   },
   {
     "station_id": "479",
+    "name": "PG. FABRA I PUIG, 344",
     "lon": 2.1671068,
     "lat": 41.430623,
     "post_code": "08031",
@@ -4661,6 +5105,7 @@
   },
   {
     "station_id": "480",
+    "name": "PG. FABRA I PUIG, 385",
     "lon": 2.1629258,
     "lat": 41.4333259,
     "post_code": "08031",
@@ -4671,6 +5116,7 @@
   },
   {
     "station_id": "481",
+    "name": "PG. FABRA I PUIG, 411",
     "lon": 2.163872,
     "lat": 41.4357978,
     "post_code": "08031",
@@ -4681,6 +5127,7 @@
   },
   {
     "station_id": "482",
+    "name": "PG. UNIVERSAL, 29 | C/ DOCTOR LETAMENDI",
     "lon": 2.1620235,
     "lat": 41.4372022,
     "post_code": "08042",
@@ -4691,6 +5138,7 @@
   },
   {
     "station_id": "483",
+    "name": "C/ LISBOA, 1",
     "lon": 2.1589684563445877,
     "lat": 41.429561735076526,
     "post_code": "08032",
@@ -4701,6 +5149,7 @@
   },
   {
     "station_id": "484",
+    "name": "C/ EDUARD TODA, 33 | C/ DOCTOR LETAMENDI",
     "lon": 2.1585268,
     "lat": 41.4345997,
     "post_code": "08031",
@@ -4711,6 +5160,7 @@
   },
   {
     "station_id": "485",
+    "name": "PG. VALLDAURA, 26",
     "lon": 2.1565742,
     "lat": 41.4374904,
     "post_code": "08031",
@@ -4721,6 +5171,7 @@
   },
   {
     "station_id": "486",
+    "name": "C/ PORTO, 35 | AV. ESTATUT DE CATALUNYA",
     "lon": 2.1564551,
     "lat": 41.4306102,
     "post_code": "08032",
@@ -4731,6 +5182,7 @@
   },
   {
     "station_id": "487",
+    "name": "C/ LISBOA, 128",
     "lon": 2.1521909,
     "lat": 41.4267638,
     "post_code": "08032",
@@ -4741,6 +5193,7 @@
   },
   {
     "station_id": "488",
+    "name": "AV. CAN MARCET, 36",
     "lon": 2.147904,
     "lat": 41.4347859,
     "post_code": "08035",
@@ -4751,6 +5204,7 @@
   },
   {
     "station_id": "489",
+    "name": "C/ JORGE MANRIQUE, 15",
     "lon": 2.1499103,
     "lat": 41.4312335,
     "post_code": "08035",
@@ -4761,6 +5215,7 @@
   },
   {
     "station_id": "490",
+    "name": "PG. VALL D'HEBRÓN, 168",
     "lon": 2.1443777,
     "lat": 41.4280668,
     "post_code": "08035",
@@ -4771,6 +5226,7 @@
   },
   {
     "station_id": "491",
+    "name": "C/ PARE MARIANA, 24",
     "lon": 2.1456449,
     "lat": 41.4306689,
     "post_code": "08035",
@@ -4781,6 +5237,7 @@
   },
   {
     "station_id": "492",
+    "name": "PL. TETUAN",
     "lon": 2.1751709,
     "lat": 41.3943454,
     "post_code": "08010",
@@ -4791,6 +5248,7 @@
   },
   {
     "station_id": "493",
+    "name": "PG. VALL D'HEBRÓN, 80",
     "lon": 2.1401823,
     "lat": 41.419965,
     "post_code": "08023",
@@ -4801,6 +5259,7 @@
   },
   {
     "station_id": "494",
+    "name": "RBLA. CATALUNYA, 33 - C/ DIPUTACIÓ",
     "lon": 2.1652199,
     "lat": 41.3896967,
     "post_code": "08007",
@@ -4811,6 +5270,7 @@
   },
   {
     "station_id": "495",
+    "name": "C/ DIPUTACIÓ, 22",
     "lon": 2.150523,
     "lat": 41.377846,
     "post_code": "08015",
@@ -4821,6 +5281,7 @@
   },
   {
     "station_id": "496",
+    "name": "C/ PROVENÇA,  445",
     "lon": 2.174799,
     "lat": 41.4048623,
     "post_code": "08025",
@@ -4831,6 +5292,7 @@
   },
   {
     "station_id": "497",
+    "name": "PTGE. MALUQUER, 16",
     "lon": 2.1360313,
     "lat": 41.4095489,
     "post_code": "08022",
@@ -4841,6 +5303,7 @@
   },
   {
     "station_id": "498",
+    "name": "C/ ESTEVE TERRADAS, 42",
     "lon": 2.1402433,
     "lat": 41.4144967,
     "post_code": "08023",
@@ -4851,6 +5314,7 @@
   },
   {
     "station_id": "499",
+    "name": "AV. VALLCARCA, 196",
     "lon": 2.1421504,
     "lat": 41.4160558,
     "post_code": "08023",
@@ -4861,6 +5325,7 @@
   },
   {
     "station_id": "500",
+    "name": "C/ ARGENTERA, 23",
     "lon": 2.1453424,
     "lat": 41.4117633,
     "post_code": "08023",
@@ -4871,6 +5336,7 @@
   },
   {
     "station_id": "501",
+    "name": "C/ ELISA, 1",
     "lon": 2.1420204,
     "lat": 41.4052698,
     "post_code": "08023",
@@ -4881,6 +5347,7 @@
   },
   {
     "station_id": "502",
+    "name": "AV. VALLCARCA, 11",
     "lon": 2.1492066,
     "lat": 41.4074444,
     "post_code": "08023",
@@ -4891,6 +5358,7 @@
   },
   {
     "station_id": "503",
+    "name": "C/ MAIGNON, 31-41",
     "lon": 2.1524953,
     "lat": 41.4095926,
     "post_code": "08024",
@@ -4901,6 +5369,7 @@
   },
   {
     "station_id": "504",
+    "name": "C/ MASSENS, 76",
     "lon": 2.1557747,
     "lat": 41.4092333,
     "post_code": "08024",
@@ -4911,6 +5380,7 @@
   },
   {
     "station_id": "505",
+    "name": "C/ CAMÈLIES, 78",
     "lon": 2.1658677,
     "lat": 41.4145614,
     "post_code": "08024",
@@ -4921,6 +5391,7 @@
   },
   {
     "station_id": "506",
+    "name": "C/ GARRIGA I ROCA, 2",
     "lon": 2.1718497,
     "lat": 41.4191957,
     "post_code": "08041",
@@ -4931,6 +5402,7 @@
   },
   {
     "station_id": "507",
+    "name": "C/ SARDENYA, 494",
     "lon": 2.1640965,
     "lat": 41.4107641,
     "post_code": "08024",
@@ -4941,6 +5413,7 @@
   },
   {
     "station_id": "508",
+    "name": "C/ SARDENYA, 465",
     "lon": 2.1656378,
     "lat": 41.4090922,
     "post_code": "08025",
@@ -4951,6 +5424,7 @@
   },
   {
     "station_id": "509",
+    "name": "C/ TORRENT DE L'OLLA, 11",
     "lon": 2.1606736,
     "lat": 41.3989713,
     "post_code": "08012",
@@ -4961,6 +5435,7 @@
   },
   {
     "station_id": "510",
+    "name": "C/ GRAN DE GRÀCIA, 37",
     "lon": 2.1564253,
     "lat": 41.3989151,
     "post_code": "08012",
@@ -4971,6 +5446,7 @@
   },
   {
     "station_id": "511",
+    "name": "C/ GRAN DE GRÀCIA, 91",
     "lon": 2.1543317,
     "lat": 41.4006862,
     "post_code": "08012",
@@ -4981,6 +5457,7 @@
   },
   {
     "station_id": "512",
+    "name": "C/ D'ALACANT, 12",
     "lon": 2.1326911,
     "lat": 41.4000778,
     "post_code": "08017",
@@ -4991,6 +5468,7 @@
   },
   {
     "station_id": "513",
+    "name": "VIA AUGUSTA, 317",
     "lon": 2.124329,
     "lat": 41.399017,
     "post_code": "08017",
@@ -5001,6 +5479,7 @@
   },
   {
     "station_id": "514",
+    "name": "C/ ARAGÓ, 614",
     "lon": 2.1885055,
     "lat": 41.4095069,
     "post_code": "08018",
@@ -5011,6 +5490,7 @@
   },
   {
     "station_id": "515",
+    "name": "C/ SANT ADRIÀ, 43",
     "lon": 2.1948002,
     "lat": 41.4352071,
     "post_code": "08030",
@@ -5021,6 +5501,7 @@
   },
   {
     "station_id": "516",
+    "name": "C/ SANT ADRIÀ, 88",
     "lon": 2.2001569,
     "lat": 41.4354601,
     "post_code": "08030",
@@ -5031,6 +5512,7 @@
   },
   {
     "station_id": "517",
+    "name": "AV. RASOS DE PEGUERA, 10",
     "lon": 2.178959,
     "lat": 41.462095,
     "post_code": "08033",
@@ -5041,6 +5523,7 @@
   },
   {
     "station_id": "518",
+    "name": "C/ LLOBREGÓS, 115",
     "lon": 2.1570492,
     "lat": 41.4246885,
     "post_code": "08032",
@@ -5051,6 +5534,7 @@
   },
   {
     "station_id": "519",
+    "name": "C/ PEDRELL, 52",
     "lon": 2.166289,
     "lat": 41.4246548,
     "post_code": "08032",
@@ -5061,6 +5545,7 @@
   },
   {
     "station_id": "526",
+    "name": "C/ TARONGERS | AV. MIRAMAR (TELEFÈRIC)",
     "lon": 2.1645038,
     "lat": 41.3683855,
     "post_code": "08038",
@@ -5071,6 +5556,7 @@
   },
   {
     "station_id": "527",
+    "name": "PG. OLIMPIC, 8",
     "lon": 2.1543216104507534,
     "lat": 41.361972900539186,
     "post_code": "08038",
@@ -5081,6 +5567,7 @@
   },
   {
     "station_id": "537",
+    "name": "AV. ESTADI, 12",
     "lon": 2.1476099,
     "lat": 41.3653602,
     "post_code": "08038",
@@ -5091,6 +5578,7 @@
   },
   {
     "station_id": "538",
+    "name": "AV. ESTADI, 38",
     "lon": 2.1522059,
     "lat": 41.3663147,
     "post_code": "08038",
@@ -5101,6 +5589,7 @@
   },
   {
     "station_id": "539",
+    "name": "C/ FRANÇA XICA, 4",
     "lon": 2.1602153,
     "lat": 41.3721749,
     "post_code": "08004",
@@ -5111,6 +5600,7 @@
   },
   {
     "station_id": "540",
+    "name": "C/ MANDONI, 6",
     "lon": 2.1426008,
     "lat": 41.3693483,
     "post_code": "08004",
@@ -5121,6 +5611,7 @@
   },
   {
     "station_id": "541",
+    "name": "C/ MARBRE, 2",
     "lon": 2.1476169,
     "lat": 41.3614158,
     "post_code": "08038",
@@ -5131,6 +5622,7 @@
   },
   {
     "station_id": "542",
+    "name": "Copa América Barcelona - 542",
     "lon": 2.189216913266181,
     "lat": 41.374538091110196,
     "post_code": "Unknown",
@@ -5141,6 +5633,7 @@
   },
   {
     "station_id": "543",
+    "name": "Copa América Barcelona - 543",
     "lon": 2.191370993848407,
     "lat": 41.38382985640722,
     "post_code": "Unknown",
@@ -5151,6 +5644,7 @@
   },
   {
     "station_id": "544",
+    "name": "C/ MONTFAR, 1",
     "lon": 2.148729,
     "lat": 41.37049,
     "post_code": "08004",

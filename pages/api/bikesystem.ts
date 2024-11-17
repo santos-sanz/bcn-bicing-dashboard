@@ -10,6 +10,7 @@ interface ApiStationInfo {
     lon: number;
     lat: number;
     post_code?: string;
+    name?: string;
     [key: string]: any; // for other fields that the API might have
 }
 
@@ -62,6 +63,7 @@ export default async function handler(
 
       const station: StationInfo = {
         station_id: info.station_id,
+        name: info.name || '',
         lon: info.lon,
         lat: info.lat,
         post_code: info.post_code || "Unknown",
@@ -79,6 +81,7 @@ export default async function handler(
     const infoMap = new Map<string, any>();
     stationsInfo.forEach((station: any) => {
       infoMap.set(station.station_id, { 
+        name: station.name,
         suburb: station.suburb,
         suburb_id: station.suburb_id,
         district: station.district,
@@ -94,6 +97,7 @@ export default async function handler(
   
       updatedStationsInfo.forEach((station: any) => {
         infoMap.set(station.station_id, { 
+          name: station.name,
           suburb: station.suburb,
           suburb_id: station.suburb_id,
           district: station.district,
@@ -110,6 +114,7 @@ export default async function handler(
       const stationsInfo = fileContent ? JSON.parse(fileContent) : [];
       stationsInfo.forEach((station: any) => {
         backupInfoMap.set(station.station_id, {
+          name: station.name,
           suburb: station.suburb,
           suburb_id: station.suburb_id,
           district: station.district,
@@ -134,6 +139,7 @@ export default async function handler(
       return {
         ...info,
         ...statusMap.get(info.station_id),
+        name: info.name || (backupInfo?.name || ''),
         district_id: district_id || (backupInfo?.district_id || ''),
         district: district || (backupInfo?.district || ''),
         suburb_id: suburb_id || (backupInfo?.suburb_id || ''),

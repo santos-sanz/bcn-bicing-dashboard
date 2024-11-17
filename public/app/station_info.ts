@@ -7,6 +7,7 @@ type FeatureCollection = GeoJSON.FeatureCollection;
 
 export interface StationInfo {
     station_id: string;
+    name: string;
     lon: number;
     lat: number;
     post_code: string;
