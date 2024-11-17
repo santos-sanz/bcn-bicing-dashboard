@@ -181,7 +181,7 @@ export default function AnalyticsPage() {
     }
 
     checkAccess()
-    fetch('/mock_data/mock_flow_real.json')
+    fetch('/data/flow.json')
       .then(response => response.json())
       .then(data => setUsageData(data))
   }, [router])

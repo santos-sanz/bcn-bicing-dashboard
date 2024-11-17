@@ -56,6 +56,10 @@ export default async function handler(
       station_info: stationsMap.get(stat.station_id) || null
     }))
 
+    // Save data to stats.json
+    const filePath = path.join(process.cwd(), 'public/data/stats.json')
+    await fs.writeFile(filePath, JSON.stringify(mergedData, null, 2))
+
     return res.status(200).json(mergedData)
     
   } catch (error) {
