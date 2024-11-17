@@ -189,8 +189,8 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const fetchBicingData = async () => {
       try {
-        const response = await axios.get('/api/bikesystem')
-        const stations = response.data
+        const response = await fetch('/data/stations_info.json')
+        const stations = await response.json()
         const stationsWithDefaultColor = stations.map((station: Station) => ({
           ...station,
           routeColor: '#3b82f6' // Default blue color

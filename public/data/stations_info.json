@@ -4041,7 +4041,7 @@
     "name": "C/ AGUSTÍ DURAN I SANPERE, 10",
     "lon": 2.1677697,
     "lat": 41.3816139,
-    "post_code": "8001",
+    "post_code": "08001",
     "district_id": "01",
     "district": "Ciutat Vella",
     "suburb_id": "01",
@@ -5625,10 +5625,10 @@
     "name": "Copa América Barcelona - 542",
     "lon": 2.189216913266181,
     "lat": 41.374538091110196,
-    "post_code": "Unknown",
-    "district_id": "",
+    "post_code": "08003",
+    "district_id": "01",
     "district": "Ciutat Vella",
-    "suburb_id": "",
+    "suburb_id": "03",
     "suburb": "la Barceloneta"
   },
   {
@@ -5636,10 +5636,10 @@
     "name": "Copa América Barcelona - 543",
     "lon": 2.191370993848407,
     "lat": 41.38382985640722,
-    "post_code": "Unknown",
-    "district_id": "",
+    "post_code": "08003",
+    "district_id": "01",
     "district": "Ciutat Vella",
-    "suburb_id": "",
+    "suburb_id": "03",
     "suburb": "la Barceloneta"
   },
   {
