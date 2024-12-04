@@ -5652,5 +5652,16 @@
     "district": "Sants-Montjuïc",
     "suburb_id": "14",
     "suburb": "la Font de la Guatlla"
+  },
+  {
+    "station_id": "237",
+    "name": "C/ RIUS I TAULET, 4",
+    "lon": 2.1539198,
+    "lat": 41.3727426,
+    "post_code": "08004",
+    "district_id": "03",
+    "district": "Sants-Montjuïc",
+    "suburb_id": "11",
+    "suburb": "el Poble-sec"
   }
 ]
