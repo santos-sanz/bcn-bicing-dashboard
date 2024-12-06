@@ -100,6 +100,9 @@ export default function AnalyticsPage() {
   const [tempToDate, setTempToDate] = useState<string>(getCurrentFormattedDate())
   const [stationStats, setStationStats] = useState<Array<StationStats>>([])
   const [filteredStats, setFilteredStats] = useState<Array<StationStats>>([])
+  const [searchFilteredStations, setSearchFilteredStations] = useState<Station[]>([])
+  const [lastSearchFilter, setLastSearchFilter] = useState<string>('')
+  const [searchTerm, setSearchTerm] = useState('')
 
   // Add color mapping for districts and suburbs
   const districtColors: { [key: string]: string } = {
@@ -425,39 +428,27 @@ export default function AnalyticsPage() {
   }, [map])
 
   useEffect(() => {
-    if (!bikeStations.length || !stationStats.length) return;
-    
-    let filtered = bikeStations;
-    let filteredStats = stationStats;
-
-    // First apply map filters
-    if (filter !== 'district' && filter !== 'station') {
-      filtered = bikeStations.filter(station => {
-        switch (filter) {
-          case 'EMPTY':
-            return station.num_bikes_available === 0 && station.status === 'IN_SERVICE';
-          case 'FULL':
-            return station.num_docks_available === 0 && station.status === 'IN_SERVICE';
-          case 'AVAILABLE':
-            return station.num_bikes_available > 0 && station.num_docks_available > 0 && station.status === 'IN_SERVICE';
-          case 'OTHER':
-            return station.status !== 'IN_SERVICE';
-          default:
-            return true;
-        }
-      });
-
-      // Filter stats based on filtered stations
-      const filteredStationIds = filtered.map(station => station.station_id);
-      filteredStats = stationStats.filter(stat => 
-        filteredStationIds.includes(stat.station_info?.station_id || '')
-      );
+    if (filterValue && !filter.includes('-')) {
+      setLastSearchFilter(filterValue)
+      let filtered = bikeStations
+      if (filter === 'station') {
+        filtered = bikeStations.filter(station => 
+          station.name.toLowerCase().includes(filterValue.toLowerCase())
+        )
+      } else if (filter === 'district') {
+        filtered = bikeStations.filter(station => {
+          const statData = stationStats.find(stat => 
+            stat.station_info?.station_id === station.station_id
+          )
+          return statData?.station_info?.district === filterValue
+        })
+      }
+      // Store the filtered stations
+      setSearchFilteredStations(filtered)
+      // Update the current view
+      setFilteredStations(filtered)
     }
-
-    setFilteredStations(filtered);
-    setFilteredStats(filteredStats);
-    updateMetrics(filtered);
-  }, [filter, bikeStations, stationStats, updateMetrics]);
+  }, [filterValue, filter, bikeStations, stationStats])
 
   useEffect(() => {
     // Load stats.json data
@@ -539,54 +530,90 @@ export default function AnalyticsPage() {
   // Update handleStationSelect
   const handleStationSelect = (station: Station | null) => {
     if (!station) {
-      resetToDefaultView();
-      return;
+      // Reset to all stations
+      setSearchFilteredStations([])
+      setSelectedStation(null)
+      setFilter('city')
+      setFilterValue('')
+      
+      if (map && typeof map.setView === 'function') {
+        try {
+          map.setView([DEFAULT_COORDINATES.lat, DEFAULT_COORDINATES.lng], DEFAULT_COORDINATES.zoom)
+        } catch (error) {
+          console.error('Error resetting map view:', error)
+        }
+      }
+      return
     }
 
-    // Ensure we have valid coordinates before proceeding
-    const lat = typeof station.lat === 'string' ? parseFloat(station.lat) : station.lat;
-    const lon = typeof station.lon === 'string' ? parseFloat(station.lon) : station.lon;
+    // Filter stations by name
+    const filtered = bikeStations.filter(s => 
+      s.name.toLowerCase().includes(station.name.toLowerCase())
+    )
     
-    // Validate coordinates
-    if (!lat || !lon || isNaN(lat) || isNaN(lon) || lat === 0 || lon === 0) {
-      console.warn('Invalid coordinates for station:', station);
-      resetToDefaultView();
-      return;
-    }
+    setSearchFilteredStations(filtered)
+    setFilteredStations(filtered)
+    setSelectedStation(station)
+    setFilter('station')
+    setFilterValue(station.name)
 
-    // Filter stats by station ID
-    const filtered = stationStats.filter(stat => 
-      stat.station_info?.station_id === station.station_id
-    );
-    setFilteredStats(filtered);
-    setSelectedStation(station);
-    setFilter('station');
-    setFilterValue(station.name);
+    // Update map view
+    const lat = typeof station.lat === 'string' ? parseFloat(station.lat) : station.lat
+    const lon = typeof station.lon === 'string' ? parseFloat(station.lon) : station.lon
     
-    if (map && typeof map.setView === 'function') {
+    if (map && typeof map.setView === 'function' && lat && lon) {
       try {
-        map.setView([lat, lon], 15);
+        map.setView([lat, lon], 15)
       } catch (error) {
-        console.error('Error setting map view:', error);
-        resetToDefaultView();
+        console.error('Error setting map view:', error)
       }
     }
-  };
+  }
+
+  // Modify the useEffect that handles filtering to preserve filtered stations
+  useEffect(() => {
+    // Only update filtered stations if we're not in the middle of a district/search filter
+    if (!filterValue) {
+      setFilteredStations(bikeStations)
+    }
+  }, [bikeStations])
+
+  // Update the effect that handles filter value changes
+  useEffect(() => {
+    if (filterValue && !filter.includes('-')) {
+      let filtered = bikeStations
+      if (filter === 'station') {
+        filtered = bikeStations.filter(station => 
+          station.name.toLowerCase().includes(filterValue.toLowerCase())
+        )
+      } else if (filter === 'district') {
+        filtered = bikeStations.filter(station => station.district === filterValue)
+      } else if (filter === 'suburb') {
+        filtered = bikeStations.filter(station => station.suburb === filterValue)
+      } else if (filter === 'postcode') {
+        filtered = bikeStations.filter(station => station.post_code === filterValue)
+      }
+      setFilteredStations(filtered)
+    }
+  }, [filterValue, filter, bikeStations])
 
   // Update handleDistrictFilter
   const handleDistrictFilter = (district: string) => {
+    console.log('handleDistrictFilter called with:', district);
+    
     if (!district) {
       resetToDefaultView();
       return;
     }
+
+    setFilter('district');
+    setFilterValue(district);
 
     // Filter stats by district
     const filtered = stationStats.filter(stat => 
       stat.station_info?.district === district
     );
     setFilteredStats(filtered);
-    setFilter('district');
-    setFilterValue(district);
 
     // Calculate center of the district based on filtered stats
     if (filtered.length > 0) {
@@ -667,13 +694,14 @@ export default function AnalyticsPage() {
   interface SummaryData {
     location: string;
     total: number;
-    events_per_day: number;
-    bikes_in_per_day: number;
-    bikes_out_per_day: number;
+    avg_capacity: number;
     avg_bikes: number;
     avg_docks: number;
     pct_time_empty: number;
     pct_time_full: number;
+    total_events: number;
+    total_bikes_in: number;
+    total_bikes_out: number;
   }
 
   // Helper function to get current filter name
@@ -681,6 +709,7 @@ export default function AnalyticsPage() {
     if (filter === 'city') return 'All Barcelona'
     if (filter === 'district' && filterValue) return `District: ${filterValue}`
     if (filter === 'station' && selectedStation) return `Station: ${selectedStation.name}`
+    if (filter == 'postcode' && filterValue) return `Postcode: ${filterValue}`
     return 'Unknown'
   }
 
@@ -735,22 +764,6 @@ export default function AnalyticsPage() {
       }
     },
     {
-      key: 'station_info',
-      header: 'District',
-      render: (value) => {
-        const info = value as StationStats['station_info'];
-        return info.district;
-      }
-    },
-    {
-      key: 'station_info',
-      header: 'Suburb',
-      render: (value) => {
-        const info = value as StationStats['station_info'];
-        return info.suburb;
-      }
-    },
-    {
       key: 'capacity',
       header: 'Capacity'
     },
@@ -797,62 +810,6 @@ export default function AnalyticsPage() {
     {
       key: 'use_out',
       header: 'Total Bikes Out'
-    },
-    {
-      key: 'use_in_per_day',
-      header: 'Bikes In/Day',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'use_out_per_day',
-      header: 'Bikes Out/Day',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'events_per_day',
-      header: 'Events/Day',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'use_in_per_day_capacity',
-      header: 'Bikes In/Day/Capacity',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'use_out_per_day_capacity',
-      header: 'Bikes Out/Day/Capacity',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'events_per_day_capacity',
-      header: 'Events/Day/Capacity',
-      render: (value) => {
-        const numValue = value as number;
-        return numValue.toFixed(2);
-      }
-    },
-    {
-      key: 'events_percentile',
-      header: 'Events Percentile',
-      render: (value) => {
-        const numValue = value as number;
-        return (numValue * 100).toFixed(2) + '%';
-      }
     }
   ];
 
@@ -863,6 +820,21 @@ export default function AnalyticsPage() {
   useEffect(() => {
     setFilter('city');
   }, []); // Run only once on component mount
+
+  // Modify the handleMapFilter to preserve filtered stations
+  const handleMapFilter = (newFilter: string) => {
+    setFilter(newFilter);
+  }
+
+  const handleStationClick = (stat: StationStats) => {
+    const station = bikeStations.find(s => s.station_id === stat.station_info.station_id);
+    if (station) {
+      handleStationSelect(station);
+      setFilteredStats([stat]);
+      setSearchTerm(station.name);
+      map?.setView([station.lat, station.lon], 17);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -1010,7 +982,7 @@ export default function AnalyticsPage() {
                 {mapMode === 'default' && (
                   <DefaultMapControls 
                     filter={filter}
-                    setFilter={setFilter}
+                    setFilter={handleMapFilter}  // Use the new handler
                     filteredStations={filteredStations}
                     setFilteredStations={setFilteredStations}
                     filterValue={filterValue}
@@ -1027,7 +999,7 @@ export default function AnalyticsPage() {
                 {mapMode === 'status' && (
                   <StatusMapControls 
                     filter={filter}
-                    setFilter={setFilter}
+                    setFilter={handleMapFilter}  // Use the new handler
                     filteredStations={filteredStations}
                     setFilteredStations={setFilteredStations}
                     filterValue={filterValue}
@@ -1042,6 +1014,12 @@ export default function AnalyticsPage() {
                   bikeStations={bikeStations} 
                   setFilteredStations={setFilteredStations} 
                   updateMetrics={updateMetrics}
+                  searchTerm={searchTerm}
+                  setSearchTerm={setSearchTerm}
+                  setFilteredStats={setFilteredStats}
+                  stationStats={stationStats}
+                  setFilter={setFilter}
+                  setFilterValue={setFilterValue}
                 />
               </div>
             </div>
@@ -1062,14 +1040,8 @@ export default function AnalyticsPage() {
               data={[{
                 location: getCurrentFilterName(),
                 total: filteredStats.length,
-                events_per_day: filteredStats.length > 0
-                  ? +(filteredStats.reduce((sum, station) => sum + station.events_per_day, 0) / filteredStats.length).toFixed(2)
-                  : 0,
-                bikes_in_per_day: filteredStats.length > 0
-                  ? +(filteredStats.reduce((sum, station) => sum + station.use_in_per_day, 0) / filteredStats.length).toFixed(2)
-                  : 0,
-                bikes_out_per_day: filteredStats.length > 0
-                  ? +(filteredStats.reduce((sum, station) => sum + station.use_out_per_day, 0) / filteredStats.length).toFixed(2)
+                avg_capacity: filteredStats.length > 0
+                  ? +(filteredStats.reduce((sum, station) => sum + station.capacity, 0) / filteredStats.length).toFixed(2)
                   : 0,
                 avg_bikes: filteredStats.length > 0
                   ? +(filteredStats.reduce((sum, station) => sum + station.average_bikes_available, 0) / filteredStats.length).toFixed(2)
@@ -1082,6 +1054,15 @@ export default function AnalyticsPage() {
                   : 0,
                 pct_time_full: filteredStats.length > 0
                   ? +(filteredStats.reduce((sum, station) => sum + station.pct_time_zero_docks, 0) / filteredStats.length * 100).toFixed(2)
+                  : 0,
+                total_events: filteredStats.length > 0
+                  ? filteredStats.reduce((sum, station) => sum + station.events, 0)
+                  : 0,
+                total_bikes_in: filteredStats.length > 0
+                  ? filteredStats.reduce((sum, station) => sum + station.use_in, 0)
+                  : 0,
+                total_bikes_out: filteredStats.length > 0
+                  ? filteredStats.reduce((sum, station) => sum + station.use_out, 0)
                   : 0
               }]} 
               columns={[
@@ -1094,24 +1075,8 @@ export default function AnalyticsPage() {
                   header: 'Total Stations'
                 },
                 {
-                  key: 'events_per_day',
-                  header: 'Avg Events/Day',
-                  render: (value) => {
-                    const numValue = value as number;
-                    return numValue.toFixed(2);
-                  }
-                },
-                {
-                  key: 'bikes_in_per_day',
-                  header: 'Avg Bikes In/Day',
-                  render: (value) => {
-                    const numValue = value as number;
-                    return numValue.toFixed(2);
-                  }
-                },
-                {
-                  key: 'bikes_out_per_day',
-                  header: 'Avg Bikes Out/Day',
+                  key: 'avg_capacity',
+                  header: 'Avg Capacity',
                   render: (value) => {
                     const numValue = value as number;
                     return numValue.toFixed(2);
@@ -1148,6 +1113,30 @@ export default function AnalyticsPage() {
                     const numValue = value as number;
                     return `${numValue.toFixed(2)}%`;
                   }
+                },
+                {
+                  key: 'total_events',
+                  header: 'Total Events',
+                  render: (value) => {
+                    const numValue = value as number;
+                    return numValue.toLocaleString();
+                  }
+                },
+                {
+                  key: 'total_bikes_in',
+                  header: 'Total Bikes In',
+                  render: (value) => {
+                    const numValue = value as number;
+                    return numValue.toLocaleString();
+                  }
+                },
+                {
+                  key: 'total_bikes_out',
+                  header: 'Total Bikes Out',
+                  render: (value) => {
+                    const numValue = value as number;
+                    return numValue.toLocaleString();
+                  }
                 }
               ] as Column<SummaryData>[]}
               className="mb-8"
@@ -1157,6 +1146,7 @@ export default function AnalyticsPage() {
               columns={statsColumns}
               data={filteredStats}
               className="mt-4"
+              onRowClick={handleStationClick}
             />
           </CardContent>
         </Card>
@@ -1176,10 +1166,12 @@ export default function AnalyticsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                 <XAxis 
                   dataKey="time" 
-                  tickFormatter={(value) => value} 
-                  domain={['dataMin', 'dataMax']} 
-                  ticks={Array.from({ length: 13 }, (_, i) => `${(i * 2).toString().padStart(2, '0')}:00`)} 
-                  interval={0}
+                  tickFormatter={(value) => {
+                    const hour = parseInt(value);
+                    return `${hour.toString().padStart(2, '0')}:00`;
+                  }}
+                  ticks={Array.from({ length: 24 }, (_, i) => i)} 
+                  interval={1}
                   tick={{ fill: '#4a5568', fontSize: 12 }}
                 />
                 <YAxis 

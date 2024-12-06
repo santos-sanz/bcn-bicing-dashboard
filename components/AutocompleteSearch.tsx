@@ -11,13 +11,34 @@ interface AutocompleteSearchProps {
   bikeStations: Station[]
   setFilteredStations: React.Dispatch<React.SetStateAction<Station[]>>
   updateMetrics: (stations: Station[]) => void
+  searchTerm?: string
+  setSearchTerm?: (term: string) => void
+  setFilteredStats?: React.Dispatch<React.SetStateAction<any[]>>
+  stationStats?: any[]
+  setFilter?: React.Dispatch<React.SetStateAction<string>>
+  setFilterValue?: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const AutocompleteSearch = ({ onSelect, bikeStations, setFilteredStations, updateMetrics }: AutocompleteSearchProps) => {
-  const [searchTerm, setSearchTerm] = useState('')
+export const AutocompleteSearch = ({ 
+  onSelect, 
+  bikeStations, 
+  setFilteredStations, 
+  updateMetrics,
+  searchTerm: externalSearchTerm,
+  setSearchTerm: externalSetSearchTerm,
+  setFilteredStats,
+  stationStats,
+  setFilter,
+  setFilterValue
+}: AutocompleteSearchProps) => {
+  const [internalSearchTerm, setInternalSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState<(Station | { type: 'post_code' | 'suburb' | 'district', value: string | undefined, label?: string })[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Use external or internal search term based on what's provided
+  const searchTerm = externalSearchTerm !== undefined ? externalSearchTerm : internalSearchTerm
+  const setSearchTerm = externalSetSearchTerm || setInternalSearchTerm
 
   useEffect(() => {
     if (searchTerm.length > 1) {
@@ -73,11 +94,35 @@ export const AutocompleteSearch = ({ onSelect, bikeStations, setFilteredStations
       onSelect(null)
       setFilteredStations(filtered)
       updateMetrics(filtered)
+
+      // Update stats when filtering by district/postcode/suburb
+      if (setFilteredStats && stationStats) {
+        let filteredStats = stationStats.filter(stat => {
+          switch(item.type) {
+            case 'post_code':
+              return stat.station_info.post_code === item.value
+            case 'suburb':
+              return stat.station_info.suburb === item.value
+            case 'district':
+              return stat.station_info.district === item.value
+            default:
+              return true
+          }
+        })
+        setFilteredStats(filteredStats)
+      }
     } else {
       if ('name' in item) {
         setSearchTerm(item.name)
         setIsOpen(false)
         onSelect(item as Station)
+        // When selecting a specific station, filter stats to just that station
+        if (setFilteredStats && stationStats) {
+          const filteredStats = stationStats.filter(stat => 
+            stat.station_info.station_id === item.station_id
+          )
+          setFilteredStats(filteredStats)
+        }
       }
     }
   }
@@ -88,6 +133,9 @@ export const AutocompleteSearch = ({ onSelect, bikeStations, setFilteredStations
     onSelect(null)
     setFilteredStations(bikeStations)
     updateMetrics(bikeStations)
+    if (setFilteredStats && stationStats) {
+      setFilteredStats(stationStats) // Reset stats to original list
+    }
     inputRef.current?.focus()
   }
 

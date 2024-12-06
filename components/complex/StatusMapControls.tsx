@@ -1,5 +1,5 @@
 import { Station } from '@/types/station'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface StatusMapControlsProps {
   filter: string
@@ -18,18 +18,20 @@ export function StatusMapControls({
 }: StatusMapControlsProps) {
   const [activeFilter, setActiveFilter] = useState('empty')
   const [activeMode, setActiveMode] = useState('time')
+  const [currentFilteredStations, setCurrentFilteredStations] = useState<Station[]>(filteredStations)
+
+  // Cuando las estaciones filtradas cambian desde fuera (por ejemplo, por una búsqueda),
+  // actualiza nuestro estado local
+  useEffect(() => {
+    setCurrentFilteredStations(filteredStations)
+  }, [filteredStations])
 
   const updateMarkerColors = (newFilter: string, newMode = activeMode) => {
     setActiveFilter(newFilter)
     setActiveMode(newMode)
     setFilter(`${newFilter}-${newMode}`)
-    
-    const updatedStations = filteredStations.map(station => ({
-      ...station,
-      routeColor: newFilter === 'empty' ? '#ef4444' : '#22c55e'
-    }))
-
-    setFilteredStations(updatedStations)
+    // Asegurarse de mantener las mismas estaciones filtradas
+    setFilteredStations(currentFilteredStations)
   }
 
   return (

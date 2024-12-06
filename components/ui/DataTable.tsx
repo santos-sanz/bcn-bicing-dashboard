@@ -14,6 +14,7 @@ interface DataTableProps<T> {
   columns: Column<T>[]
   className?: string
   itemsPerPage?: number
+  onRowClick?: (item: T) => void
 }
 
 type SortDirection = 'asc' | 'desc' | null
@@ -22,7 +23,8 @@ export function DataTable<T>({
   data, 
   columns, 
   className = '',
-  itemsPerPage = 10 
+  itemsPerPage = 10,
+  onRowClick
 }: DataTableProps<T>) {
   const [sortConfig, setSortConfig] = useState<{
     key: keyof T | null
@@ -110,15 +112,15 @@ export function DataTable<T>({
               {columns.map((column, colIndex) => (
                 <td 
                   key={String(column.key)} 
-                  className={`px-4 py-2 ${colIndex === 0 ? 'text-left' : 'text-center'}`}
-                    // Start of Selection
-                    >
-                      {column.render ? 
-                        column.render(item[column.key]) : 
-                        String(item[column.key])}
-                    </td>
-                  ))}
-                </tr>
+                  className={`px-4 py-2 ${colIndex === 0 ? 'text-left cursor-pointer' : 'text-center'}`}
+                  onClick={colIndex === 0 && onRowClick ? () => onRowClick(item) : undefined}
+                >
+                  {column.render ? 
+                    column.render(item[column.key]) : 
+                    String(item[column.key])}
+                </td>
+              ))}
+            </tr>
           ))}
         </tbody>
       </table>

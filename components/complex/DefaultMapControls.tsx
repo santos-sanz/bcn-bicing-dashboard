@@ -73,10 +73,23 @@ export function DefaultMapControls({
     // Actualizar estado padre
     setFilter(newFilter)
     
-    const updatedStations = filteredStations.map(station => ({
-      ...station,
-      routeColor: '#3b82f6' // Siempre azul en modo city
-    }))
+    // Mantener las estaciones filtradas por el input, solo actualizar sus colores
+    const updatedStations = filteredStations.map(station => {
+      let color = '#3b82f6' // Default blue color for city view
+      
+      if (newFilter === 'postcode' && station.post_code) {
+        color = postcodeColors[station.post_code] || `#${hashString(station.post_code).toString(16).slice(0, 6)}`
+      } else if (newFilter === 'district' && station.district) {
+        color = `#${hashString(station.district).toString(16).slice(0, 6)}`
+      } else if (newFilter === 'suburb' && station.suburb) {
+        color = `#${hashString(station.suburb).toString(16).slice(0, 6)}`
+      }
+
+      return {
+        ...station,
+        routeColor: color
+      }
+    })
 
     setFilteredStations(updatedStations)
   }

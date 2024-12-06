@@ -14,6 +14,7 @@ type AnalyticsMapComponentProps = {
   defaultZoom?: number;
   heatMapMode?: string;
   getMetricValue?: (station: Station) => number;
+  onFilterChange?: (newFilter: string, filterValue: string) => void;
 };
 
 const DEFAULT_CENTER: [number, number] = [41.3874, 2.1686];
@@ -71,7 +72,8 @@ export default function AnalyticsMapComponent({
   defaultCenter = DEFAULT_CENTER,
   defaultZoom = DEFAULT_ZOOM,
   heatMapMode = '',
-  getMetricValue = () => 0
+  getMetricValue = () => 0,
+  onFilterChange
 }: AnalyticsMapComponentProps) {
   if (!stations || stations.length === 0) {
     return (
@@ -80,6 +82,12 @@ export default function AnalyticsMapComponent({
       </div>
     );
   }
+
+  const handleFilterChange = (newFilter: string, filterValue: string) => {
+    if (onFilterChange) {
+      onFilterChange(newFilter, filterValue);
+    }
+  };
 
   return (
     <div className="relative h-full w-full overflow-hidden">
