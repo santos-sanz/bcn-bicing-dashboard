@@ -58,10 +58,19 @@ export default function Component() {
     const fetchBicingData = async () => {
       try {
         const response = await axios.get('/api/bikesystem')
-        const stations = response.data // The API now returns the stations directly
-        setBikeStations(stations)
-        setFilteredStations(stations)
-        updateMetrics(stations)
+        const stations = response.data
+        
+        // Verify that stations have valid coordinates
+        const validStations = stations.filter(station => {
+          const lat = parseFloat(station.lat?.toString() ?? '')
+          const lon = parseFloat(station.lon?.toString() ?? '')
+          return !isNaN(lat) && !isNaN(lon)
+        })
+        
+        console.log('Valid stations:', validStations.length) // Debug log
+        setBikeStations(validStations)
+        setFilteredStations(validStations)
+        updateMetrics(validStations)
       } catch (error) {
         console.error('Error fetching Bicing data:', error)
       }
@@ -130,8 +139,13 @@ export default function Component() {
       const filtered: Station[] = [station]
       setFilteredStations(filtered)
       updateMetrics(filtered)
-      if (station && 'lat' in station && 'lon' in station && map) {
-        map.setView([station.lat, station.lon], 15)
+      if (station && station.lat && station.lon && map) {
+        // Ensure coordinates are numbers
+        const lat = parseFloat(station.lat.toString())
+        const lon = parseFloat(station.lon.toString())
+        if (!isNaN(lat) && !isNaN(lon)) {
+          map.setView([lat, lon], 15)
+        }
       }
     } else {
       setFilteredStations(bikeStations)
@@ -146,14 +160,28 @@ export default function Component() {
     try {
       const timestamp = new Date().getTime();
       const response = await axios.get(`/api/bikesystem?t=${timestamp}`)
-      const stations = response.data // The API now returns the stations directly
-      setBikeStations(stations)
-      setFilteredStations(stations)
-      updateMetrics(stations)
+      const stations = response.data
+      
+      // Validate coordinates like in the initial fetch
+      const validStations = stations.filter(station => {
+        const lat = parseFloat(station.lat?.toString() ?? '')
+        const lon = parseFloat(station.lon?.toString() ?? '')
+        return !isNaN(lat) && !isNaN(lon)
+      })
+      
+      console.log('Refreshed valid stations:', validStations.length) // Debug log
+      setBikeStations(validStations)
+      setFilteredStations(validStations)
+      updateMetrics(validStations)
     } catch (error) {
       console.error('Error fetching Bicing data:', error)
     }
   }
+
+  useEffect(() => {
+    console.log('Filtered stations:', filteredStations.length)
+    console.log('Sample station:', filteredStations[0])
+  }, [filteredStations])
 
   return (
     <div className="space-y-8">
@@ -255,7 +283,14 @@ export default function Component() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
+          <div 
+            className="h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg overflow-hidden relative" 
+            style={{ 
+              zIndex: 1,
+              position: 'relative',
+              width: '100%'
+            }}
+          >
             <MapComponent
               filteredStations={filteredStations}
               selectedStation={selectedStation}

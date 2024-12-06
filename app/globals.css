@@ -128,10 +128,42 @@
 }
 
 .leaflet-pane {
-  z-index: 1;
+  z-index: 1 !important;
 }
 
 .leaflet-top,
 .leaflet-bottom {
   z-index: 1;
 }
+
+/* Estilos para el tooltip */
+.station-tooltip {
+  background: white !important;
+  border: 1px solid #666 !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transform: rotate(-45deg) !important;
+  z-index: 1000 !important;
+}
+
+.tooltip-inner {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.station-tooltip::before,
+.station-tooltip::after {
+  display: none !important;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 1000 !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
+

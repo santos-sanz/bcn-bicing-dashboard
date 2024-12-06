@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp, ChevronsUpDown, ChevronLeft, ChevronRight } fro
 interface Column<T> {
   key: keyof T
   header: string
-  render?: (value: any, item: T) => React.ReactNode
+  render?: (value: any) => React.ReactNode
 }
 
 interface DataTableProps<T> {
@@ -111,13 +111,14 @@ export function DataTable<T>({
                 <td 
                   key={String(column.key)} 
                   className={`px-4 py-2 ${colIndex === 0 ? 'text-left' : 'text-center'}`}
-                >
-                  {column.render ? 
-                    column.render(item[column.key], item) : 
-                    String(item[column.key])}
-                </td>
-              ))}
-            </tr>
+                    // Start of Selection
+                    >
+                      {column.render ? 
+                        column.render(item[column.key]) : 
+                        String(item[column.key])}
+                    </td>
+                  ))}
+                </tr>
           ))}
         </tbody>
       </table>

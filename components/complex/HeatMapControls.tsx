@@ -21,30 +21,8 @@ export function HeatMapControls({
     setActiveMode(newMode)
     setActiveValueMode(newValueMode)
     
-    setHeatMapMode(newMode)
-    
-    const updatedStations = filteredStations.map(station => ({
-      ...station,
-      routeColor: (() => {
-        const maxBikes = Math.max(...filteredStations.map(s => s.num_bikes_available || 0))
-        const relativeValue = maxBikes > 0 ? (station.num_bikes_available || 0) / maxBikes : 0
-
-        switch (newMode) {
-          case 'all':
-            return newValueMode === 'absolute'
-              ? `hsl(${(station.num_bikes_available || 0) * 120 / 30}, 70%, 50%)`
-              : `hsl(${relativeValue * 120}, 70%, 50%)`
-          case 'in':
-            return `hsl(200, 70%, 50%)`
-          case 'out':
-            return `hsl(0, 70%, 50%)`
-          default:
-            return '#3b82f6'
-        }
-      })()
-    }))
-
-    setFilteredStations(updatedStations)
+    const combinedMode = `${newMode}-${newValueMode}`
+    setHeatMapMode(combinedMode)
   }
 
   return (
@@ -82,10 +60,16 @@ export function HeatMapControls({
             Absolute
           </button>
           <button 
-            className={`px-3 py-1 rounded-r-md ${activeValueMode === 'relative' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 border-r border-white ${activeValueMode === 'relative' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => updateHeatMapColors(activeMode, 'relative')}
           >
             Relative
+          </button>
+          <button 
+            className={`px-3 py-1 rounded-r-md ${activeValueMode === 'percentile' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            onClick={() => updateHeatMapColors(activeMode, 'percentile')}
+          >
+            Percentile
           </button>
         </div>
       </div>

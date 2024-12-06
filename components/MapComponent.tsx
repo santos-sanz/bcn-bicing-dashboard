@@ -16,17 +16,47 @@ type MapComponentProps = {
   onRefresh: () => void;
   getStationColor: (station: Station) => string;
   showUpdateBar?: boolean;
+  defaultCenter?: [number, number];
+  defaultZoom?: number;
 };
 
-function UpdateMapCenter({ selectedStation }: { selectedStation: Station | null }) {
+const DEFAULT_CENTER: [number, number] = [41.3874, 2.1686];
+const DEFAULT_ZOOM = 13;
+
+function UpdateMapCenter({ 
+  selectedStation,
+  defaultCenter = DEFAULT_CENTER,
+  defaultZoom = DEFAULT_ZOOM 
+}: { 
+  selectedStation: Station | null;
+  defaultCenter?: [number, number];
+  defaultZoom?: number;
+}) {
   const map = useMap();
+  
   useEffect(() => {
-    if (selectedStation) {
-      map.setView([selectedStation.lat, selectedStation.lon], 15);
-    } else {
-      map.setView([41.3874, 2.1686], 12);
+    if (!map) return;
+
+    try {
+      if (selectedStation?.lat && selectedStation?.lon) {
+        const lat = typeof selectedStation.lat === 'string' ? parseFloat(selectedStation.lat) : selectedStation.lat;
+        const lon = typeof selectedStation.lon === 'string' ? parseFloat(selectedStation.lon) : selectedStation.lon;
+        
+        if (!isNaN(lat) && !isNaN(lon) && lat !== 0 && lon !== 0) {
+          map.setView([lat, lon], 15);
+          return;
+        }
+      }
+      
+      // If no valid selected station, use default center
+      map.setView(defaultCenter, defaultZoom);
+    } catch (error) {
+      console.error('Error updating map center:', error);
+      // Fallback to default center if there's an error
+      map.setView(defaultCenter, defaultZoom);
     }
-  }, [selectedStation, map]);
+  }, [selectedStation, map, defaultCenter, defaultZoom]);
+  
   return null;
 }
 
@@ -48,10 +78,23 @@ export default function MapComponent({
   setMap, 
   onRefresh, 
   getStationColor,
-  showUpdateBar = true
+  showUpdateBar = true,
+  defaultCenter = DEFAULT_CENTER,
+  defaultZoom = DEFAULT_ZOOM
 }: MapComponentProps) {
   const [lastUpdateTime, setLastUpdateTime] = useState<string>('')
   const [isRefreshing, setIsRefreshing] = useState(false)
+
+  useEffect(() => {
+    console.log('Filtered stations count:', filteredStations.length);
+    if (filteredStations.length > 0) {
+      console.log('Sample station:', {
+        id: filteredStations[0].station_id,
+        lat: filteredStations[0].lat,
+        lon: filteredStations[0].lon
+      });
+    }
+  }, [filteredStations]);
 
   const handleRefresh = async () => {
     setIsRefreshing(true)
@@ -86,33 +129,48 @@ export default function MapComponent({
     <div className="relative h-full w-full overflow-hidden">
       <div className="absolute inset-[-20%] origin-center" style={{ transform: 'rotate(45deg) scale(1.7)' }}>
         <MapContainer
-          center={[41.4054458, 2.1663172]}
-          zoom={10}
+          center={defaultCenter}
+          zoom={defaultZoom}
           style={{ height: '100%', width: '100%' }}
           zoomControl={false}
           attributionControl={false}
         >
           <SetMap setMap={setMap} />
-          <UpdateMapCenter selectedStation={selectedStation} />
+          <UpdateMapCenter 
+            selectedStation={selectedStation} 
+            defaultCenter={defaultCenter}
+            defaultZoom={defaultZoom}
+          />
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {filteredStations && filteredStations.length > 0 ? (
-            filteredStations.map((station) => (
-              <Marker
-                key={station.station_id}
-                position={[station.lat, station.lon]}
-                icon={L.divIcon({
-                  className: 'custom-icon',
-                  html: `<div style="background-color: ${getStationColor(station)}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid black;"></div>`,
-                  iconSize: [12, 12],
-                  iconAnchor: [6, 6],
-                })}
-                eventHandlers={{
-                  click: () => setSelectedStation(station),
-                }}
-              />
-            ))
+            filteredStations.map((station) => {
+              // Validate station coordinates
+              const lat = typeof station.lat === 'string' ? parseFloat(station.lat) : station.lat;
+              const lon = typeof station.lon === 'string' ? parseFloat(station.lon) : station.lon;
+              
+              if (isNaN(lat) || isNaN(lon) || lat === 0 || lon === 0) {
+                console.warn('Invalid coordinates for station:', station);
+                return null;
+              }
+
+              return (
+                <Marker
+                  key={station.station_id}
+                  position={[lat, lon]}
+                  icon={L.divIcon({
+                    className: 'custom-icon',
+                    html: `<div style="background-color: ${getStationColor(station)}; width: 10px; height: 10px; border-radius: 50%; border: 1px solid black;"></div>`,
+                    iconSize: [12, 12],
+                    iconAnchor: [6, 6],
+                  })}
+                  eventHandlers={{
+                    click: () => setSelectedStation(station),
+                  }}
+                />
+              );
+            })
           ) : (
             <div>No stations to display</div>
           )}

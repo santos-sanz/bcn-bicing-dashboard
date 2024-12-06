@@ -6,13 +6,15 @@ interface DefaultMapControlsProps {
   setFilter: (filter: string) => void
   filteredStations: Station[]
   setFilteredStations: (stations: Station[]) => void
+  filterValue: string
 }
 
 export function DefaultMapControls({ 
   filter, 
   setFilter, 
   filteredStations,
-  setFilteredStations 
+  setFilteredStations,
+  filterValue
 }: DefaultMapControlsProps) {
   const hashString = (str: string): number => {
     let hash = 0
@@ -73,20 +75,7 @@ export function DefaultMapControls({
     
     const updatedStations = filteredStations.map(station => ({
       ...station,
-      routeColor: (() => {
-        switch (newFilter) {
-          case 'city':
-            return '#3b82f6'
-          case 'district':
-            return `hsl(${hashString(station.district || '') % 360}, 70%, 50%)`
-          case 'suburb':
-            return `hsl(${hashString(station.suburb || '') % 360}, 70%, 50%)`
-          case 'postcode':
-            return postcodeColors[station.post_code || ''] || '#3b82f6'
-          default:
-            return '#3b82f6'
-        }
-      })()
+      routeColor: '#3b82f6' // Siempre azul en modo city
     }))
 
     setFilteredStations(updatedStations)
