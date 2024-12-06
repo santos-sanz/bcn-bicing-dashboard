@@ -59,9 +59,8 @@ export default function Component() {
       try {
         const response = await axios.get('/api/bikesystem')
         const stations = response.data
-        
         // Verify that stations have valid coordinates
-        const validStations = stations.filter(station => {
+        const validStations = stations.filter((station: Station) => {
           const lat = parseFloat(station.lat?.toString() ?? '')
           const lon = parseFloat(station.lon?.toString() ?? '')
           return !isNaN(lat) && !isNaN(lon)
@@ -163,13 +162,13 @@ export default function Component() {
       const stations = response.data
       
       // Validate coordinates like in the initial fetch
-      const validStations = stations.filter(station => {
+      const validStations = stations.filter((station: Station) => {
         const lat = parseFloat(station.lat?.toString() ?? '')
         const lon = parseFloat(station.lon?.toString() ?? '')
         return !isNaN(lat) && !isNaN(lon)
       })
       
-      console.log('Refreshed valid stations:', validStations.length) // Debug log
+      console.log('Refreshed valid stations:', validStations.length)
       setBikeStations(validStations)
       setFilteredStations(validStations)
       updateMetrics(validStations)
@@ -177,11 +176,6 @@ export default function Component() {
       console.error('Error fetching Bicing data:', error)
     }
   }
-
-  useEffect(() => {
-    console.log('Filtered stations:', filteredStations.length)
-    console.log('Sample station:', filteredStations[0])
-  }, [filteredStations])
 
   return (
     <div className="space-y-8">
@@ -283,14 +277,7 @@ export default function Component() {
           </div>
         </CardHeader>
         <CardContent>
-          <div 
-            className="h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg overflow-hidden relative" 
-            style={{ 
-              zIndex: 1,
-              position: 'relative',
-              width: '100%'
-            }}
-          >
+          <div className="h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg overflow-hidden relative" style={{ zIndex: 1 }}>
             <MapComponent
               filteredStations={filteredStations}
               selectedStation={selectedStation}
