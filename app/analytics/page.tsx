@@ -706,11 +706,11 @@ export default function AnalyticsPage() {
 
   // Helper function to get current filter name
   const getCurrentFilterName = () => {
-    if (filter === 'city') return 'All Barcelona'
+    if (filter === 'city') return 'Barcelona'
     if (filter === 'district' && filterValue) return `District: ${filterValue}`
     if (filter === 'station' && selectedStation) return `Station: ${selectedStation.name}`
     if (filter == 'postcode' && filterValue) return `Postcode: ${filterValue}`
-    return 'Unknown'
+    return 'Barcelona'
   }
 
   // Original columns for real-time station data

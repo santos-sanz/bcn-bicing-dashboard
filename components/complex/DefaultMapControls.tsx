@@ -77,12 +77,19 @@ export function DefaultMapControls({
     const updatedStations = filteredStations.map(station => {
       let color = '#3b82f6' // Default blue color for city view
       
-      if (newFilter === 'postcode' && station.post_code) {
-        color = postcodeColors[station.post_code] || `#${hashString(station.post_code).toString(16).slice(0, 6)}`
-      } else if (newFilter === 'district' && station.district) {
-        color = `#${hashString(station.district).toString(16).slice(0, 6)}`
-      } else if (newFilter === 'suburb' && station.suburb) {
-        color = `#${hashString(station.suburb).toString(16).slice(0, 6)}`
+      try {
+        if (newFilter === 'postcode' && station.post_code) {
+          color = postcodeColors[station.post_code] || `#${hashString(station.post_code).toString(16).slice(0, 6).padStart(6, '0')}`
+        } else if (newFilter === 'district' && station.district) {
+          // Ensure we have a valid district before hashing
+          color = station.district ? `#${hashString(station.district).toString(16).slice(0, 6).padStart(6, '0')}` : '#3b82f6'
+        } else if (newFilter === 'suburb' && station.suburb) {
+          // Ensure we have a valid suburb before hashing
+          color = station.suburb ? `#${hashString(station.suburb).toString(16).slice(0, 6).padStart(6, '0')}` : '#3b82f6'
+        }
+      } catch (error) {
+        console.error('Error generating color for station:', station)
+        color = '#3b82f6' // Fallback to default blue if any error occurs
       }
 
       return {
