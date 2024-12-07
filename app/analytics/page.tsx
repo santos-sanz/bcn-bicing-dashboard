@@ -9,7 +9,7 @@ import { supabase } from '@/lib/supabase'
 import { Station } from '@/types/station'
 import { Map as LeafletMap } from 'leaflet'
 import axios from 'axios'
-import { MapPin as MapIcon } from 'lucide-react'
+import { MapPin as MapIcon, Loader2 } from 'lucide-react'
 import { Bike } from 'lucide-react'
 import { LockKeyhole as Lock } from 'lucide-react'
 import { AutocompleteSearch } from '@/components/AutocompleteSearch'
@@ -18,7 +18,7 @@ import dynamic from 'next/dynamic'
 import { DefaultMapControls } from '@/components/complex/DefaultMapControls'
 import { HeatMapControls } from '@/components/complex/HeatMapControls'
 import { StatusMapControls } from '@/components/complex/StatusMapControls'
-import { format } from 'date-fns'
+import { format, subDays, parseISO } from 'date-fns'
 import { Input } from "@/components/ui/input"
 import { DataTable } from "@/components/ui/DataTable"
 
@@ -103,6 +103,14 @@ export default function AnalyticsPage() {
   const [searchFilteredStations, setSearchFilteredStations] = useState<Station[]>([])
   const [lastSearchFilter, setLastSearchFilter] = useState<string>('')
   const [searchTerm, setSearchTerm] = useState('')
+  const [timeframeData, setTimeframeData] = useState<{
+    from_date: string;
+    to_date: string;
+  }>({
+    from_date: '',
+    to_date: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
 
   // Add color mapping for districts and suburbs
   const districtColors: { [key: string]: string } = {
@@ -321,15 +329,49 @@ export default function AnalyticsPage() {
     setTempToDate(value)
   }
 
-  const handleApplyDates = () => {
+  const handleApplyDates = async () => {
     if (
       (!tempFromDate || isValidTimestamp(tempFromDate)) && 
       (!tempToDate || isValidTimestamp(tempToDate))
     ) {
-      setFromDate(tempFromDate)
-      setToDate(tempToDate)
+      setIsLoading(true);
+      
+      try {
+        const params = new URLSearchParams({
+          from_date: tempFromDate,
+          to_date: tempToDate,
+          model: 'city',
+          station_code: 'city',
+        });
+
+        // Call both APIs in parallel
+        const [statsResponse, flowResponse] = await Promise.all([
+          fetch(`/api/stats?${params.toString()}`),
+          fetch(`/api/flow?${params.toString()}&output=both&aggregation_timeframe=1h`)
+        ]);
+
+        if (!statsResponse.ok || !flowResponse.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        const [statsData, flowData] = await Promise.all([
+          statsResponse.json(),
+          flowResponse.json()
+        ]);
+
+        setStationStats(statsData);
+        setFilteredStats(statsData);
+        setUsageData(flowData);
+        setFromDate(tempFromDate);
+        setToDate(tempToDate);
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
-  }
+  };
 
   const refreshData = useCallback(async () => {
     try {
@@ -370,7 +412,13 @@ export default function AnalyticsPage() {
     }
 
     checkAccess()
-    fetch('/data/flow.json')
+    const timestamp = new Date().getTime()
+    fetch(`/data/flow.json?t=${timestamp}`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    })
       .then(response => response.json())
       .then(data => setUsageData(data))
   }, [router])
@@ -378,7 +426,13 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const fetchBicingData = async () => {
       try {
-        const response = await fetch('/data/stats.json')
+        const timestamp = new Date().getTime()
+        const response = await fetch(`/data/stats.json?t=${timestamp}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        })
         const statsData = await response.json()
         
         // Transform stats data into Station format
@@ -454,7 +508,13 @@ export default function AnalyticsPage() {
     // Load stats.json data
     const loadStatsData = async () => {
       try {
-        const response = await fetch('/data/stats.json');
+        const timestamp = new Date().getTime()
+        const response = await fetch(`/data/stats.json?t=${timestamp}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        })
         const data = await response.json();
         const validData = data.filter((stat: any) => stat && stat.station_info);
         setStationStats(validData);
@@ -836,6 +896,28 @@ export default function AnalyticsPage() {
     }
   };
 
+  // Add this useEffect to load timeframe data
+  useEffect(() => {
+    fetch('/data/timeframe.json')
+      .then(response => response.json())
+      .then(data => {
+        setTimeframeData(data);
+        
+        // Set default dates when timeframe data loads
+        const toDate = data.to_date;
+        const fromDate = format(
+          subDays(parseISO(data.to_date.replace(' ', 'T')), 1),
+          'yyyy-MM-dd HH:mm:ss'
+        );
+        
+        setTempFromDate(fromDate);
+        setTempToDate(toDate);
+        setFromDate(fromDate);
+        setToDate(toDate);
+      })
+      .catch(error => console.error('Error loading timeframe:', error));
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Bicing Analytics</h1>
@@ -846,27 +928,39 @@ export default function AnalyticsPage() {
             <CardTitle className="text-2xl text-gray-800">Stations Map</CardTitle>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full lg:w-auto">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
-                <div className="flex items-center gap-2 w-full sm:w-auto">
-                  <span className="text-sm text-gray-500 whitespace-nowrap">From:</span>
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <span className="text-sm text-gray-500 whitespace-nowrap">From:</span>
+                <div className="relative w-full sm:w-[200px]">
                   <Input
                     type="text"
                     placeholder="2023-01-01 00:00:00"
                     value={tempFromDate}
                     onChange={(e) => handleFromDateChange(e.target.value)}
-                    className={`w-full sm:w-[200px] ${!isValidTimestamp(tempFromDate) && tempFromDate !== "" ? "border-red-500" : ""}`}
+                    className={`w-full ${!isValidTimestamp(tempFromDate) && tempFromDate !== "" ? "border-red-500" : ""}`}
                   />
+                  {timeframeData.from_date && (
+                    <div className="absolute -bottom-5 left-0 text-xs text-gray-400">
+                      {timeframeData.from_date}
+                    </div>
+                  )}
                 </div>
+              </div>
 
-                <div className="flex items-center gap-2 w-full sm:w-auto">
-                  <span className="text-sm text-gray-500 whitespace-nowrap">To:</span>
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <span className="text-sm text-gray-500 whitespace-nowrap">To:</span>
+                <div className="relative w-full sm:w-[200px]">
                   <Input
                     type="text"
                     placeholder={getCurrentFormattedDate()}
                     value={tempToDate}
                     onChange={(e) => handleToDateChange(e.target.value)}
-                    className={`w-full sm:w-[200px] ${!isValidTimestamp(tempToDate) && tempToDate !== "" ? "border-red-500" : ""}`}
+                    className={`w-full ${!isValidTimestamp(tempToDate) && tempToDate !== "" ? "border-red-500" : ""}`}
                   />
+                  {timeframeData.to_date && (
+                    <div className="absolute -bottom-5 left-0 text-xs text-gray-400">
+                      {timeframeData.to_date}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -874,16 +968,24 @@ export default function AnalyticsPage() {
                 onClick={handleApplyDates}
                 disabled={
                   (tempFromDate !== "" && !isValidTimestamp(tempFromDate)) ||
-                  (tempToDate !== "" && !isValidTimestamp(tempToDate))
+                  (tempToDate !== "" && !isValidTimestamp(tempToDate)) ||
+                  isLoading
                 }
-                className={`px-4 py-2 rounded-md w-full sm:w-auto ${
+                className={`px-4 py-2 rounded-md w-full sm:w-auto flex items-center justify-center gap-2 ${
                   (tempFromDate !== "" && !isValidTimestamp(tempFromDate)) ||
                   (tempToDate !== "" && !isValidTimestamp(tempToDate))
                     ? "bg-gray-300 cursor-not-allowed"
                     : "bg-blue-500 hover:bg-blue-600 text-white"
                 }`}
               >
-                Apply
+                {isLoading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span>Loading...</span>
+                  </>
+                ) : (
+                  'Apply'
+                )}
               </button>
             </div>
           </div>
