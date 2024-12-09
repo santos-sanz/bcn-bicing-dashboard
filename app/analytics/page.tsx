@@ -344,48 +344,79 @@ export default function AnalyticsPage() {
           station_code: 'city',
         });
 
-        // First call stats API
-        const statsResponse = await fetch(`/api/stats?${params.toString()}`);
-        if (!statsResponse.ok) {
-          throw new Error('Failed to fetch stats data');
+        // First call stats API with a timeout
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 59000); // 59 seconds timeout
+
+        try {
+          const statsResponse = await fetch(`/api/stats?${params.toString()}`, {
+            signal: controller.signal
+          });
+          clearTimeout(timeout);
+          
+          if (!statsResponse.ok) {
+            throw new Error('Failed to fetch stats data');
+          }
+          const statsData = await statsResponse.json();
+          
+          // Update stats data and derived state
+          setStationStats(statsData);
+          setFilteredStats(statsData);
+
+          // Transform stats data into Station format and update map
+          const stationsData: Station[] = statsData
+            .filter((stat: any) => stat.station_info && stat.station_info.station_id)
+            .map((stat: any) => ({
+              station_id: stat.station_info.station_id,
+              name: stat.station_info.name,
+              lat: stat.station_info.lat,
+              lon: stat.station_info.lon,
+              district: stat.station_info.district,
+              suburb: stat.station_info.suburb,
+              post_code: stat.station_info.post_code,
+              capacity: stat.capacity,
+              num_bikes_available: stat.average_bikes_available,
+              num_bikes_disabled: 0,
+              num_docks_available: stat.average_docks_available,
+              num_docks_disabled: 0,
+              last_reported: new Date().toISOString(),
+              status: 'IN_SERVICE'
+            }));
+
+          setBikeStations(stationsData);
+          setFilteredStations(stationsData);
+          updateMetrics(stationsData);
+        } catch (error: unknown) {
+          if (error instanceof Error && error.name === 'AbortError') {
+            console.error('Stats request timed out');
+            throw new Error('Stats request timed out');
+          }
+          throw error;
         }
-        const statsData = await statsResponse.json();
-        
-        // Update stats data and derived state
-        setStationStats(statsData);
-        setFilteredStats(statsData);
 
-        // Transform stats data into Station format and update map
-        const stationsData: Station[] = statsData
-          .filter((stat: any) => stat.station_info && stat.station_info.station_id)
-          .map((stat: any) => ({
-            station_id: stat.station_info.station_id,
-            name: stat.station_info.name,
-            lat: stat.station_info.lat,
-            lon: stat.station_info.lon,
-            district: stat.station_info.district,
-            suburb: stat.station_info.suburb,
-            post_code: stat.station_info.post_code,
-            capacity: stat.capacity,
-            num_bikes_available: stat.average_bikes_available,
-            num_bikes_disabled: 0,
-            num_docks_available: stat.average_docks_available,
-            num_docks_disabled: 0,
-            last_reported: new Date().toISOString(),
-            status: 'IN_SERVICE'
-          }));
+        // After stats is done, call flow API with a new timeout
+        const flowController = new AbortController();
+        const flowTimeout = setTimeout(() => flowController.abort(), 59000); // 59 seconds timeout
 
-        setBikeStations(stationsData);
-        setFilteredStations(stationsData);
-        updateMetrics(stationsData);
+        try {
+          const flowResponse = await fetch(
+            `/api/flow?${params.toString()}&output=both&aggregation_timeframe=1h`,
+            { signal: flowController.signal }
+          );
+          clearTimeout(flowTimeout);
 
-        // After stats is done, call flow API
-        const flowResponse = await fetch(`/api/flow?${params.toString()}&output=both&aggregation_timeframe=1h`);
-        if (!flowResponse.ok) {
-          throw new Error('Failed to fetch flow data');
+          if (!flowResponse.ok) {
+            throw new Error('Failed to fetch flow data');
+          }
+          const flowData = await flowResponse.json();
+          setUsageData(flowData);
+        } catch (error: unknown) {
+          if (error instanceof Error && error.name === 'AbortError') {
+            console.error('Flow request timed out');
+            throw new Error('Flow request timed out');
+          }
+          throw error;
         }
-        const flowData = await flowResponse.json();
-        setUsageData(flowData);
 
         setFromDate(tempFromDate);
         setToDate(tempToDate);
