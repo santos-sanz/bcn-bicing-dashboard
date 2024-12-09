@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Auth } from '@/components/Auth'
-import { supabase } from '@/lib/supabase'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { User } from '@supabase/supabase-js'
 import { useState, useEffect } from 'react'
 
@@ -15,6 +15,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [user, setUser] = useState<User | null>(null)
+  const supabase = createClientComponentClient()
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -23,15 +24,23 @@ export function Navigation() {
     checkIfMobile()
     window.addEventListener('resize', checkIfMobile)
 
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+    // Get initial session
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      setUser(user)
+    }
+    getUser()
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null)
     })
 
     return () => {
       window.removeEventListener('resize', checkIfMobile)
-      authListener.subscription.unsubscribe()
+      subscription.unsubscribe()
     }
-  }, [])
+  }, [supabase.auth])
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
