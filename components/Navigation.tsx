@@ -9,7 +9,6 @@ import { Auth } from '@/components/Auth'
 import { supabase } from '@/lib/supabase'
 import { User } from '@supabase/supabase-js'
 import { useState, useEffect } from 'react'
-import { hasAccess } from '@/config/accessRules';
 
 export function Navigation() {
   const pathname = usePathname()
@@ -42,11 +41,9 @@ export function Navigation() {
   }
 
   const NavLinks = () => {
-    const canAccessProtectedPages = hasAccess(user?.email);
-
     return (
       <div className={`${isMobile ? 'flex flex-col' : 'flex flex-row items-center space-x-4'}`}>
-        {canAccessProtectedPages && (
+        {user && (
           <>
             <Link 
               href="/analytics" 
