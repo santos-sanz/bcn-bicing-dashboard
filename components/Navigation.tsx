@@ -111,7 +111,7 @@ export function Navigation() {
             <div className="flex-1 flex justify-end">
               {user ? (
                 <div className="flex items-center">
-                  <span className="mr-4">Bienvenido, {user.email}</span>
+                  <span className="mr-4">Welcome, {user.email}</span>
                   <Button variant="outline" size="sm" onClick={handleLogout}>
                     Cerrar sesión
                   </Button>
