@@ -344,24 +344,49 @@ export default function AnalyticsPage() {
           station_code: 'city',
         });
 
-        // Call both APIs in parallel
-        const [statsResponse, flowResponse] = await Promise.all([
-          fetch(`/api/stats?${params.toString()}`),
-          fetch(`/api/flow?${params.toString()}&output=both&aggregation_timeframe=1h`)
-        ]);
-
-        if (!statsResponse.ok || !flowResponse.ok) {
-          throw new Error('Failed to fetch data');
+        // First call stats API
+        const statsResponse = await fetch(`/api/stats?${params.toString()}`);
+        if (!statsResponse.ok) {
+          throw new Error('Failed to fetch stats data');
         }
-
-        const [statsData, flowData] = await Promise.all([
-          statsResponse.json(),
-          flowResponse.json()
-        ]);
-
+        const statsData = await statsResponse.json();
+        
+        // Update stats data and derived state
         setStationStats(statsData);
         setFilteredStats(statsData);
+
+        // Transform stats data into Station format and update map
+        const stationsData: Station[] = statsData
+          .filter((stat: any) => stat.station_info && stat.station_info.station_id)
+          .map((stat: any) => ({
+            station_id: stat.station_info.station_id,
+            name: stat.station_info.name,
+            lat: stat.station_info.lat,
+            lon: stat.station_info.lon,
+            district: stat.station_info.district,
+            suburb: stat.station_info.suburb,
+            post_code: stat.station_info.post_code,
+            capacity: stat.capacity,
+            num_bikes_available: stat.average_bikes_available,
+            num_bikes_disabled: 0,
+            num_docks_available: stat.average_docks_available,
+            num_docks_disabled: 0,
+            last_reported: new Date().toISOString(),
+            status: 'IN_SERVICE'
+          }));
+
+        setBikeStations(stationsData);
+        setFilteredStations(stationsData);
+        updateMetrics(stationsData);
+
+        // After stats is done, call flow API
+        const flowResponse = await fetch(`/api/flow?${params.toString()}&output=both&aggregation_timeframe=1h`);
+        if (!flowResponse.ok) {
+          throw new Error('Failed to fetch flow data');
+        }
+        const flowData = await flowResponse.json();
         setUsageData(flowData);
+
         setFromDate(tempFromDate);
         setToDate(tempToDate);
 
@@ -404,40 +429,57 @@ export default function AnalyticsPage() {
   }, [fromDate, toDate, refreshData]);
 
   useEffect(() => {
-    const checkAccess = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!hasAccess(user?.email)) {
-        router.push('/')
-      }
-    }
-
-    checkAccess()
-    const timestamp = new Date().getTime()
-    fetch(`/data/flow.json?t=${timestamp}`, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache'
-      }
-    })
-      .then(response => response.json())
-      .then(data => setUsageData(data))
-  }, [router])
-
-  useEffect(() => {
-    const fetchBicingData = async () => {
+    const loadInitialData = async () => {
       try {
-        const timestamp = new Date().getTime()
-        const response = await fetch(`/data/stats.json?t=${timestamp}`, {
+        // Check access first
+        const { data: { user } } = await supabase.auth.getUser()
+        if (!hasAccess(user?.email)) {
+          router.push('/')
+          return;
+        }
+
+        // Load timeframe data first
+        const timeframeResponse = await fetch('/data/timeframe.json');
+        const timeframe = await timeframeResponse.json();
+        setTimeframeData(timeframe);
+        
+        // Set default dates when timeframe data loads
+        const toDate = timeframe.to_date;
+        const fromDate = format(
+          subDays(parseISO(timeframe.to_date.replace(' ', 'T')), 1),
+          'yyyy-MM-dd HH:mm:ss'
+        );
+        
+        setTempFromDate(fromDate);
+        setTempToDate(toDate);
+        setFromDate(fromDate);
+        setToDate(toDate);
+
+        // Load initial flow data from file
+        const timestamp = new Date().getTime();
+        const flowResponse = await fetch(`/data/flow.json?t=${timestamp}`, {
           cache: 'no-store',
           headers: {
             'Cache-Control': 'no-cache'
           }
-        })
-        const statsData = await response.json()
+        });
+        const flowData = await flowResponse.json();
+        setUsageData(flowData);
+
+        // Load initial stats data from file
+        const statsResponse = await fetch(`/data/stats.json?t=${timestamp}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        });
+        const statsData = await statsResponse.json();
+        const validData = statsData.filter((stat: any) => stat && stat.station_info);
+        setStationStats(validData);
+        setFilteredStats(validData);
         
-        // Transform stats data into Station format
-        const stations: Station[] = statsData
-          .filter((stat: any) => stat && stat.station_info)
+        const stationsData: Station[] = validData
+          .filter((stat: any) => stat.station_info && stat.station_info.station_id)
           .map((stat: any) => ({
             station_id: stat.station_info.station_id,
             name: stat.station_info.name,
@@ -454,22 +496,17 @@ export default function AnalyticsPage() {
             last_reported: new Date().toISOString(),
             status: 'IN_SERVICE'
           }));
-
-        console.log('Transformed stations:', stations.length);
-        if (stations.length > 0) {
-          console.log('Sample transformed station:', stations[0]);
-        }
-
-        setBikeStations(stations);
-        setFilteredStations(stations);
-        updateMetrics(stations);
+        
+        setBikeStations(stationsData);
+        setFilteredStations(stationsData);
+        updateMetrics(stationsData);
       } catch (error) {
-        console.error('Error fetching Bicing data:', error);
+        console.error('Error loading initial data:', error);
       }
     };
 
-    fetchBicingData()
-  }, [updateMetrics])
+    loadInitialData();
+  }, [updateMetrics]);
 
   useEffect(() => {
     if (map && typeof map.setView === 'function') {
@@ -895,28 +932,6 @@ export default function AnalyticsPage() {
       map?.setView([station.lat, station.lon], 17);
     }
   };
-
-  // Add this useEffect to load timeframe data
-  useEffect(() => {
-    fetch('/data/timeframe.json')
-      .then(response => response.json())
-      .then(data => {
-        setTimeframeData(data);
-        
-        // Set default dates when timeframe data loads
-        const toDate = data.to_date;
-        const fromDate = format(
-          subDays(parseISO(data.to_date.replace(' ', 'T')), 1),
-          'yyyy-MM-dd HH:mm:ss'
-        );
-        
-        setTempFromDate(fromDate);
-        setTempToDate(toDate);
-        setFromDate(fromDate);
-        setToDate(toDate);
-      })
-      .catch(error => console.error('Error loading timeframe:', error));
-  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">

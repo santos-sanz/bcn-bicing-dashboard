@@ -5663,5 +5663,16 @@
     "district": "Sants-Montjuïc",
     "suburb_id": "11",
     "suburb": "el Poble-sec"
+  },
+  {
+    "station_id": "276",
+    "name": "PLAÇA ALFONS X EL SAVI / RONDA DEL GUIN",
+    "lon": 2.1652216,
+    "lat": 41.4121345,
+    "post_code": "08024",
+    "district_id": "07",
+    "district": "Horta-Guinardó",
+    "suburb_id": "33",
+    "suburb": "el Baix Guinardó"
   }
 ]
