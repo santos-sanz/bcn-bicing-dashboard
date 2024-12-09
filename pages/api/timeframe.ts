@@ -1,6 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { writeFile } from 'fs/promises'
-import path from 'path'
 
 export default async function handler(
   req: NextApiRequest,
@@ -19,10 +17,7 @@ export default async function handler(
 
     const data = await response.json()
     
-    // Save data to timeframe.json
-    const filePath = path.join(process.cwd(), 'public/data/timeframe.json')
-    await writeFile(filePath, JSON.stringify(data, null, 2))
-
+    // Remove file writing operation and return data directly
     return res.status(200).json(data)
     
   } catch (error) {
