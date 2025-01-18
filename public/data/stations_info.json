@@ -5674,5 +5674,16 @@
     "district": "Horta-Guinardó",
     "suburb_id": "33",
     "suburb": "el Baix Guinardó"
+  },
+  {
+    "station_id": "59",
+    "name": "C/ AGUSTÍ DURAN I SANPERE, 1",
+    "lon": 2.16807754829512,
+    "lat": 41.381381539774694,
+    "post_code": "08001",
+    "district_id": "01",
+    "district": "Ciutat Vella",
+    "suburb_id": "01",
+    "suburb": "el Raval"
   }
 ]
