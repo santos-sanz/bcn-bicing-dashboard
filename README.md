@@ -59,5 +59,3 @@ The project currently uses real-time data obtained through official Bicing API c
 
 ## License
 This project is open source and available under the MIT License.
-# End of Selection
-```
